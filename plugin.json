@@ -1,0 +1,13 @@
+{
+	"pluginName": "Pandas文档",
+	"description": "Python Pandas文档",
+	"main": "index.html",
+	"version": "0.0.1",
+	"features": [
+	    {
+			"code": "pandas",
+			"explain": "pandas文档",
+	        "cmds":["pandas"]
+	    }
+	]
+}
