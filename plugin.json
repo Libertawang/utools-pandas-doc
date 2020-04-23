@@ -1,8 +1,10 @@
 {
 	"pluginName": "Pandas文档",
 	"description": "Python Pandas文档",
-	"main": "index.html",
-	"version": "0.0.1",
+    "author": "Jianhua Wang",
+    "homepage": "https://github.com/Jianhua-Wang/utools-pandas-doc",
+    "preload": "preload.js",
+    "logo": "pandas.svg",
 	"features": [
 	    {
 			"code": "pandas",
