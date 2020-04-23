@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-series-to-sql">
+<h1>pandas.Series.to_sql<a class="headerlink" href="#pandas-series-to-sql" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pandas.Series.to_sql">
+<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">to_sql</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name: str</em>, <em class="sig-param">con</em>, <em class="sig-param">schema=None</em>, <em class="sig-param">if_exists: str = 'fail'</em>, <em class="sig-param">index: bool = True</em>, <em class="sig-param">index_label=None</em>, <em class="sig-param">chunksize=None</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">method=None</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L2508-L2664"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.to_sql" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write records stored in a DataFrame to a SQL database.</p>
+<p>Databases supported by SQLAlchemy <a class="reference internal" href="#rb112c6730e63-1" id="id1">[1]</a> are supported. Tables can be
+newly created, appended to, or overwritten.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of SQL table.</p>
+</dd>
+<dt><strong>con</strong><span class="classifier">sqlalchemy.engine.Engine or sqlite3.Connection</span></dt><dd><p>Using SQLAlchemy makes it possible to use any DB supported by that
+library. Legacy support is provided for sqlite3.Connection objects. The user
+is responsible for engine disposal and connection closure for the SQLAlchemy
+connectable See <a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/connections.html">here</a></p>
+</dd>
+<dt><strong>schema</strong><span class="classifier">str, optional</span></dt><dd><p>Specify the schema (if database flavor supports this). If None, use
+default schema.</p>
+</dd>
+<dt><strong>if_exists</strong><span class="classifier">{‘fail’, ‘replace’, ‘append’}, default ‘fail’</span></dt><dd><p>How to behave if the table already exists.</p>
+<ul class="simple">
+<li><p>fail: Raise a ValueError.</p></li>
+<li><p>replace: Drop the table before inserting new values.</p></li>
+<li><p>append: Insert new values to the existing table.</p></li>
+</ul>
+</dd>
+<dt><strong>index</strong><span class="classifier">bool, default True</span></dt><dd><p>Write DataFrame index as a column. Uses <cite>index_label</cite> as the column
+name in the table.</p>
+</dd>
+<dt><strong>index_label</strong><span class="classifier">str or sequence, default None</span></dt><dd><p>Column label for index column(s). If None is given (default) and
+<cite>index</cite> is True, then the index names are used.
+A sequence should be given if the DataFrame uses MultiIndex.</p>
+</dd>
+<dt><strong>chunksize</strong><span class="classifier">int, optional</span></dt><dd><p>Specify the number of rows in each batch to be written at a time.
+By default, all rows will be written at once.</p>
+</dd>
+<dt><strong>dtype</strong><span class="classifier">dict or scalar, optional</span></dt><dd><p>Specifying the datatype for columns. If a dictionary is used, the
+keys should be the column names and the values should be the
+SQLAlchemy types or strings for the sqlite3 legacy mode. If a
+scalar is provided, it will be applied to all columns.</p>
+</dd>
+<dt><strong>method</strong><span class="classifier">{None, ‘multi’, callable}, optional</span></dt><dd><p>Controls the SQL insertion clause used:</p>
+<ul class="simple">
+<li><p>None : Uses standard SQL <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> clause (one per row).</p></li>
+<li><p>‘multi’: Pass multiple values in a single <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> clause.</p></li>
+<li><p>callable with signature <code class="docutils literal notranslate"><span class="pre">(pd_table,</span> <span class="pre">conn,</span> <span class="pre">keys,</span> <span class="pre">data_iter)</span></code>.</p></li>
+</ul>
+<p>Details and a sample callable implementation can be found in the
+section <a class="reference internal" href="../../user_guide/io.html#io-sql-method"><span class="std std-ref">insert method</span></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.24.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>When the table already exists and <cite>if_exists</cite> is ‘fail’ (the
+default).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.read_sql.html#pandas.read_sql" title="pandas.read_sql"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_sql</span></code></a></dt><dd><p>Read a DataFrame from a table.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Timezone aware datetime columns will be written as
+<code class="docutils literal notranslate"><span class="pre">Timestamp</span> <span class="pre">with</span> <span class="pre">timezone</span></code> type with SQLAlchemy if supported by the
+database. Otherwise, the datetimes will be stored as timezone unaware
+timestamps local to the original timezone.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.24.0.</span></p>
+</div>
+<p class="rubric">References</p>
+<dl class="citation">
+<dt class="label" id="rb112c6730e63-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="http://docs.sqlalchemy.org">http://docs.sqlalchemy.org</a></p>
+</dd>
+<dt class="label" id="rb112c6730e63-2"><span class="brackets">2</span></dt>
+<dd><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0249/">https://www.python.org/dev/peps/pep-0249/</a></p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Create an in-memory SQLite database.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s1">'sqlite://'</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Create a table from scratch with 3 rows.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'name'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'User 1'</span><span class="p">,</span> <span class="s1">'User 2'</span><span class="p">,</span> <span class="s1">'User 3'</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">     name</span>
+<span class="go">0  User 1</span>
+<span class="go">1  User 2</span>
+<span class="go">2  User 3</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM users"</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="go">[(0, 'User 1'), (1, 'User 2'), (2, 'User 3')]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'name'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'User 4'</span><span class="p">,</span> <span class="s1">'User 5'</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM users"</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="go">[(0, 'User 1'), (1, 'User 2'), (2, 'User 3'),</span>
+<span class="go"> (0, 'User 4'), (1, 'User 5')]</span>
+</pre></div>
+</div>
+<p>Overwrite the table with just <code class="docutils literal notranslate"><span class="pre">df1</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span>
+<span class="gp">... </span>           <span class="n">index_label</span><span class="o">=</span><span class="s1">'id'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM users"</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="go">[(0, 'User 4'), (1, 'User 5')]</span>
+</pre></div>
+</div>
+<p>Specify the dtype (especially useful for integers with missing values).
+Notice that while pandas is forced to store the data as floating point,
+the database supports nullable integers. When fetching the data with
+Python, we get back integer scalars.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"A"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">     A</span>
+<span class="go">0  1.0</span>
+<span class="go">1  NaN</span>
+<span class="go">2  2.0</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sqlalchemy.types</span> <span class="kn">import</span> <span class="n">Integer</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'integers'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="gp">... </span>          <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s2">"A"</span><span class="p">:</span> <span class="n">Integer</span><span class="p">()})</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM integers"</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="go">[(1,), (None,), (2,)]</span>
+</pre></div>
+</div>
+</dd></dl>
+</div>
+</body></html>

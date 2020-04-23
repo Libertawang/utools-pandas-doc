@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-series-str-split">
+<h1>pandas.Series.str.split<a class="headerlink" href="#pandas-series-str-split" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pandas.Series.str.split">
+<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">split</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pat=None</em>, <em class="sig-param">n=-1</em>, <em class="sig-param">expand=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L2624-L2628"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.split" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split strings around given separator/delimiter.</p>
+<p>Splits the string in the Series/Index from the beginning,
+at the specified delimiter string. Equivalent to <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.split" title="(in Python v3.8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.split()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pat</strong><span class="classifier">str, optional</span></dt><dd><p>String or regular expression to split on.
+If not specified, split on whitespace.</p>
+</dd>
+<dt><strong>n</strong><span class="classifier">int, default -1 (all)</span></dt><dd><p>Limit number of splits in output.
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, 0 and -1 will be interpreted as return all splits.</p>
+</dd>
+<dt><strong>expand</strong><span class="classifier">bool, default False</span></dt><dd><p>Expand the splitted strings into separate columns.</p>
+<ul class="simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return DataFrame/MultiIndex expanding dimensionality.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, return Series/Index, containing lists of strings.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>Series, Index, DataFrame or MultiIndex</dt><dd><p>Type matches caller unless <code class="docutils literal notranslate"><span class="pre">expand=True</span></code> (see Notes).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pandas.Series.str.split" title="pandas.Series.str.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.split</span></code></a></dt><dd><p>Split strings around given separator/delimiter.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.rsplit.html#pandas.Series.str.rsplit" title="pandas.Series.str.rsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.rsplit</span></code></a></dt><dd><p>Splits string around given separator/delimiter, starting from the right.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.join.html#pandas.Series.str.join" title="pandas.Series.str.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.join</span></code></a></dt><dd><p>Join lists contained as elements in the Series/Index with passed delimiter.</p>
+</dd>
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.split" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.split</span></code></a></dt><dd><p>Standard library version for split.</p>
+</dd>
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.rsplit" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.rsplit</span></code></a></dt><dd><p>Standard library version for rsplit.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The handling of the <cite>n</cite> keyword depends on the number of found splits:</p>
+<ul class="simple">
+<li><p>If found splits &gt; <cite>n</cite>,  make first <cite>n</cite> splits only</p></li>
+<li><p>If found splits &lt;= <cite>n</cite>, make all splits</p></li>
+<li><p>If for a certain row the number of found splits &lt; <cite>n</cite>,
+append <cite>None</cite> for padding up to <cite>n</cite> if <code class="docutils literal notranslate"><span class="pre">expand=True</span></code></p></li>
+</ul>
+<p>If using <code class="docutils literal notranslate"><span class="pre">expand=True</span></code>, Series and Index callers return DataFrame and
+MultiIndex objects, respectively.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"this is a regular sentence"</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="s2">"https://docs.python.org/3/tutorial/index.html"</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+<span class="go">0                       this is a regular sentence</span>
+<span class="go">1    https://docs.python.org/3/tutorial/index.html</span>
+<span class="go">2                                              NaN</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+<p>In the default setting, the string is split by whitespace.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="go">0                   [this, is, a, regular, sentence]</span>
+<span class="go">1    [https://docs.python.org/3/tutorial/index.html]</span>
+<span class="go">2                                                NaN</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+<p>Without the <cite>n</cite> parameter, the outputs of <cite>rsplit</cite> and <cite>split</cite>
+are identical.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rsplit</span><span class="p">()</span>
+<span class="go">0                   [this, is, a, regular, sentence]</span>
+<span class="go">1    [https://docs.python.org/3/tutorial/index.html]</span>
+<span class="go">2                                                NaN</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+<p>The <cite>n</cite> parameter can be used to limit the number of splits on the
+delimiter. The outputs of <cite>split</cite> and <cite>rsplit</cite> are different.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">0                     [this, is, a regular sentence]</span>
+<span class="go">1    [https://docs.python.org/3/tutorial/index.html]</span>
+<span class="go">2                                                NaN</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">0                     [this is a, regular, sentence]</span>
+<span class="go">1    [https://docs.python.org/3/tutorial/index.html]</span>
+<span class="go">2                                                NaN</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+<p>The <cite>pat</cite> parameter can be used to split by other characters.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pat</span> <span class="o">=</span> <span class="s2">"/"</span><span class="p">)</span>
+<span class="go">0                         [this is a regular sentence]</span>
+<span class="go">1    [https:, , docs.python.org, 3, tutorial, index...</span>
+<span class="go">2                                                  NaN</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+<p>When using <code class="docutils literal notranslate"><span class="pre">expand=True</span></code>, the split elements will expand out into
+separate columns. If NaN is present, it is propagated throughout
+the columns during the split.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">                                               0     1     2        3</span>
+<span class="go">0                                           this    is     a  regular</span>
+<span class="go">1  https://docs.python.org/3/tutorial/index.html  None  None     None</span>
+<span class="go">2                                            NaN   NaN   NaN      NaN \</span>
+<span class="go">             4</span>
+<span class="go">0     sentence</span>
+<span class="go">1         None</span>
+<span class="go">2          NaN</span>
+</pre></div>
+</div>
+<p>For slightly more complex use cases like splitting the html document name
+from a url, a combination of parameter settings can be used.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">                                    0           1</span>
+<span class="go">0          this is a regular sentence        None</span>
+<span class="go">1  https://docs.python.org/3/tutorial  index.html</span>
+<span class="go">2                                 NaN         NaN</span>
+</pre></div>
+</div>
+<p>Remember to escape special characters when explicitly using regular
+expressions.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"1+1=2"</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\+|="</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">     0    1    2</span>
+<span class="go">0    1    1    2</span>
+</pre></div>
+</div>
+</dd></dl>
+</div>
+</body></html>

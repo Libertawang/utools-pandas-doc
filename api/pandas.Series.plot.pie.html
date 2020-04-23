@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-series-plot-pie">
+<h1>pandas.Series.plot.pie<a class="headerlink" href="#pandas-series-plot-pie" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pandas.Series.plot.pie">
+<code class="sig-prename descclassname">Series.plot.</code><code class="sig-name descname">pie</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_core.py#L1365-L1418"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.plot.pie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a pie plot.</p>
+<p>A pie plot is a proportional representation of the numerical data in a
+column. This function wraps <code class="xref py py-meth docutils literal notranslate"><span class="pre">matplotlib.pyplot.pie()</span></code> for the
+specified column. If no column reference is passed and
+<code class="docutils literal notranslate"><span class="pre">subplots=True</span></code> a pie plot is drawn for each numerical column
+independently.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>y</strong><span class="classifier">int or label, optional</span></dt><dd><p>Label or position of the column to plot.
+If not provided, <code class="docutils literal notranslate"><span class="pre">subplots=True</span></code> argument must be passed.</p>
+</dd>
+<dt><strong>**kwargs</strong></dt><dd><p>Keyword arguments to pass on to <a class="reference internal" href="pandas.DataFrame.plot.html#pandas.DataFrame.plot" title="pandas.DataFrame.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.plot()</span></code></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>matplotlib.axes.Axes or np.ndarray of them</dt><dd><p>A NumPy array is returned when <cite>subplots</cite> is True.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#pandas.Series.plot.pie" title="pandas.Series.plot.pie"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.plot.pie</span></code></a></dt><dd><p>Generate a pie plot for a Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.html#pandas.DataFrame.plot" title="pandas.DataFrame.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.plot</span></code></a></dt><dd><p>Make plots of a DataFrame.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>In the example below we have a DataFrame with the information about
+planet’s mass and radius. We pass the the ‘mass’ column to the
+pie function to get a pie plot.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'mass'</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.330</span><span class="p">,</span> <span class="mf">4.87</span> <span class="p">,</span> <span class="mf">5.97</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="s1">'radius'</span><span class="p">:</span> <span class="p">[</span><span class="mf">2439.7</span><span class="p">,</span> <span class="mf">6051.8</span><span class="p">,</span> <span class="mf">6378.1</span><span class="p">]},</span>
+<span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'Mercury'</span><span class="p">,</span> <span class="s1">'Venus'</span><span class="p">,</span> <span class="s1">'Earth'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'mass'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-Series-plot-pie-1.png" src="../../_images/pandas-Series-plot-pie-1.png"/>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-Series-plot-pie-2.png" src="../../_images/pandas-Series-plot-pie-2.png"/>
+</div>
+</dd></dl>
+</div>
+</body></html>

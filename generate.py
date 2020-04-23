@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 def get_soup(url):
     response = requests.get(f'{main_url}/{url}')
-    soup = BeautifulSoup(response.content)
+    soup = BeautifulSoup(response.content,'lxml')
     return soup
 
 def write_html(title_text,main):
@@ -61,7 +61,7 @@ def write_html(title_text,main):
 </head>
   <body>'''
     tail = '''</body></html>'''
-    with open(f'./html/{title_text}.html','w') as html:
+    with open(f'./api/{title_text}.html','w') as html:
         html.write(f'{head}\n{main}\n{tail}')
 
 
@@ -71,14 +71,15 @@ indexes_json = pd.DataFrame(columns=['t','d','p'])
 for chapter in main_soup.select('.nav>li>a'):
     print(f"{chapter['href']}\t{chapter.text}")
     chapter_soup = get_soup(chapter["href"])
-    for method in chapter_soup.select('tr'):
-        title,description = method.select('td')
-        description_text = description.p.text
-        title_text = title.a['title']
-        title_url = title.a['href']
+    for table in chapter_soup.find_all('table',{'class':'longtable table'}):
+        for tr in table.select('tr'):
+            title,description = tr.select('td')
+            description_text = description.p.text
+            title_text = title.a['title']
+            title_url = title.a['href']
 
-        method_soup = get_soup(title_url)
-        main = method_soup.find('div', {'class':'section'})
-        write_html(title_text,main)
-        indexes_json.loc[title_text] = [title_text,description_text,title_url]
+            method_soup = get_soup(title_url)
+            main = method_soup.find('div', {'class':'section'})
+            write_html(title_text,main)
+            indexes_json.loc[title_text] = [title_text,description_text,title_url]
 indexes_json.to_json('./indexes.json',orient='records')

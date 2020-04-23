@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-dataframe-to-json">
+<h1>pandas.DataFrame.to_json<a class="headerlink" href="#pandas-dataframe-to-json" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pandas.DataFrame.to_json">
+<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param">self, path_or_buf: Union[str, pathlib.Path, IO[~AnyStr], NoneType] = None, orient: Union[str, NoneType] = None, date_format: Union[str, NoneType] = None, double_precision: int = 10, force_ascii: bool = True, date_unit: str = 'ms', default_handler: Union[Callable[[Any], Union[str, int, float, bool, List, Dict]], NoneType] = None, lines: bool = False, compression: Union[str, NoneType] = 'infer', index: bool = True, indent: Union[int, NoneType] = None</em><span class="sig-paren">)</span> → Union[str, NoneType]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L2184-L2365"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_json" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the object to a JSON string.</p>
+<p>Note NaN’s and None will be converted to null and datetime objects
+will be converted to UNIX timestamps.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>path_or_buf</strong><span class="classifier">str or file handle, optional</span></dt><dd><p>File path or object. If not specified, the result is returned as
+a string.</p>
+</dd>
+<dt><strong>orient</strong><span class="classifier">str</span></dt><dd><p>Indication of expected JSON string format.</p>
+<ul>
+<li><p>Series:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>default is ‘index’</p></li>
+<li><p>allowed values are: {‘split’,’records’,’index’,’table’}.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>DataFrame:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>default is ‘columns’</p></li>
+<li><p>allowed values are: {‘split’, ‘records’, ‘index’, ‘columns’,
+‘values’, ‘table’}.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>The format of the JSON string:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>‘split’ : dict like {‘index’ -&gt; [index], ‘columns’ -&gt; [columns],
+‘data’ -&gt; [values]}</p></li>
+<li><p>‘records’ : list like [{column -&gt; value}, … , {column -&gt; value}]</p></li>
+<li><p>‘index’ : dict like {index -&gt; {column -&gt; value}}</p></li>
+<li><p>‘columns’ : dict like {column -&gt; {index -&gt; value}}</p></li>
+<li><p>‘values’ : just the values array</p></li>
+<li><p>‘table’ : dict like {‘schema’: {schema}, ‘data’: {data}}</p></li>
+</ul>
+<p>Describing the data, where data component is like <code class="docutils literal notranslate"><span class="pre">orient='records'</span></code>.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.20.0.</span></p>
+</div>
+</dd>
+<dt><strong>date_format</strong><span class="classifier">{None, ‘epoch’, ‘iso’}</span></dt><dd><p>Type of date conversion. ‘epoch’ = epoch milliseconds,
+‘iso’ = ISO8601. The default depends on the <cite>orient</cite>. For
+<code class="docutils literal notranslate"><span class="pre">orient='table'</span></code>, the default is ‘iso’. For all other orients,
+the default is ‘epoch’.</p>
+</dd>
+<dt><strong>double_precision</strong><span class="classifier">int, default 10</span></dt><dd><p>The number of decimal places to use when encoding
+floating point values.</p>
+</dd>
+<dt><strong>force_ascii</strong><span class="classifier">bool, default True</span></dt><dd><p>Force encoded string to be ASCII.</p>
+</dd>
+<dt><strong>date_unit</strong><span class="classifier">str, default ‘ms’ (milliseconds)</span></dt><dd><p>The time unit to encode to, governs timestamp and ISO8601
+precision.  One of ‘s’, ‘ms’, ‘us’, ‘ns’ for second, millisecond,
+microsecond, and nanosecond respectively.</p>
+</dd>
+<dt><strong>default_handler</strong><span class="classifier">callable, default None</span></dt><dd><p>Handler to call if object cannot otherwise be converted to a
+suitable format for JSON. Should receive a single argument which is
+the object to convert and return a serialisable object.</p>
+</dd>
+<dt><strong>lines</strong><span class="classifier">bool, default False</span></dt><dd><p>If ‘orient’ is ‘records’ write out line delimited json format. Will
+throw ValueError if incorrect ‘orient’ since others are not list
+like.</p>
+</dd>
+<dt><strong>compression</strong><span class="classifier">{‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}</span></dt><dd><p>A string representing the compression to use in the output file,
+only used when the first argument is a filename. By default, the
+compression is inferred from the filename.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.24.0: </span>‘infer’ option added and set to default</p>
+</div>
+</dd>
+<dt><strong>index</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to include the index values in the JSON string. Not
+including the index (<code class="docutils literal notranslate"><span class="pre">index=False</span></code>) is only supported when
+orient is ‘split’ or ‘table’.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+</div>
+</dd>
+<dt><strong>indent</strong><span class="classifier">int, optional</span></dt><dd><p>Length of whitespace used to indent each record.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None or str</dt><dd><p>If path_or_buf is None, returns the resulting json format as a
+string. Otherwise returns None.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.read_json.html#pandas.read_json" title="pandas.read_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_json</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The behavior of <code class="docutils literal notranslate"><span class="pre">indent=0</span></code> varies from the stdlib, which does not
+indent the output but does insert newlines. Currently, <code class="docutils literal notranslate"><span class="pre">indent=0</span></code>
+and the default <code class="docutils literal notranslate"><span class="pre">indent=None</span></code> are equivalent in pandas, though this
+may change in a future release.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]],</span>
+<span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'row 1'</span><span class="p">,</span> <span class="s1">'row 2'</span><span class="p">],</span>
+<span class="gp">... </span>                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'col 1'</span><span class="p">,</span> <span class="s1">'col 2'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'split'</span><span class="p">)</span>
+<span class="go">'{"columns":["col 1","col 2"],</span>
+<span class="go">  "index":["row 1","row 2"],</span>
+<span class="go">  "data":[["a","b"],["c","d"]]}'</span>
+</pre></div>
+</div>
+<p>Encoding/decoding a Dataframe using <code class="docutils literal notranslate"><span class="pre">'records'</span></code> formatted JSON.
+Note that index labels are not preserved with this encoding.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'records'</span><span class="p">)</span>
+<span class="go">'[{"col 1":"a","col 2":"b"},{"col 1":"c","col 2":"d"}]'</span>
+</pre></div>
+</div>
+<p>Encoding/decoding a Dataframe using <code class="docutils literal notranslate"><span class="pre">'index'</span></code> formatted JSON:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'index'</span><span class="p">)</span>
+<span class="go">'{"row 1":{"col 1":"a","col 2":"b"},"row 2":{"col 1":"c","col 2":"d"}}'</span>
+</pre></div>
+</div>
+<p>Encoding/decoding a Dataframe using <code class="docutils literal notranslate"><span class="pre">'columns'</span></code> formatted JSON:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
+<span class="go">'{"col 1":{"row 1":"a","row 2":"c"},"col 2":{"row 1":"b","row 2":"d"}}'</span>
+</pre></div>
+</div>
+<p>Encoding/decoding a Dataframe using <code class="docutils literal notranslate"><span class="pre">'values'</span></code> formatted JSON:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'values'</span><span class="p">)</span>
+<span class="go">'[["a","b"],["c","d"]]'</span>
+</pre></div>
+</div>
+<p>Encoding with Table Schema</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'table'</span><span class="p">)</span>
+<span class="go">'{"schema": {"fields": [{"name": "index", "type": "string"},</span>
+<span class="go">                        {"name": "col 1", "type": "string"},</span>
+<span class="go">                        {"name": "col 2", "type": "string"}],</span>
+<span class="go">             "primaryKey": "index",</span>
+<span class="go">             "pandas_version": "0.20.0"},</span>
+<span class="go">  "data": [{"index": "row 1", "col 1": "a", "col 2": "b"},</span>
+<span class="go">           {"index": "row 2", "col 1": "c", "col 2": "d"}]}'</span>
+</pre></div>
+</div>
+</dd></dl>
+</div>
+</body></html>

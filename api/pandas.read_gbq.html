@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-read-gbq">
+<h1>pandas.read_gbq<a class="headerlink" href="#pandas-read-gbq" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="pandas.read_gbq">
+<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_gbq</code><span class="sig-paren">(</span><em class="sig-param">query: str, project_id: Union[str, NoneType] = None, index_col: Union[str, NoneType] = None, col_order: Union[List[str], NoneType] = None, reauth: bool = False, auth_local_webserver: bool = False, dialect: Union[str, NoneType] = None, location: Union[str, NoneType] = None, configuration: Union[Dict[str, Any], NoneType] = None, credentials=None, use_bqstorage_api: Union[bool, NoneType] = None, private_key=None, verbose=None, progress_bar_type: Union[str, NoneType] = None</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/gbq.py#L21-L187"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_gbq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load data from Google BigQuery.</p>
+<p>This function requires the <a class="reference external" href="https://pandas-gbq.readthedocs.io">pandas-gbq package</a>.</p>
+<p>See the <a class="reference external" href="https://pandas-gbq.readthedocs.io/en/latest/howto/authentication.html">How to authenticate with Google BigQuery</a>
+guide for authentication instructions.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>query</strong><span class="classifier">str</span></dt><dd><p>SQL-Like Query to return data values.</p>
+</dd>
+<dt><strong>project_id</strong><span class="classifier">str, optional</span></dt><dd><p>Google BigQuery Account project ID. Optional when available from
+the environment.</p>
+</dd>
+<dt><strong>index_col</strong><span class="classifier">str, optional</span></dt><dd><p>Name of result column to use for index in results DataFrame.</p>
+</dd>
+<dt><strong>col_order</strong><span class="classifier">list(str), optional</span></dt><dd><p>List of BigQuery column names in the desired order for results
+DataFrame.</p>
+</dd>
+<dt><strong>reauth</strong><span class="classifier">bool, default False</span></dt><dd><p>Force Google BigQuery to re-authenticate the user. This is useful
+if multiple accounts are used.</p>
+</dd>
+<dt><strong>auth_local_webserver</strong><span class="classifier">bool, default False</span></dt><dd><p>Use the <a class="reference external" href="http://google-auth-oauthlib.readthedocs.io/en/latest/reference/google_auth_oauthlib.flow.html#google_auth_oauthlib.flow.InstalledAppFlow.run_local_server">local webserver flow</a> instead of the <a class="reference external" href="http://google-auth-oauthlib.readthedocs.io/en/latest/reference/google_auth_oauthlib.flow.html#google_auth_oauthlib.flow.InstalledAppFlow.run_console">console flow</a>
+when getting user credentials.</p>
+<p><em>New in version 0.2.0 of pandas-gbq</em>.</p>
+</dd>
+<dt><strong>dialect</strong><span class="classifier">str, default ‘legacy’</span></dt><dd><p>Note: The default value is changing to ‘standard’ in a future version.</p>
+<p>SQL syntax dialect to use. Value can be one of:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'legacy'</span></code></dt><dd><p>Use BigQuery’s legacy SQL dialect. For more information see
+<a class="reference external" href="https://cloud.google.com/bigquery/docs/reference/legacy-sql">BigQuery Legacy SQL Reference</a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'standard'</span></code></dt><dd><p>Use BigQuery’s standard SQL, which is
+compliant with the SQL 2011 standard. For more information
+see <a class="reference external" href="https://cloud.google.com/bigquery/docs/reference/standard-sql/">BigQuery Standard SQL Reference</a>.</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.24.0.</span></p>
+</div>
+</dd>
+<dt><strong>location</strong><span class="classifier">str, optional</span></dt><dd><p>Location where the query job should run. See the <a class="reference external" href="https://cloud.google.com/bigquery/docs/dataset-locations">BigQuery locations
+documentation</a> for a
+list of available locations. The location must match that of any
+datasets used in the query.</p>
+<p><em>New in version 0.5.0 of pandas-gbq</em>.</p>
+</dd>
+<dt><strong>configuration</strong><span class="classifier">dict, optional</span></dt><dd><p>Query config parameters for job processing.
+For example:</p>
+<blockquote>
+<div><p>configuration = {‘query’: {‘useQueryCache’: False}}</p>
+</div></blockquote>
+<p>For more information see <a class="reference external" href="https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs#configuration.query">BigQuery REST API Reference</a>.</p>
+</dd>
+<dt><strong>credentials</strong><span class="classifier">google.auth.credentials.Credentials, optional</span></dt><dd><p>Credentials for accessing Google APIs. Use this parameter to override
+default credentials, such as to use Compute Engine
+<code class="xref py py-class docutils literal notranslate"><span class="pre">google.auth.compute_engine.Credentials</span></code> or Service Account
+<code class="xref py py-class docutils literal notranslate"><span class="pre">google.oauth2.service_account.Credentials</span></code> directly.</p>
+<p><em>New in version 0.8.0 of pandas-gbq</em>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.24.0.</span></p>
+</div>
+</dd>
+<dt><strong>use_bqstorage_api</strong><span class="classifier">bool, default False</span></dt><dd><p>Use the <a class="reference external" href="https://cloud.google.com/bigquery/docs/reference/storage/">BigQuery Storage API</a> to
+download query results quickly, but at an increased cost. To use this
+API, first <a class="reference external" href="https://console.cloud.google.com/apis/library/bigquerystorage.googleapis.com">enable it in the Cloud Console</a>.
+You must also have the <a class="reference external" href="https://cloud.google.com/bigquery/docs/access-control#roles">bigquery.readsessions.create</a>
+permission on the project you are billing queries to.</p>
+<p>This feature requires version 0.10.0 or later of the <code class="docutils literal notranslate"><span class="pre">pandas-gbq</span></code>
+package. It also requires the <code class="docutils literal notranslate"><span class="pre">google-cloud-bigquery-storage</span></code> and
+<code class="docutils literal notranslate"><span class="pre">fastavro</span></code> packages.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.25.0.</span></p>
+</div>
+</dd>
+<dt><strong>progress_bar_type</strong><span class="classifier">Optional, str</span></dt><dd><p>If set, use the <a class="reference external" href="https://tqdm.github.io/">tqdm</a> library to
+display a progress bar while the data downloads. Install the
+<code class="docutils literal notranslate"><span class="pre">tqdm</span></code> package to use this feature.</p>
+<p>Possible values of <code class="docutils literal notranslate"><span class="pre">progress_bar_type</span></code> include:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">None</span></code></dt><dd><p>No progress bar.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'tqdm'</span></code></dt><dd><p>Use the <code class="xref py py-func docutils literal notranslate"><span class="pre">tqdm.tqdm()</span></code> function to print a progress bar
+to <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.stderr" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">sys.stderr</span></code></a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'tqdm_notebook'</span></code></dt><dd><p>Use the <code class="xref py py-func docutils literal notranslate"><span class="pre">tqdm.tqdm_notebook()</span></code> function to display a
+progress bar as a Jupyter notebook widget.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">'tqdm_gui'</span></code></dt><dd><p>Use the <code class="xref py py-func docutils literal notranslate"><span class="pre">tqdm.tqdm_gui()</span></code> function to display a
+progress bar as a graphical dialog box.</p>
+</dd>
+</dl>
+<p>Note that his feature requires version 0.12.0 or later of the
+<code class="docutils literal notranslate"><span class="pre">pandas-gbq</span></code> package. And it requires the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> package. Slightly
+different than <code class="docutils literal notranslate"><span class="pre">pandas-gbq</span></code>, here the default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>df: DataFrame</dt><dd><p>DataFrame representing results of query.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference external" href="https://pandas-gbq.readthedocs.io/en/latest/api.html#pandas_gbq.read_gbq" title="(in pandas-gbq v0.13.1+1.g97e9a9e)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas_gbq.read_gbq</span></code></a></dt><dd><p>This function in the pandas-gbq library.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_gbq.html#pandas.DataFrame.to_gbq" title="pandas.DataFrame.to_gbq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.to_gbq</span></code></a></dt><dd><p>Write a DataFrame to Google BigQuery.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+</div>
+</body></html>

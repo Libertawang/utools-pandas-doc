@@ -1,6 +1,6 @@
 {
-	"pluginName": "Pandas文档",
-	"description": "Python Pandas文档",
+	"pluginName": "Pandas API Reference",
+	"description": "Python Pandas API Reference",
     "author": "Jianhua Wang",
     "homepage": "https://github.com/Jianhua-Wang/utools-pandas-doc",
     "preload": "preload.js",
@@ -9,7 +9,7 @@
 	"features": [
 	    {
 			"code": "pandas",
-			"explain": "pandas文档",
+			"explain": "Pandas API Reference",
 	        "cmds":["pandas"]
 	    }
 	]

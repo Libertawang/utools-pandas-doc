@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-series-asof">
+<h1>pandas.Series.asof<a class="headerlink" href="#pandas-series-asof" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pandas.Series.asof">
+<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">asof</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">where</em>, <em class="sig-param">subset=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L7033-L7197"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.asof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the last row(s) without any NaNs before <cite>where</cite>.</p>
+<p>The last row (for each element in <cite>where</cite>, if list) without any
+NaN is taken.
+In case of a <a class="reference internal" href="pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>, the last row without NaN
+considering only the subset of columns (if not <cite>None</cite>)</p>
+<p>If there is no good value, NaN is returned for a Series or
+a Series of NaN values for a DataFrame</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>where</strong><span class="classifier">date or array-like of dates</span></dt><dd><p>Date(s) before which the last row(s) are returned.</p>
+</dd>
+<dt><strong>subset</strong><span class="classifier">str or array-like of str, default <cite>None</cite></span></dt><dd><p>For DataFrame, if not <cite>None</cite>, only use these columns to
+check for NaNs.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt>scalar, Series, or DataFrame</dt><dd><p>The return can be:</p>
+<ul class="simple">
+<li><p>scalar : when <cite>self</cite> is a Series and <cite>where</cite> is a scalar</p></li>
+<li><p>Series: when <cite>self</cite> is a Series and <cite>where</cite> is an array-like,
+or when <cite>self</cite> is a DataFrame and <cite>where</cite> is a scalar</p></li>
+<li><p>DataFrame : when <cite>self</cite> is a DataFrame and <cite>where</cite> is an
+array-like</p></li>
+</ul>
+<p>Return scalar, Series, or DataFrame.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.merge_asof.html#pandas.merge_asof" title="pandas.merge_asof"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_asof</span></code></a></dt><dd><p>Perform an asof merge. Similar to left join.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Dates are assumed to be sorted. Raises if this is not the case.</p>
+<p class="rubric">Examples</p>
+<p>A Series and a scalar <cite>where</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">10    1.0</span>
+<span class="go">20    2.0</span>
+<span class="go">30    NaN</span>
+<span class="go">40    4.0</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">asof</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="go">2.0</span>
+</pre></div>
+</div>
+<p>For a sequence <cite>where</cite>, a Series is returned. The first value is
+NaN, because the first element of <cite>where</cite> is before the first
+index value.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">asof</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="go">5     NaN</span>
+<span class="go">20    2.0</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p>Missing values are not considered. The following is <code class="docutils literal notranslate"><span class="pre">2.0</span></code>, not
+NaN, even though NaN is at the index location for <code class="docutils literal notranslate"><span class="pre">30</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">asof</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="go">2.0</span>
+</pre></div>
+</div>
+<p>Take all columns into consideration</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'a'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="s1">'b'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">500</span><span class="p">]},</span>
+<span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">([</span><span class="s1">'2018-02-27 09:01:00'</span><span class="p">,</span>
+<span class="gp">... </span>                                          <span class="s1">'2018-02-27 09:02:00'</span><span class="p">,</span>
+<span class="gp">... </span>                                          <span class="s1">'2018-02-27 09:03:00'</span><span class="p">,</span>
+<span class="gp">... </span>                                          <span class="s1">'2018-02-27 09:04:00'</span><span class="p">,</span>
+<span class="gp">... </span>                                          <span class="s1">'2018-02-27 09:05:00'</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">asof</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">([</span><span class="s1">'2018-02-27 09:03:30'</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="s1">'2018-02-27 09:04:30'</span><span class="p">]))</span>
+<span class="go">                      a   b</span>
+<span class="go">2018-02-27 09:03:30 NaN NaN</span>
+<span class="go">2018-02-27 09:04:30 NaN NaN</span>
+</pre></div>
+</div>
+<p>Take a single column into consideration</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">asof</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">([</span><span class="s1">'2018-02-27 09:03:30'</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="s1">'2018-02-27 09:04:30'</span><span class="p">]),</span>
+<span class="gp">... </span>        <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">])</span>
+<span class="go">                         a   b</span>
+<span class="go">2018-02-27 09:03:30   30.0 NaN</span>
+<span class="go">2018-02-27 09:04:30   40.0 NaN</span>
+</pre></div>
+</div>
+</dd></dl>
+</div>
+</body></html>

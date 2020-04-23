@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-dataframe-nlargest">
+<h1>pandas.DataFrame.nlargest<a class="headerlink" href="#pandas-dataframe-nlargest" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pandas.DataFrame.nlargest">
+<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">nlargest</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n</em>, <em class="sig-param">columns</em>, <em class="sig-param">keep='first'</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L5018-L5125"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.nlargest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first <cite>n</cite> rows ordered by <cite>columns</cite> in descending order.</p>
+<p>Return the first <cite>n</cite> rows with the largest values in <cite>columns</cite>, in
+descending order. The columns that are not specified are returned as
+well, but not used for ordering.</p>
+<p>This method is equivalent to
+<code class="docutils literal notranslate"><span class="pre">df.sort_values(columns,</span> <span class="pre">ascending=False).head(n)</span></code>, but more
+performant.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd><p>Number of rows to return.</p>
+</dd>
+<dt><strong>columns</strong><span class="classifier">label or list of labels</span></dt><dd><p>Column label(s) to order by.</p>
+</dd>
+<dt><strong>keep</strong><span class="classifier">{‘first’, ‘last’, ‘all’}, default ‘first’</span></dt><dd><p>Where there are duplicate values:</p>
+<ul class="simple">
+<li><p><cite>first</cite> : prioritize the first occurrence(s)</p></li>
+<li><p><cite>last</cite> : prioritize the last occurrence(s)</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">all</span></code><span class="classifier">do not drop any duplicates, even it means</span></dt><dd><p>selecting more than <cite>n</cite> items.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.24.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>DataFrame</dt><dd><p>The first <cite>n</cite> rows ordered by the given columns in descending
+order.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.DataFrame.nsmallest.html#pandas.DataFrame.nsmallest" title="pandas.DataFrame.nsmallest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.nsmallest</span></code></a></dt><dd><p>Return the first <cite>n</cite> rows ordered by <cite>columns</cite> in ascending order.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sort_values.html#pandas.DataFrame.sort_values" title="pandas.DataFrame.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sort_values</span></code></a></dt><dd><p>Sort DataFrame by the values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.head.html#pandas.DataFrame.head" title="pandas.DataFrame.head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.head</span></code></a></dt><dd><p>Return the first <cite>n</cite> rows without re-ordering.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>This function cannot be used with all column types. For example, when
+specifying columns with <cite>object</cite> or <cite>category</cite> dtypes, <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is
+raised.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'population'</span><span class="p">:</span> <span class="p">[</span><span class="mi">59000000</span><span class="p">,</span> <span class="mi">65000000</span><span class="p">,</span> <span class="mi">434000</span><span class="p">,</span>
+<span class="gp">... </span>                                  <span class="mi">434000</span><span class="p">,</span> <span class="mi">434000</span><span class="p">,</span> <span class="mi">337000</span><span class="p">,</span> <span class="mi">11300</span><span class="p">,</span>
+<span class="gp">... </span>                                  <span class="mi">11300</span><span class="p">,</span> <span class="mi">11300</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="s1">'GDP'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1937894</span><span class="p">,</span> <span class="mi">2583560</span> <span class="p">,</span> <span class="mi">12011</span><span class="p">,</span> <span class="mi">4520</span><span class="p">,</span> <span class="mi">12128</span><span class="p">,</span>
+<span class="gp">... </span>                           <span class="mi">17036</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">311</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="s1">'alpha-2'</span><span class="p">:</span> <span class="p">[</span><span class="s2">"IT"</span><span class="p">,</span> <span class="s2">"FR"</span><span class="p">,</span> <span class="s2">"MT"</span><span class="p">,</span> <span class="s2">"MV"</span><span class="p">,</span> <span class="s2">"BN"</span><span class="p">,</span>
+<span class="gp">... </span>                               <span class="s2">"IS"</span><span class="p">,</span> <span class="s2">"NR"</span><span class="p">,</span> <span class="s2">"TV"</span><span class="p">,</span> <span class="s2">"AI"</span><span class="p">]},</span>
+<span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"Italy"</span><span class="p">,</span> <span class="s2">"France"</span><span class="p">,</span> <span class="s2">"Malta"</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="s2">"Maldives"</span><span class="p">,</span> <span class="s2">"Brunei"</span><span class="p">,</span> <span class="s2">"Iceland"</span><span class="p">,</span>
+<span class="gp">... </span>                         <span class="s2">"Nauru"</span><span class="p">,</span> <span class="s2">"Tuvalu"</span><span class="p">,</span> <span class="s2">"Anguilla"</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">          population      GDP alpha-2</span>
+<span class="go">Italy       59000000  1937894      IT</span>
+<span class="go">France      65000000  2583560      FR</span>
+<span class="go">Malta         434000    12011      MT</span>
+<span class="go">Maldives      434000     4520      MV</span>
+<span class="go">Brunei        434000    12128      BN</span>
+<span class="go">Iceland       337000    17036      IS</span>
+<span class="go">Nauru          11300      182      NR</span>
+<span class="go">Tuvalu         11300       38      TV</span>
+<span class="go">Anguilla       11300      311      AI</span>
+</pre></div>
+</div>
+<p>In the following example, we will use <code class="docutils literal notranslate"><span class="pre">nlargest</span></code> to select the three
+rows having the largest values in column “population”.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'population'</span><span class="p">)</span>
+<span class="go">        population      GDP alpha-2</span>
+<span class="go">France    65000000  2583560      FR</span>
+<span class="go">Italy     59000000  1937894      IT</span>
+<span class="go">Malta       434000    12011      MT</span>
+</pre></div>
+</div>
+<p>When using <code class="docutils literal notranslate"><span class="pre">keep='last'</span></code>, ties are resolved in reverse order:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'population'</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'last'</span><span class="p">)</span>
+<span class="go">        population      GDP alpha-2</span>
+<span class="go">France    65000000  2583560      FR</span>
+<span class="go">Italy     59000000  1937894      IT</span>
+<span class="go">Brunei      434000    12128      BN</span>
+</pre></div>
+</div>
+<p>When using <code class="docutils literal notranslate"><span class="pre">keep='all'</span></code>, all duplicate items are maintained:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'population'</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
+<span class="go">          population      GDP alpha-2</span>
+<span class="go">France      65000000  2583560      FR</span>
+<span class="go">Italy       59000000  1937894      IT</span>
+<span class="go">Malta         434000    12011      MT</span>
+<span class="go">Maldives      434000     4520      MV</span>
+<span class="go">Brunei        434000    12128      BN</span>
+</pre></div>
+</div>
+<p>To order by the largest values in column “population” and then “GDP”,
+we can specify multiple columns like in the next example.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s1">'population'</span><span class="p">,</span> <span class="s1">'GDP'</span><span class="p">])</span>
+<span class="go">        population      GDP alpha-2</span>
+<span class="go">France    65000000  2583560      FR</span>
+<span class="go">Italy     59000000  1937894      IT</span>
+<span class="go">Brunei      434000    12128      BN</span>
+</pre></div>
+</div>
+</dd></dl>
+</div>
+</body></html>
