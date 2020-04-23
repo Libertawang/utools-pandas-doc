@@ -4,7 +4,7 @@
     "author": "Jianhua Wang",
     "homepage": "https://github.com/Jianhua-Wang/utools-pandas-doc",
     "preload": "preload.js",
-	"logo": "pandas.svg",
+	"logo": "pandas-logo-300.png",
 	"version": "0.0.1",
 	"features": [
 	    {
