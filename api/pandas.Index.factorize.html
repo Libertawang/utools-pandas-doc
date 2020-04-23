@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-index-factorize">
+<h1>pandas.Index.factorize<a class="headerlink" href="#pandas-index-factorize" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pandas.Index.factorize">
+<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">factorize</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sort=False</em>, <em class="sig-param">na_sentinel=-1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/base.py#L1362-L1376"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.factorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encode the object as an enumerated type or categorical variable.</p>
+<p>This method is useful for obtaining a numeric representation of an
+array when all that matters is identifying distinct values. <cite>factorize</cite>
+is available as both a top-level function <a class="reference internal" href="pandas.factorize.html#pandas.factorize" title="pandas.factorize"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.factorize()</span></code></a>,
+and as a method <a class="reference internal" href="pandas.Series.factorize.html#pandas.Series.factorize" title="pandas.Series.factorize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.factorize()</span></code></a> and <a class="reference internal" href="#pandas.Index.factorize" title="pandas.Index.factorize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Index.factorize()</span></code></a>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>sort</strong><span class="classifier">bool, default False</span></dt><dd><p>Sort <cite>uniques</cite> and shuffle <cite>codes</cite> to maintain the
+relationship.</p>
+</dd>
+<dt><strong>na_sentinel</strong><span class="classifier">int, default -1</span></dt><dd><p>Value to mark “not found”.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>codes</strong><span class="classifier">ndarray</span></dt><dd><p>An integer ndarray that’s an indexer into <cite>uniques</cite>.
+<code class="docutils literal notranslate"><span class="pre">uniques.take(codes)</span></code> will have the same values as <cite>values</cite>.</p>
+</dd>
+<dt><strong>uniques</strong><span class="classifier">ndarray, Index, or Categorical</span></dt><dd><p>The unique valid values. When <cite>values</cite> is Categorical, <cite>uniques</cite>
+is a Categorical. When <cite>values</cite> is some other pandas object, an
+<cite>Index</cite> is returned. Otherwise, a 1-D ndarray is returned.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>Even if there’s a missing value in <cite>values</cite>, <cite>uniques</cite> will
+<em>not</em> contain an entry for it.</p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.cut.html#pandas.cut" title="pandas.cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cut</span></code></a></dt><dd><p>Discretize continuous-valued array.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.unique.html#pandas.unique" title="pandas.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a></dt><dd><p>Find the unique value in an array.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>These examples all show factorize as a top-level method like
+<code class="docutils literal notranslate"><span class="pre">pd.factorize(values)</span></code>. The results are identical for methods like
+<a class="reference internal" href="pandas.Series.factorize.html#pandas.Series.factorize" title="pandas.Series.factorize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.factorize()</span></code></a>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span><span class="p">,</span> <span class="n">uniques</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span>
+<span class="go">array([0, 0, 1, 2, 0])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uniques</span>
+<span class="go">array(['b', 'a', 'c'], dtype=object)</span>
+</pre></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">sort=True</span></code>, the <cite>uniques</cite> will be sorted, and <cite>codes</cite> will be
+shuffled so that the relationship is the maintained.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span><span class="p">,</span> <span class="n">uniques</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span>
+<span class="go">array([1, 1, 0, 2, 1])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uniques</span>
+<span class="go">array(['a', 'b', 'c'], dtype=object)</span>
+</pre></div>
+</div>
+<p>Missing values are indicated in <cite>codes</cite> with <cite>na_sentinel</cite>
+(<code class="docutils literal notranslate"><span class="pre">-1</span></code> by default). Note that missing values are never
+included in <cite>uniques</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span><span class="p">,</span> <span class="n">uniques</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span>
+<span class="go">array([ 0, -1,  1,  2,  0])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uniques</span>
+<span class="go">array(['b', 'a', 'c'], dtype=object)</span>
+</pre></div>
+</div>
+<p>Thus far, we’ve only factorized lists (which are internally coerced to
+NumPy arrays). When factorizing pandas objects, the type of <cite>uniques</cite>
+will differ. For Categoricals, a <cite>Categorical</cite> is returned.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span> <span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span><span class="p">,</span> <span class="n">uniques</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span>
+<span class="go">array([0, 0, 1])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uniques</span>
+<span class="go">[a, c]</span>
+<span class="go">Categories (3, object): [a, b, c]</span>
+</pre></div>
+</div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">'b'</span></code> is in <code class="docutils literal notranslate"><span class="pre">uniques.categories</span></code>, despite not being
+present in <code class="docutils literal notranslate"><span class="pre">cat.values</span></code>.</p>
+<p>For all other pandas objects, an Index of the appropriate type is
+returned.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span><span class="p">,</span> <span class="n">uniques</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">codes</span>
+<span class="go">array([0, 0, 1])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uniques</span>
+<span class="go">Index(['a', 'c'], dtype='object')</span>
+</pre></div>
+</div>
+</dd></dl>
+</div>
+</body></html>

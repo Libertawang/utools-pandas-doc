@@ -3,6 +3,7 @@
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+import os
 
 def get_soup(url):
     response = requests.get(f'{main_url}/{url}')
@@ -77,9 +78,11 @@ for chapter in main_soup.select('.nav>li>a'):
             description_text = description.p.text
             title_text = title.a['title']
             title_url = title.a['href']
-
-            method_soup = get_soup(title_url)
-            main = method_soup.find('div', {'class':'section'})
-            write_html(title_text,main)
             indexes_json.loc[title_text] = [title_text,description_text,title_url]
+            if os.path.exists(f'./api/{title_text}.html'):
+                continue
+            else:
+                method_soup = get_soup(title_url)
+                main = method_soup.find('div', {'class':'section'})
+                write_html(title_text,main)
 indexes_json.to_json('./indexes.json',orient='records')

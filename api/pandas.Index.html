@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-index">
+<h1>pandas.Index<a class="headerlink" href="#pandas-index" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pandas.Index">
+<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">Index</code><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L177-L5244"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Immutable ndarray implementing an ordered, sliceable set. The basic object
+storing axis labels for all pandas objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">array-like (1-dimensional)</span></dt><dd></dd>
+<dt><strong>dtype</strong><span class="classifier">NumPy dtype (default: object)</span></dt><dd><p>If dtype is None, we find the dtype that best fits the data.
+If an actual dtype is provided, we coerce to that dtype if it’s safe.
+Otherwise, an error will be raised.</p>
+</dd>
+<dt><strong>copy</strong><span class="classifier">bool</span></dt><dd><p>Make a copy of input ndarray.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">object</span></dt><dd><p>Name to be stored in the index.</p>
+</dd>
+<dt><strong>tupleize_cols</strong><span class="classifier">bool (default: True)</span></dt><dd><p>When True, attempt to create a MultiIndex if possible.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.RangeIndex.html#pandas.RangeIndex" title="pandas.RangeIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RangeIndex</span></code></a></dt><dd><p>Index implementing a monotonic integer range.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.html#pandas.CategoricalIndex" title="pandas.CategoricalIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CategoricalIndex</span></code></a></dt><dd><p>Index of <a class="reference internal" href="pandas.Categorical.html#pandas.Categorical" title="pandas.Categorical"><code class="xref py py-class docutils literal notranslate"><span class="pre">Categorical</span></code></a> s.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.MultiIndex.html#pandas.MultiIndex" title="pandas.MultiIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiIndex</span></code></a></dt><dd><p>A multi-level, or hierarchical, Index.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.IntervalIndex.html#pandas.IntervalIndex" title="pandas.IntervalIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IntervalIndex</span></code></a></dt><dd><p>An Index of <a class="reference internal" href="pandas.Interval.html#pandas.Interval" title="pandas.Interval"><code class="xref py py-class docutils literal notranslate"><span class="pre">Interval</span></code></a> s.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DatetimeIndex.html#pandas.DatetimeIndex" title="pandas.DatetimeIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DatetimeIndex</span></code></a>, <a class="reference internal" href="pandas.TimedeltaIndex.html#pandas.TimedeltaIndex" title="pandas.TimedeltaIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimedeltaIndex</span></code></a>, <a class="reference internal" href="pandas.PeriodIndex.html#pandas.PeriodIndex" title="pandas.PeriodIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PeriodIndex</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.Int64Index.html#pandas.Int64Index" title="pandas.Int64Index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Int64Index</span></code></a>, <a class="reference internal" href="pandas.UInt64Index.html#pandas.UInt64Index" title="pandas.UInt64Index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UInt64Index</span></code></a>, <a class="reference internal" href="pandas.Float64Index.html#pandas.Float64Index" title="pandas.Float64Index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Float64Index</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>An Index instance can <strong>only</strong> contain hashable objects</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">Int64Index([1, 2, 3], dtype='int64')</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">))</span>
+<span class="go">Index(['a', 'b', 'c'], dtype='object')</span>
+</pre></div>
+</div>
+<p class="rubric">Attributes</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.T.html#pandas.Index.T" title="pandas.Index.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a></p></td>
+<td><p>Return the transpose, which is by definition self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.array.html#pandas.Index.array" title="pandas.Index.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></p></td>
+<td><p>The ExtensionArray of the data backing this Series or Index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.asi8.html#pandas.Index.asi8" title="pandas.Index.asi8"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asi8</span></code></a></p></td>
+<td><p>Integer representation of the values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.dtype.html#pandas.Index.dtype" title="pandas.Index.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a></p></td>
+<td><p>Return the dtype object of the underlying data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.hasnans.html#pandas.Index.hasnans" title="pandas.Index.hasnans"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasnans</span></code></a></p></td>
+<td><p>Return if I have any nans; enables various perf speedups.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.inferred_type.html#pandas.Index.inferred_type" title="pandas.Index.inferred_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inferred_type</span></code></a></p></td>
+<td><p>Return a string of the type inferred from the values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.is_monotonic.html#pandas.Index.is_monotonic" title="pandas.Index.is_monotonic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_monotonic</span></code></a></p></td>
+<td><p>Alias for is_monotonic_increasing.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.is_monotonic_decreasing.html#pandas.Index.is_monotonic_decreasing" title="pandas.Index.is_monotonic_decreasing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_monotonic_decreasing</span></code></a></p></td>
+<td><p>Return if the index is monotonic decreasing (only equal or decreasing) values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.is_monotonic_increasing.html#pandas.Index.is_monotonic_increasing" title="pandas.Index.is_monotonic_increasing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_monotonic_increasing</span></code></a></p></td>
+<td><p>Return if the index is monotonic increasing (only equal or increasing) values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.is_unique.html#pandas.Index.is_unique" title="pandas.Index.is_unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_unique</span></code></a></p></td>
+<td><p>Return if the index has unique values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.nbytes.html#pandas.Index.nbytes" title="pandas.Index.nbytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nbytes</span></code></a></p></td>
+<td><p>Return the number of bytes in the underlying data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.ndim.html#pandas.Index.ndim" title="pandas.Index.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a></p></td>
+<td><p>Number of dimensions of the underlying data, by definition 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.nlevels.html#pandas.Index.nlevels" title="pandas.Index.nlevels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlevels</span></code></a></p></td>
+<td><p>Number of levels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.shape.html#pandas.Index.shape" title="pandas.Index.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a></p></td>
+<td><p>Return a tuple of the shape of the underlying data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.size.html#pandas.Index.size" title="pandas.Index.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></p></td>
+<td><p>Return the number of elements in the underlying data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.values.html#pandas.Index.values" title="pandas.Index.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a></p></td>
+<td><p>Return an array representing the data in the Index.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 64%"/>
+<col style="width: 36%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>empty</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>has_duplicates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>is_all_dates</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>name</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>names</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.all.html#pandas.Index.all" title="pandas.Index.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Return whether all elements are True.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.any.html#pandas.Index.any" title="pandas.Index.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">any</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Return whether any element is True.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.append.html#pandas.Index.append" title="pandas.Index.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a>(self, other)</p></td>
+<td><p>Append a collection of Index options together.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.argmax.html#pandas.Index.argmax" title="pandas.Index.argmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmax</span></code></a>(self[, axis, skipna])</p></td>
+<td><p>Return an ndarray of the maximum argument indexer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.argmin.html#pandas.Index.argmin" title="pandas.Index.argmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmin</span></code></a>(self[, axis, skipna])</p></td>
+<td><p>Return a ndarray of the minimum argument indexer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.argsort.html#pandas.Index.argsort" title="pandas.Index.argsort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argsort</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Return the integer indices that would sort the index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.asof.html#pandas.Index.asof" title="pandas.Index.asof"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asof</span></code></a>(self, label)</p></td>
+<td><p>Return the label from the index, or, if not present, the previous one.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.asof_locs.html#pandas.Index.asof_locs" title="pandas.Index.asof_locs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asof_locs</span></code></a>(self, where, mask)</p></td>
+<td><p>Find the locations (indices) of the labels from the index for every entry in the <cite>where</cite> argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.astype.html#pandas.Index.astype" title="pandas.Index.astype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astype</span></code></a>(self, dtype[, copy])</p></td>
+<td><p>Create an Index with values cast to dtypes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.copy.html#pandas.Index.copy" title="pandas.Index.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self[, name, deep, dtype])</p></td>
+<td><p>Make a copy of this object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.delete.html#pandas.Index.delete" title="pandas.Index.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a>(self, loc)</p></td>
+<td><p>Make new Index with passed location(-s) deleted.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.difference.html#pandas.Index.difference" title="pandas.Index.difference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">difference</span></code></a>(self, other[, sort])</p></td>
+<td><p>Return a new Index with elements from the index that are not in <cite>other</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.drop.html#pandas.Index.drop" title="pandas.Index.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code></a>(self, labels[, errors])</p></td>
+<td><p>Make new Index with passed list of labels deleted.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.drop_duplicates.html#pandas.Index.drop_duplicates" title="pandas.Index.drop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a>(self[, keep])</p></td>
+<td><p>Return Index with duplicate values removed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.droplevel.html#pandas.Index.droplevel" title="pandas.Index.droplevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">droplevel</span></code></a>(self[, level])</p></td>
+<td><p>Return index with requested level(s) removed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.dropna.html#pandas.Index.dropna" title="pandas.Index.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropna</span></code></a>(self[, how])</p></td>
+<td><p>Return Index without NA/NaN values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.duplicated.html#pandas.Index.duplicated" title="pandas.Index.duplicated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">duplicated</span></code></a>(self[, keep])</p></td>
+<td><p>Indicate duplicate index values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.equals.html#pandas.Index.equals" title="pandas.Index.equals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equals</span></code></a>(self, other)</p></td>
+<td><p>Determine if two Index objects contain the same elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.factorize.html#pandas.Index.factorize" title="pandas.Index.factorize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">factorize</span></code></a>(self[, sort, na_sentinel])</p></td>
+<td><p>Encode the object as an enumerated type or categorical variable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.fillna.html#pandas.Index.fillna" title="pandas.Index.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillna</span></code></a>(self[, value, downcast])</p></td>
+<td><p>Fill NA/NaN values with the specified value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.format.html#pandas.Index.format" title="pandas.Index.format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format</span></code></a>(self[, name, formatter])</p></td>
+<td><p>Render a string representation of the Index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.get_indexer.html#pandas.Index.get_indexer" title="pandas.Index.get_indexer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_indexer</span></code></a>(self, target[, method, limit, …])</p></td>
+<td><p>Compute indexer and mask for new index given the current index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.get_indexer_for.html#pandas.Index.get_indexer_for" title="pandas.Index.get_indexer_for"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_indexer_for</span></code></a>(self, target, \*\*kwargs)</p></td>
+<td><p>Guaranteed return of an indexer even when non-unique.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.get_indexer_non_unique.html#pandas.Index.get_indexer_non_unique" title="pandas.Index.get_indexer_non_unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_indexer_non_unique</span></code></a>(self, target)</p></td>
+<td><p>Compute indexer and mask for new index given the current index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.get_level_values.html#pandas.Index.get_level_values" title="pandas.Index.get_level_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_level_values</span></code></a>(self, level)</p></td>
+<td><p>Return an Index of values for requested level.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.get_loc.html#pandas.Index.get_loc" title="pandas.Index.get_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_loc</span></code></a>(self, key[, method, tolerance])</p></td>
+<td><p>Get integer location, slice or boolean mask for requested label.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.get_slice_bound.html#pandas.Index.get_slice_bound" title="pandas.Index.get_slice_bound"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_slice_bound</span></code></a>(self, label, side, kind)</p></td>
+<td><p>Calculate slice bound that corresponds to given label.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.get_value.html#pandas.Index.get_value" title="pandas.Index.get_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_value</span></code></a>(self, series, key)</p></td>
+<td><p>Fast lookup of value from 1-dimensional ndarray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.groupby.html#pandas.Index.groupby" title="pandas.Index.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a>(self, values)</p></td>
+<td><p>Group the index labels by a given array of values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.holds_integer.html#pandas.Index.holds_integer" title="pandas.Index.holds_integer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">holds_integer</span></code></a>(self)</p></td>
+<td><p>Whether the type is an integer type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.identical.html#pandas.Index.identical" title="pandas.Index.identical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">identical</span></code></a>(self, other)</p></td>
+<td><p>Similar to equals, but check that other comparable attributes are also equal.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.insert.html#pandas.Index.insert" title="pandas.Index.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(self, loc, item)</p></td>
+<td><p>Make new Index inserting new item at location.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.intersection.html#pandas.Index.intersection" title="pandas.Index.intersection"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intersection</span></code></a>(self, other[, sort])</p></td>
+<td><p>Form the intersection of two Index objects.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.is_.html#pandas.Index.is_" title="pandas.Index.is_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_</span></code></a>(self, other)</p></td>
+<td><p>More flexible, faster check like <code class="docutils literal notranslate"><span class="pre">is</span></code> but that works through views.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.is_categorical.html#pandas.Index.is_categorical" title="pandas.Index.is_categorical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_categorical</span></code></a>(self)</p></td>
+<td><p>Check if the Index holds categorical data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.is_type_compatible.html#pandas.Index.is_type_compatible" title="pandas.Index.is_type_compatible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_type_compatible</span></code></a>(self, kind)</p></td>
+<td><p>Whether the index type is compatible with the provided type.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.isin.html#pandas.Index.isin" title="pandas.Index.isin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isin</span></code></a>(self, values[, level])</p></td>
+<td><p>Return a boolean array where the index values are in <cite>values</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.isna.html#pandas.Index.isna" title="pandas.Index.isna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isna</span></code></a>(self)</p></td>
+<td><p>Detect missing values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.isnull.html#pandas.Index.isnull" title="pandas.Index.isnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnull</span></code></a>(self)</p></td>
+<td><p>Detect missing values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.item.html#pandas.Index.item" title="pandas.Index.item"><code class="xref py py-obj docutils literal notranslate"><span class="pre">item</span></code></a>(self)</p></td>
+<td><p>Return the first element of the underlying data as a python scalar.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.join.html#pandas.Index.join" title="pandas.Index.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a>(self, other[, how, level, …])</p></td>
+<td><p>Compute join_index and indexers to conform data structures to the new index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.map.html#pandas.Index.map" title="pandas.Index.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">map</span></code></a>(self, mapper[, na_action])</p></td>
+<td><p>Map values using input correspondence (a dict, Series, or function).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.max.html#pandas.Index.max" title="pandas.Index.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>(self[, axis, skipna])</p></td>
+<td><p>Return the maximum value of the Index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.memory_usage.html#pandas.Index.memory_usage" title="pandas.Index.memory_usage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">memory_usage</span></code></a>(self[, deep])</p></td>
+<td><p>Memory usage of the values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.min.html#pandas.Index.min" title="pandas.Index.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>(self[, axis, skipna])</p></td>
+<td><p>Return the minimum value of the Index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.notna.html#pandas.Index.notna" title="pandas.Index.notna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notna</span></code></a>(self)</p></td>
+<td><p>Detect existing (non-missing) values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.notnull.html#pandas.Index.notnull" title="pandas.Index.notnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notnull</span></code></a>(self)</p></td>
+<td><p>Detect existing (non-missing) values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.nunique.html#pandas.Index.nunique" title="pandas.Index.nunique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nunique</span></code></a>(self[, dropna])</p></td>
+<td><p>Return number of unique elements in the object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.putmask.html#pandas.Index.putmask" title="pandas.Index.putmask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">putmask</span></code></a>(self, mask, value)</p></td>
+<td><p>Return a new Index of the values set with the mask.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.ravel.html#pandas.Index.ravel" title="pandas.Index.ravel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ravel</span></code></a>(self[, order])</p></td>
+<td><p>Return an ndarray of the flattened values of the underlying data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.reindex.html#pandas.Index.reindex" title="pandas.Index.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a>(self, target[, method, level, …])</p></td>
+<td><p>Create index with target’s values (move/add/delete values as necessary).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.rename.html#pandas.Index.rename" title="pandas.Index.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a>(self, name[, inplace])</p></td>
+<td><p>Alter Index or MultiIndex name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.repeat.html#pandas.Index.repeat" title="pandas.Index.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(self, repeats[, axis])</p></td>
+<td><p>Repeat elements of a Index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.searchsorted.html#pandas.Index.searchsorted" title="pandas.Index.searchsorted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">searchsorted</span></code></a>(self, value[, side, sorter])</p></td>
+<td><p>Find indices where elements should be inserted to maintain order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.set_names.html#pandas.Index.set_names" title="pandas.Index.set_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_names</span></code></a>(self, names[, level, inplace])</p></td>
+<td><p>Set Index or MultiIndex name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.set_value.html#pandas.Index.set_value" title="pandas.Index.set_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_value</span></code></a>(self, arr, key, value)</p></td>
+<td><p>(DEPRECATED) Fast lookup of value from 1-dimensional ndarray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.shift.html#pandas.Index.shift" title="pandas.Index.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(self[, periods, freq])</p></td>
+<td><p>Shift index by desired number of time frequency increments.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.slice_indexer.html#pandas.Index.slice_indexer" title="pandas.Index.slice_indexer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_indexer</span></code></a>(self[, start, end, step, kind])</p></td>
+<td><p>For an ordered or unique index, compute the slice indexer for input labels and step.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.slice_locs.html#pandas.Index.slice_locs" title="pandas.Index.slice_locs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_locs</span></code></a>(self[, start, end, step, kind])</p></td>
+<td><p>Compute slice locations for input labels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.sort.html#pandas.Index.sort" title="pandas.Index.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Use sort_values instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.sort_values.html#pandas.Index.sort_values" title="pandas.Index.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a>(self[, return_indexer, ascending])</p></td>
+<td><p>Return a sorted copy of the index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.sortlevel.html#pandas.Index.sortlevel" title="pandas.Index.sortlevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sortlevel</span></code></a>(self[, level, ascending, …])</p></td>
+<td><p>For internal compatibility with with the Index API.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.str.html#pandas.Index.str" title="pandas.Index.str"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a></p></td>
+<td><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.core.strings.StringMethods</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.symmetric_difference.html#pandas.Index.symmetric_difference" title="pandas.Index.symmetric_difference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">symmetric_difference</span></code></a>(self, other[, …])</p></td>
+<td><p>Compute the symmetric difference of two Index objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.take.html#pandas.Index.take" title="pandas.Index.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, indices[, axis, allow_fill, …])</p></td>
+<td><p>Return a new Index of the values selected by the indices.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.to_flat_index.html#pandas.Index.to_flat_index" title="pandas.Index.to_flat_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_flat_index</span></code></a>(self)</p></td>
+<td><p>Identity method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.to_frame.html#pandas.Index.to_frame" title="pandas.Index.to_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_frame</span></code></a>(self[, index, name])</p></td>
+<td><p>Create a DataFrame with a column containing the Index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.to_list.html#pandas.Index.to_list" title="pandas.Index.to_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_list</span></code></a>(self)</p></td>
+<td><p>Return a list of the values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.to_native_types.html#pandas.Index.to_native_types" title="pandas.Index.to_native_types"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_native_types</span></code></a>(self[, slicer])</p></td>
+<td><p>Format specified values of <cite>self</cite> and return them.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.to_numpy.html#pandas.Index.to_numpy" title="pandas.Index.to_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy</span></code></a>(self[, dtype, copy, na_value])</p></td>
+<td><p>A NumPy ndarray representing the values in this Series or Index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.to_series.html#pandas.Index.to_series" title="pandas.Index.to_series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_series</span></code></a>(self[, index, name])</p></td>
+<td><p>Create a Series with both index and values equal to the index keys.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.tolist.html#pandas.Index.tolist" title="pandas.Index.tolist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tolist</span></code></a>(self)</p></td>
+<td><p>Return a list of the values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.transpose.html#pandas.Index.transpose" title="pandas.Index.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Return the transpose, which is by definition self.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.union.html#pandas.Index.union" title="pandas.Index.union"><code class="xref py py-obj docutils literal notranslate"><span class="pre">union</span></code></a>(self, other[, sort])</p></td>
+<td><p>Form the union of two Index objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.unique.html#pandas.Index.unique" title="pandas.Index.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self[, level])</p></td>
+<td><p>Return unique values in the index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Index.value_counts.html#pandas.Index.value_counts" title="pandas.Index.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_counts</span></code></a>(self[, normalize, sort, …])</p></td>
+<td><p>Return a Series containing counts of unique values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Index.where.html#pandas.Index.where" title="pandas.Index.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(self, cond[, other])</p></td>
+<td><p>Return an Index of same shape as self and whose corresponding entries are from self where cond is True and otherwise are from other.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<colgroup>
+<col style="width: 60%"/>
+<col style="width: 40%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>is_boolean</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>is_floating</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>is_integer</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>is_interval</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>is_mixed</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>is_numeric</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>is_object</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>view</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+</body></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-api-extensions-extensionarray">
+<h1>pandas.api.extensions.ExtensionArray<a class="headerlink" href="#pandas-api-extensions-extensionarray" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pandas.api.extensions.ExtensionArray">
+<em class="property">class </em><code class="sig-prename descclassname">pandas.api.extensions.</code><code class="sig-name descname">ExtensionArray</code><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/arrays/base.py#L57-L1074"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.api.extensions.ExtensionArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract base class for custom 1-D array types.</p>
+<p>pandas will recognize instances of this class as proper arrays
+with a custom type and will not attempt to coerce them to objects. They
+may be stored directly inside a <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+</div>
+<p class="rubric">Notes</p>
+<p>The interface includes the following abstract methods that must be
+implemented by subclasses:</p>
+<ul class="simple">
+<li><p>_from_sequence</p></li>
+<li><p>_from_factorized</p></li>
+<li><p>__getitem__</p></li>
+<li><p>__len__</p></li>
+<li><p>dtype</p></li>
+<li><p>nbytes</p></li>
+<li><p>isna</p></li>
+<li><p>take</p></li>
+<li><p>copy</p></li>
+<li><p>_concat_same_type</p></li>
+</ul>
+<p>A default repr displaying the type, (truncated) data, length,
+and dtype is provided. It can be customized or replaced by
+by overriding:</p>
+<ul class="simple">
+<li><p>__repr__ : A default repr for the ExtensionArray.</p></li>
+<li><p>_formatter : Print scalars inside a Series or DataFrame.</p></li>
+</ul>
+<p>Some methods require casting the ExtensionArray to an ndarray of Python
+objects with <code class="docutils literal notranslate"><span class="pre">self.astype(object)</span></code>, which may be expensive. When
+performance is a concern, we highly recommend overriding the following
+methods:</p>
+<ul class="simple">
+<li><p>fillna</p></li>
+<li><p>dropna</p></li>
+<li><p>unique</p></li>
+<li><p>factorize / _values_for_factorize</p></li>
+<li><p>argsort / _values_for_argsort</p></li>
+<li><p>searchsorted</p></li>
+</ul>
+<p>The remaining methods implemented on this class should be performant,
+as they only compose abstract methods. Still, a more efficient
+implementation may be available, and these methods can be overridden.</p>
+<p>One can implement methods to handle array reductions.</p>
+<ul class="simple">
+<li><p>_reduce</p></li>
+</ul>
+<p>One can implement methods to handle parsing from strings that will be used
+in methods such as <code class="docutils literal notranslate"><span class="pre">pandas.io.parsers.read_csv</span></code>.</p>
+<ul class="simple">
+<li><p>_from_sequence_of_strings</p></li>
+</ul>
+<p>This class does not inherit from ‘abc.ABCMeta’ for performance reasons.
+Methods and properties required by the interface raise
+<code class="docutils literal notranslate"><span class="pre">pandas.errors.AbstractMethodError</span></code> and no <code class="docutils literal notranslate"><span class="pre">register</span></code> method is
+provided for registering virtual subclasses.</p>
+<p>ExtensionArrays are limited to 1 dimension.</p>
+<p>They may be backed by none, one, or many NumPy arrays. For example,
+<code class="docutils literal notranslate"><span class="pre">pandas.Categorical</span></code> is an extension array backed by two arrays,
+one for codes and one for categories. An array of IPv6 address may
+be backed by a NumPy structured array with two fields, one for the
+lower 64 bits and one for the upper 64 bits. Or they may be backed
+by some other storage type, like Python lists. Pandas makes no
+assumptions on how the data are stored, just that it can be converted
+to a NumPy array.
+The ExtensionArray interface does not impose any rules on how this data
+is stored. However, currently, the backing data cannot be stored in
+attributes called <code class="docutils literal notranslate"><span class="pre">.values</span></code> or <code class="docutils literal notranslate"><span class="pre">._values</span></code> to ensure full compatibility
+with pandas internals. But other names as <code class="docutils literal notranslate"><span class="pre">.data</span></code>, <code class="docutils literal notranslate"><span class="pre">._data</span></code>,
+<code class="docutils literal notranslate"><span class="pre">._items</span></code>, … can be freely used.</p>
+<p>If implementing NumPy’s <code class="docutils literal notranslate"><span class="pre">__array_ufunc__</span></code> interface, pandas expects
+that</p>
+<ol class="arabic simple">
+<li><p>You defer by returning <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> when any Series are present
+in <cite>inputs</cite>. Pandas will extract the arrays and call the ufunc again.</p></li>
+<li><p>You define a <code class="docutils literal notranslate"><span class="pre">_HANDLED_TYPES</span></code> tuple as an attribute on the class.
+Pandas inspect this to determine whether the ufunc is valid for the
+types present.</p></li>
+</ol>
+<p>See <a class="reference internal" href="../../development/extending.html#extending-extension-ufunc"><span class="std std-ref">NumPy Universal Functions</span></a> for more.</p>
+<p class="rubric">Attributes</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.dtype.html#pandas.api.extensions.ExtensionArray.dtype" title="pandas.api.extensions.ExtensionArray.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a></p></td>
+<td><p>An instance of ‘ExtensionDtype’.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.nbytes.html#pandas.api.extensions.ExtensionArray.nbytes" title="pandas.api.extensions.ExtensionArray.nbytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nbytes</span></code></a></p></td>
+<td><p>The number of bytes needed to store this object in memory.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.ndim.html#pandas.api.extensions.ExtensionArray.ndim" title="pandas.api.extensions.ExtensionArray.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a></p></td>
+<td><p>Extension Arrays are only allowed to be 1-dimensional.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.shape.html#pandas.api.extensions.ExtensionArray.shape" title="pandas.api.extensions.ExtensionArray.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a></p></td>
+<td><p>Return a tuple of the array dimensions.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.argsort.html#pandas.api.extensions.ExtensionArray.argsort" title="pandas.api.extensions.ExtensionArray.argsort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argsort</span></code></a>(self, ascending, kind, \*args, …)</p></td>
+<td><p>Return the indices that would sort this array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.astype.html#pandas.api.extensions.ExtensionArray.astype" title="pandas.api.extensions.ExtensionArray.astype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astype</span></code></a>(self, dtype[, copy])</p></td>
+<td><p>Cast to a NumPy array with ‘dtype’.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.copy.html#pandas.api.extensions.ExtensionArray.copy" title="pandas.api.extensions.ExtensionArray.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(self)</p></td>
+<td><p>Return a copy of the array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.dropna.html#pandas.api.extensions.ExtensionArray.dropna" title="pandas.api.extensions.ExtensionArray.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropna</span></code></a>(self)</p></td>
+<td><p>Return ExtensionArray without NA values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.factorize.html#pandas.api.extensions.ExtensionArray.factorize" title="pandas.api.extensions.ExtensionArray.factorize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">factorize</span></code></a>(self, na_sentinel)</p></td>
+<td><p>Encode the extension array as an enumerated type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.fillna.html#pandas.api.extensions.ExtensionArray.fillna" title="pandas.api.extensions.ExtensionArray.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillna</span></code></a>(self[, value, method, limit])</p></td>
+<td><p>Fill NA/NaN values using the specified method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.isna.html#pandas.api.extensions.ExtensionArray.isna" title="pandas.api.extensions.ExtensionArray.isna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isna</span></code></a>(self)</p></td>
+<td><p>A 1-D array indicating if each value is missing.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.ravel.html#pandas.api.extensions.ExtensionArray.ravel" title="pandas.api.extensions.ExtensionArray.ravel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ravel</span></code></a>(self[, order])</p></td>
+<td><p>Return a flattened view on this array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.repeat.html#pandas.api.extensions.ExtensionArray.repeat" title="pandas.api.extensions.ExtensionArray.repeat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code></a>(self, repeats[, axis])</p></td>
+<td><p>Repeat elements of a ExtensionArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.searchsorted.html#pandas.api.extensions.ExtensionArray.searchsorted" title="pandas.api.extensions.ExtensionArray.searchsorted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">searchsorted</span></code></a>(self, value[, side, sorter])</p></td>
+<td><p>Find indices where elements should be inserted to maintain order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.shift.html#pandas.api.extensions.ExtensionArray.shift" title="pandas.api.extensions.ExtensionArray.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a>(self, periods, fill_value)</p></td>
+<td><p>Shift values by desired number.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.take.html#pandas.api.extensions.ExtensionArray.take" title="pandas.api.extensions.ExtensionArray.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>(self, indices, allow_fill, fill_value)</p></td>
+<td><p>Take elements from an array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.unique.html#pandas.api.extensions.ExtensionArray.unique" title="pandas.api.extensions.ExtensionArray.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a>(self)</p></td>
+<td><p>Compute the ExtensionArray of unique values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray.view.html#pandas.api.extensions.ExtensionArray.view" title="pandas.api.extensions.ExtensionArray.view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">view</span></code></a>(self[, dtype])</p></td>
+<td><p>Return a view on the array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._concat_same_type.html#pandas.api.extensions.ExtensionArray._concat_same_type" title="pandas.api.extensions.ExtensionArray._concat_same_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_concat_same_type</span></code></a>(to_concat)</p></td>
+<td><p>Concatenate multiple array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._formatter.html#pandas.api.extensions.ExtensionArray._formatter" title="pandas.api.extensions.ExtensionArray._formatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_formatter</span></code></a>(self, boxed)</p></td>
+<td><p>Formatting function for scalar values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._from_factorized.html#pandas.api.extensions.ExtensionArray._from_factorized" title="pandas.api.extensions.ExtensionArray._from_factorized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_from_factorized</span></code></a>(values, original)</p></td>
+<td><p>Reconstruct an ExtensionArray after factorization.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._from_sequence.html#pandas.api.extensions.ExtensionArray._from_sequence" title="pandas.api.extensions.ExtensionArray._from_sequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_from_sequence</span></code></a>(scalars[, dtype, copy])</p></td>
+<td><p>Construct a new ExtensionArray from a sequence of scalars.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._from_sequence_of_strings.html#pandas.api.extensions.ExtensionArray._from_sequence_of_strings" title="pandas.api.extensions.ExtensionArray._from_sequence_of_strings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_from_sequence_of_strings</span></code></a>(strings[, dtype, copy])</p></td>
+<td><p>Construct a new ExtensionArray from a sequence of strings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._ndarray_values.html#pandas.api.extensions.ExtensionArray._ndarray_values" title="pandas.api.extensions.ExtensionArray._ndarray_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_ndarray_values</span></code></a></p></td>
+<td><p>Internal pandas method for lossy conversion to a NumPy ndarray.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._reduce.html#pandas.api.extensions.ExtensionArray._reduce" title="pandas.api.extensions.ExtensionArray._reduce"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_reduce</span></code></a>(self, name[, skipna])</p></td>
+<td><p>Return a scalar result of performing the reduction operation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._values_for_argsort.html#pandas.api.extensions.ExtensionArray._values_for_argsort" title="pandas.api.extensions.ExtensionArray._values_for_argsort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_values_for_argsort</span></code></a>(self)</p></td>
+<td><p>Return values for sorting.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.api.extensions.ExtensionArray._values_for_factorize.html#pandas.api.extensions.ExtensionArray._values_for_factorize" title="pandas.api.extensions.ExtensionArray._values_for_factorize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_values_for_factorize</span></code></a>(self)</p></td>
+<td><p>Return an array and missing value suitable for factorization.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+</body></html>

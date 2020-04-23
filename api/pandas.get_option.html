@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-get-option">
+<h1>pandas.get_option<a class="headerlink" href="#pandas-get-option" title="Permalink to this headline">¶</a></h1>
+<dl class="data">
+<dt id="pandas.get_option">
+<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">get_option</code><span class="sig-paren">(</span><em class="sig-param">pat</em><span class="sig-paren">)</span><em class="property"> = &lt;pandas._config.config.CallableDynamicDoc object&gt;</em><a class="headerlink" href="#pandas.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the value of the specified option.</p>
+<p>Available options:</p>
+<ul class="simple">
+<li><p>compute.[use_bottleneck, use_numexpr]</p></li>
+<li><p>display.[chop_threshold, colheader_justify, column_space, date_dayfirst,
+date_yearfirst, encoding, expand_frame_repr, float_format]</p></li>
+<li><p>display.html.[border, table_schema, use_mathjax]</p></li>
+<li><p>display.[large_repr]</p></li>
+<li><p>display.latex.[escape, longtable, multicolumn, multicolumn_format, multirow,
+repr]</p></li>
+<li><p>display.[max_categories, max_columns, max_colwidth, max_info_columns,
+max_info_rows, max_rows, max_seq_items, memory_usage, min_rows, multi_sparse,
+notebook_repr_html, pprint_nest_depth, precision, show_dimensions]</p></li>
+<li><p>display.unicode.[ambiguous_as_wide, east_asian_width]</p></li>
+<li><p>display.[width]</p></li>
+<li><p>io.excel.ods.[reader]</p></li>
+<li><p>io.excel.xls.[reader, writer]</p></li>
+<li><p>io.excel.xlsb.[reader]</p></li>
+<li><p>io.excel.xlsm.[reader, writer]</p></li>
+<li><p>io.excel.xlsx.[reader, writer]</p></li>
+<li><p>io.hdf.[default_format, dropna_table]</p></li>
+<li><p>io.parquet.[engine]</p></li>
+<li><p>mode.[chained_assignment, sim_interactive, use_inf_as_na, use_inf_as_null]</p></li>
+<li><p>plotting.[backend]</p></li>
+<li><p>plotting.matplotlib.[register_converters]</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>pat</strong><span class="classifier">str</span></dt><dd><p>Regexp which should match a single option.
+Note: partial matches are supported for convenience, but unless you use the
+full option name (e.g. x.y.z.option_name), your code may break in future
+versions if new options with similar names are introduced.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>result</strong><span class="classifier">the value of the option</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>OptionError</strong><span class="classifier">if no such option exists</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The available options with its descriptions:</p>
+<dl>
+<dt>compute.use_bottleneck<span class="classifier">bool</span></dt><dd><p>Use the bottleneck library to accelerate if it is installed,
+the default is True
+Valid values: False,True
+[default: True] [currently: True]</p>
+</dd>
+<dt>compute.use_numexpr<span class="classifier">bool</span></dt><dd><p>Use the numexpr library to accelerate computation if it is installed,
+the default is True
+Valid values: False,True
+[default: True] [currently: True]</p>
+</dd>
+<dt>display.chop_threshold<span class="classifier">float or None</span></dt><dd><p>if set to a float value, all float values smaller then the given threshold
+will be displayed as exactly 0 by repr and friends.
+[default: None] [currently: None]</p>
+</dd>
+<dt>display.colheader_justify<span class="classifier">‘left’/’right’</span></dt><dd><p>Controls the justification of column headers. used by DataFrameFormatter.
+[default: right] [currently: right]</p>
+</dd>
+<dt>display.column_space No description available.</dt><dd><p>[default: 12] [currently: 12]</p>
+</dd>
+<dt>display.date_dayfirst<span class="classifier">boolean</span></dt><dd><p>When True, prints and parses dates with the day first, eg 20/01/2005
+[default: False] [currently: False]</p>
+</dd>
+<dt>display.date_yearfirst<span class="classifier">boolean</span></dt><dd><p>When True, prints and parses dates with the year first, eg 2005/01/20
+[default: False] [currently: False]</p>
+</dd>
+<dt>display.encoding<span class="classifier">str/unicode</span></dt><dd><p>Defaults to the detected encoding of the console.
+Specifies the encoding to be used for strings returned by to_string,
+these are generally strings meant to be displayed on the console.
+[default: UTF-8] [currently: UTF-8]</p>
+</dd>
+<dt>display.expand_frame_repr<span class="classifier">boolean</span></dt><dd><p>Whether to print out the full DataFrame repr for wide DataFrames across
+multiple lines, <cite>max_columns</cite> is still respected, but the output will
+wrap-around across multiple “pages” if its width exceeds <cite>display.width</cite>.
+[default: True] [currently: True]</p>
+</dd>
+<dt>display.float_format<span class="classifier">callable</span></dt><dd><p>The callable should accept a floating point number and return
+a string with the desired format of the number. This is used
+in some places like SeriesFormatter.
+See formats.format.EngFormatter for an example.
+[default: None] [currently: None]</p>
+</dd>
+<dt>display.html.border<span class="classifier">int</span></dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">border=value</span></code> attribute is inserted in the <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> tag
+for the DataFrame HTML repr.
+[default: 1] [currently: 1]</p>
+</dd>
+<dt>display.html.table_schema<span class="classifier">boolean</span></dt><dd><p>Whether to publish a Table Schema representation for frontends
+that support it.
+(default: False)
+[default: False] [currently: False]</p>
+</dd>
+<dt>display.html.use_mathjax<span class="classifier">boolean</span></dt><dd><p>When True, Jupyter notebook will process table contents using MathJax,
+rendering mathematical expressions enclosed by the dollar symbol.
+(default: True)
+[default: True] [currently: True]</p>
+</dd>
+<dt>display.large_repr<span class="classifier">‘truncate’/’info’</span></dt><dd><p>For DataFrames exceeding max_rows/max_cols, the repr (and HTML repr) can
+show a truncated table (the default from 0.13), or switch to the view from
+df.info() (the behaviour in earlier versions of pandas).
+[default: truncate] [currently: truncate]</p>
+</dd>
+<dt>display.latex.escape<span class="classifier">bool</span></dt><dd><p>This specifies if the to_latex method of a Dataframe uses escapes special
+characters.
+Valid values: False,True
+[default: True] [currently: True]</p>
+</dd>
+<dt>display.latex.longtable :bool</dt><dd><p>This specifies if the to_latex method of a Dataframe uses the longtable
+format.
+Valid values: False,True
+[default: False] [currently: False]</p>
+</dd>
+<dt>display.latex.multicolumn<span class="classifier">bool</span></dt><dd><p>This specifies if the to_latex method of a Dataframe uses multicolumns
+to pretty-print MultiIndex columns.
+Valid values: False,True
+[default: True] [currently: True]</p>
+</dd>
+<dt>display.latex.multicolumn_format<span class="classifier">bool</span></dt><dd><p>This specifies if the to_latex method of a Dataframe uses multicolumns
+to pretty-print MultiIndex columns.
+Valid values: False,True
+[default: l] [currently: l]</p>
+</dd>
+<dt>display.latex.multirow<span class="classifier">bool</span></dt><dd><p>This specifies if the to_latex method of a Dataframe uses multirows
+to pretty-print MultiIndex rows.
+Valid values: False,True
+[default: False] [currently: False]</p>
+</dd>
+<dt>display.latex.repr<span class="classifier">boolean</span></dt><dd><p>Whether to produce a latex DataFrame representation for jupyter
+environments that support it.
+(default: False)
+[default: False] [currently: False]</p>
+</dd>
+<dt>display.max_categories<span class="classifier">int</span></dt><dd><p>This sets the maximum number of categories pandas should output when
+printing out a <cite>Categorical</cite> or a Series of dtype “category”.
+[default: 8] [currently: 8]</p>
+</dd>
+<dt>display.max_columns<span class="classifier">int</span></dt><dd><p>If max_cols is exceeded, switch to truncate view. Depending on
+<cite>large_repr</cite>, objects are either centrally truncated or printed as
+a summary view. ‘None’ value means unlimited.</p>
+<p>In case python/IPython is running in a terminal and <cite>large_repr</cite>
+equals ‘truncate’ this can be set to 0 and pandas will auto-detect
+the width of the terminal and print a truncated object which fits
+the screen width. The IPython notebook, IPython qtconsole, or IDLE
+do not run in a terminal and hence it is not possible to do
+correct auto-detection.
+[default: 0] [currently: 0]</p>
+</dd>
+<dt>display.max_colwidth<span class="classifier">int or None</span></dt><dd><p>The maximum width in characters of a column in the repr of
+a pandas data structure. When the column overflows, a “…”
+placeholder is embedded in the output. A ‘None’ value means unlimited.
+[default: 50] [currently: 50]</p>
+</dd>
+<dt>display.max_info_columns<span class="classifier">int</span></dt><dd><p>max_info_columns is used in DataFrame.info method to decide if
+per column information will be printed.
+[default: 100] [currently: 100]</p>
+</dd>
+<dt>display.max_info_rows<span class="classifier">int or None</span></dt><dd><p>df.info() will usually show null-counts for each column.
+For large frames this can be quite slow. max_info_rows and max_info_cols
+limit this null check only to frames with smaller dimensions than
+specified.
+[default: 1690785] [currently: 1690785]</p>
+</dd>
+<dt>display.max_rows<span class="classifier">int</span></dt><dd><p>If max_rows is exceeded, switch to truncate view. Depending on
+<cite>large_repr</cite>, objects are either centrally truncated or printed as
+a summary view. ‘None’ value means unlimited.</p>
+<p>In case python/IPython is running in a terminal and <cite>large_repr</cite>
+equals ‘truncate’ this can be set to 0 and pandas will auto-detect
+the height of the terminal and print a truncated object which fits
+the screen height. The IPython notebook, IPython qtconsole, or
+IDLE do not run in a terminal and hence it is not possible to do
+correct auto-detection.
+[default: 60] [currently: 15]</p>
+</dd>
+<dt>display.max_seq_items<span class="classifier">int or None</span></dt><dd><p>when pretty-printing a long sequence, no more then <cite>max_seq_items</cite>
+will be printed. If items are omitted, they will be denoted by the
+addition of “…” to the resulting string.</p>
+<p>If set to None, the number of items to be printed is unlimited.
+[default: 100] [currently: 100]</p>
+</dd>
+<dt>display.memory_usage<span class="classifier">bool, string or None</span></dt><dd><p>This specifies if the memory usage of a DataFrame should be displayed when
+df.info() is called. Valid values True,False,’deep’
+[default: True] [currently: True]</p>
+</dd>
+<dt>display.min_rows<span class="classifier">int</span></dt><dd><p>The numbers of rows to show in a truncated view (when <cite>max_rows</cite> is
+exceeded). Ignored when <cite>max_rows</cite> is set to None or 0. When set to
+None, follows the value of <cite>max_rows</cite>.
+[default: 10] [currently: 10]</p>
+</dd>
+<dt>display.multi_sparse<span class="classifier">boolean</span></dt><dd><p>“sparsify” MultiIndex display (don’t display repeated
+elements in outer levels within groups)
+[default: True] [currently: True]</p>
+</dd>
+<dt>display.notebook_repr_html<span class="classifier">boolean</span></dt><dd><p>When True, IPython notebook will use html representation for
+pandas objects (if it is available).
+[default: True] [currently: True]</p>
+</dd>
+<dt>display.pprint_nest_depth<span class="classifier">int</span></dt><dd><p>Controls the number of nested levels to process when pretty-printing
+[default: 3] [currently: 3]</p>
+</dd>
+<dt>display.precision<span class="classifier">int</span></dt><dd><p>Floating point output precision (number of significant digits). This is
+only a suggestion
+[default: 6] [currently: 6]</p>
+</dd>
+<dt>display.show_dimensions<span class="classifier">boolean or ‘truncate’</span></dt><dd><p>Whether to print out dimensions at the end of DataFrame repr.
+If ‘truncate’ is specified, only print out the dimensions if the
+frame is truncated (e.g. not display all rows and/or columns)
+[default: truncate] [currently: truncate]</p>
+</dd>
+<dt>display.unicode.ambiguous_as_wide<span class="classifier">boolean</span></dt><dd><p>Whether to use the Unicode East Asian Width to calculate the display text
+width.
+Enabling this may affect to the performance (default: False)
+[default: False] [currently: False]</p>
+</dd>
+<dt>display.unicode.east_asian_width<span class="classifier">boolean</span></dt><dd><p>Whether to use the Unicode East Asian Width to calculate the display text
+width.
+Enabling this may affect to the performance (default: False)
+[default: False] [currently: False]</p>
+</dd>
+<dt>display.width<span class="classifier">int</span></dt><dd><p>Width of the display in characters. In case python/IPython is running in
+a terminal this can be set to None and pandas will correctly auto-detect
+the width.
+Note that the IPython notebook, IPython qtconsole, or IDLE do not run in a
+terminal and hence it is not possible to correctly detect the width.
+[default: 80] [currently: 80]</p>
+</dd>
+<dt>io.excel.ods.reader<span class="classifier">string</span></dt><dd><p>The default Excel reader engine for ‘ods’ files. Available options:
+auto, odf.
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>io.excel.xls.reader<span class="classifier">string</span></dt><dd><p>The default Excel reader engine for ‘xls’ files. Available options:
+auto, xlrd.
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>io.excel.xls.writer<span class="classifier">string</span></dt><dd><p>The default Excel writer engine for ‘xls’ files. Available options:
+auto, xlwt.
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>io.excel.xlsb.reader<span class="classifier">string</span></dt><dd><p>The default Excel reader engine for ‘xlsb’ files. Available options:
+auto, pyxlsb.
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>io.excel.xlsm.reader<span class="classifier">string</span></dt><dd><p>The default Excel reader engine for ‘xlsm’ files. Available options:
+auto, xlrd, openpyxl.
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>io.excel.xlsm.writer<span class="classifier">string</span></dt><dd><p>The default Excel writer engine for ‘xlsm’ files. Available options:
+auto, openpyxl.
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>io.excel.xlsx.reader<span class="classifier">string</span></dt><dd><p>The default Excel reader engine for ‘xlsx’ files. Available options:
+auto, xlrd, openpyxl.
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>io.excel.xlsx.writer<span class="classifier">string</span></dt><dd><p>The default Excel writer engine for ‘xlsx’ files. Available options:
+auto, openpyxl, xlsxwriter.
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>io.hdf.default_format<span class="classifier">format</span></dt><dd><p>default format writing format, if None, then
+put will default to ‘fixed’ and append will default to ‘table’
+[default: None] [currently: None]</p>
+</dd>
+<dt>io.hdf.dropna_table<span class="classifier">boolean</span></dt><dd><p>drop ALL nan rows when appending to a table
+[default: False] [currently: False]</p>
+</dd>
+<dt>io.parquet.engine<span class="classifier">string</span></dt><dd><p>The default parquet reader/writer engine. Available options:
+‘auto’, ‘pyarrow’, ‘fastparquet’, the default is ‘auto’
+[default: auto] [currently: auto]</p>
+</dd>
+<dt>mode.chained_assignment<span class="classifier">string</span></dt><dd><p>Raise an exception, warn, or no action if trying to use chained assignment,
+The default is warn
+[default: warn] [currently: warn]</p>
+</dd>
+<dt>mode.sim_interactive<span class="classifier">boolean</span></dt><dd><p>Whether to simulate interactive mode for purposes of testing
+[default: False] [currently: False]</p>
+</dd>
+<dt>mode.use_inf_as_na<span class="classifier">boolean</span></dt><dd><p>True means treat None, NaN, INF, -INF as NA (old way),
+False means None and NaN are null, but INF, -INF are not NA
+(new way).
+[default: False] [currently: False]</p>
+</dd>
+<dt>mode.use_inf_as_null<span class="classifier">boolean</span></dt><dd><p>use_inf_as_null had been deprecated and will be removed in a future
+version. Use <cite>use_inf_as_na</cite> instead.
+[default: False] [currently: False]
+(Deprecated, use <cite>mode.use_inf_as_na</cite> instead.)</p>
+</dd>
+<dt>plotting.backend<span class="classifier">str</span></dt><dd><p>The plotting backend to use. The default value is “matplotlib”, the
+backend provided with pandas. Other backends can be specified by
+prodiving the name of the module that implements the backend.
+[default: matplotlib] [currently: matplotlib]</p>
+</dd>
+<dt>plotting.matplotlib.register_converters<span class="classifier">bool or ‘auto’.</span></dt><dd><p>Whether to register converters with matplotlib’s units registry for
+dates, times, datetimes, and Periods. Toggling to False will remove
+the converters, restoring any converters that pandas overwrote.
+[default: auto] [currently: auto]</p>
+</dd>
+</dl>
+</dd></dl>
+</div>
+</body></html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-intervalindex">
+<h1>pandas.IntervalIndex<a class="headerlink" href="#pandas-intervalindex" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pandas.IntervalIndex">
+<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">IntervalIndex</code><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/interval.py#L205-L1188"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.IntervalIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Immutable index of intervals that are closed on the same side.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.20.0.</span></p>
+</div>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>data</strong><span class="classifier">array-like (1-dimensional)</span></dt><dd><p>Array-like containing Interval objects from which to build the
+IntervalIndex.</p>
+</dd>
+<dt><strong>closed</strong><span class="classifier">{‘left’, ‘right’, ‘both’, ‘neither’}, default ‘right’</span></dt><dd><p>Whether the intervals are closed on the left-side, right-side, both or
+neither.</p>
+</dd>
+<dt><strong>dtype</strong><span class="classifier">dtype or None, default None</span></dt><dd><p>If None, dtype will be inferred.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+</div>
+</dd>
+<dt><strong>copy</strong><span class="classifier">bool, default False</span></dt><dd><p>Copy the input data.</p>
+</dd>
+<dt><strong>name</strong><span class="classifier">object, optional</span></dt><dd><p>Name to be stored in the index.</p>
+</dd>
+<dt><strong>verify_integrity</strong><span class="classifier">bool, default True</span></dt><dd><p>Verify that the IntervalIndex is valid.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="alert alert-info">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Index.html#pandas.Index" title="pandas.Index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index</span></code></a></dt><dd><p>The base pandas Index type.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Interval.html#pandas.Interval" title="pandas.Interval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Interval</span></code></a></dt><dd><p>A bounded slice-like interval; the elements of an IntervalIndex.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.interval_range.html#pandas.interval_range" title="pandas.interval_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interval_range</span></code></a></dt><dd><p>Function to create a fixed frequency IntervalIndex.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.cut.html#pandas.cut" title="pandas.cut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cut</span></code></a></dt><dd><p>Bin values into discrete Intervals.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.qcut.html#pandas.qcut" title="pandas.qcut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qcut</span></code></a></dt><dd><p>Bin values into equal-sized Intervals based on rank or sample quantiles.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html#intervalindex">user guide</a>
+for more.</p>
+<p class="rubric">Examples</p>
+<p>A new <code class="docutils literal notranslate"><span class="pre">IntervalIndex</span></code> is typically constructed using
+<a class="reference internal" href="pandas.interval_range.html#pandas.interval_range" title="pandas.interval_range"><code class="xref py py-func docutils literal notranslate"><span class="pre">interval_range()</span></code></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">interval_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">IntervalIndex([(0, 1], (1, 2], (2, 3], (3, 4], (4, 5]],</span>
+<span class="go">              closed='right',</span>
+<span class="go">              dtype='interval[int64]')</span>
+</pre></div>
+</div>
+<p>It may also be constructed using one of the constructor
+methods: <a class="reference internal" href="pandas.IntervalIndex.from_arrays.html#pandas.IntervalIndex.from_arrays" title="pandas.IntervalIndex.from_arrays"><code class="xref py py-meth docutils literal notranslate"><span class="pre">IntervalIndex.from_arrays()</span></code></a>,
+<a class="reference internal" href="pandas.IntervalIndex.from_breaks.html#pandas.IntervalIndex.from_breaks" title="pandas.IntervalIndex.from_breaks"><code class="xref py py-meth docutils literal notranslate"><span class="pre">IntervalIndex.from_breaks()</span></code></a>, and <a class="reference internal" href="pandas.IntervalIndex.from_tuples.html#pandas.IntervalIndex.from_tuples" title="pandas.IntervalIndex.from_tuples"><code class="xref py py-meth docutils literal notranslate"><span class="pre">IntervalIndex.from_tuples()</span></code></a>.</p>
+<p>See further examples in the doc strings of <code class="docutils literal notranslate"><span class="pre">interval_range</span></code> and the
+mentioned constructor methods.</p>
+<p class="rubric">Attributes</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.left.html#pandas.IntervalIndex.left" title="pandas.IntervalIndex.left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">left</span></code></a></p></td>
+<td><p>Return the left endpoints of each Interval in the IntervalArray as an Index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.IntervalIndex.right.html#pandas.IntervalIndex.right" title="pandas.IntervalIndex.right"><code class="xref py py-obj docutils literal notranslate"><span class="pre">right</span></code></a></p></td>
+<td><p>Return the right endpoints of each Interval in the IntervalArray as an Index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.closed.html#pandas.IntervalIndex.closed" title="pandas.IntervalIndex.closed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">closed</span></code></a></p></td>
+<td><p>Whether the intervals are closed on the left-side, right-side, both or neither.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.IntervalIndex.mid.html#pandas.IntervalIndex.mid" title="pandas.IntervalIndex.mid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mid</span></code></a></p></td>
+<td><p>Return the midpoint of each Interval in the IntervalArray as an Index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.length.html#pandas.IntervalIndex.length" title="pandas.IntervalIndex.length"><code class="xref py py-obj docutils literal notranslate"><span class="pre">length</span></code></a></p></td>
+<td><p>Return an Index with entries denoting the length of each Interval in the IntervalArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.IntervalIndex.is_empty.html#pandas.IntervalIndex.is_empty" title="pandas.IntervalIndex.is_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_empty</span></code></a></p></td>
+<td><p>Indicates if an interval is empty, meaning it contains no points.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.is_non_overlapping_monotonic.html#pandas.IntervalIndex.is_non_overlapping_monotonic" title="pandas.IntervalIndex.is_non_overlapping_monotonic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_non_overlapping_monotonic</span></code></a></p></td>
+<td><p>Return True if the IntervalArray is non-overlapping (no Intervals share points) and is either monotonic increasing or monotonic decreasing, else False.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.IntervalIndex.is_overlapping.html#pandas.IntervalIndex.is_overlapping" title="pandas.IntervalIndex.is_overlapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_overlapping</span></code></a></p></td>
+<td><p>Return True if the IntervalIndex has overlapping intervals, else False.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.values.html#pandas.IntervalIndex.values" title="pandas.IntervalIndex.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a></p></td>
+<td><p>Return the IntervalIndex’s data as an IntervalArray.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<table class="longtable table">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.from_arrays.html#pandas.IntervalIndex.from_arrays" title="pandas.IntervalIndex.from_arrays"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_arrays</span></code></a>(left, right, closed[, name, dtype])</p></td>
+<td><p>Construct from two arrays defining the left and right bounds.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.IntervalIndex.from_tuples.html#pandas.IntervalIndex.from_tuples" title="pandas.IntervalIndex.from_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_tuples</span></code></a>(data, closed[, name, dtype])</p></td>
+<td><p>Construct an IntervalIndex from an array-like of tuples.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.from_breaks.html#pandas.IntervalIndex.from_breaks" title="pandas.IntervalIndex.from_breaks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_breaks</span></code></a>(breaks, closed[, name, dtype])</p></td>
+<td><p>Construct an IntervalIndex from an array of splits.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.IntervalIndex.contains.html#pandas.IntervalIndex.contains" title="pandas.IntervalIndex.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Check elementwise if the Intervals contain the value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.overlaps.html#pandas.IntervalIndex.overlaps" title="pandas.IntervalIndex.overlaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlaps</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Check elementwise if an Interval overlaps the values in the IntervalArray.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.IntervalIndex.set_closed.html#pandas.IntervalIndex.set_closed" title="pandas.IntervalIndex.set_closed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_closed</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Return an IntervalArray identical to the current one, but closed on the specified side.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.IntervalIndex.to_tuples.html#pandas.IntervalIndex.to_tuples" title="pandas.IntervalIndex.to_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_tuples</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<td><p>Return an ndarray of tuples of the form (left, right).</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+</div>
+</body></html>
