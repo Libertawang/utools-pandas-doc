@@ -64,6 +64,7 @@ def write_html(title_text,main):
     with open(f'./html/{title_text}.html','w') as html:
         html.write(f'{head}\n{main}\n{tail}')
 
+
 main_url = 'https://pandas.pydata.org/pandas-docs/stable/reference'
 main_soup = get_soup('index.html')
 indexes_json = pd.DataFrame(columns=['t','d','p'])
