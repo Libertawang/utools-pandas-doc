@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-timedelta-nanoseconds">
 <h1>pandas.Timedelta.nanoseconds<a class="headerlink" href="#pandas-timedelta-nanoseconds" title="Permalink to this headline">¶</a></h1>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pandas.Timedelta.nanoseconds">
-<code class="sig-prename descclassname">Timedelta.</code><code class="sig-name descname">nanoseconds</code><a class="headerlink" href="#pandas.Timedelta.nanoseconds" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Timedelta.</span></code><code class="sig-name descname"><span class="pre">nanoseconds</span></code><a class="headerlink" href="#pandas.Timedelta.nanoseconds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of nanoseconds (n), where 0 &lt;= n &lt; 1 microsecond.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -62,7 +62,7 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Timedelta.components.html#pandas.Timedelta.components" title="pandas.Timedelta.components"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Timedelta.components</span></code></a></dt><dd><p>Return all attributes with assigned values (i.e. days, hours, minutes, seconds, milliseconds, microseconds, nanoseconds).</p>
@@ -72,7 +72,9 @@
 <p class="rubric">Examples</p>
 <p><strong>Using string input</strong></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">td</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">'1 days 2 min 3 us 42 ns'</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">td</span><span class="o">.</span><span class="n">nanoseconds</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">td</span><span class="o">.</span><span class="n">nanoseconds</span>
 <span class="go">42</span>
 </pre></div>
 </div>

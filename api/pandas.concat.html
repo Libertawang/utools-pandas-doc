@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-concat">
 <h1>pandas.concat<a class="headerlink" href="#pandas-concat" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.concat">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">concat</code><span class="sig-paren">(</span><em class="sig-param">objs: Union[Iterable[Union[ForwardRef('DataFrame'), ForwardRef('Series')]], Mapping[Union[Hashable, NoneType], Union[ForwardRef('DataFrame'), ForwardRef('Series')]]], axis=0, join='outer', ignore_index: bool = False, keys=None, levels=None, names=None, verify_integrity: bool = False, sort: bool = False, copy: bool = True</em><span class="sig-paren">)</span> → Union[ForwardRef('DataFrame'), ForwardRef('Series')]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/reshape/concat.py#L65-L284"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.concat" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">concat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'outer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">levels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_integrity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/reshape/concat.py#L82-L298"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.concat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Concatenate pandas objects along a particular axis with optional set logic
 along the other axes.</p>
 <p>Can also add a layer of hierarchical indexing on the concatenation axis,
@@ -61,7 +61,7 @@ the passed axis number.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>objs</strong><span class="classifier">a sequence or mapping of Series or DataFrame objects</span></dt><dd><p>If a dict is passed, the sorted keys will be used as the <cite>keys</cite>
+<dt><strong>objs</strong><span class="classifier">a sequence or mapping of Series or DataFrame objects</span></dt><dd><p>If a mapping is passed, the sorted keys will be used as the <cite>keys</cite>
 argument, unless it is passed, in which case the values will be
 selected (see below). Any None objects will be dropped silently unless
 they are all None in which case a ValueError will be raised.</p>
@@ -91,9 +91,6 @@ be very expensive relative to the actual data concatenation.</p>
 is ‘outer’.
 This has no effect when <code class="docutils literal notranslate"><span class="pre">join='inner'</span></code>, which already preserves
 the order of the non-concatenation axis.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 1.0.0: </span>Changed to not sort by default.</p>
 </div>
@@ -112,7 +109,7 @@ the columns (axis=1), a <code class="docutils literal notranslate"><span class="
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.append.html#pandas.Series.append" title="pandas.Series.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.append</span></code></a></dt><dd><p>Concatenate Series.</p>

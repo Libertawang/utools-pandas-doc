@@ -50,11 +50,11 @@
   <body>
 <div class="section" id="pandas-dataframe-eval">
 <h1>pandas.DataFrame.eval<a class="headerlink" href="#pandas-dataframe-eval" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.eval">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expr</em>, <em class="sig-param">inplace=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L3245-L3346"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L3483-L3599"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate a string describing operations on DataFrame columns.</p>
-<p>Operates on columns only, not specific rows or elements.  This allows
+<p>Operates on columns only, not specific rows or elements. This allows
 <cite>eval</cite> to run arbitrary code, which can make you vulnerable to code
 injection if you pass user input to this function.</p>
 <dl class="field-list simple">
@@ -74,12 +74,12 @@ on the keyword arguments accepted by
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>ndarray, scalar, or pandas object</dt><dd><p>The result of the evaluation.</p>
+<dt>ndarray, scalar, pandas object, or None</dt><dd><p>The result of the evaluation or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.query.html#pandas.DataFrame.query" title="pandas.DataFrame.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.query</span></code></a></dt><dd><p>Evaluates a boolean expression to query the columns of a frame.</p>
@@ -138,6 +138,21 @@ modified.</p>
 <span class="go">2  3   6   9</span>
 <span class="go">3  4   4   8</span>
 <span class="go">4  5   2   7</span>
+</pre></div>
+</div>
+<p>Multiple columns can be assigned to using multi-line expressions:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sd">'''</span>
+<span class="gp">... </span><span class="sd">C = A + B</span>
+<span class="gp">... </span><span class="sd">D = A - B</span>
+<span class="gp">... </span><span class="sd">'''</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">   A   B   C  D</span>
+<span class="go">0  1  10  11 -9</span>
+<span class="go">1  2   8  10 -6</span>
+<span class="go">2  3   6   9 -3</span>
+<span class="go">3  4   4   8  0</span>
+<span class="go">4  5   2   7  3</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-hist">
 <h1>pandas.Series.hist<a class="headerlink" href="#pandas-series-hist" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.hist">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">hist</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">by=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">grid=True</em>, <em class="sig-param">xlabelsize=None</em>, <em class="sig-param">xrot=None</em>, <em class="sig-param">ylabelsize=None</em>, <em class="sig-param">yrot=None</em>, <em class="sig-param">figsize=None</em>, <em class="sig-param">bins=10</em>, <em class="sig-param">backend=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_core.py#L13-L86"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.hist" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">hist</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabelsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xrot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabelsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yrot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_core.py#L18-L98"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.hist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw histogram of the input series using matplotlib.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -86,6 +86,11 @@ specify the <code class="docutils literal notranslate"><span class="pre">plottin
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
 </div>
 </dd>
+<dt><strong>legend</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to show the legend.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
 <dt><strong>**kwargs</strong></dt><dd><p>To be passed to the actual plotting function.</p>
 </dd>
 </dl>
@@ -97,10 +102,10 @@ specify the <code class="docutils literal notranslate"><span class="pre">plottin
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.2.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.axes.Axes.hist</span></code></a></dt><dd><p>Plot a histogram using matplotlib.</p>
+<dt><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.axes.Axes.hist</span></code></a></dt><dd><p>Plot a histogram using matplotlib.</p>
 </dd>
 </dl>
 </div>

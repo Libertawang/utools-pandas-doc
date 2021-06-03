@@ -50,17 +50,17 @@
   <body>
 <div class="section" id="pandas-series-str-translate">
 <h1>pandas.Series.str.translate<a class="headerlink" href="#pandas-series-str-translate" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.translate">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">table</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L3021-L3025"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.translate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Map all characters in the string through the given mapping table.
-Equivalent to standard <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.translate" title="(in Python v3.8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.translate()</span></code></a>.</p>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">translate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L1927-L1947"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map all characters in the string through the given mapping table.</p>
+<p>Equivalent to standard <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.translate" title="(in Python v3.9)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.translate()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>table</strong><span class="classifier">dict</span></dt><dd><p>Table is a mapping of Unicode ordinals to Unicode ordinals, strings, or
 None. Unmapped characters are left untouched.
-Characters mapped to None are deleted. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.maketrans" title="(in Python v3.8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.maketrans()</span></code></a> is a
+Characters mapped to None are deleted. <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.maketrans" title="(in Python v3.9)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.maketrans()</span></code></a> is a
 helper function for making translation tables.</p>
 </dd>
 </dl>

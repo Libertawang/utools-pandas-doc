@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-str-count">
 <h1>pandas.Series.str.count<a class="headerlink" href="#pandas-series-str-count" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.count">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pat</em>, <em class="sig-param">flags=0</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L1998-L2001"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">count</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L1949-L2015"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count occurrences of pattern in each string of the Series/Index.</p>
 <p>This function is used to count the number of times a particular regex
 pattern is repeated in each of the string elements of the
@@ -75,12 +75,12 @@ pattern is repeated in each of the string elements of the
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/re.html#module-re" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">re</span></code></a></dt><dd><p>Standard library module for regular expressions.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/re.html#module-re" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">re</span></code></a></dt><dd><p>Standard library module for regular expressions.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.count" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.count</span></code></a></dt><dd><p>Standard library version, without regular expression support.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.count" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.count</span></code></a></dt><dd><p>Standard library version, without regular expression support.</p>
 </dd>
 </dl>
 </div>
@@ -103,7 +103,7 @@ finding this literal character.</p>
 </div>
 <p>Escape <code class="docutils literal notranslate"><span class="pre">'$'</span></code> to find the literal dollar sign.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'$'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'Aab$'</span><span class="p">,</span> <span class="s1">'$$ca'</span><span class="p">,</span> <span class="s1">'C$B$'</span><span class="p">,</span> <span class="s1">'cat'</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'\$'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">$'</span><span class="p">)</span>
 <span class="go">0    1</span>
 <span class="go">1    0</span>
 <span class="go">2    1</span>

@@ -50,18 +50,18 @@
   <body>
 <div class="section" id="pandas-dataframe-to-latex">
 <h1>pandas.DataFrame.to_latex<a class="headerlink" href="#pandas-dataframe-to-latex" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.to_latex">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_latex</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">buf=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">col_space=None</em>, <em class="sig-param">header=True</em>, <em class="sig-param">index=True</em>, <em class="sig-param">na_rep='NaN'</em>, <em class="sig-param">formatters=None</em>, <em class="sig-param">float_format=None</em>, <em class="sig-param">sparsify=None</em>, <em class="sig-param">index_names=True</em>, <em class="sig-param">bold_rows=False</em>, <em class="sig-param">column_format=None</em>, <em class="sig-param">longtable=None</em>, <em class="sig-param">escape=None</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">decimal='.'</em>, <em class="sig-param">multicolumn=None</em>, <em class="sig-param">multicolumn_format=None</em>, <em class="sig-param">multirow=None</em>, <em class="sig-param">caption=None</em>, <em class="sig-param">label=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L2870-L3040"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_latex" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">to_latex</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_rep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NaN'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparsify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bold_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">longtable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">escape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multicolumn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multicolumn_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multirow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caption</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L3018-L3202"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.to_latex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render object to a LaTeX tabular, longtable, or nested table/tabular.</p>
-<p>Requires <code class="docutils literal notranslate"><span class="pre">\usepackage{booktabs}</span></code>.  The output can be copy/pasted
+<p>Requires <code class="docutils literal notranslate"><span class="pre">\usepackage{booktabs}</span></code>. The output can be copy/pasted
 into a main LaTeX document or read from an external file
 with <code class="docutils literal notranslate"><span class="pre">\input{table.tex}</span></code>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.20.2: </span>Added to Series.</p>
+<p><span class="versionmodified changed">Changed in version 1.0.0: </span>Added caption and label arguments.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 1.0.0: </span>Added caption and label arguments.</p>
+<p><span class="versionmodified changed">Changed in version 1.2.0: </span>Added position argument, changed meaning of caption argument.</p>
 </div>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -124,15 +124,26 @@ centered labels (instead of top-aligned) across the contained
 rows, separating groups via clines. The default will be read
 from the pandas config module.</p>
 </dd>
-<dt><strong>caption</strong><span class="classifier">str, optional</span></dt><dd><p>The LaTeX caption to be placed inside <code class="docutils literal notranslate"><span class="pre">\caption{}</span></code> in the output.</p>
+<dt><strong>caption</strong><span class="classifier">str or tuple, optional</span></dt><dd><p>Tuple (full_caption, short_caption),
+which results in <code class="docutils literal notranslate"><span class="pre">\caption[short_caption]{full_caption}</span></code>;
+if a single string is passed, no short caption will be set.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2.0: </span>Optionally allow caption to be a tuple <code class="docutils literal notranslate"><span class="pre">(full_caption,</span> <span class="pre">short_caption)</span></code>.</p>
 </div>
 </dd>
 <dt><strong>label</strong><span class="classifier">str, optional</span></dt><dd><p>The LaTeX label to be placed inside <code class="docutils literal notranslate"><span class="pre">\label{}</span></code> in the output.
 This is used with <code class="docutils literal notranslate"><span class="pre">\ref{}</span></code> in the main <code class="docutils literal notranslate"><span class="pre">.tex</span></code> file.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
+</div>
+</dd>
+<dt><strong>position</strong><span class="classifier">str, optional</span></dt><dd><p>The LaTeX positional argument for tables, to be placed after
+<code class="docutils literal notranslate"><span class="pre">\begin{}</span></code> in the output.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
 </div>
 </dd>
 </dl>
@@ -145,7 +156,7 @@ None.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.to_string.html#pandas.DataFrame.to_string" title="pandas.DataFrame.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.to_string</span></code></a></dt><dd><p>Render a DataFrame to a console-friendly tabular output.</p>
@@ -155,9 +166,9 @@ None.</p>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'name'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Raphael'</span><span class="p">,</span> <span class="s1">'Donatello'</span><span class="p">],</span>
-<span class="gp">... </span>                   <span class="s1">'mask'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">],</span>
-<span class="gp">... </span>                   <span class="s1">'weapon'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'sai'</span><span class="p">,</span> <span class="s1">'bo staff'</span><span class="p">]})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="p">[</span><span class="s1">'Raphael'</span><span class="p">,</span> <span class="s1">'Donatello'</span><span class="p">],</span>
+<span class="gp">... </span>                  <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'purple'</span><span class="p">],</span>
+<span class="gp">... </span>                  <span class="n">weapon</span><span class="o">=</span><span class="p">[</span><span class="s1">'sai'</span><span class="p">,</span> <span class="s1">'bo staff'</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">to_latex</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>  
 <span class="go">\begin{tabular}{lll}</span>
 <span class="go"> \toprule</span>

@@ -50,11 +50,10 @@
   <body>
 <div class="section" id="pandas-index-asof-locs">
 <h1>pandas.Index.asof_locs<a class="headerlink" href="#pandas-index-asof-locs" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.asof_locs">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">asof_locs</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">where</em>, <em class="sig-param">mask</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L4163-L4200"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.asof_locs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Find the locations (indices) of the labels from the index for
-every entry in the <cite>where</cite> argument.</p>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">asof_locs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">where</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L4558-L4595"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.asof_locs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the locations (indices) of labels in the index.</p>
 <p>As in the <cite>asof</cite> function, if the label (a particular entry in
 <cite>where</cite>) is not in the index, the latest index label up to the
 passed label is chosen and its index returned.</p>

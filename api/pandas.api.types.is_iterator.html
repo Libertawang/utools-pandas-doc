@@ -50,12 +50,11 @@
   <body>
 <div class="section" id="pandas-api-types-is-iterator">
 <h1>pandas.api.types.is_iterator<a class="headerlink" href="#pandas-api-types-is-iterator" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.api.types.is_iterator">
-<code class="sig-prename descclassname">pandas.api.types.</code><code class="sig-name descname">is_iterator</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span> → bool<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/dtypes/inference.py#L96-L127"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.api.types.is_iterator" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.api.types.</span></code><code class="sig-name descname"><span class="pre">is_iterator</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pandas.api.types.is_iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the object is an iterator.</p>
-<p>For example, lists are considered iterators
-but not strings or datetime objects.</p>
+<p>This is intended for generators, not list-like objects.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -70,8 +69,10 @@ but not strings or datetime objects.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_iterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_iterator</span><span class="p">((</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[]))</span>
 <span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_iterator</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_iterator</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_iterator</span><span class="p">(</span><span class="s2">"foo"</span><span class="p">)</span>

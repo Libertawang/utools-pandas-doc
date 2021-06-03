@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-categorical">
 <h1>pandas.Categorical<a class="headerlink" href="#pandas-categorical" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.Categorical">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">Categorical</code><span class="sig-paren">(</span><em class="sig-param">values</em>, <em class="sig-param">categories=None</em>, <em class="sig-param">ordered=None</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">fastpath=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/arrays/categorical.py#L209-L2476"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Categorical" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">Categorical</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fastpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/arrays/categorical.py#L187-L2323"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Categorical" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represent a categorical variable in classic R / S-plus fashion.</p>
 <p><cite>Categoricals</cite> can only take on only a limited, and usually fixed, number
 of possible values (<cite>categories</cite>). In contrast to statistical categorical
@@ -62,9 +62,9 @@ variables, a <cite>Categorical</cite> might have an order, but numerical operati
 Assigning values outside of <cite>categories</cite> will raise a <cite>ValueError</cite>. Order
 is defined by the order of the <cite>categories</cite>, not lexical order of the
 values.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>values</strong><span class="classifier">list-like</span></dt><dd><p>The values of the categorical. If categories are given, values not in
 categories will be replaced with NaN.</p>
 </dd>
@@ -79,9 +79,6 @@ An ordered categorical respects, when sorted, the order of its
 provided).</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">CategoricalDtype</span></dt><dd><p>An instance of <code class="docutils literal notranslate"><span class="pre">CategoricalDtype</span></code> to use for this categorical.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 </dd>
 </dl>
 </dd>
@@ -95,7 +92,7 @@ provided).</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.CategoricalDtype.html#pandas.CategoricalDtype" title="pandas.CategoricalDtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CategoricalDtype</span></code></a></dt><dd><p>Type for categorical data.</p>
@@ -114,8 +111,21 @@ for more.</p>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
-<span class="go">[a, b, c, a, b, c]</span>
-<span class="go">Categories (3, object): [a, b, c]</span>
+<span class="go">['a', 'b', 'c', 'a', 'b', 'c']</span>
+<span class="go">Categories (3, object): ['a', 'b', 'c']</span>
+</pre></div>
+</div>
+<p>Missing values are not included as a category.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
+<span class="go">[1, 2, 3, 1, 2, 3, NaN]</span>
+<span class="go">Categories (3, int64): [1, 2, 3]</span>
+</pre></div>
+</div>
+<p>However, their presence is indicated in the <cite>codes</cite> attribute
+by code <cite>-1</cite>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">codes</span>
+<span class="go">array([ 0,  1,  2,  0,  1,  2, -1], dtype=int8)</span>
 </pre></div>
 </div>
 <p>Ordered <cite>Categoricals</cite> can be sorted according to the custom order
@@ -123,14 +133,14 @@ of the categories and can have a min and max value.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="gp">... </span>                   <span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
-<span class="go">[a, b, c, a, b, c]</span>
-<span class="go">Categories (3, object): [c &lt; b &lt; a]</span>
+<span class="go">['a', 'b', 'c', 'a', 'b', 'c']</span>
+<span class="go">Categories (3, object): ['c' &lt; 'b' &lt; 'a']</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 <span class="go">'c'</span>
 </pre></div>
 </div>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -151,7 +161,7 @@ of the categories and can have a min and max value.</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -160,7 +170,7 @@ of the categories and can have a min and max value.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="pandas.Categorical.from_codes.html#pandas.Categorical.from_codes" title="pandas.Categorical.from_codes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_codes</span></code></a>(codes[, categories, ordered, dtype])</p></td>
 <td><p>Make a Categorical type from codes and categories or dtype.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.Categorical.__array__.html#pandas.Categorical.__array__" title="pandas.Categorical.__array__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__array__</span></code></a>(self[, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Categorical.__array__.html#pandas.Categorical.__array__" title="pandas.Categorical.__array__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__array__</span></code></a>([dtype])</p></td>
 <td><p>The numpy array interface.</p></td>
 </tr>
 </tbody>

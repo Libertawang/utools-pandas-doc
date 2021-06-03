@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-join">
 <h1>pandas.DataFrame.join<a class="headerlink" href="#pandas-dataframe-join" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.join">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">on=None</em>, <em class="sig-param">how='left'</em>, <em class="sig-param">lsuffix=''</em>, <em class="sig-param">rsuffix=''</em>, <em class="sig-param">sort=False</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L7088-L7210"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.join" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">join</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lsuffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rsuffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L7990-L8112"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.join" title="Permalink to this definition">¶</a></dt>
 <dd><p>Join columns of another DataFrame.</p>
 <p>Join columns with <cite>other</cite> DataFrame either on index or on a key
 column. Efficiently join multiple DataFrame objects by index at once by
@@ -98,10 +98,10 @@ the order of the join key depends on the join type (how keyword).</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="pandas.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.merge</span></code></a></dt><dd><p>For column(s)-on-columns(s) operations.</p>
+<dt><a class="reference internal" href="pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="pandas.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.merge</span></code></a></dt><dd><p>For column(s)-on-column(s) operations.</p>
 </dd>
 </dl>
 </div>

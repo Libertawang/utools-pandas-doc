@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-sql-table">
 <h1>pandas.read_sql_table<a class="headerlink" href="#pandas-read-sql-table" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_sql_table">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_sql_table</code><span class="sig-paren">(</span><em class="sig-param">table_name</em>, <em class="sig-param">con</em>, <em class="sig-param">schema=None</em>, <em class="sig-param">index_col=None</em>, <em class="sig-param">coerce_float=True</em>, <em class="sig-param">parse_dates=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">chunksize=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/sql.py#L166-L259"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_sql_table" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_sql_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">con</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coerce_float</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/sql.py#L205-L297"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_sql_table" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read SQL database table into a DataFrame.</p>
 <p>Given a table name and a SQLAlchemy connectable, returns a DataFrame.
 This function does not support DBAPI connections.</p>
@@ -61,7 +61,7 @@ This function does not support DBAPI connections.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>table_name</strong><span class="classifier">str</span></dt><dd><p>Name of SQL table in database.</p>
 </dd>
-<dt><strong>con</strong><span class="classifier">SQLAlchemy connectable or str</span></dt><dd><p>A database URI could be provided as as str.
+<dt><strong>con</strong><span class="classifier">SQLAlchemy connectable or str</span></dt><dd><p>A database URI could be provided as str.
 SQLite DBAPI connection mode not supported.</p>
 </dd>
 <dt><strong>schema</strong><span class="classifier">str, default None</span></dt><dd><p>Name of SQL schema in database to query (if database flavor
@@ -92,13 +92,13 @@ rows to include in each chunk.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>DataFrame</dt><dd><p>A SQL table is returned as two-dimensional data structure with labeled
+<dt>DataFrame or Iterator[DataFrame]</dt><dd><p>A SQL table is returned as two-dimensional data structure with labeled
 axes.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.read_sql_query.html#pandas.read_sql_query" title="pandas.read_sql_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_sql_query</span></code></a></dt><dd><p>Read SQL query into a DataFrame.</p>

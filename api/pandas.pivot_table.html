@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-pivot-table">
 <h1>pandas.pivot_table<a class="headerlink" href="#pandas-pivot-table" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.pivot_table">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">pivot_table</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">values=None</em>, <em class="sig-param">index=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">aggfunc='mean'</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">margins=False</em>, <em class="sig-param">dropna=True</em>, <em class="sig-param">margins_name='All'</em>, <em class="sig-param">observed=False</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/reshape/pivot.py#L25-L186"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.pivot_table" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">pivot_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggfunc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margins_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/reshape/pivot.py#L37-L200"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.pivot_table" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a spreadsheet-style pivot table as a DataFrame.</p>
 <p>The levels in the pivot table will be stored in MultiIndex objects
 (hierarchical indexes) on the index and columns of the result DataFrame.</p>
@@ -63,12 +63,12 @@
 <dt><strong>values</strong><span class="classifier">column to aggregate, optional</span></dt><dd></dd>
 <dt><strong>index</strong><span class="classifier">column, Grouper, array, or list of the previous</span></dt><dd><p>If an array is passed, it must be the same length as the data. The
 list can contain any of the other types (except list).
-Keys to group by on the pivot table index.  If an array is passed,
+Keys to group by on the pivot table index. If an array is passed,
 it is being used as the same manner as column values.</p>
 </dd>
 <dt><strong>columns</strong><span class="classifier">column, Grouper, array, or list of the previous</span></dt><dd><p>If an array is passed, it must be the same length as the data. The
 list can contain any of the other types (except list).
-Keys to group by on the pivot table column.  If an array is passed,
+Keys to group by on the pivot table column. If an array is passed,
 it is being used as the same manner as column values.</p>
 </dd>
 <dt><strong>aggfunc</strong><span class="classifier">function, list of functions, dict, default numpy.mean</span></dt><dd><p>If list of functions passed, the resulting pivot table will have
@@ -77,7 +77,8 @@ hierarchical columns whose top level are the function names
 If dict is passed, the key is column to aggregate and value
 is function or list of functions.</p>
 </dd>
-<dt><strong>fill_value</strong><span class="classifier">scalar, default None</span></dt><dd><p>Value to replace missing values with.</p>
+<dt><strong>fill_value</strong><span class="classifier">scalar, default None</span></dt><dd><p>Value to replace missing values with (in the resulting pivot table,
+after aggregation).</p>
 </dd>
 <dt><strong>margins</strong><span class="classifier">bool, default False</span></dt><dd><p>Add all row / columns (e.g. for subtotal / grand totals).</p>
 </dd>
@@ -102,10 +103,14 @@ If False: show all values for categorical groupers.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.pivot.html#pandas.DataFrame.pivot" title="pandas.DataFrame.pivot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.pivot</span></code></a></dt><dd><p>Pivot without aggregation that can handle non-numeric data.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.melt.html#pandas.DataFrame.melt" title="pandas.DataFrame.melt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.melt</span></code></a></dt><dd><p>Unpivot a DataFrame from wide to long format, optionally leaving identifiers set.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.wide_to_long.html#pandas.wide_to_long" title="pandas.wide_to_long"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wide_to_long</span></code></a></dt><dd><p>Wide panel to long format. Less flexible but more user-friendly than melt.</p>
 </dd>
 </dl>
 </div>

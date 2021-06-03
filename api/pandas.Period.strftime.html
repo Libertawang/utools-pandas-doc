@@ -50,13 +50,13 @@
   <body>
 <div class="section" id="pandas-period-strftime">
 <h1>pandas.Period.strftime<a class="headerlink" href="#pandas-period-strftime" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Period.strftime">
-<code class="sig-prename descclassname">Period.</code><code class="sig-name descname">strftime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pandas.Period.strftime" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Period.</span></code><code class="sig-name descname"><span class="pre">strftime</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pandas.Period.strftime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the string representation of the <a class="reference internal" href="pandas.Period.html#pandas.Period" title="pandas.Period"><code class="xref py py-class docutils literal notranslate"><span class="pre">Period</span></code></a>, depending
 on the selected <code class="docutils literal notranslate"><span class="pre">fmt</span></code>. <code class="docutils literal notranslate"><span class="pre">fmt</span></code> must be a string
-containing one or several directives.  The method recognizes the same
-directives as the <a class="reference external" href="https://docs.python.org/3/library/time.html#time.strftime" title="(in Python v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.strftime()</span></code></a> function of the standard Python
+containing one or several directives. The method recognizes the same
+directives as the <a class="reference external" href="https://docs.python.org/3/library/time.html#time.strftime" title="(in Python v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">time.strftime()</span></code></a> function of the standard Python
 distribution, as well as the specific additional directives <code class="docutils literal notranslate"><span class="pre">%f</span></code>,
 <code class="docutils literal notranslate"><span class="pre">%F</span></code>, <code class="docutils literal notranslate"><span class="pre">%q</span></code>. (formatting &amp; docs originally from scikits.timeries).</p>
 <table class="table">
@@ -102,7 +102,7 @@ number [01,31].</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">%f</span></code></p></td>
 <td><p>‘Fiscal’ year without a
-century  as a decimal number
+century as a decimal number
 [00,99]</p></td>
 <td><p>(1)</p></td>
 </tr>
@@ -155,7 +155,7 @@ AM or PM.</p></td>
 <td><p>Week number of the year
 (Sunday as the first day of
 the week) as a decimal number
-[00,53].  All days in a new
+[00,53]. All days in a new
 year preceding the first
 Sunday are considered to be in
 week 0.</p></td>
@@ -170,7 +170,7 @@ week 0.</p></td>
 <td><p>Week number of the year
 (Monday as the first day of
 the week) as a decimal number
-[00,53].  All days in a new
+[00,53]. All days in a new
 year preceding the first
 Monday are considered to be in
 week 0.</p></td>

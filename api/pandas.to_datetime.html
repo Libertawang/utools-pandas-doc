@@ -50,14 +50,14 @@
   <body>
 <div class="section" id="pandas-to-datetime">
 <h1>pandas.to_datetime<a class="headerlink" href="#pandas-to-datetime" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.to_datetime">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">to_datetime</code><span class="sig-paren">(</span><em class="sig-param">arg</em>, <em class="sig-param">errors='raise'</em>, <em class="sig-param">dayfirst=False</em>, <em class="sig-param">yearfirst=False</em>, <em class="sig-param">utc=None</em>, <em class="sig-param">format=None</em>, <em class="sig-param">exact=True</em>, <em class="sig-param">unit=None</em>, <em class="sig-param">infer_datetime_format=False</em>, <em class="sig-param">origin='unix'</em>, <em class="sig-param">cache=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/tools/datetimes.py#L530-L758"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.to_datetime" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">to_datetime</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dayfirst</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yearfirst</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">utc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infer_datetime_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'unix'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/tools/datetimes.py#L609-L834"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.to_datetime" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert argument to datetime.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>arg</strong><span class="classifier">int, float, str, datetime, list, tuple, 1-d array, Series DataFrame/dict-like</span></dt><dd><p>The object to convert to a datetime.</p>
+<dt><strong>arg</strong><span class="classifier">int, float, str, datetime, list, tuple, 1-d array, Series, DataFrame/dict-like</span></dt><dd><p>The object to convert to a datetime.</p>
 </dd>
 <dt><strong>errors</strong><span class="classifier">{‘ignore’, ‘raise’, ‘coerce’}, default ‘raise’</span></dt><dd><ul class="simple">
 <li><p>If ‘raise’, then invalid parsing will raise an exception.</p></li>
@@ -99,9 +99,9 @@ Example, with unit=’ms’ and origin=’unix’ (the default), this
 would calculate the number of milliseconds to the unix epoch start.</p>
 </dd>
 <dt><strong>infer_datetime_format</strong><span class="classifier">bool, default False</span></dt><dd><p>If True and no <cite>format</cite> is given, attempt to infer the format of the
-datetime strings, and if it can be inferred, switch to a faster
-method of parsing them. In some cases this can increase the parsing
-speed by ~5-10x.</p>
+datetime strings based on the first non-NaN element,
+and if it can be inferred, switch to a faster method of parsing them.
+In some cases this can increase the parsing speed by ~5-10x.</p>
 </dd>
 <dt><strong>origin</strong><span class="classifier">scalar, default ‘unix’</span></dt><dd><p>Define the reference date. The numeric values would be parsed as number
 of units (defined by <cite>unit</cite>) since this reference date.</p>
@@ -119,9 +119,6 @@ conversion. May produce significant speed-up when parsing duplicate
 date strings, especially ones with timezone offsets. The cache is only
 used when there are at least 50 values. The presence of out-of-bounds
 values will render the cache unusable and may slow down parsing.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.25.0: </span>- changed default value from False to True.</p>
 </div>
@@ -145,7 +142,7 @@ array/Series).</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.astype.html#pandas.DataFrame.astype" title="pandas.DataFrame.astype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.astype</span></code></a></dt><dd><p>Cast argument to a specified dtype.</p>
@@ -206,7 +203,7 @@ if its not an ISO8601 format exactly, but in a regular format.</p>
 <span class="go">Timestamp('2017-03-22 15:16:45.433502912')</span>
 </pre></div>
 </div>
-<div class="alert alert-warning">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>For float arg, precision rounding might happen. To prevent
 unexpected behavior use a fixed-width exact type.</p>

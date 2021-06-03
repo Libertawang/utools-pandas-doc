@@ -50,21 +50,31 @@
   <body>
 <div class="section" id="pandas-series-ewm">
 <h1>pandas.Series.ewm<a class="headerlink" href="#pandas-series-ewm" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.ewm">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">ewm</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">com=None</em>, <em class="sig-param">span=None</em>, <em class="sig-param">halflife=None</em>, <em class="sig-param">alpha=None</em>, <em class="sig-param">min_periods=0</em>, <em class="sig-param">adjust=True</em>, <em class="sig-param">ignore_na=False</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L10396-L10419"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.ewm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Provide exponential weighted functions.</p>
-<dl class="field-list simple">
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">ewm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">com</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">halflife</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjust</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_na</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L11273-L11299"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.ewm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide exponential weighted (EW) functions.</p>
+<p>Available EW functions: <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">var()</span></code>, <code class="docutils literal notranslate"><span class="pre">std()</span></code>, <code class="docutils literal notranslate"><span class="pre">corr()</span></code>, <code class="docutils literal notranslate"><span class="pre">cov()</span></code>.</p>
+<p>Exactly one parameter: <code class="docutils literal notranslate"><span class="pre">com</span></code>, <code class="docutils literal notranslate"><span class="pre">span</span></code>, <code class="docutils literal notranslate"><span class="pre">halflife</span></code>, or <code class="docutils literal notranslate"><span class="pre">alpha</span></code> must be
+provided.</p>
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>com</strong><span class="classifier">float, optional</span></dt><dd><p>Specify decay in terms of center of mass,
-<span class="math notranslate nohighlight">\(\alpha = 1 / (1 + com),\text{ for } com \geq 0\)</span>.</p>
+<span class="math notranslate nohighlight">\(\alpha = 1 / (1 + com)\)</span>, for <span class="math notranslate nohighlight">\(com \geq 0\)</span>.</p>
 </dd>
 <dt><strong>span</strong><span class="classifier">float, optional</span></dt><dd><p>Specify decay in terms of span,
-<span class="math notranslate nohighlight">\(\alpha = 2 / (span + 1),\text{ for } span \geq 1\)</span>.</p>
+<span class="math notranslate nohighlight">\(\alpha = 2 / (span + 1)\)</span>, for <span class="math notranslate nohighlight">\(span \geq 1\)</span>.</p>
 </dd>
-<dt><strong>halflife</strong><span class="classifier">float, optional</span></dt><dd><p>Specify decay in terms of half-life,
-<span class="math notranslate nohighlight">\(\alpha = 1 - exp(log(0.5) / halflife),\text{for} halflife &gt; 0\)</span>.</p>
+<dt><strong>halflife</strong><span class="classifier">float, str, timedelta, optional</span></dt><dd><p>Specify decay in terms of half-life,
+<span class="math notranslate nohighlight">\(\alpha = 1 - \exp\left(-\ln(2) / halflife\right)\)</span>, for
+<span class="math notranslate nohighlight">\(halflife &gt; 0\)</span>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">times</span></code> is specified, the time unit (str or timedelta) over which an
+observation decays to half its value. Only applicable to <code class="docutils literal notranslate"><span class="pre">mean()</span></code>
+and halflife value will not apply to the other functions.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 <dt><strong>alpha</strong><span class="classifier">float, optional</span></dt><dd><p>Specify smoothing factor <span class="math notranslate nohighlight">\(\alpha\)</span> directly,
 <span class="math notranslate nohighlight">\(0 &lt; \alpha \leq 1\)</span>.</p>
@@ -73,14 +83,51 @@
 (otherwise result is NA).</p>
 </dd>
 <dt><strong>adjust</strong><span class="classifier">bool, default True</span></dt><dd><p>Divide by decaying adjustment factor in beginning periods to account
-for imbalance in relative weightings
-(viewing EWMA as a moving average).</p>
+for imbalance in relative weightings (viewing EWMA as a moving average).</p>
+<ul class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">adjust=True</span></code> (default), the EW function is calculated using weights
+<span class="math notranslate nohighlight">\(w_i = (1 - \alpha)^i\)</span>. For example, the EW moving average of the series
+[<span class="math notranslate nohighlight">\(x_0, x_1, ..., x_t\)</span>] would be:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[y_t = \frac{x_t + (1 - \alpha)x_{t-1} + (1 - \alpha)^2 x_{t-2} + ... + (1 -
+\alpha)^t x_0}{1 + (1 - \alpha) + (1 - \alpha)^2 + ... + (1 - \alpha)^t}\]</div>
+<ul class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">adjust=False</span></code>, the exponentially weighted function is calculated
+recursively:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{split}
+y_0 &amp;= x_0\\
+y_t &amp;= (1 - \alpha) y_{t-1} + \alpha x_t,
+\end{split}\end{split}\]</div>
 </dd>
-<dt><strong>ignore_na</strong><span class="classifier">bool, default False</span></dt><dd><p>Ignore missing values when calculating weights;
-specify True to reproduce pre-0.15.0 behavior.</p>
+<dt><strong>ignore_na</strong><span class="classifier">bool, default False</span></dt><dd><p>Ignore missing values when calculating weights; specify <code class="docutils literal notranslate"><span class="pre">True</span></code> to reproduce
+pre-0.15.0 behavior.</p>
+<ul class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">ignore_na=False</span></code> (default), weights are based on absolute positions.
+For example, the weights of <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> used in calculating
+the final weighted average of [<span class="math notranslate nohighlight">\(x_0\)</span>, None, <span class="math notranslate nohighlight">\(x_2\)</span>] are
+<span class="math notranslate nohighlight">\((1-\alpha)^2\)</span> and <span class="math notranslate nohighlight">\(1\)</span> if <code class="docutils literal notranslate"><span class="pre">adjust=True</span></code>, and
+<span class="math notranslate nohighlight">\((1-\alpha)^2\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> if <code class="docutils literal notranslate"><span class="pre">adjust=False</span></code>.</p></li>
+<li><p>When <code class="docutils literal notranslate"><span class="pre">ignore_na=True</span></code> (reproducing pre-0.15.0 behavior), weights are based
+on relative positions. For example, the weights of <span class="math notranslate nohighlight">\(x_0\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>
+used in calculating the final weighted average of
+[<span class="math notranslate nohighlight">\(x_0\)</span>, None, <span class="math notranslate nohighlight">\(x_2\)</span>] are <span class="math notranslate nohighlight">\(1-\alpha\)</span> and <span class="math notranslate nohighlight">\(1\)</span> if
+<code class="docutils literal notranslate"><span class="pre">adjust=True</span></code>, and <span class="math notranslate nohighlight">\(1-\alpha\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> if <code class="docutils literal notranslate"><span class="pre">adjust=False</span></code>.</p></li>
+</ul>
 </dd>
-<dt><strong>axis</strong><span class="classifier">{0 or ‘index’, 1 or ‘columns’}, default 0</span></dt><dd><p>The axis to use. The value 0 identifies the rows, and 1
+<dt><strong>axis</strong><span class="classifier">{0, 1}, default 0</span></dt><dd><p>The axis to use. The value 0 identifies the rows, and 1
 identifies the columns.</p>
+</dd>
+<dt><strong>times</strong><span class="classifier">str, np.ndarray, Series, default None</span></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+<p>Times corresponding to the observations. Must be monotonically increasing and
+<code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code> dtype.</p>
+<p>If str, the name of the column in the DataFrame representing the times.</p>
+<p>If 1-D array like, a sequence with the same shape as the observations.</p>
+<p>Only applicable to <code class="docutils literal notranslate"><span class="pre">mean()</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -91,7 +138,7 @@ identifies the columns.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.rolling.html#pandas.Series.rolling" title="pandas.Series.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a></dt><dd><p>Provides rolling window calculations.</p>
@@ -101,27 +148,8 @@ identifies the columns.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>Exactly one of center of mass, span, half-life, and alpha must be provided.
-Allowed values and relationship between the parameters are specified in the
-parameter descriptions above; see the link at the end of this section for
-a detailed explanation.</p>
-<p>When adjust is True (default), weighted averages are calculated using
-weights (1-alpha)**(n-1), (1-alpha)**(n-2), …, 1-alpha, 1.</p>
-<dl class="simple">
-<dt>When adjust is False, weighted averages are calculated recursively as:</dt><dd><p>weighted_average[0] = arg[0];
-weighted_average[i] = (1-alpha)*weighted_average[i-1] + alpha*arg[i].</p>
-</dd>
-</dl>
-<p>When ignore_na is False (default), weights are based on absolute positions.
-For example, the weights of x and y used in calculating the final weighted
-average of [x, None, y] are (1-alpha)**2 and 1 (if adjust is True), and
-(1-alpha)**2 and alpha (if adjust is False).</p>
-<p>When ignore_na is True (reproducing pre-0.15.0 behavior), weights are based
-on relative positions. For example, the weights of x and y used in
-calculating the final weighted average of [x, None, y] are 1-alpha and 1
-(if adjust is True), and 1-alpha and alpha (if adjust is False).</p>
-<p>More details can be found at
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html#exponentially-weighted-windows">https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html#exponentially-weighted-windows</a></p>
+<p>More details can be found at:
+<a class="reference internal" href="../../user_guide/window.html#window-exponentially-weighted"><span class="std std-ref">Exponentially weighted windows</span></a>.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'B'</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
@@ -140,6 +168,17 @@ calculating the final weighted average of [x, None, y] are 1-alpha and 1
 <span class="go">2  1.615385</span>
 <span class="go">3  1.615385</span>
 <span class="go">4  3.670213</span>
+</pre></div>
+</div>
+<p>Specifying <code class="docutils literal notranslate"><span class="pre">times</span></code> with a timedelta <code class="docutils literal notranslate"><span class="pre">halflife</span></code> when computing mean.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="s1">'2020-01-03'</span><span class="p">,</span> <span class="s1">'2020-01-10'</span><span class="p">,</span> <span class="s1">'2020-01-15'</span><span class="p">,</span> <span class="s1">'2020-01-17'</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">ewm</span><span class="p">(</span><span class="n">halflife</span><span class="o">=</span><span class="s1">'4 days'</span><span class="p">,</span> <span class="n">times</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">times</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="go">          B</span>
+<span class="go">0  0.000000</span>
+<span class="go">1  0.585786</span>
+<span class="go">2  1.523889</span>
+<span class="go">3  1.523889</span>
+<span class="go">4  3.233686</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -50,14 +50,19 @@
   <body>
 <div class="section" id="pandas-io-formats-style-styler-highlight-null">
 <h1>pandas.io.formats.style.Styler.highlight_null<a class="headerlink" href="#pandas-io-formats-style-styler-highlight-null" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.io.formats.style.Styler.highlight_null">
-<code class="sig-prename descclassname">Styler.</code><code class="sig-name descname">highlight_null</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">null_color='red'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/formats/style.py#L972-L985"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.io.formats.style.Styler.highlight_null" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Styler.</span></code><code class="sig-name descname"><span class="pre">highlight_null</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">null_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'red'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/formats/style.py#L1139-L1160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.io.formats.style.Styler.highlight_null" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shade the background <code class="docutils literal notranslate"><span class="pre">null_color</span></code> for missing values.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>null_color</strong><span class="classifier">str</span></dt><dd></dd>
+<dd class="field-odd"><dl>
+<dt><strong>null_color</strong><span class="classifier">str, default ‘red’</span></dt><dd></dd>
+<dt><strong>subset</strong><span class="classifier">label or list of labels, default None</span></dt><dd><p>A valid slice for <code class="docutils literal notranslate"><span class="pre">data</span></code> to limit the style application to.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>

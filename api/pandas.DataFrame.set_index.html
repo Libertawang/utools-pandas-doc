@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-set-index">
 <h1>pandas.DataFrame.set_index<a class="headerlink" href="#pandas-dataframe-set-index" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.set_index">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">set_index</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">keys</em>, <em class="sig-param">drop=True</em>, <em class="sig-param">append=False</em>, <em class="sig-param">inplace=False</em>, <em class="sig-param">verify_integrity=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L4181-L4367"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.set_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">set_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_integrity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L4604-L4791"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.set_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the DataFrame index using existing columns.</p>
 <p>Set the DataFrame index (row labels) using one or more existing
 columns or arrays (of the correct length). The index can replace the
@@ -64,13 +64,13 @@ existing index or expand on it.</p>
 the same length as the calling DataFrame, or a list containing an
 arbitrary combination of column keys and arrays. Here, “array”
 encompasses <a class="reference internal" href="pandas.Series.html#pandas.Series" title="pandas.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a>, <a class="reference internal" href="pandas.Index.html#pandas.Index" title="pandas.Index"><code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code></a>, <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code>, and
-instances of <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code></a>.</p>
+instances of <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterator" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterator</span></code></a>.</p>
 </dd>
 <dt><strong>drop</strong><span class="classifier">bool, default True</span></dt><dd><p>Delete columns to be used as the new index.</p>
 </dd>
 <dt><strong>append</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to append columns to existing index.</p>
 </dd>
-<dt><strong>inplace</strong><span class="classifier">bool, default False</span></dt><dd><p>Modify the DataFrame in place (do not create a new object).</p>
+<dt><strong>inplace</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, modifies the DataFrame in place (do not create a new object).</p>
 </dd>
 <dt><strong>verify_integrity</strong><span class="classifier">bool, default False</span></dt><dd><p>Check the new index for duplicates. Otherwise defer the check until
 necessary. Setting to False will improve the performance of this
@@ -80,12 +80,12 @@ method.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>DataFrame</dt><dd><p>Changed row labels.</p>
+<dt>DataFrame or None</dt><dd><p>Changed row labels or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="pandas.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.reset_index</span></code></a></dt><dd><p>Opposite of set_index.</p>

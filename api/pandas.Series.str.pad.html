@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-str-pad">
 <h1>pandas.Series.str.pad<a class="headerlink" href="#pandas-series-str-pad" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.pad">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">pad</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">width</em>, <em class="sig-param">side='left'</em>, <em class="sig-param">fillchar=' '</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L2787-L2791"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.pad" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">pad</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fillchar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L1360-L1426"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.pad" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pad strings in the Series/Index up to width.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -73,14 +73,14 @@ with character defined in <cite>fillchar</cite>.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.rjust.html#pandas.Series.str.rjust" title="pandas.Series.str.rjust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.rjust</span></code></a></dt><dd><p>Fills the left side of strings with an arbitrary character. Equivalent to <code class="docutils literal notranslate"><span class="pre">Series.str.pad(side='left')</span></code>.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.ljust.html#pandas.Series.str.ljust" title="pandas.Series.str.ljust"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.ljust</span></code></a></dt><dd><p>Fills the right side of strings with an arbitrary character. Equivalent to <code class="docutils literal notranslate"><span class="pre">Series.str.pad(side='right')</span></code>.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.Series.str.center.html#pandas.Series.str.center" title="pandas.Series.str.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.center</span></code></a></dt><dd><p>Fills boths sides of strings with an arbitrary character. Equivalent to <code class="docutils literal notranslate"><span class="pre">Series.str.pad(side='both')</span></code>.</p>
+<dt><a class="reference internal" href="pandas.Series.str.center.html#pandas.Series.str.center" title="pandas.Series.str.center"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.center</span></code></a></dt><dd><p>Fills both sides of strings with an arbitrary character. Equivalent to <code class="docutils literal notranslate"><span class="pre">Series.str.pad(side='both')</span></code>.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.zfill.html#pandas.Series.str.zfill" title="pandas.Series.str.zfill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.zfill</span></code></a></dt><dd><p>Pad strings in the Series/Index by prepending ‘0’ character. Equivalent to <code class="docutils literal notranslate"><span class="pre">Series.str.pad(side='left',</span> <span class="pre">fillchar='0')</span></code>.</p>
 </dd>

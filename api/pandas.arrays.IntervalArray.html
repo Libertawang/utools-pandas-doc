@@ -50,16 +50,16 @@
   <body>
 <div class="section" id="pandas-arrays-intervalarray">
 <h1>pandas.arrays.IntervalArray<a class="headerlink" href="#pandas-arrays-intervalarray" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.arrays.IntervalArray">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.arrays.</code><code class="sig-name descname">IntervalArray</code><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/arrays/interval.py#L148-L1334"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.arrays.IntervalArray" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.arrays.</span></code><code class="sig-name descname"><span class="pre">IntervalArray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_integrity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/arrays/interval.py#L158-L1436"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.arrays.IntervalArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pandas array for interval data that are closed on the same side.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.0.</span></p>
 </div>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>data</strong><span class="classifier">array-like (1-dimensional)</span></dt><dd><p>Array-like containing Interval objects from which to build the
 IntervalArray.</p>
 </dd>
@@ -67,9 +67,6 @@ IntervalArray.</p>
 neither.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">dtype or None, default None</span></dt><dd><p>If None, dtype will be inferred.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
 </dd>
 <dt><strong>copy</strong><span class="classifier">bool, default False</span></dt><dd><p>Copy the input data.</p>
 </dd>
@@ -78,7 +75,7 @@ neither.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index</span></code></dt><dd><p>The base pandas Index type.</p>
@@ -109,7 +106,7 @@ for more.</p>
 methods: <a class="reference internal" href="pandas.arrays.IntervalArray.from_arrays.html#pandas.arrays.IntervalArray.from_arrays" title="pandas.arrays.IntervalArray.from_arrays"><code class="xref py py-meth docutils literal notranslate"><span class="pre">IntervalArray.from_arrays()</span></code></a>,
 <a class="reference internal" href="pandas.arrays.IntervalArray.from_breaks.html#pandas.arrays.IntervalArray.from_breaks" title="pandas.arrays.IntervalArray.from_breaks"><code class="xref py py-meth docutils literal notranslate"><span class="pre">IntervalArray.from_breaks()</span></code></a>, and <a class="reference internal" href="pandas.arrays.IntervalArray.from_tuples.html#pandas.arrays.IntervalArray.from_tuples" title="pandas.arrays.IntervalArray.from_tuples"><code class="xref py py-meth docutils literal notranslate"><span class="pre">IntervalArray.from_tuples()</span></code></a>.</p>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -139,7 +136,7 @@ methods: <a class="reference internal" href="pandas.arrays.IntervalArray.from_ar
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -154,16 +151,16 @@ methods: <a class="reference internal" href="pandas.arrays.IntervalArray.from_ar
 <tr class="row-odd"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.from_breaks.html#pandas.arrays.IntervalArray.from_breaks" title="pandas.arrays.IntervalArray.from_breaks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_breaks</span></code></a>(breaks[, closed, copy, dtype])</p></td>
 <td><p>Construct an IntervalArray from an array of splits.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.contains.html#pandas.arrays.IntervalArray.contains" title="pandas.arrays.IntervalArray.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(self, other)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.contains.html#pandas.arrays.IntervalArray.contains" title="pandas.arrays.IntervalArray.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(other)</p></td>
 <td><p>Check elementwise if the Intervals contain the value.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.overlaps.html#pandas.arrays.IntervalArray.overlaps" title="pandas.arrays.IntervalArray.overlaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlaps</span></code></a>(self, other)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.overlaps.html#pandas.arrays.IntervalArray.overlaps" title="pandas.arrays.IntervalArray.overlaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlaps</span></code></a>(other)</p></td>
 <td><p>Check elementwise if an Interval overlaps the values in the IntervalArray.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.set_closed.html#pandas.arrays.IntervalArray.set_closed" title="pandas.arrays.IntervalArray.set_closed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_closed</span></code></a>(self, closed)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.set_closed.html#pandas.arrays.IntervalArray.set_closed" title="pandas.arrays.IntervalArray.set_closed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_closed</span></code></a>(closed)</p></td>
 <td><p>Return an IntervalArray identical to the current one, but closed on the specified side.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.to_tuples.html#pandas.arrays.IntervalArray.to_tuples" title="pandas.arrays.IntervalArray.to_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_tuples</span></code></a>(self[, na_tuple])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.arrays.IntervalArray.to_tuples.html#pandas.arrays.IntervalArray.to_tuples" title="pandas.arrays.IntervalArray.to_tuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_tuples</span></code></a>([na_tuple])</p></td>
 <td><p>Return an ndarray of tuples of the form (left, right).</p></td>
 </tr>
 </tbody>

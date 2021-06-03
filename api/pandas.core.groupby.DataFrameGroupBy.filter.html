@@ -50,15 +50,16 @@
   <body>
 <div class="section" id="pandas-core-groupby-dataframegroupby-filter">
 <h1>pandas.core.groupby.DataFrameGroupBy.filter<a class="headerlink" href="#pandas-core-groupby-dataframegroupby-filter" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.groupby.DataFrameGroupBy.filter">
-<code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">func</em>, <em class="sig-param">dropna=True</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/groupby/generic.py#L1529-L1590"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.filter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a copy of a DataFrame excluding elements from groups that
-do not satisfy the boolean criterion specified by func.</p>
+<code class="sig-prename descclassname"><span class="pre">DataFrameGroupBy.</span></code><code class="sig-name descname"><span class="pre">filter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/groupby/generic.py#L1464-L1526"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a copy of a DataFrame excluding filtered elements.</p>
+<p>Elements from groups are filtered if they do not satisfy the
+boolean criterion specified by func.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>f</strong><span class="classifier">function</span></dt><dd><p>Function to apply to each subframe. Should return True or False.</p>
+<dt><strong>func</strong><span class="classifier">function</span></dt><dd><p>Function to apply to each subframe. Should return True or False.</p>
 </dd>
 <dt><strong>dropna</strong><span class="classifier">Drop groups that do not pass the filter. True by default;</span></dt><dd><p>If False, groups that evaluate False are filled with NaNs.</p>
 </dd>

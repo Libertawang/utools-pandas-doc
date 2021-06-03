@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-io-formats-style-styler">
 <h1>pandas.io.formats.style.Styler<a class="headerlink" href="#pandas-io-formats-style-styler" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.io.formats.style.Styler">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.io.formats.style.</code><code class="sig-name descname">Styler</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">precision=None</em>, <em class="sig-param">table_styles=None</em>, <em class="sig-param">uuid=None</em>, <em class="sig-param">caption=None</em>, <em class="sig-param">table_attributes=None</em>, <em class="sig-param">cell_ids=True</em>, <em class="sig-param">na_rep: Optional[str] = None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/formats/style.py#L51-L1460"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.io.formats.style.Styler" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.io.formats.style.</span></code><code class="sig-name descname"><span class="pre">Styler</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_styles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">caption</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_rep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uuid_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/formats/style.py#L62-L1657"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.io.formats.style.Styler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helps style a DataFrame or Series according to the data with HTML and CSS.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -76,15 +76,21 @@ where <code class="docutils literal notranslate"><span class="pre">&lt;uuid&gt;<
 number and <code class="docutils literal notranslate"><span class="pre">&lt;num_col&gt;</span></code> is the column number.</p>
 </dd>
 <dt><strong>na_rep</strong><span class="classifier">str, optional</span></dt><dd><p>Representation for missing values.
-If <code class="docutils literal notranslate"><span class="pre">na_rep</span></code> is None, no special formatting is applied</p>
+If <code class="docutils literal notranslate"><span class="pre">na_rep</span></code> is None, no special formatting is applied.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
+</div>
+</dd>
+<dt><strong>uuid_len</strong><span class="classifier">int, default 5</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">uuid</span></code> is not specified, the length of the <code class="docutils literal notranslate"><span class="pre">uuid</span></code> to randomly generate
+expressed in hex characters, in range [0, 32].</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
 </div>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.style</span></code></dt><dd><p>Return a Styler object containing methods for building a styled HTML representation for the DataFrame.</p>
@@ -113,7 +119,7 @@ where <cite>k</cite> is its level in a MultiIndex</p></li>
 <li><p>Column label cells include
 * <code class="docutils literal notranslate"><span class="pre">col_heading</span></code>
 * <code class="docutils literal notranslate"><span class="pre">col&lt;n&gt;</span></code> where <cite>n</cite> is the numeric position of the column
-* <code class="docutils literal notranslate"><span class="pre">evel&lt;k&gt;</span></code> where <cite>k</cite> is the level in a MultiIndex</p></li>
+* <code class="docutils literal notranslate"><span class="pre">level&lt;k&gt;</span></code> where <cite>k</cite> is the level in a MultiIndex</p></li>
 <li><p>Blank cells include <code class="docutils literal notranslate"><span class="pre">blank</span></code></p></li>
 <li><p>Data cells include <code class="docutils literal notranslate"><span class="pre">data</span></code></p></li>
 </ul>
@@ -136,85 +142,88 @@ where <cite>k</cite> is its level in a MultiIndex</p></li>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.apply.html#pandas.io.formats.style.Styler.apply" title="pandas.io.formats.style.Styler.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(self, func[, axis, subset])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.apply.html#pandas.io.formats.style.Styler.apply" title="pandas.io.formats.style.Styler.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(func[, axis, subset])</p></td>
 <td><p>Apply a function column-wise, row-wise, or table-wise.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.applymap.html#pandas.io.formats.style.Styler.applymap" title="pandas.io.formats.style.Styler.applymap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">applymap</span></code></a>(self, func[, subset])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.applymap.html#pandas.io.formats.style.Styler.applymap" title="pandas.io.formats.style.Styler.applymap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">applymap</span></code></a>(func[, subset])</p></td>
 <td><p>Apply a function elementwise.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.background_gradient.html#pandas.io.formats.style.Styler.background_gradient" title="pandas.io.formats.style.Styler.background_gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">background_gradient</span></code></a>(self[, cmap, low, high, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.background_gradient.html#pandas.io.formats.style.Styler.background_gradient" title="pandas.io.formats.style.Styler.background_gradient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">background_gradient</span></code></a>([cmap, low, high, axis, …])</p></td>
 <td><p>Color the background in a gradient style.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.bar.html#pandas.io.formats.style.Styler.bar" title="pandas.io.formats.style.Styler.bar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bar</span></code></a>(self[, subset, axis, color, width, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.bar.html#pandas.io.formats.style.Styler.bar" title="pandas.io.formats.style.Styler.bar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bar</span></code></a>([subset, axis, color, width, align, …])</p></td>
 <td><p>Draw bar chart in the cell backgrounds.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.clear.html#pandas.io.formats.style.Styler.clear" title="pandas.io.formats.style.Styler.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.clear.html#pandas.io.formats.style.Styler.clear" title="pandas.io.formats.style.Styler.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>()</p></td>
 <td><p>Reset the styler, removing any previously applied styles.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.export.html#pandas.io.formats.style.Styler.export" title="pandas.io.formats.style.Styler.export"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.export.html#pandas.io.formats.style.Styler.export" title="pandas.io.formats.style.Styler.export"><code class="xref py py-obj docutils literal notranslate"><span class="pre">export</span></code></a>()</p></td>
 <td><p>Export the styles to applied to the current Styler.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.format.html#pandas.io.formats.style.Styler.format" title="pandas.io.formats.style.Styler.format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format</span></code></a>(self, formatter[, subset])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.format.html#pandas.io.formats.style.Styler.format" title="pandas.io.formats.style.Styler.format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format</span></code></a>(formatter[, subset, na_rep])</p></td>
 <td><p>Format the text display value of cells.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.from_custom_template.html#pandas.io.formats.style.Styler.from_custom_template" title="pandas.io.formats.style.Styler.from_custom_template"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_custom_template</span></code></a>(searchpath, name)</p></td>
 <td><p>Factory function for creating a subclass of <code class="docutils literal notranslate"><span class="pre">Styler</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.hide_columns.html#pandas.io.formats.style.Styler.hide_columns" title="pandas.io.formats.style.Styler.hide_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hide_columns</span></code></a>(self, subset)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.hide_columns.html#pandas.io.formats.style.Styler.hide_columns" title="pandas.io.formats.style.Styler.hide_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hide_columns</span></code></a>(subset)</p></td>
 <td><p>Hide columns from rendering.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.hide_index.html#pandas.io.formats.style.Styler.hide_index" title="pandas.io.formats.style.Styler.hide_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hide_index</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.hide_index.html#pandas.io.formats.style.Styler.hide_index" title="pandas.io.formats.style.Styler.hide_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hide_index</span></code></a>()</p></td>
 <td><p>Hide any indices from rendering.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.highlight_max.html#pandas.io.formats.style.Styler.highlight_max" title="pandas.io.formats.style.Styler.highlight_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">highlight_max</span></code></a>(self[, subset, color, axis])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.highlight_max.html#pandas.io.formats.style.Styler.highlight_max" title="pandas.io.formats.style.Styler.highlight_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">highlight_max</span></code></a>([subset, color, axis])</p></td>
 <td><p>Highlight the maximum by shading the background.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.highlight_min.html#pandas.io.formats.style.Styler.highlight_min" title="pandas.io.formats.style.Styler.highlight_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">highlight_min</span></code></a>(self[, subset, color, axis])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.highlight_min.html#pandas.io.formats.style.Styler.highlight_min" title="pandas.io.formats.style.Styler.highlight_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">highlight_min</span></code></a>([subset, color, axis])</p></td>
 <td><p>Highlight the minimum by shading the background.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.highlight_null.html#pandas.io.formats.style.Styler.highlight_null" title="pandas.io.formats.style.Styler.highlight_null"><code class="xref py py-obj docutils literal notranslate"><span class="pre">highlight_null</span></code></a>(self[, null_color])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.highlight_null.html#pandas.io.formats.style.Styler.highlight_null" title="pandas.io.formats.style.Styler.highlight_null"><code class="xref py py-obj docutils literal notranslate"><span class="pre">highlight_null</span></code></a>([null_color, subset])</p></td>
 <td><p>Shade the background <code class="docutils literal notranslate"><span class="pre">null_color</span></code> for missing values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.pipe.html#pandas.io.formats.style.Styler.pipe" title="pandas.io.formats.style.Styler.pipe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pipe</span></code></a>(self, func, \*args, \*\*kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.pipe.html#pandas.io.formats.style.Styler.pipe" title="pandas.io.formats.style.Styler.pipe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pipe</span></code></a>(func, *args, **kwargs)</p></td>
 <td><p>Apply <code class="docutils literal notranslate"><span class="pre">func(self,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code>, and return the result.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.render.html#pandas.io.formats.style.Styler.render" title="pandas.io.formats.style.Styler.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>(self, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.render.html#pandas.io.formats.style.Styler.render" title="pandas.io.formats.style.Styler.render"><code class="xref py py-obj docutils literal notranslate"><span class="pre">render</span></code></a>(**kwargs)</p></td>
 <td><p>Render the built up styles to HTML.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_caption.html#pandas.io.formats.style.Styler.set_caption" title="pandas.io.formats.style.Styler.set_caption"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_caption</span></code></a>(self, caption)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_caption.html#pandas.io.formats.style.Styler.set_caption" title="pandas.io.formats.style.Styler.set_caption"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_caption</span></code></a>(caption)</p></td>
 <td><p>Set the caption on a Styler.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_na_rep.html#pandas.io.formats.style.Styler.set_na_rep" title="pandas.io.formats.style.Styler.set_na_rep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_na_rep</span></code></a>(self, na_rep)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_na_rep.html#pandas.io.formats.style.Styler.set_na_rep" title="pandas.io.formats.style.Styler.set_na_rep"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_na_rep</span></code></a>(na_rep)</p></td>
 <td><p>Set the missing data representation on a Styler.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_precision.html#pandas.io.formats.style.Styler.set_precision" title="pandas.io.formats.style.Styler.set_precision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_precision</span></code></a>(self, precision)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_precision.html#pandas.io.formats.style.Styler.set_precision" title="pandas.io.formats.style.Styler.set_precision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_precision</span></code></a>(precision)</p></td>
 <td><p>Set the precision used to render.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_properties.html#pandas.io.formats.style.Styler.set_properties" title="pandas.io.formats.style.Styler.set_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_properties</span></code></a>(self[, subset])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_properties.html#pandas.io.formats.style.Styler.set_properties" title="pandas.io.formats.style.Styler.set_properties"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_properties</span></code></a>([subset])</p></td>
 <td><p>Method to set one or more non-data dependent properties or each cell.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_table_attributes.html#pandas.io.formats.style.Styler.set_table_attributes" title="pandas.io.formats.style.Styler.set_table_attributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_table_attributes</span></code></a>(self, attributes)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_table_attributes.html#pandas.io.formats.style.Styler.set_table_attributes" title="pandas.io.formats.style.Styler.set_table_attributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_table_attributes</span></code></a>(attributes)</p></td>
 <td><p>Set the table attributes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_table_styles.html#pandas.io.formats.style.Styler.set_table_styles" title="pandas.io.formats.style.Styler.set_table_styles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_table_styles</span></code></a>(self, table_styles)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_table_styles.html#pandas.io.formats.style.Styler.set_table_styles" title="pandas.io.formats.style.Styler.set_table_styles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_table_styles</span></code></a>(table_styles[, axis, overwrite])</p></td>
 <td><p>Set the table styles on a Styler.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_uuid.html#pandas.io.formats.style.Styler.set_uuid" title="pandas.io.formats.style.Styler.set_uuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_uuid</span></code></a>(self, uuid)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_td_classes.html#pandas.io.formats.style.Styler.set_td_classes" title="pandas.io.formats.style.Styler.set_td_classes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_td_classes</span></code></a>(classes)</p></td>
+<td><p>Add string based CSS class names to data cells that will appear within the <cite>Styler</cite> HTML result.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.set_uuid.html#pandas.io.formats.style.Styler.set_uuid" title="pandas.io.formats.style.Styler.set_uuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_uuid</span></code></a>(uuid)</p></td>
 <td><p>Set the uuid for a Styler.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.to_excel.html#pandas.io.formats.style.Styler.to_excel" title="pandas.io.formats.style.Styler.to_excel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_excel</span></code></a>(self, excel_writer[, sheet_name, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.to_excel.html#pandas.io.formats.style.Styler.to_excel" title="pandas.io.formats.style.Styler.to_excel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_excel</span></code></a>(excel_writer[, sheet_name, na_rep, …])</p></td>
 <td><p>Write Styler to an Excel sheet.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.use.html#pandas.io.formats.style.Styler.use" title="pandas.io.formats.style.Styler.use"><code class="xref py py-obj docutils literal notranslate"><span class="pre">use</span></code></a>(self, styles)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.use.html#pandas.io.formats.style.Styler.use" title="pandas.io.formats.style.Styler.use"><code class="xref py py-obj docutils literal notranslate"><span class="pre">use</span></code></a>(styles)</p></td>
 <td><p>Set the styles on the current Styler.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.where.html#pandas.io.formats.style.Styler.where" title="pandas.io.formats.style.Styler.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(self, cond, value[, other, subset])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.io.formats.style.Styler.where.html#pandas.io.formats.style.Styler.where" title="pandas.io.formats.style.Styler.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a>(cond, value[, other, subset])</p></td>
 <td><p>Apply a function elementwise.</p></td>
 </tr>
 </tbody>

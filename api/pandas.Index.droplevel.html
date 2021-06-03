@@ -50,15 +50,12 @@
   <body>
 <div class="section" id="pandas-index-droplevel">
 <h1>pandas.Index.droplevel<a class="headerlink" href="#pandas-index-droplevel" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.droplevel">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">droplevel</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">level=0</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L1484-L1544"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.droplevel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">droplevel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L1561-L1611"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.droplevel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return index with requested level(s) removed.</p>
 <p>If resulting index has only 1 level left, the result will be
 of Index type, not MultiIndex.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.1: </span>(support for non-MultiIndex)</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -73,6 +70,37 @@ If list-like, elements must be names or indexes of levels.</p>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">(</span>
+<span class="gp">... </span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span>
+<span class="go">MultiIndex([(1, 3, 5),</span>
+<span class="go">            (2, 4, 6)],</span>
+<span class="go">           names=['x', 'y', 'z'])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span><span class="o">.</span><span class="n">droplevel</span><span class="p">()</span>
+<span class="go">MultiIndex([(3, 5),</span>
+<span class="go">            (4, 6)],</span>
+<span class="go">           names=['y', 'z'])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">MultiIndex([(1, 3),</span>
+<span class="go">            (2, 4)],</span>
+<span class="go">           names=['x', 'y'])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="s1">'z'</span><span class="p">)</span>
+<span class="go">MultiIndex([(1, 3),</span>
+<span class="go">            (2, 4)],</span>
+<span class="go">           names=['x', 'y'])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span><span class="o">.</span><span class="n">droplevel</span><span class="p">([</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">])</span>
+<span class="go">Int64Index([5, 6], dtype='int64', name='z')</span>
+</pre></div>
+</div>
 </dd></dl>
 </div>
 </body></html>

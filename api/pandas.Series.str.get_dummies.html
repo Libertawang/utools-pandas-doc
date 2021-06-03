@@ -50,10 +50,11 @@
   <body>
 <div class="section" id="pandas-series-str-get-dummies">
 <h1>pandas.Series.str.get_dummies<a class="headerlink" href="#pandas-series-str-get-dummies" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.get_dummies">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">get_dummies</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sep='|'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L3006-L3019"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.get_dummies" title="Permalink to this definition">¶</a></dt>
-<dd><p>Split each string in the Series by sep and return a DataFrame
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">get_dummies</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'|'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L1880-L1925"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.get_dummies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return DataFrame of dummy/indicator variables for Series.</p>
+<p>Each string in Series is split by sep and returned as a DataFrame
 of dummy/indicator variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -69,7 +70,7 @@ of dummy/indicator variables.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.get_dummies.html#pandas.get_dummies" title="pandas.get_dummies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_dummies</span></code></a></dt><dd><p>Convert categorical variable into dummy/indicator variables.</p>
@@ -78,14 +79,14 @@ of dummy/indicator variables.</p>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'a|b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a|c'</span><span class="p">])</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">()</span>
-<span class="go">   a  b  c</span>
+<span class="go">a  b  c</span>
 <span class="go">0  1  1  0</span>
 <span class="go">1  1  0  0</span>
 <span class="go">2  1  0  1</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'a|b'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="s1">'a|c'</span><span class="p">])</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">()</span>
-<span class="go">   a  b  c</span>
+<span class="go">a  b  c</span>
 <span class="go">0  1  1  0</span>
 <span class="go">1  0  0  0</span>
 <span class="go">2  1  0  1</span>

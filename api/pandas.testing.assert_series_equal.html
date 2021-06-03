@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-testing-assert-series-equal">
 <h1>pandas.testing.assert_series_equal<a class="headerlink" href="#pandas-testing-assert-series-equal" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.testing.assert_series_equal">
-<code class="sig-prename descclassname">pandas.testing.</code><code class="sig-name descname">assert_series_equal</code><span class="sig-paren">(</span><em class="sig-param">left</em>, <em class="sig-param">right</em>, <em class="sig-param">check_dtype=True</em>, <em class="sig-param">check_index_type='equiv'</em>, <em class="sig-param">check_series_type=True</em>, <em class="sig-param">check_less_precise=False</em>, <em class="sig-param">check_names=True</em>, <em class="sig-param">check_exact=False</em>, <em class="sig-param">check_datetimelike_compat=False</em>, <em class="sig-param">check_categorical=True</em>, <em class="sig-param">check_category_order=True</em>, <em class="sig-param">obj='Series'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/_testing.py#L1048-L1205"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.testing.assert_series_equal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.testing.</span></code><code class="sig-name descname"><span class="pre">assert_series_equal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">left</span></em>, <em class="sig-param"><span class="pre">right</span></em>, <em class="sig-param"><span class="pre">check_dtype=True</span></em>, <em class="sig-param"><span class="pre">check_index_type='equiv'</span></em>, <em class="sig-param"><span class="pre">check_series_type=True</span></em>, <em class="sig-param"><span class="pre">check_less_precise=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">check_names=True</span></em>, <em class="sig-param"><span class="pre">check_exact=False</span></em>, <em class="sig-param"><span class="pre">check_datetimelike_compat=False</span></em>, <em class="sig-param"><span class="pre">check_categorical=True</span></em>, <em class="sig-param"><span class="pre">check_category_order=True</span></em>, <em class="sig-param"><span class="pre">check_freq=True</span></em>, <em class="sig-param"><span class="pre">check_flags=True</span></em>, <em class="sig-param"><span class="pre">rtol=1e-05</span></em>, <em class="sig-param"><span class="pre">atol=1e-08</span></em>, <em class="sig-param"><span class="pre">obj='Series'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/_testing.py#L1261-L1498"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.testing.assert_series_equal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check that left and right Series are equal.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -74,6 +74,10 @@ than 1e-5, we compare the two numbers directly and check whether
 they are equivalent within the specified precision. Otherwise, we
 compare the <strong>ratio</strong> of the second number to the first number and
 check whether it is equivalent to 1 within the specified precision.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.0: </span>Use <cite>rtol</cite> and <cite>atol</cite> instead to define relative/absolute
+tolerance, respectively. Similar to <a class="reference external" href="https://docs.python.org/3/library/math.html#math.isclose" title="(in Python v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">math.isclose()</span></code></a>.</p>
+</div>
 </dd>
 <dt><strong>check_names</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to check the Series and Index names attribute.</p>
 </dd>
@@ -83,9 +87,29 @@ check whether it is equivalent to 1 within the specified precision.</p>
 </dd>
 <dt><strong>check_categorical</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to compare internal Categorical exactly.</p>
 </dd>
-<dt><strong>check_category_order</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to compare category order of internal Categoricals</p>
+<dt><strong>check_category_order</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to compare category order of internal Categoricals.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.2.</span></p>
+</div>
+</dd>
+<dt><strong>check_freq</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to check the <cite>freq</cite> attribute on a DatetimeIndex or TimedeltaIndex.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>check_flags</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to check the <cite>flags</cite> attribute.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
+</div>
+</dd>
+<dt><strong>rtol</strong><span class="classifier">float, default 1e-5</span></dt><dd><p>Relative tolerance. Only used when check_exact is False.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>atol</strong><span class="classifier">float, default 1e-8</span></dt><dd><p>Absolute tolerance. Only used when check_exact is False.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
 </div>
 </dd>
 <dt><strong>obj</strong><span class="classifier">str, default ‘Series’</span></dt><dd><p>Specify object name being compared, internally used to show appropriate
@@ -94,6 +118,13 @@ assertion message.</p>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas.testing</span> <span class="kn">import</span> <span class="n">assert_series_equal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">assert_series_equal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 </div>
 </body></html>

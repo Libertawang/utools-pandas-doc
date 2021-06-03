@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-interval-range">
 <h1>pandas.interval_range<a class="headerlink" href="#pandas-interval-range" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.interval_range">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">interval_range</code><span class="sig-paren">(</span><em class="sig-param">start=None</em>, <em class="sig-param">end=None</em>, <em class="sig-param">periods=None</em>, <em class="sig-param">freq=None</em>, <em class="sig-param">name=None</em>, <em class="sig-param">closed='right'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/interval.py#L1222-L1383"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.interval_range" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">interval_range</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'right'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/interval.py#L1128-L1287"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.interval_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a fixed frequency IntervalIndex.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -64,7 +64,7 @@
 <dt><strong>periods</strong><span class="classifier">int, default None</span></dt><dd><p>Number of periods to generate.</p>
 </dd>
 <dt><strong>freq</strong><span class="classifier">numeric, str, or DateOffset, default None</span></dt><dd><p>The length of each interval. Must be consistent with the type of start
-and end, e.g. 2 for numeric, or ‘5H’ for datetime-like.  Default is 1
+and end, e.g. 2 for numeric, or ‘5H’ for datetime-like. Default is 1
 for numeric and ‘D’ for datetime-like.</p>
 </dd>
 <dt><strong>name</strong><span class="classifier">str, default None</span></dt><dd><p>Name of the resulting IntervalIndex.</p>
@@ -80,7 +80,7 @@ or neither.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.IntervalIndex.html#pandas.IntervalIndex" title="pandas.IntervalIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IntervalIndex</span></code></a></dt><dd><p>An Index of intervals that are all closed on the same side.</p>
@@ -94,7 +94,7 @@ exactly three must be specified. If <code class="docutils literal notranslate"><
 <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>, inclusively.</p>
 <p>To learn more about datetime-like frequency strings, please see <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases">this link</a>.</p>
 <p class="rubric">Examples</p>
-<p>Numeric <code class="docutils literal notranslate"><span class="pre">start</span></code> and  <code class="docutils literal notranslate"><span class="pre">end</span></code> is supported.</p>
+<p>Numeric <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> is supported.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">interval_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="go">IntervalIndex([(0, 1], (1, 2], (2, 3], (3, 4], (4, 5]],</span>
 <span class="go">              closed='right', dtype='interval[int64]')</span>
@@ -109,7 +109,7 @@ exactly three must be specified. If <code class="docutils literal notranslate"><
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">freq</span></code> parameter specifies the frequency between the left and right.
-endpoints of the individual intervals within the <code class="docutils literal notranslate"><span class="pre">IntervalIndex</span></code>.  For
+endpoints of the individual intervals within the <code class="docutils literal notranslate"><span class="pre">IntervalIndex</span></code>. For
 numeric <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code>, the frequency must also be numeric.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">interval_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
 <span class="go">IntervalIndex([(0.0, 1.5], (1.5, 3.0], (3.0, 4.5], (4.5, 6.0]],</span>

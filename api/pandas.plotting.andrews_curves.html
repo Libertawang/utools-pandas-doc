@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-plotting-andrews-curves">
 <h1>pandas.plotting.andrews_curves<a class="headerlink" href="#pandas-plotting-andrews-curves" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.plotting.andrews_curves">
-<code class="sig-prename descclassname">pandas.plotting.</code><code class="sig-name descname">andrews_curves</code><span class="sig-paren">(</span><em class="sig-param">frame</em>, <em class="sig-param">class_column</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">samples=200</em>, <em class="sig-param">color=None</em>, <em class="sig-param">colormap=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_misc.py#L211-L255"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.plotting.andrews_curves" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.plotting.</span></code><code class="sig-name descname"><span class="pre">andrews_curves</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colormap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_misc.py#L223-L279"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.plotting.andrews_curves" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a matplotlib plot of Andrews curves, for visualising clusters of
 multivariate data.</p>
 <p>Andrews curves have the functional form:</p>
@@ -86,6 +86,17 @@ from matplotlib.</p>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">'https://raw.github.com/pandas-dev/'</span>
+<span class="gp">... </span>    <span class="s1">'pandas/master/pandas/tests/io/data/csv/iris.csv'</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">andrews_curves</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">'Name'</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-plotting-andrews_curves-1.png" class="plot-directive" src="../../_images/pandas-plotting-andrews_curves-1.png"/>
+</div>
 </dd></dl>
 </div>
 </body></html>

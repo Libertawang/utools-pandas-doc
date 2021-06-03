@@ -50,11 +50,12 @@
   <body>
 <div class="section" id="pandas-multiindex-get-loc">
 <h1>pandas.MultiIndex.get_loc<a class="headerlink" href="#pandas-multiindex-get-loc" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.MultiIndex.get_loc">
-<code class="sig-prename descclassname">MultiIndex.</code><code class="sig-name descname">get_loc</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">key</em>, <em class="sig-param">method=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/multi.py#L2600-L2707"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.MultiIndex.get_loc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get location for a label or a tuple of labels as an integer, slice or
-boolean mask.</p>
+<code class="sig-prename descclassname"><span class="pre">MultiIndex.</span></code><code class="sig-name descname"><span class="pre">get_loc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/multi.py#L2811-L2921"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.MultiIndex.get_loc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get location for a label or a tuple of labels.</p>
+<p>The location is returned as an integer/slice or boolean
+mask.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -70,7 +71,7 @@ boolean mask array, otherwise it is always a slice or int.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Index.get_loc.html#pandas.Index.get_loc" title="pandas.Index.get_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index.get_loc</span></code></a></dt><dd><p>The get_loc method for (single-level) index.</p>

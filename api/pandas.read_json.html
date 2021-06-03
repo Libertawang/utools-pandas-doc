@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-json">
 <h1>pandas.read_json<a class="headerlink" href="#pandas-read-json" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_json">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_json</code><span class="sig-paren">(</span><em class="sig-param">path_or_buf=None</em>, <em class="sig-param">orient=None</em>, <em class="sig-param">typ='frame'</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">convert_axes=None</em>, <em class="sig-param">convert_dates=True</em>, <em class="sig-param">keep_default_dates=True</em>, <em class="sig-param">numpy=False</em>, <em class="sig-param">precise_float=False</em>, <em class="sig-param">date_unit=None</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">lines=False</em>, <em class="sig-param">chunksize=None</em>, <em class="sig-param">compression='infer'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/json/_json.py#L349-L612"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_json" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_json</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_or_buf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">typ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'frame'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_default_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precise_float</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'infer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/json/_json.py#L290-L563"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a JSON string to pandas object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -64,7 +64,7 @@ expected. A local file could be:
 <p>If you want to pass in a path object, pandas accepts any
 <code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
 <p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method,
-such as a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
+such as a file handle (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
 or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
 </dd>
 <dt><strong>orient</strong><span class="classifier">str</span></dt><dd><p>Indication of expected JSON string format.
@@ -102,9 +102,6 @@ of the <cite>typ</cite> parameter.</p>
 </ul>
 </li>
 </ul>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0: </span>‘table’ as an allowed value for the <code class="docutils literal notranslate"><span class="pre">orient</span></code> argument</p>
-</div>
 </dd>
 <dt><strong>typ</strong><span class="classifier">{‘frame’, ‘series’}, default ‘frame’</span></dt><dd><p>The type of object to recover.</p>
 </dd>
@@ -121,8 +118,16 @@ if False, then don’t infer dtypes at all, applies only to the data.</p>
 <p><span class="versionmodified changed">Changed in version 0.25.0: </span>Not applicable for <code class="docutils literal notranslate"><span class="pre">orient='table'</span></code>.</p>
 </div>
 </dd>
-<dt><strong>convert_dates</strong><span class="classifier">bool or list of str, default True</span></dt><dd><p>List of columns to parse for dates. If True, then try to parse
-datelike columns. A column label is datelike if</p>
+<dt><strong>convert_dates</strong><span class="classifier">bool or list of str, default True</span></dt><dd><p>If True then default datelike columns may be converted (depending on
+keep_default_dates).
+If False, no dates will be converted.
+If a list of column names, then those columns will be converted and
+default datelike columns may also be converted (depending on
+keep_default_dates).</p>
+</dd>
+<dt><strong>keep_default_dates</strong><span class="classifier">bool, default True</span></dt><dd><p>If parsing dates (convert_dates is not False), then try to parse the
+default datelike columns.
+A column label is datelike if</p>
 <ul class="simple">
 <li><p>it ends with <code class="docutils literal notranslate"><span class="pre">'_at'</span></code>,</p></li>
 <li><p>it ends with <code class="docutils literal notranslate"><span class="pre">'_time'</span></code>,</p></li>
@@ -130,8 +135,6 @@ datelike columns. A column label is datelike if</p>
 <li><p>it is <code class="docutils literal notranslate"><span class="pre">'modified'</span></code>, or</p></li>
 <li><p>it is <code class="docutils literal notranslate"><span class="pre">'date'</span></code>.</p></li>
 </ul>
-</dd>
-<dt><strong>keep_default_dates</strong><span class="classifier">bool, default True</span></dt><dd><p>If parsing dates, then parse the default datelike columns.</p>
 </dd>
 <dt><strong>numpy</strong><span class="classifier">bool, default False</span></dt><dd><p>Direct decoding to numpy arrays. Supports numeric data only, but
 non-numeric column and index labels are supported. Note also that the
@@ -158,8 +161,8 @@ See the <a class="reference external" href="https://pandas.pydata.org/pandas-doc
 for more information on <code class="docutils literal notranslate"><span class="pre">chunksize</span></code>.
 This can only be passed if <cite>lines=True</cite>.
 If this is None, the file will be read into memory all at once.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2: </span><code class="docutils literal notranslate"><span class="pre">JsonReader</span></code> is a context manager.</p>
 </div>
 </dd>
 <dt><strong>compression</strong><span class="classifier">{‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}, default ‘infer’</span></dt><dd><p>For on-the-fly decompression of on-disk data. If ‘infer’, then use
@@ -167,8 +170,22 @@ gzip, bz2, zip or xz if path_or_buf is a string ending in
 ‘.gz’, ‘.bz2’, ‘.zip’, or ‘xz’, respectively, and no decompression
 otherwise. If using ‘zip’, the ZIP file must contain only one data
 file to be read in. Set to None for no decompression.</p>
+</dd>
+<dt><strong>nrows</strong><span class="classifier">int, optional</span></dt><dd><p>The number of lines from the line-delimited jsonfile that has to be read.
+This can only be passed if <cite>lines=True</cite>.
+If this is None, all the rows will be returned.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd>
+<dt><strong>storage_options</strong><span class="classifier">dict, optional</span></dt><dd><p>Extra options that make sense for a particular storage connection, e.g.
+host, port, username, password, etc., if using a URL that will
+be parsed by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, e.g., starting “s3://”, “gcs://”. An error
+will be raised if providing this argument with a non-fsspec URL.
+See the fsspec and backend storage implementation docs for the set of
+allowed keys and values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
 </div>
 </dd>
 </dl>
@@ -180,7 +197,7 @@ file to be read in. Set to None for no decompression.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.to_json.html#pandas.DataFrame.to_json" title="pandas.DataFrame.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.to_json</span></code></a></dt><dd><p>Convert a DataFrame to a JSON string.</p>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-api-extensions-register-series-accessor">
 <h1>pandas.api.extensions.register_series_accessor<a class="headerlink" href="#pandas-api-extensions-register-series-accessor" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.api.extensions.register_series_accessor">
-<code class="sig-prename descclassname">pandas.api.extensions.</code><code class="sig-name descname">register_series_accessor</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/accessor.py#L295-L304"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.api.extensions.register_series_accessor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.api.extensions.</span></code><code class="sig-name descname"><span class="pre">register_series_accessor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/accessor.py#L285-L289"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.api.extensions.register_series_accessor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register a custom accessor on Series objects.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -69,10 +69,15 @@ if this name conflicts with a preexisting attribute.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.api.extensions.register_dataframe_accessor.html#pandas.api.extensions.register_dataframe_accessor" title="pandas.api.extensions.register_dataframe_accessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_dataframe_accessor</span></code></a>, <a class="reference internal" href="pandas.api.extensions.register_index_accessor.html#pandas.api.extensions.register_index_accessor" title="pandas.api.extensions.register_index_accessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_index_accessor</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.api.extensions.register_dataframe_accessor.html#pandas.api.extensions.register_dataframe_accessor" title="pandas.api.extensions.register_dataframe_accessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_dataframe_accessor</span></code></a></dt><dd><p>Register a custom accessor on DataFrame objects.</p>
+</dd>
+<dt><a class="reference internal" href="#pandas.api.extensions.register_series_accessor" title="pandas.api.extensions.register_series_accessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_series_accessor</span></code></a></dt><dd><p>Register a custom accessor on Series objects.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.api.extensions.register_index_accessor.html#pandas.api.extensions.register_index_accessor" title="pandas.api.extensions.register_index_accessor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_index_accessor</span></code></a></dt><dd><p>Register a custom accessor on Index objects.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -112,14 +117,15 @@ if the data passed to your accessor has an incorrect dtype.</p>
 </pre></div>
 </div>
 <p>Back in an interactive IPython session:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'longitude'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
-<span class="gp">... </span>                   <span class="s1">'latitude'</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">center</span>
-<span class="go">(5.0, 10.0)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="go"># plots data on a map</span>
+<blockquote>
+<div><div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">ds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"longitude"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+<span class="gp">   ...: </span>                   <span class="s2">"latitude"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)})</span>
+<span class="gp">In [2]: </span><span class="n">ds</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">center</span>
+<span class="gh">Out[2]: </span><span class="go">(5.0, 10.0)</span>
+<span class="gp">In [3]: </span><span class="n">ds</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  <span class="c1"># plots data on a map</span>
 </pre></div>
 </div>
+</div></blockquote>
 </dd></dl>
 </div>
 </body></html>

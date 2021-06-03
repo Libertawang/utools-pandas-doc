@@ -50,11 +50,10 @@
   <body>
 <div class="section" id="pandas-core-groupby-dataframegroupby-nunique">
 <h1>pandas.core.groupby.DataFrameGroupBy.nunique<a class="headerlink" href="#pandas-core-groupby-dataframegroupby-nunique" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.groupby.DataFrameGroupBy.nunique">
-<code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">nunique</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">dropna: bool = True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/groupby/generic.py#L1791-L1868"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.nunique" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return DataFrame with number of distinct observations per group for
-each column.</p>
+<code class="sig-prename descclassname"><span class="pre">DataFrameGroupBy.</span></code><code class="sig-name descname"><span class="pre">nunique</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/groupby/generic.py#L1758-L1834"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.nunique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return DataFrame with counts of unique elements in each position.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -84,11 +83,11 @@ each column.</p>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-<span class="go">    id  value1  value2</span>
+<span class="go">      value1  value2</span>
 <span class="go">id</span>
-<span class="go">egg    1       1       1</span>
-<span class="go">ham    1       1       2</span>
-<span class="go">spam   1       2       1</span>
+<span class="go">egg        1       1</span>
+<span class="go">ham        1       2</span>
+<span class="go">spam       2       1</span>
 </pre></div>
 </div>
 <p>Check for rows with the same id but conflicting values:</p>

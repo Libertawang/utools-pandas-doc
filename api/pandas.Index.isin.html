@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-index-isin">
 <h1>pandas.Index.isin<a class="headerlink" href="#pandas-index-isin" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.isin">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">isin</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">values</em>, <em class="sig-param">level=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L4585-L4666"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.isin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">isin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L5141-L5224"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.isin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a boolean array where the index values are in <cite>values</cite>.</p>
 <p>Compute boolean array of whether each index value is found in the
 passed set of values. The length of the returned boolean array matches
@@ -74,7 +74,7 @@ the length of the index.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.isin.html#pandas.Series.isin" title="pandas.Series.isin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.isin</span></code></a></dt><dd><p>Same for Series.</p>
@@ -99,15 +99,18 @@ number of levels, or specify <cite>level</cite>. Otherwise it will raise a
 <span class="go">Int64Index([1, 2, 3], dtype='int64')</span>
 </pre></div>
 </div>
-<p>Check whether each index value in a list of values.
-&gt;&gt;&gt; idx.isin([1, 4])
-array([ True, False, False])</p>
+<p>Check whether each index value in a list of values.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="go">array([ True, False, False])</span>
+</pre></div>
+</div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">midx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
 <span class="gp">... </span>                                 <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">]],</span>
 <span class="gp">... </span>                                 <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s1">'number'</span><span class="p">,</span> <span class="s1">'color'</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">midx</span>
-<span class="go">MultiIndex(levels=[[1, 2, 3], ['blue', 'green', 'red']],</span>
-<span class="go">           codes=[[0, 1, 2], [2, 0, 1]],</span>
+<span class="go">MultiIndex([(1,   'red'),</span>
+<span class="go">            (2,  'blue'),</span>
+<span class="go">            (3, 'green')],</span>
 <span class="go">           names=['number', 'color'])</span>
 </pre></div>
 </div>

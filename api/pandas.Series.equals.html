@@ -50,15 +50,16 @@
   <body>
 <div class="section" id="pandas-series-equals">
 <h1>pandas.Series.equals<a class="headerlink" href="#pandas-series-equals" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.equals">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">equals</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L1350-L1435"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.equals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">equals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L1310-L1392"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.equals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test whether two objects contain the same elements.</p>
 <p>This function allows two Series or DataFrames to be compared against
 each other to see if they have the same shape and elements. NaNs in
-the same location are considered equal. The column headers do not
-need to have the same type, but the elements within the columns must
-be the same dtype.</p>
+the same location are considered equal.</p>
+<p>The row/column index do not need to have the same type, as long
+as the values are considered equal. Corresponding columns must be of
+the same dtype.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -74,7 +75,7 @@ otherwise.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.eq.html#pandas.Series.eq" title="pandas.Series.eq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.eq</span></code></a></dt><dd><p>Compare two Series objects of the same length and return a Series where each element is True if the element in each Series is equal, False otherwise.</p>
@@ -85,15 +86,10 @@ otherwise.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.testing.assert_frame_equal.html#pandas.testing.assert_frame_equal" title="pandas.testing.assert_frame_equal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">testing.assert_frame_equal</span></code></a></dt><dd><p>Like assert_series_equal, but targets DataFrames.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array_equal.html#numpy.array_equal" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array_equal</span></code></a></dt><dd><p>Return True if two arrays have the same shape and elements, False otherwise.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array_equal.html#numpy.array_equal" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array_equal</span></code></a></dt><dd><p>Return True if two arrays have the same shape and elements, False otherwise.</p>
 </dd>
 </dl>
 </div>
-<p class="rubric">Notes</p>
-<p>This function requires that the elements have the same dtype as their
-respective elements in the other Series or DataFrame. However, the
-column labels do not need to have the same type, as long as they are
-still considered equal.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>

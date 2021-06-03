@@ -50,16 +50,16 @@
   <body>
 <div class="section" id="pandas-eval">
 <h1>pandas.eval<a class="headerlink" href="#pandas-eval" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.eval">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param">expr</em>, <em class="sig-param">parser='pandas'</em>, <em class="sig-param">engine: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">truediv=&lt;object object at 0x7f3d5725a380&gt;</em>, <em class="sig-param">local_dict=None</em>, <em class="sig-param">global_dict=None</em>, <em class="sig-param">resolvers=()</em>, <em class="sig-param">level=0</em>, <em class="sig-param">target=None</em>, <em class="sig-param">inplace=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/computation/eval.py#L170-L390"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.eval" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">eval</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">expr</span></em>, <em class="sig-param"><span class="pre">parser='pandas'</span></em>, <em class="sig-param"><span class="pre">engine=None</span></em>, <em class="sig-param"><span class="pre">truediv=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">local_dict=None</span></em>, <em class="sig-param"><span class="pre">global_dict=None</span></em>, <em class="sig-param"><span class="pre">resolvers=()</span></em>, <em class="sig-param"><span class="pre">level=0</span></em>, <em class="sig-param"><span class="pre">target=None</span></em>, <em class="sig-param"><span class="pre">inplace=False</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/computation/eval.py#L160-L400"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.eval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluate a Python expression as a string using various backends.</p>
 <p>The following arithmetic operations are supported: <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>,
 <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code> (python engine only) along with the following
 boolean operations: <code class="docutils literal notranslate"><span class="pre">|</span></code> (or), <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> (and), and <code class="docutils literal notranslate"><span class="pre">~</span></code> (not).
-Additionally, the <code class="docutils literal notranslate"><span class="pre">'pandas'</span></code> parser allows the use of <a class="reference external" href="https://docs.python.org/3/reference/expressions.html#and" title="(in Python v3.8)"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">and</span></code></a>,
-<a class="reference external" href="https://docs.python.org/3/reference/expressions.html#or" title="(in Python v3.8)"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">or</span></code></a>, and <a class="reference external" href="https://docs.python.org/3/reference/expressions.html#not" title="(in Python v3.8)"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">not</span></code></a> with the same semantics as the
-corresponding bitwise operators.  <a class="reference internal" href="pandas.Series.html#pandas.Series" title="pandas.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> and
+Additionally, the <code class="docutils literal notranslate"><span class="pre">'pandas'</span></code> parser allows the use of <a class="reference external" href="https://docs.python.org/3/reference/expressions.html#and" title="(in Python v3.9)"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">and</span></code></a>,
+<a class="reference external" href="https://docs.python.org/3/reference/expressions.html#or" title="(in Python v3.9)"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">or</span></code></a>, and <a class="reference external" href="https://docs.python.org/3/reference/expressions.html#not" title="(in Python v3.9)"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">not</span></code></a> with the same semantics as the
+corresponding bitwise operators. <a class="reference internal" href="pandas.Series.html#pandas.Series" title="pandas.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> and
 <a class="reference internal" href="pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> objects are supported and behave as they would
 with plain ol’ Python evaluation.</p>
 <dl class="field-list">
@@ -72,13 +72,13 @@ only Python <a class="reference external" href="https://docs.python.org/3/refere
 <dt><strong>parser</strong><span class="classifier">{‘pandas’, ‘python’}, default ‘pandas’</span></dt><dd><p>The parser to use to construct the syntax tree from the expression. The
 default of <code class="docutils literal notranslate"><span class="pre">'pandas'</span></code> parses code slightly different than standard
 Python. Alternatively, you can parse an expression using the
-<code class="docutils literal notranslate"><span class="pre">'python'</span></code> parser to retain strict Python semantics.  See the
+<code class="docutils literal notranslate"><span class="pre">'python'</span></code> parser to retain strict Python semantics. See the
 <a class="reference internal" href="../../user_guide/enhancingperf.html#enhancingperf-eval"><span class="std std-ref">enhancing performance</span></a> documentation for
 more details.</p>
 </dd>
 <dt><strong>engine</strong><span class="classifier">{‘python’, ‘numexpr’}, default ‘numexpr’</span></dt><dd><p>The engine used to evaluate the expression. Supported engines are</p>
 <ul class="simple">
-<li><p>None         : tries to use <code class="docutils literal notranslate"><span class="pre">numexpr</span></code>, falls back to <code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
+<li><p>None : tries to use <code class="docutils literal notranslate"><span class="pre">numexpr</span></code>, falls back to <code class="docutils literal notranslate"><span class="pre">python</span></code></p></li>
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">'numexpr'</span></code>: This default engine evaluates pandas objects using</dt><dd><p>numexpr for large speed ups in complex expressions
 with large frames.</p>
@@ -93,8 +93,10 @@ with large frames.</p>
 </ul>
 <p>More backends may be available in the future.</p>
 </dd>
-<dt><strong>truediv</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to use true division, like in Python &gt;= 3.
-deprecated:: 1.0.0</p>
+<dt><strong>truediv</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to use true division, like in Python &gt;= 3.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.0.0.</span></p>
+</div>
 </dd>
 <dt><strong>local_dict</strong><span class="classifier">dict or None, optional</span></dt><dd><p>A dictionary of local variables, taken from locals() by default.</p>
 </dd>
@@ -124,7 +126,8 @@ the mutation.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>ndarray, numeric scalar, DataFrame, Series</dt><dd></dd>
+<dt>ndarray, numeric scalar, DataFrame, Series, or None</dt><dd><p>The completion value of evaluating the given code or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
@@ -149,11 +152,13 @@ does not support the <cite>.copy()</cite> method</p></li>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.DataFrame.query.html#pandas.DataFrame.query" title="pandas.DataFrame.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.query</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.DataFrame.eval.html#pandas.DataFrame.eval" title="pandas.DataFrame.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.eval</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.DataFrame.query.html#pandas.DataFrame.query" title="pandas.DataFrame.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.query</span></code></a></dt><dd><p>Evaluates a boolean expression to query the columns of a frame.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.eval.html#pandas.DataFrame.eval" title="pandas.DataFrame.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.eval</span></code></a></dt><dd><p>Evaluate a string describing operations on DataFrame columns.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -161,6 +166,21 @@ does not support the <cite>.copy()</cite> method</p></li>
 recursively cast to <code class="docutils literal notranslate"><span class="pre">float64</span></code>.</p>
 <p>See the <a class="reference internal" href="../../user_guide/enhancingperf.html#enhancingperf-eval"><span class="std std-ref">enhancing performance</span></a> documentation for
 more details.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"animal"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"pig"</span><span class="p">],</span> <span class="s2">"age"</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">  animal  age</span>
+<span class="go">0    dog   10</span>
+<span class="go">1    pig   20</span>
+</pre></div>
+</div>
+<p>We can add a new column using <code class="docutils literal notranslate"><span class="pre">pd.eval</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="s2">"double_age = df.age * 2"</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="go">  animal  age  double_age</span>
+<span class="go">0    dog   10          20</span>
+<span class="go">1    pig   20          40</span>
+</pre></div>
+</div>
 </dd></dl>
 </div>
 </body></html>

@@ -50,24 +50,19 @@
   <body>
 <div class="section" id="pandas-core-groupby-dataframegroupby-mad">
 <h1>pandas.core.groupby.DataFrameGroupBy.mad<a class="headerlink" href="#pandas-core-groupby-dataframegroupby-mad" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.groupby.DataFrameGroupBy.mad">
-<em class="property">property </em><code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">mad</code><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.mad" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the mean absolute deviation of the values for the requested axis.</p>
+<em class="property"><span class="pre">property</span> </em><code class="sig-prename descclassname"><span class="pre">DataFrameGroupBy.</span></code><code class="sig-name descname"><span class="pre">mad</span></code><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.mad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the mean absolute deviation of the values over the requested axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>axis</strong><span class="classifier">{index (0), columns (1)}</span></dt><dd><p>Axis for the function to be applied on.</p>
 </dd>
-<dt><strong>skipna</strong><span class="classifier">bool, default True</span></dt><dd><p>Exclude NA/null values when computing the result.</p>
+<dt><strong>skipna</strong><span class="classifier">bool, default None</span></dt><dd><p>Exclude NA/null values when computing the result.</p>
 </dd>
 <dt><strong>level</strong><span class="classifier">int or level name, default None</span></dt><dd><p>If the axis is a MultiIndex (hierarchical), count along a
 particular level, collapsing into a Series.</p>
-</dd>
-<dt><strong>numeric_only</strong><span class="classifier">bool, default None</span></dt><dd><p>Include only float, int, boolean columns. If None, will attempt to use
-everything, then use only numeric data. Not implemented for Series.</p>
-</dd>
-<dt><strong>**kwargs</strong></dt><dd><p>Additional keyword arguments to be passed to the function.</p>
 </dd>
 </dl>
 </dd>

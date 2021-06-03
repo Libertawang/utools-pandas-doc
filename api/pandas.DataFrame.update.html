@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-update">
 <h1>pandas.DataFrame.update<a class="headerlink" href="#pandas-dataframe-update" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.update">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">join='left'</em>, <em class="sig-param">overwrite=True</em>, <em class="sig-param">filter_func=None</em>, <em class="sig-param">errors='ignore'</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L5583-L5732"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">join</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'left'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L6450-L6599"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify in place using non-NA values from another DataFrame.</p>
 <p>Aligns on indices. There is no return value.</p>
 <dl class="field-list">
@@ -105,12 +105,12 @@ to <cite>errors=’ignore’|’raise’</cite>.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict.update" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict.update</span></code></a></dt><dd><p>Similar method for dictionaries.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict.update" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict.update</span></code></a></dt><dd><p>Similar method for dictionaries.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="pandas.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.merge</span></code></a></dt><dd><p>For column(s)-on-columns(s) operations.</p>
+<dt><a class="reference internal" href="pandas.DataFrame.merge.html#pandas.DataFrame.merge" title="pandas.DataFrame.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.merge</span></code></a></dt><dd><p>For column(s)-on-column(s) operations.</p>
 </dd>
 </dl>
 </div>
@@ -140,7 +140,7 @@ only values at matching index/column labels are updated.</p>
 <span class="go">2  c  f</span>
 </pre></div>
 </div>
-<p>For Series, it’s name attribute must be set.</p>
+<p>For Series, its name attribute must be set.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span>
 <span class="gp">... </span>                   <span class="s1">'B'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">,</span> <span class="s1">'z'</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new_column</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">'B'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>

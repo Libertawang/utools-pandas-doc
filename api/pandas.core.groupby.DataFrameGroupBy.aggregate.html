@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="../css/basic.css" type="text/css">
+    <link rel="stylesheet" href="../css/pygments.css" type="text/css">
+    <link href="../css/index.css" rel="stylesheet">
+    <style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_About.MathJax_MousePost {outline: none}
+    .MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    .MathJax_MenuItem {padding: 1px 2em; background: transparent}
+    .MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+    .MathJax_MenuActive .MathJax_MenuArrow {color: white}
+    .MathJax_MenuArrow.RTL {left: .5em; right: auto}
+    .MathJax_MenuCheck {position: absolute; left: .7em}
+    .MathJax_MenuCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuRadioCheck {position: absolute; left: .7em}
+    .MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+    .MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+    .MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+    .MathJax_MenuDisabled {color: GrayText}
+    .MathJax_MenuActive {background-color: #606872; color: white}
+    .MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+    .MathJax_ContextMenu:focus {outline: none}
+    .MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+    #MathJax_AboutClose {top: .2em; right: .2em}
+    .MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+    .MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+    .MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+    .MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+    .MathJax_MenuClose:hover span {background-color: #CCC!important}
+    .MathJax_MenuClose:hover:focus {outline: none}
+    </style>
+    <style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+    </style>
+    <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+    .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+    </style>
+    <style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+    #MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    #MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+    #MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+    </style>
+    <style type="text/css">.MathJax_Preview {color: #888}
+    #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+    #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+    .MathJax_Error {color: #CC0000; font-style: italic}
+    </style>
+</head>
+  <body>
+<div class="section" id="pandas-core-groupby-dataframegroupby-aggregate">
+<h1>pandas.core.groupby.DataFrameGroupBy.aggregate<a class="headerlink" href="#pandas-core-groupby-dataframegroupby-aggregate" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="pandas.core.groupby.DataFrameGroupBy.aggregate">
+<code class="sig-prename descclassname"><span class="pre">DataFrameGroupBy.</span></code><code class="sig-name descname"><span class="pre">aggregate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/groupby/generic.py#L931-L993"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregate using one or more operations over the specified axis.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>func</strong><span class="classifier">function, str, list or dict</span></dt><dd><p>Function to use for aggregating the data. If a function, must either
+work when passed a DataFrame or when passed to DataFrame.apply.</p>
+<p>Accepted combinations are:</p>
+<ul class="simple">
+<li><p>function</p></li>
+<li><p>string function name</p></li>
+<li><p>list of functions and/or function names, e.g. <code class="docutils literal notranslate"><span class="pre">[np.sum,</span> <span class="pre">'mean']</span></code></p></li>
+<li><p>dict of axis labels -&gt; functions, function names or list of such.</p></li>
+</ul>
+<p>Can also accept a Numba JIT function with
+<code class="docutils literal notranslate"><span class="pre">engine='numba'</span></code> specified. Only passing a single function is supported
+with this engine.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">'numba'</span></code> engine is chosen, the function must be
+a user defined function with <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">index</span></code> as the
+first and second arguments respectively in the function signature.
+Each group’s index will be passed to the user defined function
+and optionally available for use.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>*args</strong></dt><dd><p>Positional arguments to pass to func.</p>
+</dd>
+<dt><strong>engine</strong><span class="classifier">str, default None</span></dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'cython'</span></code> : Runs the function through C-extensions from cython.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'numba'</span></code> : Runs the function through JIT compiled code from numba.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> : Defaults to <code class="docutils literal notranslate"><span class="pre">'cython'</span></code> or globally setting <code class="docutils literal notranslate"><span class="pre">compute.use_numba</span></code></p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>engine_kwargs</strong><span class="classifier">dict, default None</span></dt><dd><ul class="simple">
+<li><p>For <code class="docutils literal notranslate"><span class="pre">'cython'</span></code> engine, there are no accepted <code class="docutils literal notranslate"><span class="pre">engine_kwargs</span></code></p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">'numba'</span></code> engine, the engine can accept <code class="docutils literal notranslate"><span class="pre">nopython</span></code>, <code class="docutils literal notranslate"><span class="pre">nogil</span></code>
+and <code class="docutils literal notranslate"><span class="pre">parallel</span></code> dictionary keys. The values must either be <code class="docutils literal notranslate"><span class="pre">True</span></code> or
+<code class="docutils literal notranslate"><span class="pre">False</span></code>. The default <code class="docutils literal notranslate"><span class="pre">engine_kwargs</span></code> for the <code class="docutils literal notranslate"><span class="pre">'numba'</span></code> engine is
+<code class="docutils literal notranslate"><span class="pre">{'nopython':</span> <span class="pre">True,</span> <span class="pre">'nogil':</span> <span class="pre">False,</span> <span class="pre">'parallel':</span> <span class="pre">False}</span></code> and will be
+applied to the function</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>**kwargs</strong></dt><dd><p>Keyword arguments to be passed into func.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>DataFrame</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.groupby.apply</span></code></dt><dd><p>Apply function func group-wise and combine the results together.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.groupby.transform</span></code></dt><dd><p>Aggregate using one or more operations over the specified axis.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.aggregate</span></code></dt><dd><p>Transforms the Series on each group based on the given function.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">engine='numba'</span></code>, there will be no “fall back” behavior internally.
+The group data and group index will be passed as numpy arrays to the JITed
+user defined function, and no alternative execution attempts will be tried.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">{</span>
+<span class="gp">... </span>        <span class="s2">"A"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="s2">"B"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="s2">"C"</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.362838</span><span class="p">,</span> <span class="mf">0.227877</span><span class="p">,</span> <span class="mf">1.267767</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.562860</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">   A  B         C</span>
+<span class="go">0  1  1  0.362838</span>
+<span class="go">1  1  2  0.227877</span>
+<span class="go">2  2  3  1.267767</span>
+<span class="go">3  2  4 -0.562860</span>
+</pre></div>
+</div>
+<p>The aggregation is for each column.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">'min'</span><span class="p">)</span>
+<span class="go">   B         C</span>
+<span class="go">A</span>
+<span class="go">1  1  0.227877</span>
+<span class="go">2  3 -0.562860</span>
+</pre></div>
+</div>
+<p>Multiple aggregations</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">'min'</span><span class="p">,</span> <span class="s1">'max'</span><span class="p">])</span>
+<span class="go">    B             C</span>
+<span class="go">  min max       min       max</span>
+<span class="go">A</span>
+<span class="go">1   1   2  0.227877  0.362838</span>
+<span class="go">2   3   4 -0.562860  1.267767</span>
+</pre></div>
+</div>
+<p>Select a column for aggregation</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span><span class="o">.</span><span class="n">B</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">'min'</span><span class="p">,</span> <span class="s1">'max'</span><span class="p">])</span>
+<span class="go">   min  max</span>
+<span class="go">A</span>
+<span class="go">1    1    2</span>
+<span class="go">2    3    4</span>
+</pre></div>
+</div>
+<p>Different aggregations per column</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'A'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">'B'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'min'</span><span class="p">,</span> <span class="s1">'max'</span><span class="p">],</span> <span class="s1">'C'</span><span class="p">:</span> <span class="s1">'sum'</span><span class="p">})</span>
+<span class="go">    B             C</span>
+<span class="go">  min max       sum</span>
+<span class="go">A</span>
+<span class="go">1   1   2  0.590715</span>
+<span class="go">2   3   4  0.704907</span>
+</pre></div>
+</div>
+<p>To control the output names with different aggregations per column,
+pandas supports “named aggregation”</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"A"</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">b_min</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">"B"</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s2">"min"</span><span class="p">),</span>
+<span class="gp">... </span>    <span class="n">c_sum</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">"C"</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s2">"sum"</span><span class="p">))</span>
+<span class="go">   b_min     c_sum</span>
+<span class="go">A</span>
+<span class="go">1      1  0.590715</span>
+<span class="go">2      3  0.704907</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The keywords are the <em>output</em> column names</p></li>
+<li><p>The values are tuples whose first element is the column to select
+and the second element is the aggregation to apply to that column.
+Pandas provides the <code class="docutils literal notranslate"><span class="pre">pandas.NamedAgg</span></code> namedtuple with the fields
+<code class="docutils literal notranslate"><span class="pre">['column',</span> <span class="pre">'aggfunc']</span></code> to make it clearer what the arguments are.
+As usual, the aggregation can be a callable or a string alias.</p></li>
+</ul>
+<p>See <a class="reference internal" href="../../user_guide/groupby.html#groupby-aggregate-named"><span class="std std-ref">Named aggregation</span></a> for more.</p>
+</dd></dl>
+</div>
+</body></html>

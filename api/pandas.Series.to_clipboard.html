@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-to-clipboard">
 <h1>pandas.Series.to_clipboard<a class="headerlink" href="#pandas-series-to-clipboard" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.to_clipboard">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">to_clipboard</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">excel: bool = True</em>, <em class="sig-param">sep: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L2727-L2785"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.to_clipboard" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">to_clipboard</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">excel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L2872-L2932"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.to_clipboard" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy object to the system clipboard.</p>
 <p>Write a text representation of object to the system clipboard.
 This can be pasted into Excel, for example.</p>
@@ -72,7 +72,7 @@ This can be pasted into Excel, for example.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="pandas.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.to_csv</span></code></a></dt><dd><p>Write a DataFrame to a comma-separated values (csv) file.</p>
@@ -93,16 +93,18 @@ This can be pasted into Excel, for example.</p>
 <p class="rubric">Examples</p>
 <p>Copy the contents of a DataFrame to the clipboard.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_clipboard</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_clipboard</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">)</span>  
 <span class="gp">... </span><span class="c1"># Wrote the following to the system clipboard:</span>
 <span class="gp">... </span><span class="c1"># ,A,B,C</span>
 <span class="gp">... </span><span class="c1"># 0,1,2,3</span>
 <span class="gp">... </span><span class="c1"># 1,4,5,6</span>
 </pre></div>
 </div>
-<p>We can omit the the index by passing the keyword <cite>index</cite> and setting
+<p>We can omit the index by passing the keyword <cite>index</cite> and setting
 it to false.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_clipboard</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_clipboard</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  
 <span class="gp">... </span><span class="c1"># Wrote the following to the system clipboard:</span>
 <span class="gp">... </span><span class="c1"># A,B,C</span>
 <span class="gp">... </span><span class="c1"># 1,2,3</span>

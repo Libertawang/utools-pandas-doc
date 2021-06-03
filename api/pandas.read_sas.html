@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-sas">
 <h1>pandas.read_sas<a class="headerlink" href="#pandas-read-sas" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_sas">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_sas</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">format=None</em>, <em class="sig-param">index=None</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">chunksize=None</em>, <em class="sig-param">iterator=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/sas/sasreader.py#L7-L86"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_sas" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_sas</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath_or_buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/sas/sasreader.py#L60-L152"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_sas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read SAS files stored as either XPORT or SAS7BDAT format files.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -64,7 +64,7 @@ expected. A local file could be:
 <p>If you want to pass in a path object, pandas accepts any
 <code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
 <p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method,
-such as a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
+such as a file handle (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
 or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
 </dd>
 <dt><strong>format</strong><span class="classifier">str {‘xport’, ‘sas7bdat’} or None</span></dt><dd><p>If None, file format is inferred from file extension. If ‘xport’ or
@@ -72,11 +72,17 @@ or <code class="docutils literal notranslate"><span class="pre">StringIO</span><
 </dd>
 <dt><strong>index</strong><span class="classifier">identifier of index column, defaults to None</span></dt><dd><p>Identifier of column that should be used as index of the DataFrame.</p>
 </dd>
-<dt><strong>encoding</strong><span class="classifier">str, default is None</span></dt><dd><p>Encoding for text data.  If None, text data are stored as raw bytes.</p>
+<dt><strong>encoding</strong><span class="classifier">str, default is None</span></dt><dd><p>Encoding for text data. If None, text data are stored as raw bytes.</p>
 </dd>
 <dt><strong>chunksize</strong><span class="classifier">int</span></dt><dd><p>Read file <cite>chunksize</cite> lines at a time, returns iterator.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2: </span><code class="docutils literal notranslate"><span class="pre">TextFileReader</span></code> is a context manager.</p>
+</div>
 </dd>
 <dt><strong>iterator</strong><span class="classifier">bool, defaults to False</span></dt><dd><p>If True, returns an iterator for reading the file incrementally.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2: </span><code class="docutils literal notranslate"><span class="pre">TextFileReader</span></code> is a context manager.</p>
+</div>
 </dd>
 </dl>
 </dd>

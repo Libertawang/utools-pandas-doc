@@ -50,14 +50,14 @@
   <body>
 <div class="section" id="pandas-multiindex-remove-unused-levels">
 <h1>pandas.MultiIndex.remove_unused_levels<a class="headerlink" href="#pandas-multiindex-remove-unused-levels" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.MultiIndex.remove_unused_levels">
-<code class="sig-prename descclassname">MultiIndex.</code><code class="sig-name descname">remove_unused_levels</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/multi.py#L1796-L1879"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.MultiIndex.remove_unused_levels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a new MultiIndex from the current that removes
-unused levels, meaning that they are not expressed in the labels.</p>
-<p>The resulting MultiIndex will have the same outward
-appearance, meaning the same .values and ordering. It will also
-be .equals() to the original.</p>
+<code class="sig-prename descclassname"><span class="pre">MultiIndex.</span></code><code class="sig-name descname"><span class="pre">remove_unused_levels</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/multi.py#L1923-L2005"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.MultiIndex.remove_unused_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new MultiIndex from current that removes unused levels.</p>
+<p>Unused level(s) means levels that are not expressed in the
+labels. The resulting MultiIndex will have the same outward
+appearance, meaning the same .values and ordering. It will
+also be .equals() to the original.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">

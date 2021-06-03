@@ -50,12 +50,13 @@
   <body>
 <div class="section" id="pandas-series-str-find">
 <h1>pandas.Series.str.find<a class="headerlink" href="#pandas-series-str-find" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.find">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sub</em>, <em class="sig-param">start=0</em>, <em class="sig-param">end=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L3073-L3084"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.find" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return lowest indexes in each strings in the Series/Index
-where the substring is fully contained between [start:end].
-Return -1 on failure. Equivalent to standard <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.find" title="(in Python v3.8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.find()</span></code></a>.</p>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">find</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sub</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L2414-L2429"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return lowest indexes in each strings in the Series/Index.</p>
+<p>Each of returned indexes corresponds to the position where the
+substring is fully contained between [start:end]. Return -1 on
+failure. Equivalent to standard <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.find" title="(in Python v3.9)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.find()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -73,7 +74,7 @@ Return -1 on failure. Equivalent to standard <a class="reference external" href=
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.rfind.html#pandas.Series.str.rfind" title="pandas.Series.str.rfind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfind</span></code></a></dt><dd><p>Return highest indexes in each strings.</p>

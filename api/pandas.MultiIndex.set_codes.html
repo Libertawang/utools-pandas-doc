@@ -50,22 +50,24 @@
   <body>
 <div class="section" id="pandas-multiindex-set-codes">
 <h1>pandas.MultiIndex.set_codes<a class="headerlink" href="#pandas-multiindex-set-codes" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.MultiIndex.set_codes">
-<code class="sig-prename descclassname">MultiIndex.</code><code class="sig-name descname">set_codes</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">codes</em>, <em class="sig-param">level=None</em>, <em class="sig-param">inplace=False</em>, <em class="sig-param">verify_integrity=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/multi.py#L828-L902"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.MultiIndex.set_codes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set new codes on MultiIndex. Defaults to returning
-new index.</p>
+<code class="sig-prename descclassname"><span class="pre">MultiIndex.</span></code><code class="sig-name descname"><span class="pre">set_codes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">codes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_integrity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/multi.py#L967-L1057"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.MultiIndex.set_codes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set new codes on MultiIndex. Defaults to returning new index.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.0: </span>New name for deprecated method <cite>set_labels</cite>.</p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>codes</strong><span class="classifier">sequence or list of sequence</span></dt><dd><p>New codes to apply.</p>
 </dd>
 <dt><strong>level</strong><span class="classifier">int, level name, or sequence of int/level names (default None)</span></dt><dd><p>Level(s) to set (None for all levels).</p>
 </dd>
 <dt><strong>inplace</strong><span class="classifier">bool</span></dt><dd><p>If True, mutates in place.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.0.</span></p>
+</div>
 </dd>
 <dt><strong>verify_integrity</strong><span class="classifier">bool (default True)</span></dt><dd><p>If True, checks that levels and codes are compatible.</p>
 </dd>
@@ -73,17 +75,24 @@ new index.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>new index (of same type and class…etc)</dt><dd></dd>
+<dt>new index (of same type and class…etc) or None</dt><dd><p>The same type as the caller or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
+</dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'one'</span><span class="p">),</span>
-<span class="go">                                     (1, 'two'),</span>
-<span class="go">                                     (2, 'one'),</span>
-<span class="go">                                     (2, 'two')],</span>
-<span class="go">                                    names=['foo', 'bar'])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">set_codes</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"one"</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"one"</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">)],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span> <span class="s2">"bar"</span><span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span>
+<span class="go">MultiIndex([(1, 'one'),</span>
+<span class="go">    (1, 'two'),</span>
+<span class="go">    (2, 'one'),</span>
+<span class="go">    (2, 'two')],</span>
+<span class="go">   names=['foo', 'bar'])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">set_codes</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
 <span class="go">MultiIndex([(2, 'one'),</span>
 <span class="go">            (1, 'one'),</span>
 <span class="go">            (2, 'two'),</span>

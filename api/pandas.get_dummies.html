@@ -50,13 +50,13 @@
   <body>
 <div class="section" id="pandas-get-dummies">
 <h1>pandas.get_dummies<a class="headerlink" href="#pandas-get-dummies" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.get_dummies">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">get_dummies</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">prefix_sep='_'</em>, <em class="sig-param">dummy_na=False</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">sparse=False</em>, <em class="sig-param">drop_first=False</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/reshape/reshape.py#L750-L936"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.get_dummies" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">get_dummies</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix_sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dummy_na</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/reshape/reshape.py#L731-L914"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.get_dummies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert categorical variable into dummy/indicator variables.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>data</strong><span class="classifier">array-like, Series, or DataFrame</span></dt><dd><p>Data of which to get dummy indicators.</p>
 </dd>
 <dt><strong>prefix</strong><span class="classifier">str, list of str, or dict of str, default None</span></dt><dd><p>String to append DataFrame column names.
@@ -80,9 +80,6 @@ a <code class="xref py py-class docutils literal notranslate"><span class="pre">
 first level.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">dtype, default np.uint8</span></dt><dd><p>Data type for new columns. Only a single dtype is allowed.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
 </dd>
 </dl>
 </dd>
@@ -93,7 +90,7 @@ first level.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.get_dummies.html#pandas.Series.str.get_dummies" title="pandas.Series.str.get_dummies"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.get_dummies</span></code></a></dt><dd><p>Convert Series to dummy codes.</p>

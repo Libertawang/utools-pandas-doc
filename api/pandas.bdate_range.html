@@ -50,14 +50,14 @@
   <body>
 <div class="section" id="pandas-bdate-range">
 <h1>pandas.bdate_range<a class="headerlink" href="#pandas-bdate-range" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.bdate_range">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">bdate_range</code><span class="sig-paren">(</span><em class="sig-param">start=None</em>, <em class="sig-param">end=None</em>, <em class="sig-param">periods=None</em>, <em class="sig-param">freq='B'</em>, <em class="sig-param">tz=None</em>, <em class="sig-param">normalize=True</em>, <em class="sig-param">name=None</em>, <em class="sig-param">weekmask=None</em>, <em class="sig-param">holidays=None</em>, <em class="sig-param">closed=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span> → pandas.core.indexes.datetimes.DatetimeIndex<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/datetimes.py#L1185-L1290"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.bdate_range" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">bdate_range</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'B'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekmask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">holidays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/datetimes.py#L1082-L1181"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.bdate_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a fixed frequency DatetimeIndex, with business day as the default
 frequency.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>start</strong><span class="classifier">str or datetime-like, default None</span></dt><dd><p>Left bound for generating dates.</p>
 </dd>
 <dt><strong>end</strong><span class="classifier">str or datetime-like, default None</span></dt><dd><p>Right bound for generating dates.</p>
@@ -74,18 +74,12 @@ Asia/Beijing.</p>
 <dt><strong>name</strong><span class="classifier">str, default None</span></dt><dd><p>Name of the resulting DatetimeIndex.</p>
 </dd>
 <dt><strong>weekmask</strong><span class="classifier">str or None, default None</span></dt><dd><p>Weekmask of valid business days, passed to <code class="docutils literal notranslate"><span class="pre">numpy.busdaycalendar</span></code>,
-only used when custom frequency strings are passed.  The default
+only used when custom frequency strings are passed. The default
 value None is equivalent to ‘Mon Tue Wed Thu Fri’.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 </dd>
 <dt><strong>holidays</strong><span class="classifier">list-like or None, default None</span></dt><dd><p>Dates to exclude from the set of valid business days, passed to
 <code class="docutils literal notranslate"><span class="pre">numpy.busdaycalendar</span></code>, only used when custom frequency strings
 are passed.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 </dd>
 <dt><strong>closed</strong><span class="classifier">str, default None</span></dt><dd><p>Make the interval closed with respect to the given frequency to
 the ‘left’, ‘right’, or both sides (None).</p>
@@ -102,8 +96,8 @@ the ‘left’, ‘right’, or both sides (None).</p>
 </dl>
 <p class="rubric">Notes</p>
 <p>Of the four parameters: <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span></code>, <code class="docutils literal notranslate"><span class="pre">periods</span></code>, and <code class="docutils literal notranslate"><span class="pre">freq</span></code>,
-exactly three must be specified.  Specifying <code class="docutils literal notranslate"><span class="pre">freq</span></code> is a requirement
-for <code class="docutils literal notranslate"><span class="pre">bdate_range</span></code>.  Use <code class="docutils literal notranslate"><span class="pre">date_range</span></code> if specifying <code class="docutils literal notranslate"><span class="pre">freq</span></code> is not
+exactly three must be specified. Specifying <code class="docutils literal notranslate"><span class="pre">freq</span></code> is a requirement
+for <code class="docutils literal notranslate"><span class="pre">bdate_range</span></code>. Use <code class="docutils literal notranslate"><span class="pre">date_range</span></code> if specifying <code class="docutils literal notranslate"><span class="pre">freq</span></code> is not
 desired.</p>
 <p>To learn more about the frequency strings, please see <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases">this link</a>.</p>
 <p class="rubric">Examples</p>

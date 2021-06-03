@@ -50,14 +50,14 @@
   <body>
 <div class="section" id="pandas-reset-option">
 <h1>pandas.reset_option<a class="headerlink" href="#pandas-reset-option" title="Permalink to this headline">¶</a></h1>
-<dl class="data">
+<dl class="py data">
 <dt id="pandas.reset_option">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">reset_option</code><span class="sig-paren">(</span><em class="sig-param">pat</em><span class="sig-paren">)</span><em class="property"> = &lt;pandas._config.config.CallableDynamicDoc object&gt;</em><a class="headerlink" href="#pandas.reset_option" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">reset_option</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em><span class="sig-paren">)</span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;pandas._config.config.CallableDynamicDoc</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pandas.reset_option" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset one or more options to their default value.</p>
 <p>Pass “all” as argument to reset all options.</p>
 <p>Available options:</p>
 <ul class="simple">
-<li><p>compute.[use_bottleneck, use_numexpr]</p></li>
+<li><p>compute.[use_bottleneck, use_numba, use_numexpr]</p></li>
 <li><p>display.[chop_threshold, colheader_justify, column_space, date_dayfirst,
 date_yearfirst, encoding, expand_frame_repr, float_format]</p></li>
 <li><p>display.html.[border, table_schema, use_mathjax]</p></li>
@@ -69,7 +69,7 @@ max_info_rows, max_rows, max_seq_items, memory_usage, min_rows, multi_sparse,
 notebook_repr_html, pprint_nest_depth, precision, show_dimensions]</p></li>
 <li><p>display.unicode.[ambiguous_as_wide, east_asian_width]</p></li>
 <li><p>display.[width]</p></li>
-<li><p>io.excel.ods.[reader]</p></li>
+<li><p>io.excel.ods.[reader, writer]</p></li>
 <li><p>io.excel.xls.[reader, writer]</p></li>
 <li><p>io.excel.xlsb.[reader]</p></li>
 <li><p>io.excel.xlsm.[reader, writer]</p></li>
@@ -104,6 +104,11 @@ the default is True
 Valid values: False,True
 [default: True] [currently: True]</p>
 </dd>
+<dt>compute.use_numba<span class="classifier">bool</span></dt><dd><p>Use the numba engine option for select operations if it is installed,
+the default is False
+Valid values: False,True
+[default: False] [currently: False]</p>
+</dd>
 <dt>compute.use_numexpr<span class="classifier">bool</span></dt><dd><p>Use the numexpr library to accelerate computation if it is installed,
 the default is True
 Valid values: False,True
@@ -127,7 +132,7 @@ will be displayed as exactly 0 by repr and friends.
 <dt>display.encoding<span class="classifier">str/unicode</span></dt><dd><p>Defaults to the detected encoding of the console.
 Specifies the encoding to be used for strings returned by to_string,
 these are generally strings meant to be displayed on the console.
-[default: UTF-8] [currently: UTF-8]</p>
+[default: utf-8] [currently: utf8]</p>
 </dd>
 <dt>display.expand_frame_repr<span class="classifier">boolean</span></dt><dd><p>Whether to print out the full DataFrame repr for wide DataFrames across
 multiple lines, <cite>max_columns</cite> is still respected, but the output will
@@ -230,7 +235,7 @@ IDLE do not run in a terminal and hence it is not possible to do
 correct auto-detection.
 [default: 60] [currently: 15]</p>
 </dd>
-<dt>display.max_seq_items<span class="classifier">int or None</span></dt><dd><p>when pretty-printing a long sequence, no more then <cite>max_seq_items</cite>
+<dt>display.max_seq_items<span class="classifier">int or None</span></dt><dd><p>When pretty-printing a long sequence, no more then <cite>max_seq_items</cite>
 will be printed. If items are omitted, they will be denoted by the
 addition of “…” to the resulting string.</p>
 <p>If set to None, the number of items to be printed is unlimited.
@@ -256,8 +261,9 @@ pandas objects (if it is available).
 <dt>display.pprint_nest_depth<span class="classifier">int</span></dt><dd><p>Controls the number of nested levels to process when pretty-printing
 [default: 3] [currently: 3]</p>
 </dd>
-<dt>display.precision<span class="classifier">int</span></dt><dd><p>Floating point output precision (number of significant digits). This is
-only a suggestion
+<dt>display.precision<span class="classifier">int</span></dt><dd><p>Floating point output precision in terms of number of places after the
+decimal, for regular formatting as well as scientific notation. Similar
+to <code class="docutils literal notranslate"><span class="pre">precision</span></code> in <code class="xref py py-meth docutils literal notranslate"><span class="pre">numpy.set_printoptions()</span></code>.
 [default: 6] [currently: 6]</p>
 </dd>
 <dt>display.show_dimensions<span class="classifier">boolean or ‘truncate’</span></dt><dd><p>Whether to print out dimensions at the end of DataFrame repr.
@@ -286,13 +292,18 @@ terminal and hence it is not possible to correctly detect the width.
 auto, odf.
 [default: auto] [currently: auto]</p>
 </dd>
+<dt>io.excel.ods.writer<span class="classifier">string</span></dt><dd><p>The default Excel writer engine for ‘ods’ files. Available options:
+auto, odf.
+[default: auto] [currently: auto]</p>
+</dd>
 <dt>io.excel.xls.reader<span class="classifier">string</span></dt><dd><p>The default Excel reader engine for ‘xls’ files. Available options:
 auto, xlrd.
 [default: auto] [currently: auto]</p>
 </dd>
 <dt>io.excel.xls.writer<span class="classifier">string</span></dt><dd><p>The default Excel writer engine for ‘xls’ files. Available options:
 auto, xlwt.
-[default: auto] [currently: auto]</p>
+[default: auto] [currently: auto]
+(Deprecated, use `` instead.)</p>
 </dd>
 <dt>io.excel.xlsb.reader<span class="classifier">string</span></dt><dd><p>The default Excel reader engine for ‘xlsb’ files. Available options:
 auto, pyxlsb.
@@ -344,7 +355,7 @@ version. Use <cite>use_inf_as_na</cite> instead.
 </dd>
 <dt>plotting.backend<span class="classifier">str</span></dt><dd><p>The plotting backend to use. The default value is “matplotlib”, the
 backend provided with pandas. Other backends can be specified by
-prodiving the name of the module that implements the backend.
+providing the name of the module that implements the backend.
 [default: matplotlib] [currently: matplotlib]</p>
 </dd>
 <dt>plotting.matplotlib.register_converters<span class="classifier">bool or ‘auto’.</span></dt><dd><p>Whether to register converters with matplotlib’s units registry for

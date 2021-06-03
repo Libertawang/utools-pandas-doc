@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-describe">
 <h1>pandas.Series.describe<a class="headerlink" href="#pandas-series-describe" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.describe">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">describe</code><span class="sig-paren">(</span><em class="sig-param">self: ~FrameOrSeries</em>, <em class="sig-param">percentiles=None</em>, <em class="sig-param">include=None</em>, <em class="sig-param">exclude=None</em><span class="sig-paren">)</span> → ~FrameOrSeries<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L9602-L9949"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.describe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">describe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percentiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime_is_numeric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L10025-L10412"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.describe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate descriptive statistics.</p>
 <p>Descriptive statistics include those that summarize the central
 tendency, dispersion and shape of a
@@ -61,9 +61,9 @@ dataset’s distribution, excluding <code class="docutils literal notranslate"><
 as <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> column sets of mixed data types. The output
 will vary depending on what is provided. Refer to the notes
 below for more detail.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>percentiles</strong><span class="classifier">list-like of numbers, optional</span></dt><dd><p>The percentiles to include in the output. All should
 fall between 0 and 1. The default is
 <code class="docutils literal notranslate"><span class="pre">[.25,</span> <span class="pre">.5,</span> <span class="pre">.75]</span></code>, which returns the 25th, 50th, and
@@ -96,6 +96,13 @@ exclude pandas categorical columns, use <code class="docutils literal notranslat
 <li><p>None (default) : The result will exclude nothing.</p></li>
 </ul>
 </dd>
+<dt><strong>datetime_is_numeric</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to treat datetime dtypes as numeric. This affects statistics
+calculated for the column. For DataFrame input, this also
+controls whether datetime columns are included by default.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -105,7 +112,7 @@ exclude pandas categorical columns, use <code class="docutils literal notranslat
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.count.html#pandas.DataFrame.count" title="pandas.DataFrame.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.count</span></code></a></dt><dd><p>Count number of non-NA/null observations.</p>
@@ -175,13 +182,14 @@ The parameters are ignored when analyzing a <code class="docutils literal notran
 <span class="gp">... </span>  <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s2">"2010-01-01"</span><span class="p">),</span>
 <span class="gp">... </span>  <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s2">"2010-01-01"</span><span class="p">)</span>
 <span class="gp">... </span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-<span class="go">count                       3</span>
-<span class="go">unique                      2</span>
-<span class="go">top       2010-01-01 00:00:00</span>
-<span class="go">freq                        2</span>
-<span class="go">first     2000-01-01 00:00:00</span>
-<span class="go">last      2010-01-01 00:00:00</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">datetime_is_numeric</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">count                      3</span>
+<span class="go">mean     2006-09-01 08:00:00</span>
+<span class="go">min      2000-01-01 00:00:00</span>
+<span class="go">25%      2004-12-31 12:00:00</span>
+<span class="go">50%      2010-01-01 00:00:00</span>
+<span class="go">75%      2010-01-01 00:00:00</span>
+<span class="go">max      2010-01-01 00:00:00</span>
 <span class="go">dtype: object</span>
 </pre></div>
 </div>
@@ -204,11 +212,11 @@ are returned.</p>
 </pre></div>
 </div>
 <p>Describing all columns of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> regardless of data type.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
-<span class="go">        categorical  numeric object</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>  
+<span class="go">       categorical  numeric object</span>
 <span class="go">count            3      3.0      3</span>
 <span class="go">unique           3      NaN      3</span>
-<span class="go">top              f      NaN      c</span>
+<span class="go">top              f      NaN      a</span>
 <span class="go">freq             1      NaN      1</span>
 <span class="go">mean           NaN      2.0    NaN</span>
 <span class="go">std            NaN      1.0    NaN</span>
@@ -247,11 +255,11 @@ an attribute.</p>
 </pre></div>
 </div>
 <p>Including only string columns in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> description.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">object</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="nb">object</span><span class="p">])</span>  
 <span class="go">       object</span>
 <span class="go">count       3</span>
 <span class="go">unique      3</span>
-<span class="go">top         c</span>
+<span class="go">top         a</span>
 <span class="go">freq        1</span>
 </pre></div>
 </div>
@@ -260,21 +268,21 @@ an attribute.</p>
 <span class="go">       categorical</span>
 <span class="go">count            3</span>
 <span class="go">unique           3</span>
-<span class="go">top              f</span>
+<span class="go">top              d</span>
 <span class="go">freq             1</span>
 </pre></div>
 </div>
 <p>Excluding numeric columns from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> description.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span>  
 <span class="go">       categorical object</span>
 <span class="go">count            3      3</span>
 <span class="go">unique           3      3</span>
-<span class="go">top              f      c</span>
+<span class="go">top              f      a</span>
 <span class="go">freq             1      1</span>
 </pre></div>
 </div>
 <p>Excluding object columns from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> description.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">object</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="nb">object</span><span class="p">])</span>  
 <span class="go">       categorical  numeric</span>
 <span class="go">count            3      3.0</span>
 <span class="go">unique           3      NaN</span>

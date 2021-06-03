@@ -50,11 +50,13 @@
   <body>
 <div class="section" id="pandas-arrays-periodarray">
 <h1>pandas.arrays.PeriodArray<a class="headerlink" href="#pandas-arrays-periodarray" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.arrays.PeriodArray">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.arrays.</code><code class="sig-name descname">PeriodArray</code><span class="sig-paren">(</span><em class="sig-param">values</em>, <em class="sig-param">freq=None</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">copy=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/arrays/period.py#L61-L758"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.arrays.PeriodArray" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.arrays.</span></code><code class="sig-name descname"><span class="pre">PeriodArray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/arrays/period.py#L66-L789"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.arrays.PeriodArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pandas ExtensionArray for storing Period data.</p>
-<p>Users should use <code class="xref py py-func docutils literal notranslate"><span class="pre">period_array()</span></code> to create new instances.</p>
+<p>Users should use <code class="xref py py-func docutils literal notranslate"><span class="pre">period_range()</span></code> to create new instances.
+Alternatively, <code class="xref py py-func docutils literal notranslate"><span class="pre">array()</span></code> can be used to create new instances
+from a sequence of Period scalars.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -63,25 +65,29 @@ converted to ordinals without inference or copy (PeriodArray,
 ndarray[int64]), or a box around such an array (Series[period],
 PeriodIndex).</p>
 </dd>
+<dt><strong>dtype</strong><span class="classifier">PeriodDtype, optional</span></dt><dd><p>A PeriodDtype instance from which to extract a <cite>freq</cite>. If both
+<cite>freq</cite> and <cite>dtype</cite> are specified, then the frequencies must match.</p>
+</dd>
 <dt><strong>freq</strong><span class="classifier">str or DateOffset</span></dt><dd><p>The <cite>freq</cite> to use for the array. Mostly applicable when <cite>values</cite>
 is an ndarray of integers, when <cite>freq</cite> is required. When <cite>values</cite>
 is a PeriodArray (or box around), it’s checked that <code class="docutils literal notranslate"><span class="pre">values.freq</span></code>
 matches <cite>freq</cite>.</p>
-</dd>
-<dt><strong>dtype</strong><span class="classifier">PeriodDtype, optional</span></dt><dd><p>A PeriodDtype instance from which to extract a <cite>freq</cite>. If both
-<cite>freq</cite> and <cite>dtype</cite> are specified, then the frequencies must match.</p>
 </dd>
 <dt><strong>copy</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to copy the ordinals before storing.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">period_array</span></code></dt><dd><p>Create a new PeriodArray.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Period</span></code></dt><dd><p>Represents a period of time.</p>
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">PeriodIndex</span></code></dt><dd><p>Immutable Index for period data.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">period_range</span></code></dt><dd><p>Create a fixed-frequency PeriodArray.</p>
+</dd>
+<dt><a class="reference external" href="https://docs.python.org/3/library/array.html#module-array" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></dt><dd><p>Construct a pandas array.</p>
 </dd>
 </dl>
 </div>

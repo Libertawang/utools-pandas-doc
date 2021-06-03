@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-count">
 <h1>pandas.Series.count<a class="headerlink" href="#pandas-series-count" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.count">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">level=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L1695-L1732"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">count</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L1738-L1786"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return number of non-NA/null observations in the Series.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -69,6 +69,13 @@ particular level, collapsing into a smaller Series.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.DataFrame.count.html#pandas.DataFrame.count" title="pandas.DataFrame.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.count</span></code></a></dt><dd><p>Count non-NA cells for each column or row.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>

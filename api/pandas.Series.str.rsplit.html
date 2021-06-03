@@ -50,12 +50,12 @@
   <body>
 <div class="section" id="pandas-series-str-rsplit">
 <h1>pandas.Series.str.rsplit<a class="headerlink" href="#pandas-series-str-rsplit" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.rsplit">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">rsplit</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pat=None</em>, <em class="sig-param">n=-1</em>, <em class="sig-param">expand=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L2630-L2634"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.rsplit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">rsplit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L749-L753"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.rsplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split strings around given separator/delimiter.</p>
 <p>Splits the string in the Series/Index from the end,
-at the specified delimiter string. Equivalent to <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.rsplit" title="(in Python v3.8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.rsplit()</span></code></a>.</p>
+at the specified delimiter string. Equivalent to <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.rsplit" title="(in Python v3.9)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.rsplit()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -65,7 +65,7 @@ If not specified, split on whitespace.</p>
 <dt><strong>n</strong><span class="classifier">int, default -1 (all)</span></dt><dd><p>Limit number of splits in output.
 <code class="docutils literal notranslate"><span class="pre">None</span></code>, 0 and -1 will be interpreted as return all splits.</p>
 </dd>
-<dt><strong>expand</strong><span class="classifier">bool, default False</span></dt><dd><p>Expand the splitted strings into separate columns.</p>
+<dt><strong>expand</strong><span class="classifier">bool, default False</span></dt><dd><p>Expand the split strings into separate columns.</p>
 <ul class="simple">
 <li><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, return DataFrame/MultiIndex expanding dimensionality.</p></li>
 <li><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, return Series/Index, containing lists of strings.</p></li>
@@ -80,7 +80,7 @@ If not specified, split on whitespace.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.split.html#pandas.Series.str.split" title="pandas.Series.str.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.split</span></code></a></dt><dd><p>Split strings around given separator/delimiter.</p>
@@ -89,16 +89,16 @@ If not specified, split on whitespace.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.join.html#pandas.Series.str.join" title="pandas.Series.str.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.join</span></code></a></dt><dd><p>Join lists contained as elements in the Series/Index with passed delimiter.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.split" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.split</span></code></a></dt><dd><p>Standard library version for split.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.split" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.split</span></code></a></dt><dd><p>Standard library version for split.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.rsplit" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.rsplit</span></code></a></dt><dd><p>Standard library version for rsplit.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.rsplit" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.rsplit</span></code></a></dt><dd><p>Standard library version for rsplit.</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
 <p>The handling of the <cite>n</cite> keyword depends on the number of found splits:</p>
 <ul class="simple">
-<li><p>If found splits &gt; <cite>n</cite>,  make first <cite>n</cite> splits only</p></li>
+<li><p>If found splits &gt; <cite>n</cite>, make first <cite>n</cite> splits only</p></li>
 <li><p>If found splits &lt;= <cite>n</cite>, make all splits</p></li>
 <li><p>If for a certain row the number of found splits &lt; <cite>n</cite>,
 append <cite>None</cite> for padding up to <cite>n</cite> if <code class="docutils literal notranslate"><span class="pre">expand=True</span></code></p></li>
@@ -106,9 +106,14 @@ append <cite>None</cite> for padding up to <cite>n</cite> if <code class="docuti
 <p>If using <code class="docutils literal notranslate"><span class="pre">expand=True</span></code>, Series and Index callers return DataFrame and
 MultiIndex objects, respectively.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"this is a regular sentence"</span><span class="p">,</span>
-<span class="gp">... </span>               <span class="s2">"https://docs.python.org/3/tutorial/index.html"</span><span class="p">,</span>
-<span class="gp">... </span>               <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[</span>
+<span class="gp">... </span>        <span class="s2">"this is a regular sentence"</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s2">"https://docs.python.org/3/tutorial/index.html"</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="gp">... </span>    <span class="p">]</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
 <span class="go">0                       this is a regular sentence</span>
 <span class="go">1    https://docs.python.org/3/tutorial/index.html</span>
 <span class="go">2                                              NaN</span>
@@ -149,7 +154,7 @@ delimiter. The outputs of <cite>split</cite> and <cite>rsplit</cite> are differe
 </pre></div>
 </div>
 <p>The <cite>pat</cite> parameter can be used to split by other characters.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pat</span> <span class="o">=</span> <span class="s2">"/"</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pat</span><span class="o">=</span><span class="s2">"/"</span><span class="p">)</span>
 <span class="go">0                         [this is a regular sentence]</span>
 <span class="go">1    [https:, , docs.python.org, 3, tutorial, index...</span>
 <span class="go">2                                                  NaN</span>
@@ -160,14 +165,10 @@ delimiter. The outputs of <cite>split</cite> and <cite>rsplit</cite> are differe
 separate columns. If NaN is present, it is propagated throughout
 the columns during the split.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="go">                                               0     1     2        3</span>
-<span class="go">0                                           this    is     a  regular</span>
-<span class="go">1  https://docs.python.org/3/tutorial/index.html  None  None     None</span>
-<span class="go">2                                            NaN   NaN   NaN      NaN \</span>
-<span class="go">             4</span>
-<span class="go">0     sentence</span>
-<span class="go">1         None</span>
-<span class="go">2          NaN</span>
+<span class="go">                                               0     1     2        3         4</span>
+<span class="go">0                                           this    is     a  regular  sentence</span>
+<span class="go">1  https://docs.python.org/3/tutorial/index.html  None  None     None      None</span>
+<span class="go">2                                            NaN   NaN   NaN      NaN       NaN</span>
 </pre></div>
 </div>
 <p>For slightly more complex use cases like splitting the html document name
@@ -182,9 +183,10 @@ from a url, a combination of parameter settings can be used.</p>
 <p>Remember to escape special characters when explicitly using regular
 expressions.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"1+1=2"</span><span class="p">])</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\+|="</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">0    1+1=2</span>
+<span class="go">dtype: object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\+|="</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">     0    1    2</span>
 <span class="go">0    1    1    2</span>
 </pre></div>

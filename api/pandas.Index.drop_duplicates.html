@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-index-drop-duplicates">
 <h1>pandas.Index.drop_duplicates<a class="headerlink" href="#pandas-index-drop-duplicates" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.drop_duplicates">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">drop_duplicates</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">keep='first'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L1977-L2023"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.drop_duplicates" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">drop_duplicates</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'first'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L2389-L2439"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.drop_duplicates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return Index with duplicate values removed.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -71,7 +71,7 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.drop_duplicates.html#pandas.Series.drop_duplicates" title="pandas.Series.drop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.drop_duplicates</span></code></a></dt><dd><p>Equivalent method on Series.</p>
@@ -87,7 +87,7 @@
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="s1">'lama'</span><span class="p">,</span> <span class="s1">'cow'</span><span class="p">,</span> <span class="s1">'lama'</span><span class="p">,</span> <span class="s1">'beetle'</span><span class="p">,</span> <span class="s1">'lama'</span><span class="p">,</span> <span class="s1">'hippo'</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>The <cite>keep</cite> parameter controls  which duplicate values are removed.
+<p>The <cite>keep</cite> parameter controls which duplicate values are removed.
 The value ‘first’ keeps the first occurrence for each
 set of duplicated entries. The default value of keep is ‘first’.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s1">'first'</span><span class="p">)</span>

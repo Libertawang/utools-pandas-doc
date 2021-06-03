@@ -50,19 +50,19 @@
   <body>
 <div class="section" id="pandas-series-rename">
 <h1>pandas.Series.rename<a class="headerlink" href="#pandas-series-rename" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.rename">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">rename</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=None</em>, <em class="sig-param">*</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">copy=True</em>, <em class="sig-param">inplace=False</em>, <em class="sig-param">level=None</em>, <em class="sig-param">errors='ignore'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L3951-L4025"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.rename" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">rename</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L4233-L4307"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.rename" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alter Series index labels or name.</p>
 <p>Function / dict values must be unique (1-to-1). Labels not contained in
 a dict / Series will be left as-is. Extra labels listed don’t throw an
 error.</p>
 <p>Alternatively, change <code class="docutils literal notranslate"><span class="pre">Series.name</span></code> with a scalar value.</p>
-<p>See the <a class="reference internal" href="../../getting_started/basics.html#basics-rename"><span class="std std-ref">user guide</span></a> for more.</p>
+<p>See the <a class="reference internal" href="../../user_guide/basics.html#basics-rename"><span class="std std-ref">user guide</span></a> for more.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>axis</strong><span class="classifier">{0 or “index”}</span></dt><dd><p>Unused. Accepted for compatability with DataFrame method only.</p>
+<dt><strong>axis</strong><span class="classifier">{0 or “index”}</span></dt><dd><p>Unused. Accepted for compatibility with DataFrame method only.</p>
 </dd>
 <dt><strong>index</strong><span class="classifier">scalar, hashable sequence, dict-like or function, optional</span></dt><dd><p>Functions or dict-like are transformations to apply to
 the index.
@@ -76,12 +76,12 @@ attribute.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>Series</dt><dd><p>Series with index labels or name altered.</p>
+<dt>Series or None</dt><dd><p>Series with index labels or name altered or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.rename.html#pandas.DataFrame.rename" title="pandas.DataFrame.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.rename</span></code></a></dt><dd><p>Corresponding DataFrame method.</p>

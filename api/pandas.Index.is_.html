@@ -50,25 +50,33 @@
   <body>
 <div class="section" id="pandas-index-is">
 <h1>pandas.Index.is_<a class="headerlink" href="#pandas-index-is" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.is_">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">is_</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em><span class="sig-paren">)</span> → bool<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L573-L590"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.is_" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">is_</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L532-L561"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.is_" title="Permalink to this definition">¶</a></dt>
 <dd><p>More flexible, faster check like <code class="docutils literal notranslate"><span class="pre">is</span></code> but that works through views.</p>
 <p>Note: this is <em>not</em> the same as <code class="docutils literal notranslate"><span class="pre">Index.identical()</span></code>, which checks
 that metadata is also the same.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>other</strong><span class="classifier">object</span></dt><dd><p>other object to compare against.</p>
+<dt><strong>other</strong><span class="classifier">object</span></dt><dd><p>Other object to compare against.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>True if both have same underlying data, False otherwise</strong><span class="classifier">bool</span></dt><dd></dd>
+<dt>bool</dt><dd><p>True if both have same underlying data, False otherwise.</p>
+</dd>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Index.identical.html#pandas.Index.identical" title="pandas.Index.identical"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index.identical</span></code></a></dt><dd><p>Works like <code class="docutils literal notranslate"><span class="pre">Index.is_</span></code> but also checks metadata.</p>
+</dd>
+</dl>
+</div>
 </dd></dl>
 </div>
 </body></html>

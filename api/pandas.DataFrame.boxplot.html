@@ -50,18 +50,18 @@
   <body>
 <div class="section" id="pandas-dataframe-boxplot">
 <h1>pandas.DataFrame.boxplot<a class="headerlink" href="#pandas-dataframe-boxplot" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.boxplot">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">boxplot</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">column=None</em>, <em class="sig-param">by=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">fontsize=None</em>, <em class="sig-param">rot=0</em>, <em class="sig-param">grid=True</em>, <em class="sig-param">figsize=None</em>, <em class="sig-param">layout=None</em>, <em class="sig-param">return_type=None</em>, <em class="sig-param">backend=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_core.py#L419-L448"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.boxplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">boxplot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fontsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_core.py#L477-L506"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.boxplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a box plot from DataFrame columns.</p>
 <p>Make a box-and-whisker plot from DataFrame columns, optionally grouped
 by some other columns. A box plot is a method for graphically depicting
 groups of numerical data through their quartiles.
 The box extends from the Q1 to Q3 quartile values of the data,
 with a line at the median (Q2). The whiskers extend from the edges
-of box to show the range of the data. The position of the whiskers
-is set by default to <cite>1.5 * IQR (IQR = Q3 - Q1)</cite> from the edges of the box.
-Outlier points are those past the end of the whiskers.</p>
+of box to show the range of the data. By default, they extend no more than
+<cite>1.5 * IQR (IQR = Q3 - Q1)</cite> from the edges of the box, ending at the farthest
+data point within that interval. Outliers are plotted as separate dots.</p>
 <p>For further details see
 Wikipedia’s entry for <a class="reference external" href="https://en.wikipedia.org/wiki/Box_plot">boxplot</a>.</p>
 <dl class="field-list">
@@ -109,7 +109,7 @@ specify the <code class="docutils literal notranslate"><span class="pre">plottin
 </div>
 </dd>
 <dt><strong>**kwargs</strong></dt><dd><p>All other plotting keyword arguments to be passed to
-<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot" title="(in Matplotlib v3.2.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.boxplot()</span></code></a>.</p>
+<a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot" title="(in Matplotlib v3.4.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.boxplot()</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
@@ -120,12 +120,12 @@ specify the <code class="docutils literal notranslate"><span class="pre">plottin
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.plot.hist.html#pandas.Series.plot.hist" title="pandas.Series.plot.hist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.plot.hist</span></code></a></dt><dd><p>Make a histogram.</p>
 </dd>
-<dt><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot" title="(in Matplotlib v3.2.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.boxplot</span></code></a></dt><dd><p>Matplotlib equivalent plot.</p>
+<dt><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html#matplotlib.pyplot.boxplot" title="(in Matplotlib v3.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.boxplot</span></code></a></dt><dd><p>Matplotlib equivalent plot.</p>
 </dd>
 </dl>
 </div>
@@ -155,7 +155,7 @@ by <code class="docutils literal notranslate"><span class="pre">df.boxplot()</sp
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-boxplot-1.png" src="../../_images/pandas-DataFrame-boxplot-1.png"/>
+<img alt="../../_images/pandas-DataFrame-boxplot-1.png" class="plot-directive" src="../../_images/pandas-DataFrame-boxplot-1.png"/>
 </div>
 <p>Boxplots of variables distributions grouped by the values of a third
 variable can be created using the option <code class="docutils literal notranslate"><span class="pre">by</span></code>. For instance:</p>
@@ -167,7 +167,7 @@ variable can be created using the option <code class="docutils literal notransla
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-boxplot-2.png" src="../../_images/pandas-DataFrame-boxplot-2.png"/>
+<img alt="../../_images/pandas-DataFrame-boxplot-2.png" class="plot-directive" src="../../_images/pandas-DataFrame-boxplot-2.png"/>
 </div>
 <p>A list of strings (i.e. <code class="docutils literal notranslate"><span class="pre">['X',</span> <span class="pre">'Y']</span></code>) can be passed to boxplot
 in order to group the data by combination of the variables in the x-axis:</p>
@@ -181,7 +181,7 @@ in order to group the data by combination of the variables in the x-axis:</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-boxplot-3.png" src="../../_images/pandas-DataFrame-boxplot-3.png"/>
+<img alt="../../_images/pandas-DataFrame-boxplot-3.png" class="plot-directive" src="../../_images/pandas-DataFrame-boxplot-3.png"/>
 </div>
 <p>The layout of boxplot can be adjusted giving a tuple to <code class="docutils literal notranslate"><span class="pre">layout</span></code>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">boxplot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s1">'Col1'</span><span class="p">,</span> <span class="s1">'Col2'</span><span class="p">],</span> <span class="n">by</span><span class="o">=</span><span class="s1">'X'</span><span class="p">,</span>
@@ -189,7 +189,7 @@ in order to group the data by combination of the variables in the x-axis:</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-boxplot-4.png" src="../../_images/pandas-DataFrame-boxplot-4.png"/>
+<img alt="../../_images/pandas-DataFrame-boxplot-4.png" class="plot-directive" src="../../_images/pandas-DataFrame-boxplot-4.png"/>
 </div>
 <p>Additional formatting can be done to the boxplot, like suppressing the grid
 (<code class="docutils literal notranslate"><span class="pre">grid=False</span></code>), rotating the labels in the x-axis (i.e. <code class="docutils literal notranslate"><span class="pre">rot=45</span></code>)
@@ -198,10 +198,10 @@ or changing the fontsize (i.e. <code class="docutils literal notranslate"><span 
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-boxplot-5.png" src="../../_images/pandas-DataFrame-boxplot-5.png"/>
+<img alt="../../_images/pandas-DataFrame-boxplot-5.png" class="plot-directive" src="../../_images/pandas-DataFrame-boxplot-5.png"/>
 </div>
 <p>The parameter <code class="docutils literal notranslate"><span class="pre">return_type</span></code> can be used to select the type of element
-returned by <cite>boxplot</cite>.  When <code class="docutils literal notranslate"><span class="pre">return_type='axes'</span></code> is selected,
+returned by <cite>boxplot</cite>. When <code class="docutils literal notranslate"><span class="pre">return_type='axes'</span></code> is selected,
 the matplotlib axes on which the boxplot is drawn are returned:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">boxplot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="p">[</span><span class="s1">'Col1'</span><span class="p">,</span> <span class="s1">'Col2'</span><span class="p">],</span> <span class="n">return_type</span><span class="o">=</span><span class="s1">'axes'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">boxplot</span><span class="p">)</span>

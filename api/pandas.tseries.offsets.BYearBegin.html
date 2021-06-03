@@ -50,12 +50,25 @@
   <body>
 <div class="section" id="pandas-tseries-offsets-byearbegin">
 <h1>pandas.tseries.offsets.BYearBegin<a class="headerlink" href="#pandas-tseries-offsets-byearbegin" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.tseries.offsets.BYearBegin">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.tseries.offsets.</code><code class="sig-name descname">BYearBegin</code><span class="sig-paren">(</span><em class="sig-param">n=1</em>, <em class="sig-param">normalize=False</em>, <em class="sig-param">month=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/tseries/offsets.py#L2018-L2026"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.tseries.offsets.BYearBegin" title="Permalink to this definition">¶</a></dt>
-<dd><p>DateOffset increments between business year begin dates.</p>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.tseries.offsets.</span></code><code class="sig-name descname"><span class="pre">BYearBegin</span></code><a class="headerlink" href="#pandas.tseries.offsets.BYearBegin" title="Permalink to this definition">¶</a></dt>
+<dd><p>DateOffset increments between the first business day of the year.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas.tseries.offset</span> <span class="kn">import</span> <span class="n">BYearBegin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'2020-05-24 05:01:15'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">+</span> <span class="n">BYearBegin</span><span class="p">()</span>
+<span class="go">Timestamp('2021-01-01 05:01:15')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">-</span> <span class="n">BYearBegin</span><span class="p">()</span>
+<span class="go">Timestamp('2020-01-01 05:01:15')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">+</span> <span class="n">BYearBegin</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">Timestamp('2020-01-01 05:01:15')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">+</span> <span class="n">BYearBegin</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Timestamp('2022-01-03 05:01:15')</span>
+</pre></div>
+</div>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -78,28 +91,40 @@
 <tr class="row-even"><td><p><strong>kwds</strong></p></td>
 <td></td>
 </tr>
+<tr class="row-odd"><td><p><strong>month</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>n</strong></p></td>
+<td></td>
+</tr>
 <tr class="row-odd"><td><p><strong>name</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>nanos</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>rule_code</strong></p></td>
+<tr class="row-odd"><td><p><strong>normalize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>rule_code</strong></p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BYearBegin.rollback.html#pandas.tseries.offsets.BYearBegin.rollback" title="pandas.tseries.offsets.BYearBegin.rollback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollback</span></code></a>(self, dt)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BYearBegin.__call__.html#pandas.tseries.offsets.BYearBegin.__call__" title="pandas.tseries.offsets.BYearBegin.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.tseries.offsets.BYearBegin.rollback.html#pandas.tseries.offsets.BYearBegin.rollback" title="pandas.tseries.offsets.BYearBegin.rollback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollback</span></code></a></p></td>
 <td><p>Roll provided date backward to next offset only if not on offset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.tseries.offsets.BYearBegin.rollforward.html#pandas.tseries.offsets.BYearBegin.rollforward" title="pandas.tseries.offsets.BYearBegin.rollforward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollforward</span></code></a>(self, dt)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BYearBegin.rollforward.html#pandas.tseries.offsets.BYearBegin.rollforward" title="pandas.tseries.offsets.BYearBegin.rollforward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollforward</span></code></a></p></td>
 <td><p>Roll provided date forward to next offset only if not on offset.</p></td>
 </tr>
 </tbody>
@@ -110,28 +135,25 @@
 <col style="width: 38%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>__call__</strong></p></td>
+<tr class="row-odd"><td><p><strong>apply</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>apply</strong></p></td>
+<tr class="row-even"><td><p><strong>apply_index</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>apply_index</strong></p></td>
+<tr class="row-odd"><td><p><strong>copy</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>copy</strong></p></td>
+<tr class="row-even"><td><p><strong>isAnchored</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>isAnchored</strong></p></td>
+<tr class="row-odd"><td><p><strong>is_anchored</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>is_anchored</strong></p></td>
+<tr class="row-even"><td><p><strong>is_on_offset</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>is_on_offset</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>onOffset</strong></p></td>
+<tr class="row-odd"><td><p><strong>onOffset</strong></p></td>
 <td></td>
 </tr>
 </tbody>

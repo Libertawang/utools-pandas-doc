@@ -50,18 +50,18 @@
   <body>
 <div class="section" id="pandas-dataframe-rename">
 <h1>pandas.DataFrame.rename<a class="headerlink" href="#pandas-dataframe-rename" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.rename">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">rename</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">mapper=None</em>, <em class="sig-param">index=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">copy=True</em>, <em class="sig-param">inplace=False</em>, <em class="sig-param">level=None</em>, <em class="sig-param">errors='ignore'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L4000-L4134"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.rename" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">rename</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ignore'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L4318-L4450"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.rename" title="Permalink to this definition">¶</a></dt>
 <dd><p>Alter axes labels.</p>
 <p>Function / dict values must be unique (1-to-1). Labels not contained in
 a dict / Series will be left as-is. Extra labels listed don’t throw an
 error.</p>
-<p>See the <a class="reference internal" href="../../getting_started/basics.html#basics-rename"><span class="std std-ref">user guide</span></a> for more.</p>
+<p>See the <a class="reference internal" href="../../user_guide/basics.html#basics-rename"><span class="std std-ref">user guide</span></a> for more.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>mapper</strong><span class="classifier">dict-like or function</span></dt><dd><p>Dict-like or functions transformations to apply to
+<dt><strong>mapper</strong><span class="classifier">dict-like or function</span></dt><dd><p>Dict-like or function transformations to apply to
 that axis’ values. Use either <code class="docutils literal notranslate"><span class="pre">mapper</span></code> and <code class="docutils literal notranslate"><span class="pre">axis</span></code> to
 specify the axis to target with <code class="docutils literal notranslate"><span class="pre">mapper</span></code>, or <code class="docutils literal notranslate"><span class="pre">index</span></code> and
 <code class="docutils literal notranslate"><span class="pre">columns</span></code>.</p>
@@ -72,7 +72,7 @@ is equivalent to <code class="docutils literal notranslate"><span class="pre">in
 <dt><strong>columns</strong><span class="classifier">dict-like or function</span></dt><dd><p>Alternative to specifying axis (<code class="docutils literal notranslate"><span class="pre">mapper,</span> <span class="pre">axis=1</span></code>
 is equivalent to <code class="docutils literal notranslate"><span class="pre">columns=mapper</span></code>).</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">int or str</span></dt><dd><p>Axis to target with <code class="docutils literal notranslate"><span class="pre">mapper</span></code>. Can be either the axis name
+<dt><strong>axis</strong><span class="classifier">{0 or ‘index’, 1 or ‘columns’}, default 0</span></dt><dd><p>Axis to target with <code class="docutils literal notranslate"><span class="pre">mapper</span></code>. Can be either the axis name
 (‘index’, ‘columns’) or number (0, 1). The default is ‘index’.</p>
 </dd>
 <dt><strong>copy</strong><span class="classifier">bool, default True</span></dt><dd><p>Also copy underlying data.</p>
@@ -93,7 +93,7 @@ ignored.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>DataFrame</dt><dd><p>DataFrame with the renamed axis labels.</p>
+<dt>DataFrame or None</dt><dd><p>DataFrame with the renamed axis labels or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -105,7 +105,7 @@ ignored.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.rename_axis.html#pandas.DataFrame.rename_axis" title="pandas.DataFrame.rename_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.rename_axis</span></code></a></dt><dd><p>Set the name of the axis.</p>
@@ -149,7 +149,7 @@ intent.</p>
 <span class="gr">KeyError</span>: <span class="n">['C'] not found in axis</span>
 </pre></div>
 </div>
-<p>Using axis-style parameters</p>
+<p>Using axis-style parameters:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
 <span class="go">   a  b</span>
 <span class="go">0  1  4</span>

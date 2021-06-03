@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-pipe">
 <h1>pandas.Series.pipe<a class="headerlink" href="#pandas-series-pipe" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.pipe">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">pipe</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">func</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L5117-L5119"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.pipe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">pipe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L5353-L5406"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.pipe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply func(self, *args, **kwargs).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -75,25 +75,28 @@ Alternatively a <code class="docutils literal notranslate"><span class="pre">(ca
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.DataFrame.apply.html#pandas.DataFrame.apply" title="pandas.DataFrame.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.apply</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.DataFrame.applymap.html#pandas.DataFrame.applymap" title="pandas.DataFrame.applymap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.applymap</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.Series.map.html#pandas.Series.map" title="pandas.Series.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.map</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.DataFrame.apply.html#pandas.DataFrame.apply" title="pandas.DataFrame.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.apply</span></code></a></dt><dd><p>Apply a function along input axis of DataFrame.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.applymap.html#pandas.DataFrame.applymap" title="pandas.DataFrame.applymap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.applymap</span></code></a></dt><dd><p>Apply a function elementwise on a whole DataFrame.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.map.html#pandas.Series.map" title="pandas.Series.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.map</span></code></a></dt><dd><p>Apply a mapping correspondence on a <a class="reference internal" href="pandas.Series.html#pandas.Series" title="pandas.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a>.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
 <p>Use <code class="docutils literal notranslate"><span class="pre">.pipe</span></code> when chaining together functions that expect
 Series, DataFrames or GroupBy objects. Instead of writing</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">arg1</span><span class="o">=</span><span class="n">a</span><span class="p">),</span> <span class="n">arg2</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">func</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">h</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">arg1</span><span class="o">=</span><span class="n">a</span><span class="p">),</span> <span class="n">arg2</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>  
 </pre></div>
 </div>
 <p>You can write</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
 <span class="gp">... </span>   <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">arg1</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
-<span class="gp">... </span>   <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
-<span class="gp">... </span><span class="p">)</span>
+<span class="gp">... </span>   <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">arg2</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>  
 </pre></div>
 </div>
 <p>If you have a function that takes the data as (say) the second
@@ -101,8 +104,8 @@ argument, pass a tuple indicating which keyword expects the
 data. For example, suppose <code class="docutils literal notranslate"><span class="pre">f</span></code> takes its data as <code class="docutils literal notranslate"><span class="pre">arg2</span></code>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
 <span class="gp">... </span>   <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">arg1</span><span class="o">=</span><span class="n">a</span><span class="p">)</span>
-<span class="gp">... </span>   <span class="o">.</span><span class="n">pipe</span><span class="p">((</span><span class="n">f</span><span class="p">,</span> <span class="s1">'arg2'</span><span class="p">),</span> <span class="n">arg1</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
-<span class="gp">... </span> <span class="p">)</span>
+<span class="gp">... </span>   <span class="o">.</span><span class="n">pipe</span><span class="p">((</span><span class="n">func</span><span class="p">,</span> <span class="s1">'arg2'</span><span class="p">),</span> <span class="n">arg1</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">arg3</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+<span class="gp">... </span> <span class="p">)</span>  
 </pre></div>
 </div>
 </dd></dl>

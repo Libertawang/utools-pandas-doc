@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-dt-to-pytimedelta">
 <h1>pandas.Series.dt.to_pytimedelta<a class="headerlink" href="#pandas-series-dt-to-pytimedelta" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.dt.to_pytimedelta">
-<code class="sig-prename descclassname">Series.dt.</code><code class="sig-name descname">to_pytimedelta</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/accessors.py#L212-L246"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.dt.to_pytimedelta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.dt.</span></code><code class="sig-name descname"><span class="pre">to_pytimedelta</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/accessors.py#L320-L355"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.dt.to_pytimedelta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an array of native <cite>datetime.timedelta</cite> objects.</p>
 <p>Python’s standard <cite>datetime</cite> library uses a different representation
 timedelta’s. This method converts a Series of pandas Timedeltas
@@ -66,14 +66,15 @@ Series.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime.timedelta</span></code></a></dt><dd></dd>
+<dt><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime.timedelta</span></code></a></dt><dd><p>A duration expressing the difference between two date, time, or datetime.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s1">'d'</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s2">"d"</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
 <span class="go">0   0 days</span>
 <span class="go">1   1 days</span>
@@ -84,9 +85,9 @@ Series.</p>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">to_pytimedelta</span><span class="p">()</span>
-<span class="go">array([datetime.timedelta(0), datetime.timedelta(1),</span>
-<span class="go">       datetime.timedelta(2), datetime.timedelta(3),</span>
-<span class="go">       datetime.timedelta(4)], dtype=object)</span>
+<span class="go">array([datetime.timedelta(0), datetime.timedelta(days=1),</span>
+<span class="go">datetime.timedelta(days=2), datetime.timedelta(days=3),</span>
+<span class="go">datetime.timedelta(days=4)], dtype=object)</span>
 </pre></div>
 </div>
 </dd></dl>

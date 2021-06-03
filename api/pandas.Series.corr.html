@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-corr">
 <h1>pandas.Series.corr<a class="headerlink" href="#pandas-series-corr" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.corr">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">corr</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">method='pearson'</em>, <em class="sig-param">min_periods=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L2210-L2261"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.corr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">corr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pearson'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L2278-L2335"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.corr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute correlation with <cite>other</cite> Series, excluding missing values.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -83,6 +83,15 @@ behavior.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.DataFrame.corr.html#pandas.DataFrame.corr" title="pandas.DataFrame.corr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.corr</span></code></a></dt><dd><p>Compute pairwise correlation between columns.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.corrwith.html#pandas.DataFrame.corrwith" title="pandas.DataFrame.corrwith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.corrwith</span></code></a></dt><dd><p>Compute pairwise correlation with another DataFrame or Series.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">histogram_intersection</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>

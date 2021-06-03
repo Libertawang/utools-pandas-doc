@@ -50,13 +50,12 @@
   <body>
 <div class="section" id="pandas-series-str-wrap">
 <h1>pandas.Series.str.wrap<a class="headerlink" href="#pandas-series-str-wrap" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.wrap">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">wrap</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">width</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L3000-L3004"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.wrap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wrap long strings in the Series/Index to be formatted in
-paragraphs with length less than a given width.</p>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">wrap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L1821-L1878"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.wrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrap strings in Series/Index at specified line width.</p>
 <p>This method has the same keyword parameters and defaults as
-<a class="reference external" href="https://docs.python.org/3/library/textwrap.html#textwrap.TextWrapper" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">textwrap.TextWrapper</span></code></a>.</p>
+<a class="reference external" href="https://docs.python.org/3/library/textwrap.html#textwrap.TextWrapper" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">textwrap.TextWrapper</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -90,7 +89,7 @@ insecable words (default: True).</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>Internally, this method uses a <a class="reference external" href="https://docs.python.org/3/library/textwrap.html#textwrap.TextWrapper" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">textwrap.TextWrapper</span></code></a> instance with
+<p>Internally, this method uses a <a class="reference external" href="https://docs.python.org/3/library/textwrap.html#textwrap.TextWrapper" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">textwrap.TextWrapper</span></code></a> instance with
 default settings. To achieve behavior matching R’s stringr library str_wrap
 function, use the arguments:</p>
 <ul class="simple">

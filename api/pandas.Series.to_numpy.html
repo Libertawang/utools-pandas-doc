@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-to-numpy">
 <h1>pandas.Series.to_numpy<a class="headerlink" href="#pandas-series-to-numpy" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.to_numpy">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">to_numpy</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">copy=False</em>, <em class="sig-param">na_value=&lt;object object at 0x7f3d5725a380&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/base.py#L741-L851"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.to_numpy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">to_numpy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dtype=None</span></em>, <em class="sig-param"><span class="pre">copy=False</span></em>, <em class="sig-param"><span class="pre">na_value=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/base.py#L503-L616"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.to_numpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>A NumPy ndarray representing the values in this Series or Index.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.0.</span></p>
@@ -62,7 +62,7 @@
 <dd class="field-odd"><dl>
 <dt><strong>dtype</strong><span class="classifier">str or numpy.dtype, optional</span></dt><dd><p>The dtype to pass to <code class="xref py py-meth docutils literal notranslate"><span class="pre">numpy.asarray()</span></code>.</p>
 </dd>
-<dt><strong>copy</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to ensure that the returned value is a not a view on
+<dt><strong>copy</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to ensure that the returned value is not a view on
 another array. Note that <code class="docutils literal notranslate"><span class="pre">copy=False</span></code> does not <em>ensure</em> that
 <code class="docutils literal notranslate"><span class="pre">to_numpy()</span></code> is no-copy. Rather, <code class="docutils literal notranslate"><span class="pre">copy=True</span></code> ensure that
 a copy is made, even if not strictly necessary.</p>
@@ -87,7 +87,7 @@ of the underlying array (for extension arrays).</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.array.html#pandas.Series.array" title="pandas.Series.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.array</span></code></a></dt><dd><p>Get the actual data stored within.</p>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-orc">
 <h1>pandas.read_orc<a class="headerlink" href="#pandas-read-orc" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_orc">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_orc</code><span class="sig-paren">(</span><em class="sig-param">path: Union[str, pathlib.Path, IO[~AnyStr]], columns: Union[List[str], NoneType] = None, **kwargs</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/orc.py#L14-L57"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_orc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_orc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/orc.py#L14-L53"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_orc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load an ORC object from the file path, returning a DataFrame.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
@@ -67,7 +67,7 @@ expected. A local file could be:
 <p>If you want to pass in a path object, pandas accepts any
 <code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
 <p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method,
-such as a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
+such as a file handle (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
 or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
 </dd>
 <dt><strong>columns</strong><span class="classifier">list, default None</span></dt><dd><p>If not None, only these columns will be read from the file.</p>

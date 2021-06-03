@@ -50,14 +50,16 @@
   <body>
 <div class="section" id="pandas-dataframe-shift">
 <h1>pandas.DataFrame.shift<a class="headerlink" href="#pandas-dataframe-shift" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.shift">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">shift</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">periods=1</em>, <em class="sig-param">freq=None</em>, <em class="sig-param">axis=0</em>, <em class="sig-param">fill_value=None</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L4175-L4179"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.shift" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">shift</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">periods=1</span></em>, <em class="sig-param"><span class="pre">freq=None</span></em>, <em class="sig-param"><span class="pre">axis=0</span></em>, <em class="sig-param"><span class="pre">fill_value=&lt;object</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L4568-L4602"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.shift" title="Permalink to this definition">¶</a></dt>
 <dd><p>Shift index by desired number of periods with an optional time <cite>freq</cite>.</p>
 <p>When <cite>freq</cite> is not passed, shift the index without realigning the data.
 If <cite>freq</cite> is passed (in this case, the index must be date or datetime,
 or it will raise a <cite>NotImplementedError</cite>), the index will be
-increased using the periods and the <cite>freq</cite>.</p>
+increased using the periods and the <cite>freq</cite>. <cite>freq</cite> can be inferred
+when specified as “infer” as long as either freq or inferred_freq
+attribute is set in the index.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -66,7 +68,10 @@ increased using the periods and the <cite>freq</cite>.</p>
 <dt><strong>freq</strong><span class="classifier">DateOffset, tseries.offsets, timedelta, or str, optional</span></dt><dd><p>Offset to use from the tseries module or time rule (e.g. ‘EOM’).
 If <cite>freq</cite> is specified then the index values are shifted but the
 data is not realigned. That is, use <cite>freq</cite> if you would like to
-extend the index when shifting and preserve the original data.</p>
+extend the index when shifting and preserve the original data.
+If <cite>freq</cite> is specified as “infer” then it will be inferred from
+the freq or inferred_freq attributes of the index. If neither of
+those attributes exist, a ValueError is thrown.</p>
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0 or ‘index’, 1 or ‘columns’, None}, default None</span></dt><dd><p>Shift direction.</p>
 </dd>
@@ -76,7 +81,7 @@ For numeric data, <code class="docutils literal notranslate"><span class="pre">n
 For datetime, timedelta, or period data, etc. <code class="xref py py-attr docutils literal notranslate"><span class="pre">NaT</span></code> is used.
 For extension dtypes, <code class="docutils literal notranslate"><span class="pre">self.dtype.na_value</span></code> is used.</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.24.0.</span></p>
+<p><span class="versionmodified changed">Changed in version 1.1.0.</span></p>
 </div>
 </dd>
 </dl>
@@ -88,7 +93,7 @@ For extension dtypes, <code class="docutils literal notranslate"><span class="pr
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Index.shift.html#pandas.Index.shift" title="pandas.Index.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index.shift</span></code></a></dt><dd><p>Shift values of Index.</p>
@@ -102,36 +107,62 @@ For extension dtypes, <code class="docutils literal notranslate"><span class="pr
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Col1'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span>
-<span class="gp">... </span>                   <span class="s1">'Col2'</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">48</span><span class="p">],</span>
-<span class="gp">... </span>                   <span class="s1">'Col3'</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">52</span><span class="p">]})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"Col1"</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="s2">"Col2"</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">48</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="s2">"Col3"</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">52</span><span class="p">]},</span>
+<span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">"2020-01-01"</span><span class="p">,</span> <span class="s2">"2020-01-05"</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">            Col1  Col2  Col3</span>
+<span class="go">2020-01-01    10    13    17</span>
+<span class="go">2020-01-02    20    23    27</span>
+<span class="go">2020-01-03    15    18    22</span>
+<span class="go">2020-01-04    30    33    37</span>
+<span class="go">2020-01-05    45    48    52</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="go">   Col1  Col2  Col3</span>
-<span class="go">0   NaN   NaN   NaN</span>
-<span class="go">1   NaN   NaN   NaN</span>
-<span class="go">2   NaN   NaN   NaN</span>
-<span class="go">3  10.0  13.0  17.0</span>
-<span class="go">4  20.0  23.0  27.0</span>
+<span class="go">            Col1  Col2  Col3</span>
+<span class="go">2020-01-01   NaN   NaN   NaN</span>
+<span class="go">2020-01-02   NaN   NaN   NaN</span>
+<span class="go">2020-01-03   NaN   NaN   NaN</span>
+<span class="go">2020-01-04  10.0  13.0  17.0</span>
+<span class="go">2020-01-05  20.0  23.0  27.0</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
-<span class="go">   Col1  Col2  Col3</span>
-<span class="go">0   NaN  10.0  13.0</span>
-<span class="go">1   NaN  20.0  23.0</span>
-<span class="go">2   NaN  15.0  18.0</span>
-<span class="go">3   NaN  30.0  33.0</span>
-<span class="go">4   NaN  45.0  48.0</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s2">"columns"</span><span class="p">)</span>
+<span class="go">            Col1  Col2  Col3</span>
+<span class="go">2020-01-01   NaN    10    13</span>
+<span class="go">2020-01-02   NaN    20    23</span>
+<span class="go">2020-01-03   NaN    15    18</span>
+<span class="go">2020-01-04   NaN    30    33</span>
+<span class="go">2020-01-05   NaN    45    48</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="go">   Col1  Col2  Col3</span>
-<span class="go">0     0     0     0</span>
-<span class="go">1     0     0     0</span>
-<span class="go">2     0     0     0</span>
-<span class="go">3    10    13    17</span>
-<span class="go">4    20    23    27</span>
+<span class="go">            Col1  Col2  Col3</span>
+<span class="go">2020-01-01     0     0     0</span>
+<span class="go">2020-01-02     0     0     0</span>
+<span class="go">2020-01-03     0     0     0</span>
+<span class="go">2020-01-04    10    13    17</span>
+<span class="go">2020-01-05    20    23    27</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"D"</span><span class="p">)</span>
+<span class="go">            Col1  Col2  Col3</span>
+<span class="go">2020-01-04    10    13    17</span>
+<span class="go">2020-01-05    20    23    27</span>
+<span class="go">2020-01-06    15    18    22</span>
+<span class="go">2020-01-07    30    33    37</span>
+<span class="go">2020-01-08    45    48    52</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"infer"</span><span class="p">)</span>
+<span class="go">            Col1  Col2  Col3</span>
+<span class="go">2020-01-04    10    13    17</span>
+<span class="go">2020-01-05    20    23    27</span>
+<span class="go">2020-01-06    15    18    22</span>
+<span class="go">2020-01-07    30    33    37</span>
+<span class="go">2020-01-08    45    48    52</span>
 </pre></div>
 </div>
 </dd></dl>

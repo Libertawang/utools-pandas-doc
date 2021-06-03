@@ -50,29 +50,34 @@
   <body>
 <div class="section" id="pandas-dataframe-last">
 <h1>pandas.DataFrame.last<a class="headerlink" href="#pandas-dataframe-last" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.last">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">last</code><span class="sig-paren">(</span><em class="sig-param">self: ~FrameOrSeries</em>, <em class="sig-param">offset</em><span class="sig-paren">)</span> → ~FrameOrSeries<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L8180-L8235"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.last" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to subset final periods of time series data based on a date offset.</p>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">last</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L8454-L8516"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.last" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select final periods of time series data based on a date offset.</p>
+<p>When having a DataFrame with dates as index, this function can
+select the last few rows based on a date offset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>offset</strong><span class="classifier">str, DateOffset, dateutil.relativedelta</span></dt><dd></dd>
+<dt><strong>offset</strong><span class="classifier">str, DateOffset, dateutil.relativedelta</span></dt><dd><p>The offset length of the data that will be selected. For instance,
+‘3D’ will display all the rows having their index within the last 3 days.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>subset</strong><span class="classifier">same type as caller</span></dt><dd></dd>
+<dt>Series or DataFrame</dt><dd><p>A subset of the caller.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>TypeError</dt><dd><p>If the index is not  a <a class="reference internal" href="pandas.DatetimeIndex.html#pandas.DatetimeIndex" title="pandas.DatetimeIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatetimeIndex</span></code></a></p>
+<dt>TypeError</dt><dd><p>If the index is not a <a class="reference internal" href="pandas.DatetimeIndex.html#pandas.DatetimeIndex" title="pandas.DatetimeIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatetimeIndex</span></code></a></p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.first.html#pandas.DataFrame.first" title="pandas.DataFrame.first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">first</span></code></a></dt><dd><p>Select initial periods of time series based on a date offset.</p>
@@ -101,7 +106,7 @@
 <span class="go">2018-04-15  4</span>
 </pre></div>
 </div>
-<p>Notice the data for 3 last calender days were returned, not the last
+<p>Notice the data for 3 last calendar days were returned, not the last
 3 observed days in the dataset, and therefore data for 2018-04-11 was
 not returned.</p>
 </dd></dl>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-to-string">
 <h1>pandas.DataFrame.to_string<a class="headerlink" href="#pandas-dataframe-to-string" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.to_string">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_string</code><span class="sig-paren">(</span><em class="sig-param">self, buf: Union[str, pathlib.Path, IO[str], NoneType] = None, columns: Union[Sequence[str], NoneType] = None, col_space: Union[int, NoneType] = None, header: Union[bool, Sequence[str]] = True, index: bool = True, na_rep: str = 'NaN', formatters: Union[List[Callable], Tuple[Callable, ...], Mapping[Union[str, int], Callable], NoneType] = None, float_format: Union[str, Callable, ForwardRef('EngFormatter'), NoneType] = None, sparsify: Union[bool, NoneType] = None, index_names: bool = True, justify: Union[str, NoneType] = None, max_rows: Union[int, NoneType] = None, min_rows: Union[int, NoneType] = None, max_cols: Union[int, NoneType] = None, show_dimensions: bool = False, decimal: str = '.', line_width: Union[int, NoneType] = None, max_colwidth: Union[int, NoneType] = None, encoding: Union[str, NoneType] = None</em><span class="sig-paren">)</span> → Union[str, NoneType]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L738-L820"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">to_string</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_rep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NaN'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparsify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">justify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dimensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_colwidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L859-L943"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.to_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render a DataFrame to a console-friendly tabular output.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -61,13 +61,13 @@
 </dd>
 <dt><strong>columns</strong><span class="classifier">sequence, optional, default None</span></dt><dd><p>The subset of columns to write. Writes all columns by default.</p>
 </dd>
-<dt><strong>col_space</strong><span class="classifier">int, optional</span></dt><dd><p>The minimum width of each column.</p>
+<dt><strong>col_space</strong><span class="classifier">int, list or dict of int, optional</span></dt><dd><p>The minimum width of each column.</p>
 </dd>
 <dt><strong>header</strong><span class="classifier">bool or sequence, optional</span></dt><dd><p>Write out the column names. If a list of strings is given, it is assumed to be aliases for the column names.</p>
 </dd>
 <dt><strong>index</strong><span class="classifier">bool, optional, default True</span></dt><dd><p>Whether to print index (row) labels.</p>
 </dd>
-<dt><strong>na_rep</strong><span class="classifier">str, optional, default ‘NaN’</span></dt><dd><p>String representation of NAN to use.</p>
+<dt><strong>na_rep</strong><span class="classifier">str, optional, default ‘NaN’</span></dt><dd><p>String representation of <code class="docutils literal notranslate"><span class="pre">NaN</span></code> to use.</p>
 </dd>
 <dt><strong>formatters</strong><span class="classifier">list, tuple or dict of one-param. functions, optional</span></dt><dd><p>Formatter functions to apply to columns’ elements by position or
 name.
@@ -75,7 +75,12 @@ The result of each function must be a unicode string.
 List/tuple must be of length equal to the number of columns.</p>
 </dd>
 <dt><strong>float_format</strong><span class="classifier">one-parameter function, optional, default None</span></dt><dd><p>Formatter function to apply to columns’ elements if they are
-floats. The result of this function must be a unicode string.</p>
+floats. This function must return a unicode string and will be
+applied only to the non-<code class="docutils literal notranslate"><span class="pre">NaN</span></code> elements, with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> being
+handled by <code class="docutils literal notranslate"><span class="pre">na_rep</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2.0.</span></p>
+</div>
 </dd>
 <dt><strong>sparsify</strong><span class="classifier">bool, optional, default True</span></dt><dd><p>Set to False for a DataFrame with a hierarchical index to print
 every multiindex key at each row.</p>
@@ -132,7 +137,7 @@ None.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.to_html.html#pandas.DataFrame.to_html" title="pandas.DataFrame.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a></dt><dd><p>Convert DataFrame to HTML.</p>

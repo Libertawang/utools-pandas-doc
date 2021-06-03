@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-core-groupby-seriesgroupby-nsmallest">
 <h1>pandas.core.groupby.SeriesGroupBy.nsmallest<a class="headerlink" href="#pandas-core-groupby-seriesgroupby-nsmallest" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.groupby.SeriesGroupBy.nsmallest">
-<em class="property">property </em><code class="sig-prename descclassname">SeriesGroupBy.</code><code class="sig-name descname">nsmallest</code><a class="headerlink" href="#pandas.core.groupby.SeriesGroupBy.nsmallest" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-prename descclassname"><span class="pre">SeriesGroupBy.</span></code><code class="sig-name descname"><span class="pre">nsmallest</span></code><a class="headerlink" href="#pandas.core.groupby.SeriesGroupBy.nsmallest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the smallest <cite>n</cite> elements.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -88,7 +88,7 @@ Series of <cite>n</cite> elements:</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.nlargest</span></code></dt><dd><p>Get the <cite>n</cite> largest elements.</p>
@@ -107,7 +107,7 @@ the size of the <code class="docutils literal notranslate"><span class="pre">Ser
 <span class="gp">... </span>                        <span class="s2">"Brunei"</span><span class="p">:</span> <span class="mi">434000</span><span class="p">,</span> <span class="s2">"Malta"</span><span class="p">:</span> <span class="mi">434000</span><span class="p">,</span>
 <span class="gp">... </span>                        <span class="s2">"Maldives"</span><span class="p">:</span> <span class="mi">434000</span><span class="p">,</span> <span class="s2">"Iceland"</span><span class="p">:</span> <span class="mi">337000</span><span class="p">,</span>
 <span class="gp">... </span>                        <span class="s2">"Nauru"</span><span class="p">:</span> <span class="mi">11300</span><span class="p">,</span> <span class="s2">"Tuvalu"</span><span class="p">:</span> <span class="mi">11300</span><span class="p">,</span>
-<span class="gp">... </span>                        <span class="s2">"Anguilla"</span><span class="p">:</span> <span class="mi">11300</span><span class="p">,</span> <span class="s2">"Monserat"</span><span class="p">:</span> <span class="mi">5200</span><span class="p">}</span>
+<span class="gp">... </span>                        <span class="s2">"Anguilla"</span><span class="p">:</span> <span class="mi">11300</span><span class="p">,</span> <span class="s2">"Montserrat"</span><span class="p">:</span> <span class="mi">5200</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">countries_population</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
 <span class="go">Italy       59000000</span>
@@ -119,13 +119,13 @@ the size of the <code class="docutils literal notranslate"><span class="pre">Ser
 <span class="go">Nauru          11300</span>
 <span class="go">Tuvalu         11300</span>
 <span class="go">Anguilla       11300</span>
-<span class="go">Monserat        5200</span>
+<span class="go">Montserrat      5200</span>
 <span class="go">dtype: int64</span>
 </pre></div>
 </div>
 <p>The <cite>n</cite> smallest elements where <code class="docutils literal notranslate"><span class="pre">n=5</span></code> by default.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">()</span>
-<span class="go">Monserat      5200</span>
+<span class="go">Montserrat    5200</span>
 <span class="go">Nauru        11300</span>
 <span class="go">Tuvalu       11300</span>
 <span class="go">Anguilla     11300</span>
@@ -136,7 +136,7 @@ the size of the <code class="docutils literal notranslate"><span class="pre">Ser
 <p>The <cite>n</cite> smallest elements where <code class="docutils literal notranslate"><span class="pre">n=3</span></code>. Default <cite>keep</cite> value is
 ‘first’ so Nauru and Tuvalu will be kept.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="go">Monserat     5200</span>
+<span class="go">Montserrat   5200</span>
 <span class="go">Nauru       11300</span>
 <span class="go">Tuvalu      11300</span>
 <span class="go">dtype: int64</span>
@@ -146,7 +146,7 @@ the size of the <code class="docutils literal notranslate"><span class="pre">Ser
 duplicates. Anguilla and Tuvalu will be kept since they are the last
 with value 11300 based on the index order.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'last'</span><span class="p">)</span>
-<span class="go">Monserat     5200</span>
+<span class="go">Montserrat   5200</span>
 <span class="go">Anguilla    11300</span>
 <span class="go">Tuvalu      11300</span>
 <span class="go">dtype: int64</span>
@@ -155,7 +155,7 @@ with value 11300 based on the index order.</p>
 <p>The <cite>n</cite> smallest elements where <code class="docutils literal notranslate"><span class="pre">n=3</span></code> with all duplicates kept. Note
 that the returned Series has four elements due to the three duplicates.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
-<span class="go">Monserat     5200</span>
+<span class="go">Montserrat   5200</span>
 <span class="go">Nauru       11300</span>
 <span class="go">Tuvalu      11300</span>
 <span class="go">Anguilla    11300</span>

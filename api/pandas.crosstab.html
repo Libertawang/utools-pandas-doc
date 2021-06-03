@@ -50,15 +50,15 @@
   <body>
 <div class="section" id="pandas-crosstab">
 <h1>pandas.crosstab<a class="headerlink" href="#pandas-crosstab" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.crosstab">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">crosstab</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">columns</em>, <em class="sig-param">values=None</em>, <em class="sig-param">rownames=None</em>, <em class="sig-param">colnames=None</em>, <em class="sig-param">aggfunc=None</em>, <em class="sig-param">margins=False</em>, <em class="sig-param">margins_name: str = 'All'</em>, <em class="sig-param">dropna: bool = True</em>, <em class="sig-param">normalize=False</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/reshape/pivot.py#L453-L607"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.crosstab" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">crosstab</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rownames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggfunc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margins_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/reshape/pivot.py#L464-L633"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.crosstab" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute a simple cross tabulation of two (or more) factors. By default
 computes a frequency table of the factors unless an array of values and an
 aggregation function are passed.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>index</strong><span class="classifier">array-like, Series, or list of arrays/Series</span></dt><dd><p>Values to group by in the rows.</p>
 </dd>
 <dt><strong>columns</strong><span class="classifier">array-like, Series, or list of arrays/Series</span></dt><dd><p>Values to group by in the columns.</p>
@@ -76,9 +76,6 @@ Requires <cite>aggfunc</cite> be specified.</p>
 </dd>
 <dt><strong>margins_name</strong><span class="classifier">str, default ‘All’</span></dt><dd><p>Name of the row/column that will contain the totals
 when margins is True.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 </dd>
 <dt><strong>dropna</strong><span class="classifier">bool, default True</span></dt><dd><p>Do not include columns whose entries are all NaN.</p>
 </dd>
@@ -99,7 +96,7 @@ when margins is True.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.pivot.html#pandas.DataFrame.pivot" title="pandas.DataFrame.pivot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.pivot</span></code></a></dt><dd><p>Reshape data based on column values.</p>

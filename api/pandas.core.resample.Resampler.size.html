@@ -50,23 +50,26 @@
   <body>
 <div class="section" id="pandas-core-resample-resampler-size">
 <h1>pandas.core.resample.Resampler.size<a class="headerlink" href="#pandas-core-resample-resampler-size" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.resample.Resampler.size">
-<code class="sig-prename descclassname">Resampler.</code><code class="sig-name descname">size</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/resample.py#L867-L878"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.resample.Resampler.size" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Resampler.</span></code><code class="sig-name descname"><span class="pre">size</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/resample.py#L888-L899"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.resample.Resampler.size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute group sizes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>Series</dt><dd><p>Number of rows in each group.</p>
+<dt>DataFrame or Series</dt><dd><p>Number of rows in each group as a Series if as_index is True
+or a DataFrame if as_index is False.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.groupby</span></code></dt><dd></dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.groupby</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.groupby</span></code></dt><dd><p>Apply a function groupby to a Series.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.groupby</span></code></dt><dd><p>Apply a function groupby to each row or column of a DataFrame.</p>
+</dd>
 </dl>
 </div>
 </dd></dl>

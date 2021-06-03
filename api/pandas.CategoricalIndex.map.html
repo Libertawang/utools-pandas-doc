@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-categoricalindex-map">
 <h1>pandas.CategoricalIndex.map<a class="headerlink" href="#pandas-categoricalindex-map" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.CategoricalIndex.map">
-<code class="sig-prename descclassname">CategoricalIndex.</code><code class="sig-name descname">map</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">mapper</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/category.py#L742-L809"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.CategoricalIndex.map" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">CategoricalIndex.</span></code><code class="sig-name descname"><span class="pre">map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapper</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/category.py#L569-L637"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.CategoricalIndex.map" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map values using input correspondence (a dict, Series, or function).</p>
 <p>Maps the values (their categories, not the codes) of the index to new
 categories. If the mapping correspondence is one-to-one the result is a
@@ -75,7 +75,7 @@ will be returned.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Index.map.html#pandas.Index.map" title="pandas.Index.map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index.map</span></code></a></dt><dd><p>Apply a mapping correspondence on an <a class="reference internal" href="pandas.Index.html#pandas.Index" title="pandas.Index"><code class="xref py py-class docutils literal notranslate"><span class="pre">Index</span></code></a>.</p>
@@ -90,7 +90,7 @@ will be returned.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">CategoricalIndex</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span>
 <span class="go">CategoricalIndex(['a', 'b', 'c'], categories=['a', 'b', 'c'],</span>
-<span class="go">                 ordered=False, dtype='category')</span>
+<span class="go">                  ordered=False, dtype='category')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 <span class="go">CategoricalIndex(['A', 'B', 'C'], categories=['A', 'B', 'C'],</span>
 <span class="go">                 ordered=False, dtype='category')</span>

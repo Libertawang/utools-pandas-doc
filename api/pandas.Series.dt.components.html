@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-dt-components">
 <h1>pandas.Series.dt.components<a class="headerlink" href="#pandas-series-dt-components" title="Permalink to this headline">¶</a></h1>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pandas.Series.dt.components">
-<code class="sig-prename descclassname">Series.dt.</code><code class="sig-name descname">components</code><a class="headerlink" href="#pandas.Series.dt.components" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.dt.</span></code><code class="sig-name descname"><span class="pre">components</span></code><a class="headerlink" href="#pandas.Series.dt.components" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a Dataframe of the components of the Timedeltas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -64,11 +64,11 @@
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s1">'s'</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
-<span class="go">0   00:00:00</span>
-<span class="go">1   00:00:01</span>
-<span class="go">2   00:00:02</span>
-<span class="go">3   00:00:03</span>
-<span class="go">4   00:00:04</span>
+<span class="go">0   0 days 00:00:00</span>
+<span class="go">1   0 days 00:00:01</span>
+<span class="go">2   0 days 00:00:02</span>
+<span class="go">3   0 days 00:00:03</span>
+<span class="go">4   0 days 00:00:04</span>
 <span class="go">dtype: timedelta64[ns]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">components</span>
 <span class="go">   days  hours  minutes  seconds  milliseconds  microseconds  nanoseconds</span>

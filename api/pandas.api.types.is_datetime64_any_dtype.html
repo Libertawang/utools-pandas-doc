@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-api-types-is-datetime64-any-dtype">
 <h1>pandas.api.types.is_datetime64_any_dtype<a class="headerlink" href="#pandas-api-types-is-datetime64-any-dtype" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.api.types.is_datetime64_any_dtype">
-<code class="sig-prename descclassname">pandas.api.types.</code><code class="sig-name descname">is_datetime64_any_dtype</code><span class="sig-paren">(</span><em class="sig-param">arr_or_dtype</em><span class="sig-paren">)</span> → bool<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/dtypes/common.py#L987-L1024"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.api.types.is_datetime64_any_dtype" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.api.types.</span></code><code class="sig-name descname"><span class="pre">is_datetime64_any_dtype</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr_or_dtype</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/dtypes/common.py#L912-L951"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.api.types.is_datetime64_any_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check whether the provided array or dtype is of the datetime64 dtype.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -63,7 +63,7 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>boolean</dt><dd><p>Whether or not the array or dtype is of the datetime64 dtype.</p>
+<dt>bool</dt><dd><p>Whether or not the array or dtype is of the datetime64 dtype.</p>
 </dd>
 </dl>
 </dd>
@@ -81,10 +81,9 @@
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
 <span class="go">False</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"datetime64[ns]"</span><span class="p">))</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-<span class="go">                            dtype=np.datetime64))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_datetime64_any_dtype</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"datetime64[ns]"</span><span class="p">))</span>
 <span class="go">True</span>
 </pre></div>
 </div>

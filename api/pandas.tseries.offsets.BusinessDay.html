@@ -50,12 +50,12 @@
   <body>
 <div class="section" id="pandas-tseries-offsets-businessday">
 <h1>pandas.tseries.offsets.BusinessDay<a class="headerlink" href="#pandas-tseries-offsets-businessday" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.tseries.offsets.BusinessDay">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.tseries.offsets.</code><code class="sig-name descname">BusinessDay</code><span class="sig-paren">(</span><em class="sig-param">n=1</em>, <em class="sig-param">normalize=False</em>, <em class="sig-param">offset=datetime.timedelta(0)</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/tseries/offsets.py#L543-L655"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.tseries.offsets.BusinessDay" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.tseries.offsets.</span></code><code class="sig-name descname"><span class="pre">BusinessDay</span></code><a class="headerlink" href="#pandas.tseries.offsets.BusinessDay" title="Permalink to this definition">¶</a></dt>
 <dd><p>DateOffset subclass representing possibly n business days.</p>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -75,34 +75,52 @@
 <col style="width: 43%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>freqstr</strong></p></td>
+<tr class="row-odd"><td><p><strong>calendar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>freqstr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>holidays</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>kwds</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>name</strong></p></td>
+<tr class="row-odd"><td><p><strong>n</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>nanos</strong></p></td>
+<tr class="row-even"><td><p><strong>name</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>nanos</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>normalize</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>rule_code</strong></p></td>
 <td></td>
 </tr>
+<tr class="row-even"><td><p><strong>weekmask</strong></p></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BusinessDay.rollback.html#pandas.tseries.offsets.BusinessDay.rollback" title="pandas.tseries.offsets.BusinessDay.rollback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollback</span></code></a>(self, dt)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BusinessDay.__call__.html#pandas.tseries.offsets.BusinessDay.__call__" title="pandas.tseries.offsets.BusinessDay.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.tseries.offsets.BusinessDay.rollback.html#pandas.tseries.offsets.BusinessDay.rollback" title="pandas.tseries.offsets.BusinessDay.rollback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollback</span></code></a></p></td>
 <td><p>Roll provided date backward to next offset only if not on offset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.tseries.offsets.BusinessDay.rollforward.html#pandas.tseries.offsets.BusinessDay.rollforward" title="pandas.tseries.offsets.BusinessDay.rollforward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollforward</span></code></a>(self, dt)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BusinessDay.rollforward.html#pandas.tseries.offsets.BusinessDay.rollforward" title="pandas.tseries.offsets.BusinessDay.rollforward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollforward</span></code></a></p></td>
 <td><p>Roll provided date forward to next offset only if not on offset.</p></td>
 </tr>
 </tbody>
@@ -113,28 +131,25 @@
 <col style="width: 38%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>__call__</strong></p></td>
+<tr class="row-odd"><td><p><strong>apply</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>apply</strong></p></td>
+<tr class="row-even"><td><p><strong>apply_index</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>apply_index</strong></p></td>
+<tr class="row-odd"><td><p><strong>copy</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>copy</strong></p></td>
+<tr class="row-even"><td><p><strong>isAnchored</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>isAnchored</strong></p></td>
+<tr class="row-odd"><td><p><strong>is_anchored</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>is_anchored</strong></p></td>
+<tr class="row-even"><td><p><strong>is_on_offset</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>is_on_offset</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>onOffset</strong></p></td>
+<tr class="row-odd"><td><p><strong>onOffset</strong></p></td>
 <td></td>
 </tr>
 </tbody>

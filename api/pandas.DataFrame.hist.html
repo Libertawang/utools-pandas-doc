@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-hist">
 <h1>pandas.DataFrame.hist<a class="headerlink" href="#pandas-dataframe-hist" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.hist">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">hist</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">column=None</em>, <em class="sig-param">by=None</em>, <em class="sig-param">grid=True</em>, <em class="sig-param">xlabelsize=None</em>, <em class="sig-param">xrot=None</em>, <em class="sig-param">ylabelsize=None</em>, <em class="sig-param">yrot=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">sharex=False</em>, <em class="sig-param">sharey=False</em>, <em class="sig-param">figsize=None</em>, <em class="sig-param">layout=None</em>, <em class="sig-param">bins=10</em>, <em class="sig-param">backend=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_core.py#L89-L209"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.hist" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">hist</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabelsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xrot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabelsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yrot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sharex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sharey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_core.py#L101-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.hist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a histogram of the DataFrame’s.</p>
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Histogram">histogram</a> is a representation of the distribution of data.
 This function calls <code class="xref py py-meth docutils literal notranslate"><span class="pre">matplotlib.pyplot.hist()</span></code>, on each series in
@@ -107,6 +107,11 @@ specify the <code class="docutils literal notranslate"><span class="pre">plottin
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
 </div>
 </dd>
+<dt><strong>legend</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to show the legend.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
 <dt><strong>**kwargs</strong></dt><dd><p>All other plotting keyword arguments to be passed to
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">matplotlib.pyplot.hist()</span></code>.</p>
 </dd>
@@ -118,10 +123,10 @@ specify the <code class="docutils literal notranslate"><span class="pre">plottin
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist" title="(in Matplotlib v3.2.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.hist</span></code></a></dt><dd><p>Plot a histogram using matplotlib.</p>
+<dt><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html#matplotlib.pyplot.hist" title="(in Matplotlib v3.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.hist</span></code></a></dt><dd><p>Plot a histogram using matplotlib.</p>
 </dd>
 </dl>
 </div>
@@ -136,7 +141,7 @@ some animals, displayed in three bins</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-hist-1.png" src="../../_images/pandas-DataFrame-hist-1.png"/>
+<img alt="../../_images/pandas-DataFrame-hist-1.png" class="plot-directive" src="../../_images/pandas-DataFrame-hist-1.png"/>
 </div>
 </dd></dl>
 </div>

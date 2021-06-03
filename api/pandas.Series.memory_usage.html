@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-memory-usage">
 <h1>pandas.Series.memory_usage<a class="headerlink" href="#pandas-series-memory-usage" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.memory_usage">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">memory_usage</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=True</em>, <em class="sig-param">deep=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L4187-L4239"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.memory_usage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">memory_usage</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L4549-L4601"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.memory_usage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the memory usage of the Series.</p>
 <p>The memory usage can optionally include the contribution of
 the index and of elements of <cite>object</cite> dtype.</p>
@@ -74,10 +74,10 @@ it in the returned value.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.nbytes.html#numpy.ndarray.nbytes" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.nbytes</span></code></a></dt><dd><p>Total bytes consumed by the elements of the array.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.nbytes.html#numpy.ndarray.nbytes" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.nbytes</span></code></a></dt><dd><p>Total bytes consumed by the elements of the array.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.memory_usage.html#pandas.DataFrame.memory_usage" title="pandas.DataFrame.memory_usage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.memory_usage</span></code></a></dt><dd><p>Bytes consumed by a DataFrame.</p>
 </dd>
@@ -102,7 +102,7 @@ is necessarily smaller:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">()</span>
 <span class="go">144</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="go">260</span>
+<span class="go">244</span>
 </pre></div>
 </div>
 </dd></dl>

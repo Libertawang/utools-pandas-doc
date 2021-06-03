@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-wide-to-long">
 <h1>pandas.wide_to_long<a class="headerlink" href="#pandas-wide-to-long" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.wide_to_long">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">wide_to_long</code><span class="sig-paren">(</span><em class="sig-param">df: pandas.core.frame.DataFrame</em>, <em class="sig-param">stubnames</em>, <em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">sep: str = ''</em>, <em class="sig-param">suffix: str = '\d+'</em><span class="sig-paren">)</span> → pandas.core.frame.DataFrame<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/reshape/melt.py#L195-L474"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.wide_to_long" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">wide_to_long</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stubnames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\\d+'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/reshape/melt.py#L236-L523"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.wide_to_long" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wide panel to long format. Less flexible but more user-friendly than melt.</p>
 <p>With stubnames [‘A’, ‘B’], this function expects to find one or more
 group of columns with format
@@ -62,9 +62,9 @@ with <cite>j</cite> (for example <cite>j=’year’</cite>)</p>
 <p>Each row of these wide variables are assumed to be uniquely identified by
 <cite>i</cite> (can be a single column name or a list of column names)</p>
 <p>All remaining variables in the data frame are left intact.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>df</strong><span class="classifier">DataFrame</span></dt><dd><p>The wide-format DataFrame.</p>
 </dd>
 <dt><strong>stubnames</strong><span class="classifier">str or list-like</span></dt><dd><p>The stub name(s). The wide format variables are assumed to
@@ -83,12 +83,10 @@ can strip the hyphen by specifying <cite>sep=’-‘</cite>.</p>
 <dt><strong>suffix</strong><span class="classifier">str, default ‘\d+’</span></dt><dd><p>A regular expression capturing the wanted suffixes. ‘\d+’ captures
 numeric suffixes. Suffixes with no numbers could be specified with the
 negated character class ‘\D+’. You can also further disambiguate
-suffixes, for example, if your wide variables are of the form
-A-one, B-two,.., and you have an unrelated column A-rating, you can
-ignore the last one by specifying <cite>suffix=’(!?one|two)’</cite>.</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.23.0: </span>When all suffixes are numeric, they are cast to int64/float64.</p>
-</div>
+suffixes, for example, if your wide variables are of the form A-one,
+B-two,.., and you have an unrelated column A-rating, you can ignore the
+last one by specifying <cite>suffix=’(!?one|two)’</cite>. When all suffixes are
+numeric, they are cast to int64/float64.</p>
 </dd>
 </dl>
 </dd>
@@ -100,6 +98,21 @@ ignore the last one by specifying <cite>suffix=’(!?one|two)’</cite>.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.melt.html#pandas.melt" title="pandas.melt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">melt</span></code></a></dt><dd><p>Unpivot a DataFrame from wide to long format, optionally leaving identifiers set.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.pivot.html#pandas.pivot" title="pandas.pivot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pivot</span></code></a></dt><dd><p>Create a spreadsheet-style pivot table as a DataFrame.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.pivot.html#pandas.DataFrame.pivot" title="pandas.DataFrame.pivot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.pivot</span></code></a></dt><dd><p>Pivot without aggregation that can handle non-numeric data.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.pivot_table.html#pandas.DataFrame.pivot_table" title="pandas.DataFrame.pivot_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.pivot_table</span></code></a></dt><dd><p>Generalization of pivot that can handle duplicate values for one index/column pair.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.unstack.html#pandas.DataFrame.unstack" title="pandas.DataFrame.unstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.unstack</span></code></a></dt><dd><p>Pivot based on the index values instead of a column.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Notes</p>
 <p>All extra variables are left untouched. This simply uses
 <cite>pandas.melt</cite> under the hood, but is hard-coded to “do the right thing”
@@ -249,7 +262,7 @@ have non-integers as suffixes.</p>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">wide_to_long</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">stubnames</span><span class="o">=</span><span class="s1">'ht'</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="p">[</span><span class="s1">'famid'</span><span class="p">,</span> <span class="s1">'birth'</span><span class="p">],</span> <span class="n">j</span><span class="o">=</span><span class="s1">'age'</span><span class="p">,</span>
-<span class="gp">... </span>                    <span class="n">sep</span><span class="o">=</span><span class="s1">'_'</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s1">'\w+'</span><span class="p">)</span>
+<span class="gp">... </span>                    <span class="n">sep</span><span class="o">=</span><span class="s1">'_'</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="sa">r</span><span class="s1">'\w+'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">l</span>
 <span class="gp">... </span>
 <span class="go">                  ht</span>

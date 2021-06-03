@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-interval">
 <h1>pandas.Interval<a class="headerlink" href="#pandas-interval" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.Interval">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">Interval</code><a class="headerlink" href="#pandas.Interval" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">Interval</span></code><a class="headerlink" href="#pandas.Interval" title="Permalink to this definition">¶</a></dt>
 <dd><p>Immutable object implementing an Interval, a bounded slice-like interval.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -67,7 +67,7 @@ neither. See the Notes for more detailed explanation.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.IntervalIndex.html#pandas.IntervalIndex" title="pandas.IntervalIndex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IntervalIndex</span></code></a></dt><dd><p>An Index of Interval objects that are all closed on the same side.</p>
@@ -139,14 +139,8 @@ of the bound elements</p>
 <span class="go">Timedelta('365 days 00:00:00')</span>
 </pre></div>
 </div>
-<p>And also you can create string intervals</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">volume_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="s1">'Ant'</span><span class="p">,</span> <span class="s1">'Dog'</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s1">'both'</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">'Bee'</span> <span class="ow">in</span> <span class="n">volume_1</span>
-<span class="go">True</span>
-</pre></div>
-</div>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -185,13 +179,13 @@ of the bound elements</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Interval.overlaps.html#pandas.Interval.overlaps" title="pandas.Interval.overlaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlaps</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Interval.overlaps.html#pandas.Interval.overlaps" title="pandas.Interval.overlaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">overlaps</span></code></a></p></td>
 <td><p>Check whether two Interval objects overlap.</p></td>
 </tr>
 </tbody>

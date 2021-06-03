@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-nsmallest">
 <h1>pandas.DataFrame.nsmallest<a class="headerlink" href="#pandas-dataframe-nsmallest" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.nsmallest">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">nsmallest</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">n</em>, <em class="sig-param">columns</em>, <em class="sig-param">keep='first'</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L5127-L5226"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.nsmallest" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">nsmallest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'first'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L5799-L5899"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.nsmallest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the first <cite>n</cite> rows ordered by <cite>columns</cite> in ascending order.</p>
 <p>Return the first <cite>n</cite> rows with the smallest values in <cite>columns</cite>, in
 ascending order. The columns that are not specified are returned as
@@ -86,7 +86,7 @@ selecting more than <cite>n</cite> items.</p></li>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.nlargest.html#pandas.DataFrame.nlargest" title="pandas.DataFrame.nlargest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.nlargest</span></code></a></dt><dd><p>Return the first <cite>n</cite> rows ordered by <cite>columns</cite> in descending order.</p>
@@ -99,7 +99,7 @@ selecting more than <cite>n</cite> items.</p></li>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'population'</span><span class="p">:</span> <span class="p">[</span><span class="mi">59000000</span><span class="p">,</span> <span class="mi">65000000</span><span class="p">,</span> <span class="mi">434000</span><span class="p">,</span>
-<span class="gp">... </span>                                  <span class="mi">434000</span><span class="p">,</span> <span class="mi">434000</span><span class="p">,</span> <span class="mi">337000</span><span class="p">,</span> <span class="mi">11300</span><span class="p">,</span>
+<span class="gp">... </span>                                  <span class="mi">434000</span><span class="p">,</span> <span class="mi">434000</span><span class="p">,</span> <span class="mi">337000</span><span class="p">,</span> <span class="mi">337000</span><span class="p">,</span>
 <span class="gp">... </span>                                  <span class="mi">11300</span><span class="p">,</span> <span class="mi">11300</span><span class="p">],</span>
 <span class="gp">... </span>                   <span class="s1">'GDP'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1937894</span><span class="p">,</span> <span class="mi">2583560</span> <span class="p">,</span> <span class="mi">12011</span><span class="p">,</span> <span class="mi">4520</span><span class="p">,</span> <span class="mi">12128</span><span class="p">,</span>
 <span class="gp">... </span>                           <span class="mi">17036</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">311</span><span class="p">],</span>
@@ -116,18 +116,18 @@ selecting more than <cite>n</cite> items.</p></li>
 <span class="go">Maldives      434000     4520      MV</span>
 <span class="go">Brunei        434000    12128      BN</span>
 <span class="go">Iceland       337000    17036      IS</span>
-<span class="go">Nauru          11300      182      NR</span>
+<span class="go">Nauru         337000      182      NR</span>
 <span class="go">Tuvalu         11300       38      TV</span>
 <span class="go">Anguilla       11300      311      AI</span>
 </pre></div>
 </div>
 <p>In the following example, we will use <code class="docutils literal notranslate"><span class="pre">nsmallest</span></code> to select the
-three rows having the smallest values in column “a”.</p>
+three rows having the smallest values in column “population”.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'population'</span><span class="p">)</span>
-<span class="go">          population  GDP alpha-2</span>
-<span class="go">Nauru          11300  182      NR</span>
-<span class="go">Tuvalu         11300   38      TV</span>
-<span class="go">Anguilla       11300  311      AI</span>
+<span class="go">          population    GDP alpha-2</span>
+<span class="go">Tuvalu         11300     38      TV</span>
+<span class="go">Anguilla       11300    311      AI</span>
+<span class="go">Iceland       337000  17036      IS</span>
 </pre></div>
 </div>
 <p>When using <code class="docutils literal notranslate"><span class="pre">keep='last'</span></code>, ties are resolved in reverse order:</p>
@@ -135,24 +135,25 @@ three rows having the smallest values in column “a”.</p>
 <span class="go">          population  GDP alpha-2</span>
 <span class="go">Anguilla       11300  311      AI</span>
 <span class="go">Tuvalu         11300   38      TV</span>
-<span class="go">Nauru          11300  182      NR</span>
+<span class="go">Nauru         337000  182      NR</span>
 </pre></div>
 </div>
 <p>When using <code class="docutils literal notranslate"><span class="pre">keep='all'</span></code>, all duplicate items are maintained:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'population'</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="s1">'all'</span><span class="p">)</span>
-<span class="go">          population  GDP alpha-2</span>
-<span class="go">Nauru          11300  182      NR</span>
-<span class="go">Tuvalu         11300   38      TV</span>
-<span class="go">Anguilla       11300  311      AI</span>
+<span class="go">          population    GDP alpha-2</span>
+<span class="go">Tuvalu         11300     38      TV</span>
+<span class="go">Anguilla       11300    311      AI</span>
+<span class="go">Iceland       337000  17036      IS</span>
+<span class="go">Nauru         337000    182      NR</span>
 </pre></div>
 </div>
-<p>To order by the largest values in column “a” and then “c”, we can
+<p>To order by the smallest values in column “population” and then “GDP”, we can
 specify multiple columns like in the next example.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="s1">'population'</span><span class="p">,</span> <span class="s1">'GDP'</span><span class="p">])</span>
 <span class="go">          population  GDP alpha-2</span>
 <span class="go">Tuvalu         11300   38      TV</span>
-<span class="go">Nauru          11300  182      NR</span>
 <span class="go">Anguilla       11300  311      AI</span>
+<span class="go">Nauru         337000  182      NR</span>
 </pre></div>
 </div>
 </dd></dl>

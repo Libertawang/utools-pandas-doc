@@ -50,14 +50,14 @@
   <body>
 <div class="section" id="pandas-arrays-stringarray">
 <h1>pandas.arrays.StringArray<a class="headerlink" href="#pandas-arrays-stringarray" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.arrays.StringArray">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.arrays.</code><code class="sig-name descname">StringArray</code><span class="sig-paren">(</span><em class="sig-param">values</em>, <em class="sig-param">copy=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/arrays/string_.py#L86-L319"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.arrays.StringArray" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.arrays.</span></code><code class="sig-name descname"><span class="pre">StringArray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/arrays/string_.py#L107-L428"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.arrays.StringArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extension array for string data.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
 </div>
-<div class="alert alert-warning">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>StringArray is considered experimental. The implementation and
 parts of the API may change without warning.</p>
@@ -66,7 +66,7 @@ parts of the API may change without warning.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>values</strong><span class="classifier">array-like</span></dt><dd><p>The array of data.</p>
-<div class="alert alert-warning">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Currently, this expects an object-dtype ndarray
 where the elements are Python strings or <code class="xref py py-attr docutils literal notranslate"><span class="pre">pandas.NA</span></code>.
@@ -80,10 +80,10 @@ creating a <cite>StringArray</cite> from any sequence.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/array.html#module-array" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></dt><dd><p>The recommended function for creating a StringArray.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/array.html#module-array" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></dt><dd><p>The recommended function for creating a StringArray.</p>
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str</span></code></dt><dd><p>The string methods are available on Series backed by a StringArray.</p>
 </dd>
@@ -98,15 +98,20 @@ creating a <cite>StringArray</cite> from any sequence.</p>
 <span class="go">Length: 4, dtype: string</span>
 </pre></div>
 </div>
-<p>Unlike <code class="docutils literal notranslate"><span class="pre">object</span></code> dtype arrays, <code class="docutils literal notranslate"><span class="pre">StringArray</span></code> doesn’t allow non-string
-values.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">'1'</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"string"</span><span class="p">)</span>
-<span class="gt">Traceback (most recent call last):</span>
-<span class="c">...</span>
-<span class="gr">ValueError</span>: <span class="n">StringArray requires an object-dtype ndarray of strings.</span>
+<p>Unlike arrays instantiated with <code class="docutils literal notranslate"><span class="pre">dtype="object"</span></code>, <code class="docutils literal notranslate"><span class="pre">StringArray</span></code>
+will convert the values to strings.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">'1'</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"object"</span><span class="p">)</span>
+<span class="go">&lt;PandasArray&gt;</span>
+<span class="go">['1', 1]</span>
+<span class="go">Length: 2, dtype: object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">'1'</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"string"</span><span class="p">)</span>
+<span class="go">&lt;StringArray&gt;</span>
+<span class="go">['1', '1']</span>
+<span class="go">Length: 2, dtype: string</span>
 </pre></div>
 </div>
-<p>For comparison methods, this returns a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.BooleanArray</span></code></p>
+<p>However, instantiating StringArrays directly with non-strings will raise an error.</p>
+<p>For comparison methods, <cite>StringArray</cite> returns a <code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.BooleanArray</span></code>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">"string"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"a"</span>
 <span class="go">&lt;BooleanArray&gt;</span>
 <span class="go">[True, &lt;NA&gt;, False]</span>

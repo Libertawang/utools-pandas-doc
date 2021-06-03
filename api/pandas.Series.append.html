@@ -50,16 +50,16 @@
   <body>
 <div class="section" id="pandas-series-append">
 <h1>pandas.Series.append<a class="headerlink" href="#pandas-series-append" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.append">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">to_append</em>, <em class="sig-param">ignore_index=False</em>, <em class="sig-param">verify_integrity=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L2504-L2583"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.append" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">append</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_append</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_integrity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L2614-L2696"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Concatenate two or more Series.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>to_append</strong><span class="classifier">Series or list/tuple of Series</span></dt><dd><p>Series to append with self.</p>
 </dd>
-<dt><strong>ignore_index</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, do not use the index labels.</p>
+<dt><strong>ignore_index</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, the resulting axis will be labeled 0, 1, …, n - 1.</p>
 </dd>
 <dt><strong>verify_integrity</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, raise Exception on creating index with duplicates.</p>
 </dd>
@@ -72,7 +72,7 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.concat.html#pandas.concat" title="pandas.concat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat</span></code></a></dt><dd><p>General function to concatenate DataFrame or Series objects.</p>

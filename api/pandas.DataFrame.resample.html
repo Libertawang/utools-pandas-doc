@@ -50,17 +50,17 @@
   <body>
 <div class="section" id="pandas-dataframe-resample">
 <h1>pandas.DataFrame.resample<a class="headerlink" href="#pandas-dataframe-resample" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.resample">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">resample</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">rule</em>, <em class="sig-param">axis=0</em>, <em class="sig-param">closed: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">label: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">convention: str = 'start'</em>, <em class="sig-param">kind: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">loffset=None</em>, <em class="sig-param">base: int = 0</em>, <em class="sig-param">on=None</em>, <em class="sig-param">level=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L7824-L8116"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.resample" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">resample</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convention</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'start'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loffset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'start_day'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L7983-L8383"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.resample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample time-series data.</p>
 <p>Convenience method for frequency conversion and resampling of time
 series. Object must have a datetime-like index (<cite>DatetimeIndex</cite>,
 <cite>PeriodIndex</cite>, or <cite>TimedeltaIndex</cite>), or pass datetime-like values
 to the <cite>on</cite> or <cite>level</cite> keyword.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>rule</strong><span class="classifier">DateOffset, Timedelta or str</span></dt><dd><p>The offset string or object representing target conversion.</p>
 </dd>
 <dt><strong>axis</strong><span class="classifier">{0 or ‘index’, 1 or ‘columns’}, default 0</span></dt><dd><p>Which axis to use for up- or down-sampling. For <cite>Series</cite> this
@@ -83,16 +83,40 @@ end of <cite>rule</cite>.</p>
 By default the input representation is retained.</p>
 </dd>
 <dt><strong>loffset</strong><span class="classifier">timedelta, default None</span></dt><dd><p>Adjust the resampled time labels.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.0: </span>You should add the loffset to the <cite>df.index</cite> after the resample.
+See below.</p>
+</div>
 </dd>
 <dt><strong>base</strong><span class="classifier">int, default 0</span></dt><dd><p>For frequencies that evenly subdivide 1 day, the “origin” of the
 aggregated intervals. For example, for ‘5min’ frequency, base could
 range from 0 through 4. Defaults to 0.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.0: </span>The new arguments that you should use are ‘offset’ or ‘origin’.</p>
+</div>
 </dd>
 <dt><strong>on</strong><span class="classifier">str, optional</span></dt><dd><p>For a DataFrame, column to use instead of index for resampling.
 Column must be datetime-like.</p>
 </dd>
 <dt><strong>level</strong><span class="classifier">str or int, optional</span></dt><dd><p>For a MultiIndex, level (name or number) to use for
 resampling. <cite>level</cite> must be datetime-like.</p>
+</dd>
+<dt><strong>origin</strong><span class="classifier">{‘epoch’, ‘start’, ‘start_day’}, Timestamp or str, default ‘start_day’</span></dt><dd><p>The timestamp on which to adjust the grouping. The timezone of origin
+must match the timezone of the index.
+If a timestamp is not used, these values are also supported:</p>
+<ul class="simple">
+<li><p>‘epoch’: <cite>origin</cite> is 1970-01-01</p></li>
+<li><p>‘start’: <cite>origin</cite> is the first value of the timeseries</p></li>
+<li><p>‘start_day’: <cite>origin</cite> is the first day at midnight of the timeseries</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>offset</strong><span class="classifier">Timedelta or str, default is None</span></dt><dd><p>An offset timedelta added to the origin.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -102,7 +126,7 @@ resampling. <cite>level</cite> must be datetime-like.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="pandas.DataFrame.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a></dt><dd><p>Group by mapping, function, label, or list of labels.</p>
@@ -262,8 +286,8 @@ assigned to the last month of the period.</p>
 </div>
 <p>For DataFrame objects, the keyword <cite>on</cite> can be used to specify the
 column instead of the index for resampling.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">'price'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
-<span class="gp">... </span>          <span class="s1">'volume'</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'price'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="s1">'volume'</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">'week_starting'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'01/01/2018'</span><span class="p">,</span>
 <span class="gp">... </span>                                    <span class="n">periods</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
@@ -288,8 +312,8 @@ column instead of the index for resampling.</p>
 <p>For a DataFrame with MultiIndex, the keyword <cite>level</cite> can be used to
 specify on which level the resampling needs to take place.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">days</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2000'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'D'</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">'price'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
-<span class="gp">... </span>           <span class="s1">'volume'</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'price'</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
+<span class="gp">... </span>      <span class="s1">'volume'</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d2</span><span class="p">,</span>
 <span class="gp">... </span>                   <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">([</span><span class="n">days</span><span class="p">,</span>
 <span class="gp">... </span>                                                    <span class="p">[</span><span class="s1">'morning'</span><span class="p">,</span>
@@ -311,6 +335,92 @@ specify on which level the resampling needs to take place.</p>
 <span class="go">2000-01-02     22     140</span>
 <span class="go">2000-01-03     32     150</span>
 <span class="go">2000-01-04     36      90</span>
+</pre></div>
+</div>
+<p>If you want to adjust the start of the bins based on a fixed timestamp:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">'2000-10-01 23:30:00'</span><span class="p">,</span> <span class="s1">'2000-10-02 00:30:00'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'7min'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rng</span><span class="p">))</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span>
+<span class="go">2000-10-01 23:30:00     0</span>
+<span class="go">2000-10-01 23:37:00     3</span>
+<span class="go">2000-10-01 23:44:00     6</span>
+<span class="go">2000-10-01 23:51:00     9</span>
+<span class="go">2000-10-01 23:58:00    12</span>
+<span class="go">2000-10-02 00:05:00    15</span>
+<span class="go">2000-10-02 00:12:00    18</span>
+<span class="go">2000-10-02 00:19:00    21</span>
+<span class="go">2000-10-02 00:26:00    24</span>
+<span class="go">Freq: 7T, dtype: int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'17min'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:14:00     0</span>
+<span class="go">2000-10-01 23:31:00     9</span>
+<span class="go">2000-10-01 23:48:00    21</span>
+<span class="go">2000-10-02 00:05:00    54</span>
+<span class="go">2000-10-02 00:22:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'17min'</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">'epoch'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:18:00     0</span>
+<span class="go">2000-10-01 23:35:00    18</span>
+<span class="go">2000-10-01 23:52:00    27</span>
+<span class="go">2000-10-02 00:09:00    39</span>
+<span class="go">2000-10-02 00:26:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'17min'</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">'2000-01-01'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:24:00     3</span>
+<span class="go">2000-10-01 23:41:00    15</span>
+<span class="go">2000-10-01 23:58:00    45</span>
+<span class="go">2000-10-02 00:15:00    45</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<p>If you want to adjust the start of the bins with an <cite>offset</cite> Timedelta, the two
+following lines are equivalent:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'17min'</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">'start'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:30:00     9</span>
+<span class="go">2000-10-01 23:47:00    21</span>
+<span class="go">2000-10-02 00:04:00    54</span>
+<span class="go">2000-10-02 00:21:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'17min'</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="s1">'23h30min'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:30:00     9</span>
+<span class="go">2000-10-01 23:47:00    21</span>
+<span class="go">2000-10-02 00:04:00    54</span>
+<span class="go">2000-10-02 00:21:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<p>To replace the use of the deprecated <cite>base</cite> argument, you can now use <cite>offset</cite>,
+in this example it is equivalent to have <cite>base=2</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'17min'</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="s1">'2min'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:16:00     0</span>
+<span class="go">2000-10-01 23:33:00     9</span>
+<span class="go">2000-10-01 23:50:00    36</span>
+<span class="go">2000-10-02 00:07:00    39</span>
+<span class="go">2000-10-02 00:24:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<p>To replace the use of the deprecated <cite>loffset</cite> argument:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas.tseries.frequencies</span> <span class="kn">import</span> <span class="n">to_offset</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loffset</span> <span class="o">=</span> <span class="s1">'19min'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts_out</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">'17min'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts_out</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">ts_out</span><span class="o">.</span><span class="n">index</span> <span class="o">+</span> <span class="n">to_offset</span><span class="p">(</span><span class="n">loffset</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts_out</span>
+<span class="go">2000-10-01 23:33:00     0</span>
+<span class="go">2000-10-01 23:50:00     9</span>
+<span class="go">2000-10-02 00:07:00    21</span>
+<span class="go">2000-10-02 00:24:00    54</span>
+<span class="go">2000-10-02 00:41:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
 </pre></div>
 </div>
 </dd></dl>

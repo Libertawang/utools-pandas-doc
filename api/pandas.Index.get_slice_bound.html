@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-index-get-slice-bound">
 <h1>pandas.Index.get_slice_bound<a class="headerlink" href="#pandas-index-get-slice-bound" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.get_slice_bound">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">get_slice_bound</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">label</em>, <em class="sig-param">side</em>, <em class="sig-param">kind</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L4807-L4871"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.get_slice_bound" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">get_slice_bound</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L5356-L5422"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.get_slice_bound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate slice bound that corresponds to given label.</p>
 <p>Returns leftmost (one-past-the-rightmost if <code class="docutils literal notranslate"><span class="pre">side=='right'</span></code>) position
 of given label.</p>
@@ -61,7 +61,7 @@ of given label.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>label</strong><span class="classifier">object</span></dt><dd></dd>
 <dt><strong>side</strong><span class="classifier">{‘left’, ‘right’}</span></dt><dd></dd>
-<dt><strong>kind</strong><span class="classifier">{‘ix’, ‘loc’, ‘getitem’}</span></dt><dd></dd>
+<dt><strong>kind</strong><span class="classifier">{‘loc’, ‘getitem’} or None</span></dt><dd></dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>

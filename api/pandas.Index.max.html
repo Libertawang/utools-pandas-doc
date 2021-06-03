@@ -50,16 +50,19 @@
   <body>
 <div class="section" id="pandas-index-max">
 <h1>pandas.Index.max<a class="headerlink" href="#pandas-index-max" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.max">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">max</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">skipna=True</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/base.py#L874-L913"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.max" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">max</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/base.py#L622-L664"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.max" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the maximum value of the Index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>axis</strong><span class="classifier">int, optional</span></dt><dd><p>For compatibility with NumPy. Only 0 or None are allowed.</p>
 </dd>
-<dt><strong>skipna</strong><span class="classifier">bool, default True</span></dt><dd></dd>
+<dt><strong>skipna</strong><span class="classifier">bool, default True</span></dt><dd><p>Exclude NA/null values when showing the result.</p>
+</dd>
+<dt><strong>*args, **kwargs</strong></dt><dd><p>Additional arguments and keywords for compatibility with NumPy.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -69,7 +72,7 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Index.min.html#pandas.Index.min" title="pandas.Index.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index.min</span></code></a></dt><dd><p>Return the minimum value in an Index.</p>

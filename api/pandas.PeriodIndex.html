@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-periodindex">
 <h1>pandas.PeriodIndex<a class="headerlink" href="#pandas-periodindex" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.PeriodIndex">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">PeriodIndex</code><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/period.py#L86-L845"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.PeriodIndex" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">PeriodIndex</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordinal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fields</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/period.py#L68-L702"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.PeriodIndex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Immutable ndarray holding ordinal values indicating regular periods in time.</p>
 <p>Index keys are boxed to Period objects which carries the metadata (eg,
 frequency information).</p>
@@ -63,7 +63,7 @@ frequency information).</p>
 </dd>
 <dt><strong>copy</strong><span class="classifier">bool</span></dt><dd><p>Make a copy of input ndarray.</p>
 </dd>
-<dt><strong>freq</strong><span class="classifier">str or period object, optional</span></dt><dd><p>One of pandas period strings or corresponding objects</p>
+<dt><strong>freq</strong><span class="classifier">str or period object, optional</span></dt><dd><p>One of pandas period strings or corresponding objects.</p>
 </dd>
 <dt><strong>year</strong><span class="classifier">int, array, or Series, default None</span></dt><dd></dd>
 <dt><strong>month</strong><span class="classifier">int, array, or Series, default None</span></dt><dd></dd>
@@ -78,7 +78,7 @@ frequency information).</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Index.html#pandas.Index" title="pandas.Index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index</span></code></a></dt><dd><p>The base pandas Index type.</p>
@@ -94,11 +94,13 @@ frequency information).</p>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">PeriodIndex</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">year_arr</span><span class="p">,</span> <span class="n">quarter</span><span class="o">=</span><span class="n">q_arr</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">PeriodIndex</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="p">[</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2002</span><span class="p">],</span> <span class="n">quarter</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span>
+<span class="go">PeriodIndex(['2000Q1', '2002Q3'], dtype='period[Q-DEC]', freq='Q-DEC')</span>
 </pre></div>
 </div>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -110,7 +112,13 @@ frequency information).</p>
 <tr class="row-even"><td><p><a class="reference internal" href="pandas.PeriodIndex.dayofweek.html#pandas.PeriodIndex.dayofweek" title="pandas.PeriodIndex.dayofweek"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dayofweek</span></code></a></p></td>
 <td><p>The day of the week with Monday=0, Sunday=6.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.PeriodIndex.dayofyear.html#pandas.PeriodIndex.dayofyear" title="pandas.PeriodIndex.dayofyear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dayofyear</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.PeriodIndex.day_of_week.html#pandas.PeriodIndex.day_of_week" title="pandas.PeriodIndex.day_of_week"><code class="xref py py-obj docutils literal notranslate"><span class="pre">day_of_week</span></code></a></p></td>
+<td><p>The day of the week with Monday=0, Sunday=6.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.PeriodIndex.dayofyear.html#pandas.PeriodIndex.dayofyear" title="pandas.PeriodIndex.dayofyear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dayofyear</span></code></a></p></td>
+<td><p>The ordinal day of the year.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.PeriodIndex.day_of_year.html#pandas.PeriodIndex.day_of_year" title="pandas.PeriodIndex.day_of_year"><code class="xref py py-obj docutils literal notranslate"><span class="pre">day_of_year</span></code></a></p></td>
 <td><p>The ordinal day of the year.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pandas.PeriodIndex.days_in_month.html#pandas.PeriodIndex.days_in_month" title="pandas.PeriodIndex.days_in_month"><code class="xref py py-obj docutils literal notranslate"><span class="pre">days_in_month</span></code></a></p></td>
@@ -123,7 +131,7 @@ frequency information).</p>
 <td><p>Return the frequency object if it is set, otherwise None.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pandas.PeriodIndex.freqstr.html#pandas.PeriodIndex.freqstr" title="pandas.PeriodIndex.freqstr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">freqstr</span></code></a></p></td>
-<td><p>Return the frequency object as a string if its set, otherwise None</p></td>
+<td><p>Return the frequency object as a string if its set, otherwise None.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pandas.PeriodIndex.hour.html#pandas.PeriodIndex.hour" title="pandas.PeriodIndex.hour"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hour</span></code></a></p></td>
 <td><p>The hour of the period.</p></td>
@@ -175,19 +183,19 @@ frequency information).</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.PeriodIndex.asfreq.html#pandas.PeriodIndex.asfreq" title="pandas.PeriodIndex.asfreq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asfreq</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.PeriodIndex.asfreq.html#pandas.PeriodIndex.asfreq" title="pandas.PeriodIndex.asfreq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asfreq</span></code></a>([freq, how])</p></td>
 <td><p>Convert the Period Array/Index to the specified frequency <cite>freq</cite>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.PeriodIndex.strftime.html#pandas.PeriodIndex.strftime" title="pandas.PeriodIndex.strftime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strftime</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.PeriodIndex.strftime.html#pandas.PeriodIndex.strftime" title="pandas.PeriodIndex.strftime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strftime</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Convert to Index using specified date_format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.PeriodIndex.to_timestamp.html#pandas.PeriodIndex.to_timestamp" title="pandas.PeriodIndex.to_timestamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_timestamp</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.PeriodIndex.to_timestamp.html#pandas.PeriodIndex.to_timestamp" title="pandas.PeriodIndex.to_timestamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_timestamp</span></code></a>([freq, how])</p></td>
 <td><p>Cast to DatetimeArray/Index.</p></td>
 </tr>
 </tbody>

@@ -50,11 +50,11 @@
   <body>
 <div class="section" id="pandas-series-values">
 <h1>pandas.Series.values<a class="headerlink" href="#pandas-series-values" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.values">
-<em class="property">property </em><code class="sig-prename descclassname">Series.</code><code class="sig-name descname">values</code><a class="headerlink" href="#pandas.Series.values" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">values</span></code><a class="headerlink" href="#pandas.Series.values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return Series as ndarray or ndarray-like depending on the dtype.</p>
-<div class="alert alert-warning">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>We recommend using <a class="reference internal" href="pandas.Series.array.html#pandas.Series.array" title="pandas.Series.array"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Series.array</span></code></a> or
 <a class="reference internal" href="pandas.Series.to_numpy.html#pandas.Series.to_numpy" title="pandas.Series.to_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.to_numpy()</span></code></a>, depending on whether you need
@@ -67,7 +67,7 @@ a reference to the underlying data or a NumPy array.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.array.html#pandas.Series.array" title="pandas.Series.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.array</span></code></a></dt><dd><p>Reference to the underlying data.</p>
@@ -86,8 +86,8 @@ a reference to the underlying data or a NumPy array.</p>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">'aabc'</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
-<span class="go">[a, a, b, c]</span>
-<span class="go">Categories (3, object): [a, b, c]</span>
+<span class="go">['a', 'a', 'b', 'c']</span>
+<span class="go">Categories (3, object): ['a', 'b', 'c']</span>
 </pre></div>
 </div>
 <p>Timezone aware datetime data is converted to UTC:</p>

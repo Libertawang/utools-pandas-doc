@@ -50,38 +50,31 @@
   <body>
 <div class="section" id="pandas-dataframe-set-axis">
 <h1>pandas.DataFrame.set_axis<a class="headerlink" href="#pandas-dataframe-set-axis" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.set_axis">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">set_axis</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">labels</em>, <em class="sig-param">axis=0</em>, <em class="sig-param">inplace=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L572-L658"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.set_axis" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">set_axis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L4115-L4155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.set_axis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign desired index to given axis.</p>
 <p>Indexes for column or row labels can be changed by assigning
 a list-like or Index.</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.21.0: </span>The signature is now <cite>labels</cite> and <cite>axis</cite>, consistent with
-the rest of pandas API. Previously, the <cite>axis</cite> and <cite>labels</cite>
-arguments were respectively the first and second positional
-arguments.</p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>labels</strong><span class="classifier">list-like, Index</span></dt><dd><p>The values for the new index.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">{0 or ‘index’, 1 or ‘columns’}, default 0</span></dt><dd><p>The axis to update. The value 0 identifies the rows, and 1
-identifies the columns.</p>
+<dt><strong>axis</strong><span class="classifier">{0 or ‘index’, 1 or ‘columns’}, default 0</span></dt><dd><p>The axis to update. The value 0 identifies the rows, and 1 identifies the columns.</p>
 </dd>
-<dt><strong>inplace</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to return a new %(klass)s instance.</p>
+<dt><strong>inplace</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to return a new DataFrame instance.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>renamed</strong><span class="classifier">%(klass)s or None</span></dt><dd><p>An object of same type as caller if inplace=False, None otherwise.</p>
+<dt><strong>renamed</strong><span class="classifier">DataFrame or None</span></dt><dd><p>An object of type DataFrame or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.rename_axis.html#pandas.DataFrame.rename_axis" title="pandas.DataFrame.rename_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.rename_axis</span></code></a></dt><dd><p>Alter the name of the index or columns.</p>
@@ -89,23 +82,6 @@ identifies the columns.</p>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<p><strong>Series</strong></p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
-<span class="go">0    1</span>
-<span class="go">1    2</span>
-<span class="go">2    3</span>
-<span class="go">dtype: int64</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">set_axis</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="go">a    1</span>
-<span class="go">b    2</span>
-<span class="go">c    3</span>
-<span class="go">dtype: int64</span>
-</pre></div>
-</div>
-<p><strong>DataFrame</strong></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"A"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">"B"</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]})</span>
 </pre></div>
 </div>

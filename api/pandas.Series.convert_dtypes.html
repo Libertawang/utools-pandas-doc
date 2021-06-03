@@ -50,16 +50,16 @@
   <body>
 <div class="section" id="pandas-series-convert-dtypes">
 <h1>pandas.Series.convert_dtypes<a class="headerlink" href="#pandas-series-convert-dtypes" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.convert_dtypes">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">convert_dtypes</code><span class="sig-paren">(</span><em class="sig-param">self: ~FrameOrSeries</em>, <em class="sig-param">infer_objects: bool = True</em>, <em class="sig-param">convert_string: bool = True</em>, <em class="sig-param">convert_integer: bool = True</em>, <em class="sig-param">convert_boolean: bool = True</em><span class="sig-paren">)</span> → ~FrameOrSeries<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L5922-L6056"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.convert_dtypes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">convert_dtypes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">infer_objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_integer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_boolean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_floating</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L6095-L6250"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.convert_dtypes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert columns to best possible dtypes using dtypes supporting <code class="docutils literal notranslate"><span class="pre">pd.NA</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>infer_objects</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether object dtypes should be converted to the best possible types.</p>
 </dd>
 <dt><strong>convert_string</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether object dtypes should be converted to <code class="docutils literal notranslate"><span class="pre">StringDtype()</span></code>.</p>
@@ -67,6 +67,13 @@
 <dt><strong>convert_integer</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether, if possible, conversion can be done to integer extension types.</p>
 </dd>
 <dt><strong>convert_boolean</strong><span class="classifier">bool, defaults True</span></dt><dd><p>Whether object dtypes should be converted to <code class="docutils literal notranslate"><span class="pre">BooleanDtypes()</span></code>.</p>
+</dd>
+<dt><strong>convert_floating</strong><span class="classifier">bool, defaults True</span></dt><dd><p>Whether, if possible, conversion can be done to floating extension types.
+If <cite>convert_integer</cite> is also True, preference will be give to integer
+dtypes if the floats can be faithfully casted to integers.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -77,7 +84,7 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.infer_objects.html#pandas.Series.infer_objects" title="pandas.Series.infer_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_objects</span></code></a></dt><dd><p>Infer dtypes of objects.</p>
@@ -93,16 +100,22 @@
 <p class="rubric">Notes</p>
 <p>By default, <code class="docutils literal notranslate"><span class="pre">convert_dtypes</span></code> will attempt to convert a Series (or each
 Series in a DataFrame) to dtypes that support <code class="docutils literal notranslate"><span class="pre">pd.NA</span></code>. By using the options
-<code class="docutils literal notranslate"><span class="pre">convert_string</span></code>, <code class="docutils literal notranslate"><span class="pre">convert_integer</span></code>, and <code class="docutils literal notranslate"><span class="pre">convert_boolean</span></code>, it is
-possible to turn off individual conversions to <code class="docutils literal notranslate"><span class="pre">StringDtype</span></code>, the integer
-extension types or <code class="docutils literal notranslate"><span class="pre">BooleanDtype</span></code>, respectively.</p>
+<code class="docutils literal notranslate"><span class="pre">convert_string</span></code>, <code class="docutils literal notranslate"><span class="pre">convert_integer</span></code>, <code class="docutils literal notranslate"><span class="pre">convert_boolean</span></code> and
+<code class="docutils literal notranslate"><span class="pre">convert_boolean</span></code>, it is possible to turn off individual conversions
+to <code class="docutils literal notranslate"><span class="pre">StringDtype</span></code>, the integer extension types, <code class="docutils literal notranslate"><span class="pre">BooleanDtype</span></code>
+or floating extension types, respectively.</p>
 <p>For object-dtyped columns, if <code class="docutils literal notranslate"><span class="pre">infer_objects</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, use the inference
-rules as during normal Series/DataFrame construction.  Then, if possible,
-convert to <code class="docutils literal notranslate"><span class="pre">StringDtype</span></code>, <code class="docutils literal notranslate"><span class="pre">BooleanDtype</span></code> or an appropriate integer extension
-type, otherwise leave as <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+rules as during normal Series/DataFrame construction. Then, if possible,
+convert to <code class="docutils literal notranslate"><span class="pre">StringDtype</span></code>, <code class="docutils literal notranslate"><span class="pre">BooleanDtype</span></code> or an appropriate integer
+or floating extension type, otherwise leave as <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
 <p>If the dtype is integer, convert to an appropriate integer extension type.</p>
 <p>If the dtype is numeric, and consists of all integers, convert to an
-appropriate integer extension type.</p>
+appropriate integer extension type. Otherwise, convert to an
+appropriate floating extension type.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2: </span>Starting with pandas 1.2, this method also converts float columns
+to the nullable floating extension type.</p>
+</div>
 <p>In the future, as new dtypes are added that support <code class="docutils literal notranslate"><span class="pre">pd.NA</span></code>, the results
 of this method will change to support those new dtypes.</p>
 <p class="rubric">Examples</p>
@@ -140,7 +153,7 @@ of this method will change to support those new dtypes.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dfn</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">convert_dtypes</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dfn</span>
 <span class="go">   a  b      c     d     e      f</span>
-<span class="go">0  1  x   True     h    10    NaN</span>
+<span class="go">0  1  x   True     h    10   &lt;NA&gt;</span>
 <span class="go">1  2  y  False     i  &lt;NA&gt;  100.5</span>
 <span class="go">2  3  z   &lt;NA&gt;  &lt;NA&gt;    20  200.0</span>
 </pre></div>
@@ -151,7 +164,7 @@ of this method will change to support those new dtypes.</p>
 <span class="go">c    boolean</span>
 <span class="go">d     string</span>
 <span class="go">e      Int64</span>
-<span class="go">f    float64</span>
+<span class="go">f    Float64</span>
 <span class="go">dtype: object</span>
 </pre></div>
 </div>

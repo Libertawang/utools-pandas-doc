@@ -50,23 +50,24 @@
   <body>
 <div class="section" id="pandas-timedelta-isoformat">
 <h1>pandas.Timedelta.isoformat<a class="headerlink" href="#pandas-timedelta-isoformat" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Timedelta.isoformat">
-<code class="sig-prename descclassname">Timedelta.</code><code class="sig-name descname">isoformat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pandas.Timedelta.isoformat" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Timedelta.</span></code><code class="sig-name descname"><span class="pre">isoformat</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pandas.Timedelta.isoformat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Format Timedelta as ISO 8601 Duration like
 <code class="docutils literal notranslate"><span class="pre">P[n]Y[n]M[n]DT[n]H[n]M[n]S</span></code>, where the <code class="docutils literal notranslate"><span class="pre">[n]</span></code> s are replaced by the
 values. See <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601#Durations">https://en.wikipedia.org/wiki/ISO_8601#Durations</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>formatted</strong><span class="classifier">str</span></dt><dd></dd>
+<dt>str</dt><dd></dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.Timestamp.isoformat.html#pandas.Timestamp.isoformat" title="pandas.Timestamp.isoformat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Timestamp.isoformat</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.Timestamp.isoformat.html#pandas.Timestamp.isoformat" title="pandas.Timestamp.isoformat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Timestamp.isoformat</span></code></a></dt><dd><p>Function is used to convert the given Timestamp object into the ISO format.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -80,7 +81,9 @@ We do not 0 pad components, so it’s <cite>…T5H…</cite>, not <cite>…T05H�
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">td</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
 <span class="gp">... </span>                  <span class="n">milliseconds</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">microseconds</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">nanoseconds</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">td</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">td</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
 <span class="go">'P6DT0H50M3.010010012S'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
 <span class="go">'P0DT0H0M10S'</span>

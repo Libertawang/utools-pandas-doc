@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-diff">
 <h1>pandas.Series.diff<a class="headerlink" href="#pandas-series-diff" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.diff">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">diff</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">periods=1</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L2292-L2359"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.diff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">diff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L2382-L2470"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.diff" title="Permalink to this definition">¶</a></dt>
 <dd><p>First discrete difference of element.</p>
 <p>Calculates the difference of a Series element compared with another
 element in the Series (default is element in previous row).</p>
@@ -71,7 +71,7 @@ values.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.pct_change.html#pandas.Series.pct_change" title="pandas.Series.pct_change"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.pct_change</span></code></a></dt><dd><p>Percent change over given number of periods.</p>
@@ -84,7 +84,9 @@ values.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>For boolean dtypes, this uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">operator.xor()</span></code> rather than
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">operator.sub()</span></code>.</p>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">operator.sub()</span></code>.
+The result is calculated according to current dtype in Series,
+however dtype of the result is always float64.</p>
 <p class="rubric">Examples</p>
 <p>Difference with previous row</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
@@ -117,6 +119,14 @@ values.</p>
 <span class="go">3   -2.0</span>
 <span class="go">4   -3.0</span>
 <span class="go">5    NaN</span>
+<span class="go">dtype: float64</span>
+</pre></div>
+</div>
+<p>Overflow in input dtype</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="go">0      NaN</span>
+<span class="go">1    255.0</span>
 <span class="go">dtype: float64</span>
 </pre></div>
 </div>

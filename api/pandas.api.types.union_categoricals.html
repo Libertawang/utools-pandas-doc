@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-api-types-union-categoricals">
 <h1>pandas.api.types.union_categoricals<a class="headerlink" href="#pandas-api-types-union-categoricals" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.api.types.union_categoricals">
-<code class="sig-prename descclassname">pandas.api.types.</code><code class="sig-name descname">union_categoricals</code><span class="sig-paren">(</span><em class="sig-param">to_union</em>, <em class="sig-param">sort_categories: bool = False</em>, <em class="sig-param">ignore_order: bool = False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/dtypes/concat.py#L186-L357"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.api.types.union_categoricals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.api.types.</span></code><code class="sig-name descname"><span class="pre">union_categoricals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/dtypes/concat.py#L174-L339"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.api.types.union_categoricals" title="Permalink to this definition">¶</a></dt>
 <dd><p>Combine list-like of Categorical-like, unioning categories.</p>
 <p>All categories must have the same dtype.</p>
 <dl class="field-list simple">
@@ -100,16 +100,16 @@ categories being combined.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">union_categoricals</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
-<span class="go">[b, c, a, b]</span>
-<span class="go">Categories (3, object): [b, c, a]</span>
+<span class="go">['b', 'c', 'a', 'b']</span>
+<span class="go">Categories (3, object): ['b', 'c', 'a']</span>
 </pre></div>
 </div>
 <p>By default, the resulting categories will be ordered as they appear
 in the <cite>categories</cite> of the data. If you want the categories to be
 lexsorted, use <cite>sort_categories=True</cite> argument.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">union_categoricals</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="n">sort_categories</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="go">[b, c, a, b]</span>
-<span class="go">Categories (3, object): [a, b, c]</span>
+<span class="go">['b', 'c', 'a', 'b']</span>
+<span class="go">Categories (3, object): ['a', 'b', 'c']</span>
 </pre></div>
 </div>
 <p><cite>union_categoricals</cite> also works with the case of combining two
@@ -118,15 +118,17 @@ you could also <cite>append</cite> for).</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">union_categoricals</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
-<span class="go">[a, b, a, b, a]</span>
-<span class="go">Categories (2, object): [a &lt; b]</span>
+<span class="go">['a', 'b', 'a', 'b', 'a']</span>
+<span class="go">Categories (2, object): ['a' &lt; 'b']</span>
 </pre></div>
 </div>
 <p>Raises <cite>TypeError</cite> because the categories are ordered and not identical.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">union_categoricals</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
-<span class="go">TypeError: to union ordered Categoricals, all categories must be the same</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">TypeError</span>: <span class="n">to union ordered Categoricals, all categories must be the same</span>
 </pre></div>
 </div>
 <p>New in version 0.20.0</p>
@@ -135,8 +137,8 @@ combined by using the <cite>ignore_ordered=True</cite> argument.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">union_categoricals</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">],</span> <span class="n">ignore_order</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="go">[a, b, c, c, b, a]</span>
-<span class="go">Categories (3, object): [a, b, c]</span>
+<span class="go">['a', 'b', 'c', 'c', 'b', 'a']</span>
+<span class="go">Categories (3, object): ['a', 'b', 'c']</span>
 </pre></div>
 </div>
 <p><cite>union_categoricals</cite> also works with a <cite>CategoricalIndex</cite>, or <cite>Series</cite>
@@ -145,8 +147,8 @@ always be a plain <cite>Categorical</cite></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'category'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'category'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">union_categoricals</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
-<span class="go">[b, c, a, b]</span>
-<span class="go">Categories (3, object): [b, c, a]</span>
+<span class="go">['b', 'c', 'a', 'b']</span>
+<span class="go">Categories (3, object): ['b', 'c', 'a']</span>
 </pre></div>
 </div>
 </dd></dl>

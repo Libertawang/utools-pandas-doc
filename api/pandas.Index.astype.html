@@ -50,12 +50,12 @@
   <body>
 <div class="section" id="pandas-index-astype">
 <h1>pandas.Index.astype<a class="headerlink" href="#pandas-index-astype" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.astype">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">astype</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">dtype</em>, <em class="sig-param">copy=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L697-L714"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.astype" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an Index with values cast to dtypes. The class of a new Index
-is determined by dtype. When conversion is impossible, a ValueError
-exception is raised.</p>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">astype</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L665-L711"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.astype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an Index with values cast to dtypes.</p>
+<p>The class of a new Index is determined by dtype. When conversion is
+impossible, a TypeError exception is raised.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">

@@ -50,18 +50,33 @@
   <body>
 <div class="section" id="pandas-index-sort-values">
 <h1>pandas.Index.sort_values<a class="headerlink" href="#pandas-index-sort-values" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.sort_values">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">sort_values</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">return_indexer=False</em>, <em class="sig-param">ascending=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L4202-L4254"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.sort_values" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">sort_values</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">return_indexer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'last'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L4597-L4679"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.sort_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a sorted copy of the index.</p>
 <p>Return a sorted copy of the index, and optionally return the indices
 that sorted the index itself.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>return_indexer</strong><span class="classifier">bool, default False</span></dt><dd><p>Should the indices that would sort the index be returned.</p>
 </dd>
 <dt><strong>ascending</strong><span class="classifier">bool, default True</span></dt><dd><p>Should the index values be sorted in an ascending order.</p>
+</dd>
+<dt><strong>na_position</strong><span class="classifier">{‘first’ or ‘last’}, default ‘last’</span></dt><dd><p>Argument ‘first’ puts NaNs at the beginning, ‘last’ puts NaNs at
+the end.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
+</div>
+</dd>
+<dt><strong>key</strong><span class="classifier">callable, optional</span></dt><dd><p>If not None, apply the key function to the index values
+before sorting. This is similar to the <cite>key</cite> argument in the
+builtin <code class="xref py py-meth docutils literal notranslate"><span class="pre">sorted()</span></code> function, with the notable difference that
+this <cite>key</cite> function should be <em>vectorized</em>. It should expect an
+<code class="docutils literal notranslate"><span class="pre">Index</span></code> and return an <code class="docutils literal notranslate"><span class="pre">Index</span></code> of the same shape.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -74,7 +89,7 @@ that sorted the index itself.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.sort_values.html#pandas.Series.sort_values" title="pandas.Series.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.sort_values</span></code></a></dt><dd><p>Sort values of a Series.</p>

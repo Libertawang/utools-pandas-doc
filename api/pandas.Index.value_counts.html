@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-index-value-counts">
 <h1>pandas.Index.value_counts<a class="headerlink" href="#pandas-index-value-counts" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.value_counts">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">value_counts</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">normalize=False</em>, <em class="sig-param">sort=True</em>, <em class="sig-param">ascending=False</em>, <em class="sig-param">bins=None</em>, <em class="sig-param">dropna=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/base.py#L1149-L1237"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.value_counts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">value_counts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ascending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/base.py#L941-L1035"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.value_counts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a Series containing counts of unique values.</p>
 <p>The resulting object will be in descending order so that the
 first element is the most frequently-occurring element.
@@ -80,12 +80,14 @@ a convenience for <code class="docutils literal notranslate"><span class="pre">p
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.count.html#pandas.Series.count" title="pandas.Series.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.count</span></code></a></dt><dd><p>Number of non-NA elements in a Series.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.count.html#pandas.DataFrame.count" title="pandas.DataFrame.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.count</span></code></a></dt><dd><p>Number of non-NA elements in a DataFrame.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.value_counts.html#pandas.DataFrame.value_counts" title="pandas.DataFrame.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.value_counts</span></code></a></dt><dd><p>Equivalent method on DataFrames.</p>
 </dd>
 </dl>
 </div>
@@ -93,8 +95,8 @@ a convenience for <code class="docutils literal notranslate"><span class="pre">p
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">index</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="go">3.0    2</span>
-<span class="go">4.0    1</span>
 <span class="go">2.0    1</span>
+<span class="go">4.0    1</span>
 <span class="go">1.0    1</span>
 <span class="go">dtype: int64</span>
 </pre></div>
@@ -104,8 +106,8 @@ dividing all values by the sum of values.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">3.0    0.4</span>
-<span class="go">4.0    0.2</span>
 <span class="go">2.0    0.2</span>
+<span class="go">4.0    0.2</span>
 <span class="go">1.0    0.2</span>
 <span class="go">dtype: float64</span>
 </pre></div>
@@ -116,8 +118,8 @@ categorical variable; instead of counting unique
 apparitions of values, divide the index in the specified
 number of half-open bins.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="go">(2.0, 3.0]      2</span>
 <span class="go">(0.996, 2.0]    2</span>
+<span class="go">(2.0, 3.0]      2</span>
 <span class="go">(3.0, 4.0]      1</span>
 <span class="go">dtype: int64</span>
 </pre></div>
@@ -126,9 +128,9 @@ number of half-open bins.</p>
 <p>With <cite>dropna</cite> set to <cite>False</cite> we can also see NaN index values.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">3.0    2</span>
+<span class="go">2.0    1</span>
 <span class="go">NaN    1</span>
 <span class="go">4.0    1</span>
-<span class="go">2.0    1</span>
 <span class="go">1.0    1</span>
 <span class="go">dtype: int64</span>
 </pre></div>

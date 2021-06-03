@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-timedelta-range">
 <h1>pandas.timedelta_range<a class="headerlink" href="#pandas-timedelta-range" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.timedelta_range">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">timedelta_range</code><span class="sig-paren">(</span><em class="sig-param">start=None</em>, <em class="sig-param">end=None</em>, <em class="sig-param">periods=None</em>, <em class="sig-param">freq=None</em>, <em class="sig-param">name=None</em>, <em class="sig-param">closed=None</em><span class="sig-paren">)</span> → pandas.core.indexes.timedeltas.TimedeltaIndex<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/timedeltas.py#L436-L509"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.timedelta_range" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">timedelta_range</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/timedeltas.py#L237-L309"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.timedelta_range" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a fixed frequency TimedeltaIndex, with day as the default
 frequency.</p>
 <dl class="field-list simple">
@@ -91,7 +91,7 @@ exactly three must be specified. If <code class="docutils literal notranslate"><
 <span class="go">               dtype='timedelta64[ns]', freq='D')</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">closed</span></code> parameter specifies which endpoint is included.  The default
+<p>The <code class="docutils literal notranslate"><span class="pre">closed</span></code> parameter specifies which endpoint is included. The default
 behavior is to include both endpoints.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">timedelta_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">'1 day'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s1">'right'</span><span class="p">)</span>
 <span class="go">TimedeltaIndex(['2 days', '3 days', '4 days'],</span>
@@ -111,8 +111,8 @@ Only fixed frequencies can be passed, non-fixed frequencies such as
 automatically (linearly spaced).</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">timedelta_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="s1">'1 day'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'5 days'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="go">TimedeltaIndex(['1 days 00:00:00', '2 days 08:00:00', '3 days 16:00:00',</span>
-<span class="go">            '5 days 00:00:00'],</span>
-<span class="go">           dtype='timedelta64[ns]', freq=None)</span>
+<span class="go">                '5 days 00:00:00'],</span>
+<span class="go">               dtype='timedelta64[ns]', freq=None)</span>
 </pre></div>
 </div>
 </dd></dl>

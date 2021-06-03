@@ -50,17 +50,19 @@
   <body>
 <div class="section" id="pandas-series-str-endswith">
 <h1>pandas.Series.str.endswith<a class="headerlink" href="#pandas-series-str-endswith" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.endswith">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">endswith</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pat</em>, <em class="sig-param">na=nan</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L2003-L2006"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.endswith" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">endswith</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L2074-L2129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.endswith" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test if the end of each string element matches a pattern.</p>
-<p>Equivalent to <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.endswith" title="(in Python v3.8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.endswith()</span></code></a>.</p>
+<p>Equivalent to <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.endswith" title="(in Python v3.9)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.endswith()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>pat</strong><span class="classifier">str</span></dt><dd><p>Character sequence. Regular expressions are not accepted.</p>
 </dd>
-<dt><strong>na</strong><span class="classifier">object, default NaN</span></dt><dd><p>Object shown if element tested is not a string.</p>
+<dt><strong>na</strong><span class="classifier">object, default NaN</span></dt><dd><p>Object shown if element tested is not a string. The default depends
+on dtype of the array. For object-dtype, <code class="docutils literal notranslate"><span class="pre">numpy.nan</span></code> is used.
+For <code class="docutils literal notranslate"><span class="pre">StringDtype</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas.NA</span></code> is used.</p>
 </dd>
 </dl>
 </dd>
@@ -72,10 +74,10 @@ the end of each string element.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.endswith" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.endswith</span></code></a></dt><dd><p>Python standard library string method.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.endswith" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.endswith</span></code></a></dt><dd><p>Python standard library string method.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.startswith.html#pandas.Series.str.startswith" title="pandas.Series.str.startswith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.startswith</span></code></a></dt><dd><p>Same as endswith, but tests the start of string.</p>
 </dd>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-api-types-is-file-like">
 <h1>pandas.api.types.is_file_like<a class="headerlink" href="#pandas-api-types-is-file-like" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.api.types.is_file_like">
-<code class="sig-prename descclassname">pandas.api.types.</code><code class="sig-name descname">is_file_like</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span> → bool<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/dtypes/inference.py#L130-L165"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.api.types.is_file_like" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.api.types.</span></code><code class="sig-name descname"><span class="pre">is_file_like</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/dtypes/inference.py#L96-L131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.api.types.is_file_like" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the object is a file-like object.</p>
 <p>For objects to be considered file-like, they must
 be an iterator AND have either a <cite>read</cite> and/or <cite>write</cite>
@@ -73,7 +73,8 @@ iterable objects need not be file-like.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">buffer</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">"data"</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buffer</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">"data"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_file_like</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span>
 <span class="go">True</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">is_file_like</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>

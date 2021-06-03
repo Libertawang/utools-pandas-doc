@@ -50,26 +50,39 @@
   <body>
 <div class="section" id="pandas-to-timedelta">
 <h1>pandas.to_timedelta<a class="headerlink" href="#pandas-to-timedelta" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.to_timedelta">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">to_timedelta</code><span class="sig-paren">(</span><em class="sig-param">arg</em>, <em class="sig-param">unit='ns'</em>, <em class="sig-param">errors='raise'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/tools/timedeltas.py#L16-L109"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.to_timedelta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">to_timedelta</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/tools/timedeltas.py#L16-L132"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.to_timedelta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert argument to timedelta.</p>
 <p>Timedeltas are absolute differences in times, expressed in difference
 units (e.g. days, hours, minutes, seconds). This method converts
 an argument from a recognized timedelta format / value into
 a Timedelta type.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>arg</strong><span class="classifier">str, timedelta, list-like or Series</span></dt><dd><p>The data to be converted to timedelta.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2: </span>Strings with units ‘M’, ‘Y’ and ‘y’ do not represent
+unambiguous timedelta values and will be removed in a future version</p>
+</div>
 </dd>
-<dt><strong>unit</strong><span class="classifier">str, default ‘ns’</span></dt><dd><p>Denotes the unit of the arg. Possible values:
-(‘Y’, ‘M’, ‘W’, ‘D’, ‘days’, ‘day’, ‘hours’, hour’, ‘hr’,
-‘h’, ‘m’, ‘minute’, ‘min’, ‘minutes’, ‘T’, ‘S’, ‘seconds’,
-‘sec’, ‘second’, ‘ms’, ‘milliseconds’, ‘millisecond’,
-‘milli’, ‘millis’, ‘L’, ‘us’, ‘microseconds’, ‘microsecond’,
-‘micro’, ‘micros’, ‘U’, ‘ns’, ‘nanoseconds’, ‘nano’, ‘nanos’,
-‘nanosecond’, ‘N’).</p>
+<dt><strong>unit</strong><span class="classifier">str, optional</span></dt><dd><p>Denotes the unit of the arg for numeric <cite>arg</cite>. Defaults to <code class="docutils literal notranslate"><span class="pre">"ns"</span></code>.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><p>‘W’</p></li>
+<li><p>‘D’ / ‘days’ / ‘day’</p></li>
+<li><p>‘hours’ / ‘hour’ / ‘hr’ / ‘h’</p></li>
+<li><p>‘m’ / ‘minute’ / ‘min’ / ‘minutes’ / ‘T’</p></li>
+<li><p>‘S’ / ‘seconds’ / ‘sec’ / ‘second’</p></li>
+<li><p>‘ms’ / ‘milliseconds’ / ‘millisecond’ / ‘milli’ / ‘millis’ / ‘L’</p></li>
+<li><p>‘us’ / ‘microseconds’ / ‘microsecond’ / ‘micro’ / ‘micros’ / ‘U’</p></li>
+<li><p>‘ns’ / ‘nanoseconds’ / ‘nano’ / ‘nanos’ / ‘nanosecond’ / ‘N’</p></li>
+</ul>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.1.0: </span>Must not be specified when <cite>arg</cite> context strings and
+<code class="docutils literal notranslate"><span class="pre">errors="raise"</span></code>.</p>
+</div>
 </dd>
 <dt><strong>errors</strong><span class="classifier">{‘ignore’, ‘raise’, ‘coerce’}, default ‘raise’</span></dt><dd><ul class="simple">
 <li><p>If ‘raise’, then invalid parsing will raise an exception.</p></li>
@@ -86,7 +99,7 @@ a Timedelta type.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.astype.html#pandas.DataFrame.astype" title="pandas.DataFrame.astype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.astype</span></code></a></dt><dd><p>Cast argument to a specified dtype.</p>
@@ -97,24 +110,27 @@ a Timedelta type.</p>
 </dd>
 </dl>
 </div>
+<p class="rubric">Notes</p>
+<p>If the precision is higher than nanoseconds, the precision of the duration is
+truncated to nanoseconds for string inputs.</p>
 <p class="rubric">Examples</p>
 <p>Parsing a single string to a Timedelta:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="s1">'1 days 06:05:01.00003'</span><span class="p">)</span>
 <span class="go">Timedelta('1 days 06:05:01.000030')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="s1">'15.5us'</span><span class="p">)</span>
-<span class="go">Timedelta('0 days 00:00:00.000015')</span>
+<span class="go">Timedelta('0 days 00:00:00.000015500')</span>
 </pre></div>
 </div>
 <p>Parsing a list or array of strings:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">([</span><span class="s1">'1 days 06:05:01.00003'</span><span class="p">,</span> <span class="s1">'15.5us'</span><span class="p">,</span> <span class="s1">'nan'</span><span class="p">])</span>
-<span class="go">TimedeltaIndex(['1 days 06:05:01.000030', '0 days 00:00:00.000015', NaT],</span>
+<span class="go">TimedeltaIndex(['1 days 06:05:01.000030', '0 days 00:00:00.000015500', NaT],</span>
 <span class="go">               dtype='timedelta64[ns]', freq=None)</span>
 </pre></div>
 </div>
 <p>Converting numbers by specifying the <cite>unit</cite> keyword argument:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s1">'s'</span><span class="p">)</span>
-<span class="go">TimedeltaIndex(['00:00:00', '00:00:01', '00:00:02',</span>
-<span class="go">                '00:00:03', '00:00:04'],</span>
+<span class="go">TimedeltaIndex(['0 days 00:00:00', '0 days 00:00:01', '0 days 00:00:02',</span>
+<span class="go">                '0 days 00:00:03', '0 days 00:00:04'],</span>
 <span class="go">               dtype='timedelta64[ns]', freq=None)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s1">'d'</span><span class="p">)</span>
 <span class="go">TimedeltaIndex(['0 days', '1 days', '2 days', '3 days', '4 days'],</span>

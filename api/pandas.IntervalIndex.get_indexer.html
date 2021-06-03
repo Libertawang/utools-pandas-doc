@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-intervalindex-get-indexer">
 <h1>pandas.IntervalIndex.get_indexer<a class="headerlink" href="#pandas-intervalindex-get-indexer" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.IntervalIndex.get_indexer">
-<code class="sig-prename descclassname">IntervalIndex.</code><code class="sig-name descname">get_indexer</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">target: ~AnyArrayLike</em>, <em class="sig-param">method: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">limit: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">tolerance: Union[Any</em>, <em class="sig-param">NoneType] = None</em><span class="sig-paren">)</span> → numpy.ndarray<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/interval.py#L765-L837"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.IntervalIndex.get_indexer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">IntervalIndex.</span></code><code class="sig-name descname"><span class="pre">get_indexer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/interval.py#L649-L712"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.IntervalIndex.get_indexer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute indexer and mask for new index given the current index. The
 indexer should be then used as an input to ndarray.take to align the
 current data to the new index.</p>
@@ -72,16 +72,13 @@ distances are broken by preferring the larger index value.</p></li>
 inexact matches.</p>
 </dd>
 <dt><strong>tolerance</strong><span class="classifier">optional</span></dt><dd><p>Maximum distance between original and new labels for inexact
-matches. The values of the index at the matching locations most
+matches. The values of the index at the matching locations must
 satisfy the equation <code class="docutils literal notranslate"><span class="pre">abs(index[indexer]</span> <span class="pre">-</span> <span class="pre">target)</span> <span class="pre">&lt;=</span> <span class="pre">tolerance</span></code>.</p>
 <p>Tolerance may be a scalar value, which applies the same tolerance
 to all values, or list-like, which applies variable tolerance per
 element. List-like includes list, tuple, array, Series, and must be
 the same size as the index and its dtype must exactly match the
 index’s type.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0: </span>(list-like tolerance)</p>
-</div>
 </dd>
 </dl>
 </dd>

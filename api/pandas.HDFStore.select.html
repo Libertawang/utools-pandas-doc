@@ -50,28 +50,35 @@
   <body>
 <div class="section" id="pandas-hdfstore-select">
 <h1>pandas.HDFStore.select<a class="headerlink" href="#pandas-hdfstore-select" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.HDFStore.select">
-<code class="sig-prename descclassname">HDFStore.</code><code class="sig-name descname">select</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">key: str</em>, <em class="sig-param">where=None</em>, <em class="sig-param">start=None</em>, <em class="sig-param">stop=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">iterator=False</em>, <em class="sig-param">chunksize=None</em>, <em class="sig-param">auto_close: bool = False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/pytables.py#L749-L814"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.HDFStore.select" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">HDFStore.</span></code><code class="sig-name descname"><span class="pre">select</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_close</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/pytables.py#L772-L845"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.HDFStore.select" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve pandas object stored in file, optionally based on where criteria.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pandas uses PyTables for reading and writing HDF5 files, which allows
+serializing object-dtype data with pickle when using the “fixed” format.
+Loading pickled data received from untrusted sources can be unsafe.</p>
+<p>See: <a class="reference external" href="https://docs.python.org/3/library/pickle.html">https://docs.python.org/3/library/pickle.html</a> for more.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>key</strong><span class="classifier">str</span></dt><dd><p>Object being retrieved from file.</p>
 </dd>
-<dt><strong>where</strong><span class="classifier">list, default None</span></dt><dd><p>List of Term (or convertible) objects, optional.</p>
+<dt><strong>where</strong><span class="classifier">list or None</span></dt><dd><p>List of Term (or convertible) objects, optional.</p>
 </dd>
-<dt><strong>start</strong><span class="classifier">int, default None</span></dt><dd><p>Row number to start selection.</p>
+<dt><strong>start</strong><span class="classifier">int or None</span></dt><dd><p>Row number to start selection.</p>
 </dd>
 <dt><strong>stop</strong><span class="classifier">int, default None</span></dt><dd><p>Row number to stop selection.</p>
 </dd>
-<dt><strong>columns</strong><span class="classifier">list, default None</span></dt><dd><p>A list of columns that if not None, will limit the return columns.</p>
+<dt><strong>columns</strong><span class="classifier">list or None</span></dt><dd><p>A list of columns that if not None, will limit the return columns.</p>
 </dd>
-<dt><strong>iterator</strong><span class="classifier">bool, default False</span></dt><dd><p>Returns an iterator.</p>
+<dt><strong>iterator</strong><span class="classifier">bool or False</span></dt><dd><p>Returns an iterator.</p>
 </dd>
-<dt><strong>chunksize</strong><span class="classifier">int, default None</span></dt><dd><p>Number or rows to include in iteration, return an iterator.</p>
+<dt><strong>chunksize</strong><span class="classifier">int or None</span></dt><dd><p>Number or rows to include in iteration, return an iterator.</p>
 </dd>
-<dt><strong>auto_close</strong><span class="classifier">bool, default False</span></dt><dd><p>Should automatically close the store when finished.</p>
+<dt><strong>auto_close</strong><span class="classifier">bool or False</span></dt><dd><p>Should automatically close the store when finished.</p>
 </dd>
 </dl>
 </dd>

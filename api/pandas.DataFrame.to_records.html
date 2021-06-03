@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-to-records">
 <h1>pandas.DataFrame.to_records<a class="headerlink" href="#pandas-dataframe-to-records" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.to_records">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_records</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=True</em>, <em class="sig-param">column_dtypes=None</em>, <em class="sig-param">index_dtypes=None</em><span class="sig-paren">)</span> → numpy.recarray<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L1680-L1844"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_records" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">to_records</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_dtypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_dtypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L1899-L2064"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.to_records" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert DataFrame to a NumPy record array.</p>
 <p>Index will be included as the first field of the record array if
 requested.</p>
@@ -87,12 +87,12 @@ of the DataFrame as entries.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.from_records.html#pandas.DataFrame.from_records" title="pandas.DataFrame.from_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.from_records</span></code></a></dt><dd><p>Convert structured or record ndarray to DataFrame.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.recarray</span></code></a></dt><dd><p>An ndarray that allows field access using attributes, analogous to typed columns in a spreadsheet.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.recarray.html#numpy.recarray" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.recarray</span></code></a></dt><dd><p>An ndarray that allows field access using attributes, analogous to typed columns in a spreadsheet.</p>
 </dd>
 </dl>
 </div>

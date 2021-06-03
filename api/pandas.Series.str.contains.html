@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-str-contains">
 <h1>pandas.Series.str.contains<a class="headerlink" href="#pandas-series-str-contains" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.contains">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pat</em>, <em class="sig-param">case=True</em>, <em class="sig-param">flags=0</em>, <em class="sig-param">na=nan</em>, <em class="sig-param">regex=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L2759-L2765"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.contains" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">contains</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L985-L1111"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.contains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Test if pattern or regex is contained within a string of a Series or Index.</p>
 <p>Return boolean Series or Index based on whether a given pattern or regex is
 contained within a string of a Series or Index.</p>
@@ -65,7 +65,9 @@ contained within a string of a Series or Index.</p>
 </dd>
 <dt><strong>flags</strong><span class="classifier">int, default 0 (no flags)</span></dt><dd><p>Flags to pass through to the re module, e.g. re.IGNORECASE.</p>
 </dd>
-<dt><strong>na</strong><span class="classifier">default NaN</span></dt><dd><p>Fill value for missing values.</p>
+<dt><strong>na</strong><span class="classifier">scalar, optional</span></dt><dd><p>Fill value for missing values. The default depends on dtype of the
+array. For object-dtype, <code class="docutils literal notranslate"><span class="pre">numpy.nan</span></code> is used. For <code class="docutils literal notranslate"><span class="pre">StringDtype</span></code>,
+<code class="docutils literal notranslate"><span class="pre">pandas.NA</span></code> is used.</p>
 </dd>
 <dt><strong>regex</strong><span class="classifier">bool, default True</span></dt><dd><p>If True, assumes the pat is a regular expression.</p>
 <p>If False, treats the pat as a literal string.</p>
@@ -81,7 +83,7 @@ of the Series or Index.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.match.html#pandas.Series.str.match" title="pandas.Series.str.match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">match</span></code></a></dt><dd><p>Analogous, but stricter, relying on re.match instead of re.search.</p>
@@ -154,7 +156,7 @@ the resultant dtype will be <cite>bool</cite>, otherwise, an <cite>object</cite>
 </pre></div>
 </div>
 <p>Returning any digit using regular expression.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'\d'</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'</span><span class="se">\\</span><span class="s1">d'</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">0    False</span>
 <span class="go">1    False</span>
 <span class="go">2    False</span>

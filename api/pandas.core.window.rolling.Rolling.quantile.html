@@ -50,19 +50,16 @@
   <body>
 <div class="section" id="pandas-core-window-rolling-rolling-quantile">
 <h1>pandas.core.window.rolling.Rolling.quantile<a class="headerlink" href="#pandas-core-window-rolling-rolling-quantile" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.window.rolling.Rolling.quantile">
-<code class="sig-prename descclassname">Rolling.</code><code class="sig-name descname">quantile</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">quantile</em>, <em class="sig-param">interpolation='linear'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/window/rolling.py#L2073-L2078"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.window.rolling.Rolling.quantile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Rolling.</span></code><code class="sig-name descname"><span class="pre">quantile</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quantile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/window/rolling.py#L2123-L2128"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.window.rolling.Rolling.quantile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the rolling quantile.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>quantile</strong><span class="classifier">float</span></dt><dd><p>Quantile to compute. 0 &lt;= quantile &lt;= 1.</p>
 </dd>
-<dt><strong>interpolation</strong><span class="classifier">{‘linear’, ‘lower’, ‘higher’, ‘midpoint’, ‘nearest’}</span></dt><dd><div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
-<p>This optional parameter specifies the interpolation method to use,
+<dt><strong>interpolation</strong><span class="classifier">{‘linear’, ‘lower’, ‘higher’, ‘midpoint’, ‘nearest’}</span></dt><dd><p>This optional parameter specifies the interpolation method to use,
 when the desired quantile lies between two data points <cite>i</cite> and <cite>j</cite>:</p>
 <blockquote>
 <div><ul class="simple">
@@ -88,12 +85,12 @@ calculation.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.quantile</span></code></dt><dd><p>Computes value at the given quantile over all data in Series.</p>
+<dt><a class="reference internal" href="pandas.Series.quantile.html#pandas.Series.quantile" title="pandas.Series.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series.quantile</span></code></a></dt><dd><p>Computes value at the given quantile over all data in Series.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.quantile</span></code></dt><dd><p>Computes values at the given quantile over requested axis in DataFrame.</p>
+<dt><a class="reference internal" href="pandas.DataFrame.quantile.html#pandas.DataFrame.quantile" title="pandas.DataFrame.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame.quantile</span></code></a></dt><dd><p>Computes values at the given quantile over requested axis in DataFrame.</p>
 </dd>
 </dl>
 </div>

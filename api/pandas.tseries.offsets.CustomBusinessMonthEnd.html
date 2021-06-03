@@ -50,32 +50,11 @@
   <body>
 <div class="section" id="pandas-tseries-offsets-custombusinessmonthend">
 <h1>pandas.tseries.offsets.CustomBusinessMonthEnd<a class="headerlink" href="#pandas-tseries-offsets-custombusinessmonthend" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.tseries.offsets.CustomBusinessMonthEnd">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.tseries.offsets.</code><code class="sig-name descname">CustomBusinessMonthEnd</code><span class="sig-paren">(</span><em class="sig-param">n=1</em>, <em class="sig-param">normalize=False</em>, <em class="sig-param">weekmask='Mon Tue Wed Thu Fri'</em>, <em class="sig-param">holidays=None</em>, <em class="sig-param">calendar=None</em>, <em class="sig-param">offset=datetime.timedelta(0)</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/tseries/offsets.py#L1297-L1298"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.tseries.offsets.CustomBusinessMonthEnd" title="Permalink to this definition">¶</a></dt>
-<dd><p>DateOffset subclass representing custom business month(s).</p>
-<p>Increments between end of month dates.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>n</strong><span class="classifier">int, default 1</span></dt><dd><p>The number of months represented.</p>
-</dd>
-<dt><strong>normalize</strong><span class="classifier">bool, default False</span></dt><dd><p>Normalize start/end dates to midnight before generating date range.</p>
-</dd>
-<dt><strong>weekmask</strong><span class="classifier">str, Default ‘Mon Tue Wed Thu Fri’</span></dt><dd><p>Weekmask of valid business days, passed to <code class="docutils literal notranslate"><span class="pre">numpy.busdaycalendar</span></code>.</p>
-</dd>
-<dt><strong>holidays</strong><span class="classifier">list</span></dt><dd><p>List/array of dates to exclude from the set of valid business days,
-passed to <code class="docutils literal notranslate"><span class="pre">numpy.busdaycalendar</span></code>.</p>
-</dd>
-<dt><strong>calendar</strong><span class="classifier">pd.HolidayCalendar or np.busdaycalendar</span></dt><dd><p>Calendar to integrate.</p>
-</dd>
-<dt><strong>offset</strong><span class="classifier">timedelta, default timedelta(0)</span></dt><dd><p>Time offset to apply.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Attributes</p>
-<table class="longtable table">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.tseries.offsets.</span></code><code class="sig-name descname"><span class="pre">CustomBusinessMonthEnd</span></code><a class="headerlink" href="#pandas.tseries.offsets.CustomBusinessMonthEnd" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Attributes</p>
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -101,7 +80,13 @@ passed to <code class="docutils literal notranslate"><span class="pre">numpy.bus
 <col style="width: 43%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>freqstr</strong></p></td>
+<tr class="row-odd"><td><p><strong>calendar</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>freqstr</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>holidays</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>kwds</strong></p></td>
@@ -110,31 +95,40 @@ passed to <code class="docutils literal notranslate"><span class="pre">numpy.bus
 <tr class="row-odd"><td><p><strong>m_offset</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>name</strong></p></td>
+<tr class="row-even"><td><p><strong>n</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>nanos</strong></p></td>
+<tr class="row-odd"><td><p><strong>name</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>nanos</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>normalize</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p><strong>rule_code</strong></p></td>
 <td></td>
 </tr>
+<tr class="row-odd"><td><p><strong>weekmask</strong></p></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.CustomBusinessMonthEnd.apply_index.html#pandas.tseries.offsets.CustomBusinessMonthEnd.apply_index" title="pandas.tseries.offsets.CustomBusinessMonthEnd.apply_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_index</span></code></a>(self, other)</p></td>
-<td><p>Vectorized apply of DateOffset to DatetimeIndex, raises NotImplentedError for offsets without a vectorized implementation.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.CustomBusinessMonthEnd.__call__.html#pandas.tseries.offsets.CustomBusinessMonthEnd.__call__" title="pandas.tseries.offsets.CustomBusinessMonthEnd.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.tseries.offsets.CustomBusinessMonthEnd.rollback.html#pandas.tseries.offsets.CustomBusinessMonthEnd.rollback" title="pandas.tseries.offsets.CustomBusinessMonthEnd.rollback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollback</span></code></a>(self, dt)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.tseries.offsets.CustomBusinessMonthEnd.rollback.html#pandas.tseries.offsets.CustomBusinessMonthEnd.rollback" title="pandas.tseries.offsets.CustomBusinessMonthEnd.rollback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollback</span></code></a></p></td>
 <td><p>Roll provided date backward to next offset only if not on offset.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.CustomBusinessMonthEnd.rollforward.html#pandas.tseries.offsets.CustomBusinessMonthEnd.rollforward" title="pandas.tseries.offsets.CustomBusinessMonthEnd.rollforward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollforward</span></code></a>(self, dt)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.CustomBusinessMonthEnd.rollforward.html#pandas.tseries.offsets.CustomBusinessMonthEnd.rollforward" title="pandas.tseries.offsets.CustomBusinessMonthEnd.rollforward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollforward</span></code></a></p></td>
 <td><p>Roll provided date forward to next offset only if not on offset.</p></td>
 </tr>
 </tbody>
@@ -145,10 +139,10 @@ passed to <code class="docutils literal notranslate"><span class="pre">numpy.bus
 <col style="width: 38%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>__call__</strong></p></td>
+<tr class="row-odd"><td><p><strong>apply</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>apply</strong></p></td>
+<tr class="row-even"><td><p><strong>apply_index</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>copy</strong></p></td>

@@ -50,11 +50,11 @@
   <body>
 <div class="section" id="pandas-indexslice">
 <h1>pandas.IndexSlice<a class="headerlink" href="#pandas-indexslice" title="Permalink to this headline">¶</a></h1>
-<dl class="data">
+<dl class="py data">
 <dt id="pandas.IndexSlice">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">IndexSlice</code><em class="property"> = &lt;pandas.core.indexing._IndexSlice object&gt;</em><a class="headerlink" href="#pandas.IndexSlice" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">IndexSlice</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;pandas.core.indexing._IndexSlice</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#pandas.IndexSlice" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an object to more easily perform multi-index slicing.</p>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.MultiIndex.remove_unused_levels.html#pandas.MultiIndex.remove_unused_levels" title="pandas.MultiIndex.remove_unused_levels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiIndex.remove_unused_levels</span></code></a></dt><dd><p>New MultiIndex with no unused levels.</p>
@@ -68,7 +68,7 @@ for further info on slicing a MultiIndex.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">midx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">([[</span><span class="s1">'A0'</span><span class="p">,</span><span class="s1">'A1'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'B0'</span><span class="p">,</span><span class="s1">'B1'</span><span class="p">,</span><span class="s1">'B2'</span><span class="p">,</span><span class="s1">'B3'</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dfmi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">midx</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">))),</span>
-<span class="go">                        index=midx, columns=columns)</span>
+<span class="gp">... </span>                    <span class="n">index</span><span class="o">=</span><span class="n">midx</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Using the default slice command:</p>

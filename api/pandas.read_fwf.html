@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-fwf">
 <h1>pandas.read_fwf<a class="headerlink" href="#pandas-read-fwf" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_fwf">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_fwf</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer: Union[str, pathlib.Path, IO[~AnyStr]], colspecs='infer', widths=None, infer_nrows=100, **kwds</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/parsers.py#L702-L782"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_fwf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_fwf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath_or_buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colspecs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'infer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">widths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infer_nrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/parsers.py#L692-L770"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_fwf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a table of fixed-width formatted lines into DataFrame.</p>
 <p>Also supports optionally iterating or breaking of the file
 into chunks.</p>
@@ -67,11 +67,11 @@ expected. A local file could be:
 <p>If you want to pass in a path object, pandas accepts any
 <code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
 <p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method,
-such as a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
+such as a file handle (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
 or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
 </dd>
 <dt><strong>colspecs</strong><span class="classifier">list of tuple (int, int) or ‘infer’. optional</span></dt><dd><p>A list of tuples giving the extents of the fixed-width
-fields of each line as half-open intervals (i.e.,  [from, to[ ).
+fields of each line as half-open intervals (i.e., [from, to[ ).
 String value ‘infer’ can be used to instruct the parser to try
 detecting the column specifications from the first 100 rows of
 the data which are not being skipped via skiprows (default=’infer’).</p>
@@ -97,10 +97,10 @@ data structure with labeled axes.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></dt><dd><p>Write DataFrame to a comma-separated values (csv) file.</p>
+<dt><a class="reference internal" href="pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="pandas.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.to_csv</span></code></a></dt><dd><p>Write DataFrame to a comma-separated values (csv) file.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_csv</span></code></a></dt><dd><p>Read a comma-separated values (csv) file into DataFrame.</p>
 </dd>

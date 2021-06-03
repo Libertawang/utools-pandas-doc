@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-memory-usage">
 <h1>pandas.DataFrame.memory_usage<a class="headerlink" href="#pandas-dataframe-memory-usage" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.memory_usage">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">memory_usage</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=True</em>, <em class="sig-param">deep=False</em><span class="sig-paren">)</span> → pandas.core.series.Series<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L2501-L2593"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.memory_usage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">memory_usage</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L2711-L2803"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.memory_usage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the memory usage of each column in bytes.</p>
 <p>The memory usage can optionally include the contribution of
 the index and elements of <cite>object</cite> dtype.</p>
@@ -79,10 +79,10 @@ is the memory usage of each column in bytes.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.nbytes.html#numpy.ndarray.nbytes" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.nbytes</span></code></a></dt><dd><p>Total bytes consumed by the elements of an ndarray.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.nbytes.html#numpy.ndarray.nbytes" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.nbytes</span></code></a></dt><dd><p>Total bytes consumed by the elements of an ndarray.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.memory_usage.html#pandas.Series.memory_usage" title="pandas.Series.memory_usage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.memory_usage</span></code></a></dt><dd><p>Bytes consumed by a Series.</p>
 </dd>
@@ -94,16 +94,16 @@ is the memory usage of each column in bytes.</p>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dtypes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'int64'</span><span class="p">,</span> <span class="s1">'float64'</span><span class="p">,</span> <span class="s1">'complex128'</span><span class="p">,</span> <span class="s1">'object'</span><span class="p">,</span> <span class="s1">'bool'</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="gp">... </span>             <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">dtypes</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="go">   int64  float64            complex128  object  bool</span>
-<span class="go">0      1      1.0    1.000000+0.000000j       1  True</span>
-<span class="go">1      1      1.0    1.000000+0.000000j       1  True</span>
-<span class="go">2      1      1.0    1.000000+0.000000j       1  True</span>
-<span class="go">3      1      1.0    1.000000+0.000000j       1  True</span>
-<span class="go">4      1      1.0    1.000000+0.000000j       1  True</span>
+<span class="go">0      1      1.0              1.0+0.0j       1  True</span>
+<span class="go">1      1      1.0              1.0+0.0j       1  True</span>
+<span class="go">2      1      1.0              1.0+0.0j       1  True</span>
+<span class="go">3      1      1.0              1.0+0.0j       1  True</span>
+<span class="go">4      1      1.0              1.0+0.0j       1  True</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">()</span>
@@ -131,7 +131,7 @@ is the memory usage of each column in bytes.</p>
 <span class="go">int64          40000</span>
 <span class="go">float64        40000</span>
 <span class="go">complex128     80000</span>
-<span class="go">object        160000</span>
+<span class="go">object        180000</span>
 <span class="go">bool            5000</span>
 <span class="go">dtype: int64</span>
 </pre></div>
@@ -139,7 +139,7 @@ is the memory usage of each column in bytes.</p>
 <p>Use a Categorical for efficient storage of an object-dtype column with
 many repeated values.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">'object'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="go">5216</span>
+<span class="go">5244</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -50,22 +50,30 @@
   <body>
 <div class="section" id="pandas-index-copy">
 <h1>pandas.Index.copy<a class="headerlink" href="#pandas-index-copy" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.copy">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name=None</em>, <em class="sig-param">deep=False</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L858-L871"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Make a copy of this object.  Name and dtype sets those attributes on
-the new object.</p>
-<dl class="field-list simple">
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L826-L875"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a copy of this object.</p>
+<p>Name and dtype sets those attributes on the new object.</p>
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>name</strong><span class="classifier">str, optional</span></dt><dd></dd>
+<dd class="field-odd"><dl>
+<dt><strong>name</strong><span class="classifier">Label, optional</span></dt><dd><p>Set name for new object.</p>
+</dd>
 <dt><strong>deep</strong><span class="classifier">bool, default False</span></dt><dd></dd>
-<dt><strong>dtype</strong><span class="classifier">numpy dtype or pandas type</span></dt><dd></dd>
+<dt><strong>dtype</strong><span class="classifier">numpy dtype or pandas type, optional</span></dt><dd><p>Set dtype for new object.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.0: </span>use <code class="docutils literal notranslate"><span class="pre">astype</span></code> method instead.</p>
+</div>
+</dd>
+<dt><strong>names</strong><span class="classifier">list-like, optional</span></dt><dd><p>Kept for compatibility with MultiIndex. Should not be used.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>copy</strong><span class="classifier">Index</span></dt><dd></dd>
+<dt>Index</dt><dd><p>Index refer to new object which is a copy of this object.</p>
+</dd>
 </dl>
 </dd>
 </dl>

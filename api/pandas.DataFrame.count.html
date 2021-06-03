@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-count">
 <h1>pandas.DataFrame.count<a class="headerlink" href="#pandas-dataframe-count" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.count">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">axis=0</em>, <em class="sig-param">level=None</em>, <em class="sig-param">numeric_only=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L7708-L7807"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">count</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L8628-L8730"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Count non-NA cells for each column or row.</p>
 <p>The values <cite>None</cite>, <cite>NaN</cite>, <cite>NaT</cite>, and optionally <cite>numpy.inf</cite> (depending
 on <cite>pandas.options.mode.use_inf_as_na</cite>) are considered NA.</p>
@@ -60,7 +60,7 @@ on <cite>pandas.options.mode.use_inf_as_na</cite>) are considered NA.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>axis</strong><span class="classifier">{0 or ‘index’, 1 or ‘columns’}, default 0</span></dt><dd><p>If 0 or ‘index’ counts are generated for each column.
-If 1 or ‘columns’ counts are generated for each <strong>row</strong>.</p>
+If 1 or ‘columns’ counts are generated for each row.</p>
 </dd>
 <dt><strong>level</strong><span class="classifier">int or str, optional</span></dt><dd><p>If the axis is a <cite>MultiIndex</cite> (hierarchical), count along a
 particular <cite>level</cite>, collapsing into a <cite>DataFrame</cite>.
@@ -78,10 +78,12 @@ If <cite>level</cite> is specified returns a <cite>DataFrame</cite>.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.count.html#pandas.Series.count" title="pandas.Series.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.count</span></code></a></dt><dd><p>Number of non-NA elements in a Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.value_counts.html#pandas.DataFrame.value_counts" title="pandas.DataFrame.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.value_counts</span></code></a></dt><dd><p>Count unique combinations of columns.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.shape.html#pandas.DataFrame.shape" title="pandas.DataFrame.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.shape</span></code></a></dt><dd><p>Number of DataFrame rows and columns (including NA elements).</p>
 </dd>

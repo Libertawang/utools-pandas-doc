@@ -50,20 +50,21 @@
   <body>
 <div class="section" id="pandas-hdfstore-append">
 <h1>pandas.HDFStore.append<a class="headerlink" href="#pandas-hdfstore-append" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.HDFStore.append">
-<code class="sig-prename descclassname">HDFStore.</code><code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param">self, key: str, value: ~FrameOrSeries, format=None, axes=None, index=True, append=True, complib=None, complevel: Union[int, NoneType] = None, columns=None, min_itemsize: Union[int, Dict[str, int], NoneType] = None, nan_rep=None, chunksize=None, expectedrows=None, dropna: Union[bool, NoneType] = None, data_columns: Union[List[str], NoneType] = None, encoding=None, errors: str = 'strict'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/pytables.py#L1102-L1183"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.HDFStore.append" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">HDFStore.</span></code><code class="sig-name descname"><span class="pre">append</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_itemsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_rep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expectedrows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/pytables.py#L1166-L1249"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.HDFStore.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append to Table in file. Node must already exist and be Table
 format.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>key</strong><span class="classifier">str</span></dt><dd></dd>
 <dt><strong>value</strong><span class="classifier">{Series, DataFrame}</span></dt><dd></dd>
-<dt><strong>format</strong><span class="classifier">‘table’ is the default</span></dt><dd><dl class="simple">
-<dt>table(t)<span class="classifier">table format</span></dt><dd><p>Write as a PyTables Table structure which may perform
-worse but allow more flexible operations like searching
-/ selecting subsets of the data.</p>
+<dt><strong>format</strong><span class="classifier">‘table’ is the default</span></dt><dd><p>Format to use when storing object in HDFStore. Value can be one of:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'table'</span></code></dt><dd><p>Table format. Write as a PyTables Table structure which may perform
+worse but allow more flexible operations like searching / selecting
+subsets of the data.</p>
 </dd>
 </dl>
 </dd>
@@ -73,11 +74,11 @@ worse but allow more flexible operations like searching
 queries, or True to use all columns. By default only the axes
 of the object are indexed. See <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#query-via-data-columns">here</a>.</p>
 </dd>
-<dt><strong>min_itemsize</strong><span class="classifier">dict of columns that specify minimum string sizes</span></dt><dd></dd>
-<dt><strong>nan_rep</strong><span class="classifier">string to use as string nan representation</span></dt><dd></dd>
+<dt><strong>min_itemsize</strong><span class="classifier">dict of columns that specify minimum str sizes</span></dt><dd></dd>
+<dt><strong>nan_rep</strong><span class="classifier">str to use as str nan representation</span></dt><dd></dd>
 <dt><strong>chunksize</strong><span class="classifier">size to chunk the writing</span></dt><dd></dd>
 <dt><strong>expectedrows</strong><span class="classifier">expected TOTAL row size of this table</span></dt><dd></dd>
-<dt><strong>encoding</strong><span class="classifier">default None, provide an encoding for strings</span></dt><dd></dd>
+<dt><strong>encoding</strong><span class="classifier">default None, provide an encoding for str</span></dt><dd></dd>
 <dt><strong>dropna</strong><span class="classifier">bool, default False</span></dt><dd><p>Do not write an ALL nan row to the store settable
 by the option ‘io.hdf.dropna_table’.</p>
 </dd>

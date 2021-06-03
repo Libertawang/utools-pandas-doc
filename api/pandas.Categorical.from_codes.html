@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-categorical-from-codes">
 <h1>pandas.Categorical.from_codes<a class="headerlink" href="#pandas-categorical-from-codes" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Categorical.from_codes">
-<em class="property">classmethod </em><code class="sig-prename descclassname">Categorical.</code><code class="sig-name descname">from_codes</code><span class="sig-paren">(</span><em class="sig-param">codes</em>, <em class="sig-param">categories=None</em>, <em class="sig-param">ordered=None</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/arrays/categorical.py#L592-L660"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Categorical.from_codes" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-prename descclassname"><span class="pre">Categorical.</span></code><code class="sig-name descname"><span class="pre">from_codes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">codes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/arrays/categorical.py#L524-L592"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Categorical.from_codes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a Categorical type from codes and categories or dtype.</p>
 <p>This constructor is useful if you already have codes and
 categories/dtype and so do not need the (computation intensive)
@@ -91,8 +91,8 @@ should be provided.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dtype</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">CategoricalDtype</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="o">.</span><span class="n">from_codes</span><span class="p">(</span><span class="n">codes</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-<span class="go">[a, b, a, b]</span>
-<span class="go">Categories (2, object): [a &lt; b]</span>
+<span class="go">['a', 'b', 'a', 'b']</span>
+<span class="go">Categories (2, object): ['a' &lt; 'b']</span>
 </pre></div>
 </div>
 </dd></dl>

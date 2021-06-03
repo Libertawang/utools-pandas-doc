@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-api-extensions-register-extension-dtype">
 <h1>pandas.api.extensions.register_extension_dtype<a class="headerlink" href="#pandas-api-extensions-register-extension-dtype" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.api.extensions.register_extension_dtype">
-<code class="sig-prename descclassname">pandas.api.extensions.</code><code class="sig-name descname">register_extension_dtype</code><span class="sig-paren">(</span><em class="sig-param">cls: Type[pandas.core.dtypes.base.ExtensionDtype]</em><span class="sig-paren">)</span> → Type[pandas.core.dtypes.base.ExtensionDtype]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/dtypes/dtypes.py#L19-L42"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.api.extensions.register_extension_dtype" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.api.extensions.</span></code><code class="sig-name descname"><span class="pre">register_extension_dtype</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/dtypes/base.py#L355-L378"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.api.extensions.register_extension_dtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register an ExtensionType with pandas as class decorator.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.0.</span></p>
@@ -72,7 +72,7 @@ of the ExtensionDtype.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas.api.extensions</span> <span class="kn">import</span> <span class="n">ExtensionDtype</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nd">@register_extension_dtype</span>
 <span class="gp">... </span><span class="k">class</span> <span class="nc">MyExtensionDtype</span><span class="p">(</span><span class="n">ExtensionDtype</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">... </span>    <span class="n">name</span> <span class="o">=</span> <span class="s2">"myextension"</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -50,23 +50,49 @@
   <body>
 <div class="section" id="pandas-series-plot-bar">
 <h1>pandas.Series.plot.bar<a class="headerlink" href="#pandas-series-plot-bar" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.plot.bar">
-<code class="sig-prename descclassname">Series.plot.</code><code class="sig-name descname">bar</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">x=None</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_core.py#L920-L1003"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.plot.bar" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.plot.</span></code><code class="sig-name descname"><span class="pre">bar</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_core.py#L1025-L1113"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.plot.bar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vertical bar plot.</p>
 <p>A bar plot is a plot that presents categorical data with
 rectangular bars with lengths proportional to the values that they
 represent. A bar plot shows comparisons among discrete categories. One
 axis of the plot shows the specific categories being compared, and the
 other axis represents a measured value.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>x</strong><span class="classifier">label or position, optional</span></dt><dd><p>Allows plotting of one column versus another. If not specified,
 the index of the DataFrame is used.</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">label or position, optional</span></dt><dd><p>Allows plotting of one column versus another. If not specified,
 all numerical columns are used.</p>
+</dd>
+<dt><strong>color</strong><span class="classifier">str, array_like, or dict, optional</span></dt><dd><p>The color for each of the DataFrame’s columns. Possible values are:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>A single color string referred to by name, RGB or RGBA code,</dt><dd><p>for instance ‘red’ or ‘#a98d19’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A sequence of color strings referred to by name, RGB or RGBA</dt><dd><p>code, which will be used for each column recursively. For
+instance [‘green’,’yellow’] each column’s bar will be filled in
+green or yellow, alternatively.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A dict of the form {column name<span class="classifier">color}, so that each column will be</span></dt><dd><p>colored accordingly. For example, if your columns are called <cite>a</cite> and
+<cite>b</cite>, then passing {‘a’: ‘green’, ‘b’: ‘red’} will color bars for
+column <cite>a</cite> in green and bars for column <cite>b</cite> in red.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 <dt><strong>**kwargs</strong></dt><dd><p>Additional keyword arguments are documented in
 <a class="reference internal" href="pandas.DataFrame.plot.html#pandas.DataFrame.plot" title="pandas.DataFrame.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.plot()</span></code></a>.</p>
@@ -75,20 +101,20 @@ all numerical columns are used.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>matplotlib.axes.Axes or np.ndarray of them</dt><dd><p>An ndarray is returned with one <a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a>
+<dt>matplotlib.axes.Axes or np.ndarray of them</dt><dd><p>An ndarray is returned with one <a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a>
 per column when <code class="docutils literal notranslate"><span class="pre">subplots=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.plot.barh.html#pandas.DataFrame.plot.barh" title="pandas.DataFrame.plot.barh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.plot.barh</span></code></a></dt><dd><p>Horizontal bar plot.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.plot.html#pandas.DataFrame.plot" title="pandas.DataFrame.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.plot</span></code></a></dt><dd><p>Make plots of a DataFrame.</p>
 </dd>
-<dt><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.bar.html#matplotlib.pyplot.bar" title="(in Matplotlib v3.2.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.bar</span></code></a></dt><dd><p>Make a bar plot with matplotlib.</p>
+<dt><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html#matplotlib.pyplot.bar" title="(in Matplotlib v3.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.bar</span></code></a></dt><dd><p>Make a bar plot with matplotlib.</p>
 </dd>
 </dl>
 </div>
@@ -99,7 +125,7 @@ per column when <code class="docutils literal notranslate"><span class="pre">sub
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-bar-1.png" src="../../_images/pandas-Series-plot-bar-1.png"/>
+<img alt="../../_images/pandas-Series-plot-bar-1.png" class="plot-directive" src="../../_images/pandas-Series-plot-bar-1.png"/>
 </div>
 <p>Plot a whole dataframe to a bar plot. Each column is assigned a
 distinct color, and each row is nested in a group along the
@@ -114,31 +140,49 @@ horizontal axis.</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-bar-2.png" src="../../_images/pandas-Series-plot-bar-2.png"/>
+<img alt="../../_images/pandas-Series-plot-bar-2.png" class="plot-directive" src="../../_images/pandas-Series-plot-bar-2.png"/>
+</div>
+<p>Plot stacked bar charts for the DataFrame</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-Series-plot-bar-3.png" class="plot-directive" src="../../_images/pandas-Series-plot-bar-3.png"/>
 </div>
 <p>Instead of nesting, the figure can be split by column with
-<code class="docutils literal notranslate"><span class="pre">subplots=True</span></code>. In this case, a <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of
-<a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a> are returned.</p>
+<code class="docutils literal notranslate"><span class="pre">subplots=True</span></code>. In this case, a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of
+<a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a> are returned.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">axes</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-bar-3.png" src="../../_images/pandas-Series-plot-bar-3.png"/>
+<img alt="../../_images/pandas-Series-plot-bar-4.png" class="plot-directive" src="../../_images/pandas-Series-plot-bar-4.png"/>
+</div>
+<p>If you don’t like the default colours, you can specify how you’d
+like each column to be colored.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">axes</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">{</span><span class="s2">"speed"</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="s2">"lifespan"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-Series-plot-bar-5.png" class="plot-directive" src="../../_images/pandas-Series-plot-bar-5.png"/>
 </div>
 <p>Plot a single column.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'speed'</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-bar-4.png" src="../../_images/pandas-Series-plot-bar-4.png"/>
+<img alt="../../_images/pandas-Series-plot-bar-6.png" class="plot-directive" src="../../_images/pandas-Series-plot-bar-6.png"/>
 </div>
 <p>Plot only selected categories for the DataFrame.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'lifespan'</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-bar-5.png" src="../../_images/pandas-Series-plot-bar-5.png"/>
+<img alt="../../_images/pandas-Series-plot-bar-7.png" class="plot-directive" src="../../_images/pandas-Series-plot-bar-7.png"/>
 </div>
 </dd></dl>
 </div>

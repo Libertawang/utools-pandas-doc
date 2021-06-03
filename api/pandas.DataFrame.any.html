@@ -50,11 +50,11 @@
   <body>
 <div class="section" id="pandas-dataframe-any">
 <h1>pandas.DataFrame.any<a class="headerlink" href="#pandas-dataframe-any" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.any">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">any</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">axis=0</em>, <em class="sig-param">bool_only=None</em>, <em class="sig-param">skipna=True</em>, <em class="sig-param">level=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L11341-L11366"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.any" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">any</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bool_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L10858-L10869"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.any" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether any element is True, potentially over an axis.</p>
-<p>Returns False unless there at least one element within a series or
+<p>Returns False unless there is at least one element within a series or
 along a Dataframe axis that is True or equivalent (e.g. non-zero or
 non-empty).</p>
 <dl class="field-list simple">
@@ -93,10 +93,10 @@ is returned.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.any.html#numpy.any" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.any</span></code></a></dt><dd><p>Numpy version of this method.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.any.html#numpy.any" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.any</span></code></a></dt><dd><p>Numpy version of this method.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.any.html#pandas.Series.any" title="pandas.Series.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.any</span></code></a></dt><dd><p>Return whether any element is True.</p>
 </dd>

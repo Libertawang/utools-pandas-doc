@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-array">
 <h1>pandas.array<a class="headerlink" href="#pandas-array" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.array">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">array</code><span class="sig-paren">(</span><em class="sig-param">data: Sequence[object], dtype: Union[str, numpy.dtype, pandas.core.dtypes.base.ExtensionDtype, NoneType] = None, copy: bool = True</em><span class="sig-paren">)</span> → pandas.core.dtypes.generic.ABCExtensionArray<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/construction.py#L55-L334"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.array" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">array</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/construction.py#L57-L351"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an array.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.0.</span></p>
@@ -99,19 +99,22 @@ held in extension arrays.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="pandas.Period.html#pandas.Period" title="pandas.Period"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Period</span></code></a></p></td>
 <td><p><a class="reference internal" href="pandas.arrays.PeriodArray.html#pandas.arrays.PeriodArray" title="pandas.arrays.PeriodArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.arrays.PeriodArray</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a></p></td>
 <td><p><a class="reference internal" href="pandas.arrays.DatetimeArray.html#pandas.arrays.DatetimeArray" title="pandas.arrays.DatetimeArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.arrays.DatetimeArray</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.timedelta</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.timedelta" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime.timedelta</span></code></a></p></td>
 <td><p><a class="reference internal" href="pandas.arrays.TimedeltaArray.html#pandas.arrays.TimedeltaArray" title="pandas.arrays.TimedeltaArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.arrays.TimedeltaArray</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
 <td><p><a class="reference internal" href="pandas.arrays.IntegerArray.html#pandas.arrays.IntegerArray" title="pandas.arrays.IntegerArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.arrays.IntegerArray</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.arrays.FloatingArray</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p></td>
 <td><p><a class="reference internal" href="pandas.arrays.StringArray.html#pandas.arrays.StringArray" title="pandas.arrays.StringArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.arrays.StringArray</span></code></a></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p></td>
 <td><p><a class="reference internal" href="pandas.arrays.BooleanArray.html#pandas.arrays.BooleanArray" title="pandas.arrays.BooleanArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.arrays.BooleanArray</span></code></a></p></td>
 </tr>
 </tbody>
@@ -121,6 +124,10 @@ held in extension arrays.</p>
 <p><span class="versionmodified changed">Changed in version 1.0.0: </span>Pandas infers nullable-integer dtype for integer data,
 string dtype for string data, and nullable-boolean dtype
 for boolean data.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2.0: </span>Pandas now also infers nullable-floating dtype for float-like
+input data</p>
 </div>
 </dd>
 <dt><strong>copy</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to copy the data, even if not necessary. Depending
@@ -142,10 +149,10 @@ copying data, even if <code class="docutils literal notranslate"><span class="pr
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array</span></code></a></dt><dd><p>Construct a NumPy array.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.array</span></code></a></dt><dd><p>Construct a NumPy array.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.html#pandas.Series" title="pandas.Series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series</span></code></a></dt><dd><p>Construct a pandas Series.</p>
 </dd>
@@ -181,7 +188,7 @@ array.</p>
 </pre></div>
 </div>
 <p>This would instead return the new ExtensionArray dedicated for string
-data. If you really need the new array to be backed by a  NumPy array,
+data. If you really need the new array to be backed by a NumPy array,
 specify that in the dtype.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="s2">"&lt;U1"</span><span class="p">))</span>
 <span class="go">&lt;PandasArray&gt;</span>
@@ -208,7 +215,7 @@ timezone-aware data, which NumPy does not natively support.</p>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">"1H"</span><span class="p">,</span> <span class="s2">"2H"</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'timedelta64[ns]'</span><span class="p">)</span>
 <span class="go">&lt;TimedeltaArray&gt;</span>
-<span class="go">['01:00:00', '02:00:00']</span>
+<span class="go">['0 days 01:00:00', '0 days 02:00:00']</span>
 <span class="go">Length: 2, dtype: timedelta64[ns]</span>
 </pre></div>
 </div>
@@ -223,13 +230,19 @@ See the description of <cite>dtype</cite> for the types pandas infers for.</p>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span>
 <span class="go">&lt;IntegerArray&gt;</span>
-<span class="go">[1, 2, NaN]</span>
+<span class="go">[1, 2, &lt;NA&gt;]</span>
 <span class="go">Length: 3, dtype: Int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">])</span>
+<span class="go">&lt;FloatingArray&gt;</span>
+<span class="go">[1.1, 2.2]</span>
+<span class="go">Length: 2, dtype: Float64</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">"a"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">])</span>
 <span class="go">&lt;StringArray&gt;</span>
-<span class="go">['a', nan, 'c']</span>
+<span class="go">['a', &lt;NA&gt;, 'c']</span>
 <span class="go">Length: 3, dtype: string</span>
 </pre></div>
 </div>
@@ -241,23 +254,23 @@ See the description of <cite>dtype</cite> for the types pandas infers for.</p>
 </div>
 <p>You can use the string alias for <cite>dtype</cite></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">'category'</span><span class="p">)</span>
-<span class="go">[a, b, a]</span>
-<span class="go">Categories (2, object): [a, b]</span>
+<span class="go">['a', 'b', 'a']</span>
+<span class="go">Categories (2, object): ['a', 'b']</span>
 </pre></div>
 </div>
 <p>Or specify the actual dtype</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">],</span>
 <span class="gp">... </span>         <span class="n">dtype</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">CategoricalDtype</span><span class="p">([</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-<span class="go">[a, b, a]</span>
-<span class="go">Categories (3, object): [a &lt; b &lt; c]</span>
+<span class="go">['a', 'b', 'a']</span>
+<span class="go">Categories (3, object): ['a' &lt; 'b' &lt; 'c']</span>
 </pre></div>
 </div>
 <p>If pandas does not infer a dedicated extension type a
 <a class="reference internal" href="pandas.arrays.PandasArray.html#pandas.arrays.PandasArray" title="pandas.arrays.PandasArray"><code class="xref py py-class docutils literal notranslate"><span class="pre">arrays.PandasArray</span></code></a> is returned.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">])</span>
 <span class="go">&lt;PandasArray&gt;</span>
-<span class="go">[1.1, 2.2]</span>
-<span class="go">Length: 2, dtype: float64</span>
+<span class="go">[(1+1j), (3+2j)]</span>
+<span class="go">Length: 2, dtype: complex128</span>
 </pre></div>
 </div>
 <p>As mentioned in the “Notes” section, new extension types may be added

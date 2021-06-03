@@ -50,30 +50,24 @@
   <body>
 <div class="section" id="pandas-series-drop">
 <h1>pandas.Series.drop<a class="headerlink" href="#pandas-series-drop" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.drop">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">drop</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">axis=0</em>, <em class="sig-param">index=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">level=None</em>, <em class="sig-param">inplace=False</em>, <em class="sig-param">errors='raise'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L4032-L4140"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.drop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">drop</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L4347-L4451"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.drop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return Series with specified index labels removed.</p>
 <p>Remove elements of a Series based on specifying the index labels.
 When using a multi-index, labels on different levels can be removed
 by specifying the level.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>labels</strong><span class="classifier">single label or list-like</span></dt><dd><p>Index labels to drop.</p>
 </dd>
 <dt><strong>axis</strong><span class="classifier">0, default 0</span></dt><dd><p>Redundant for application on Series.</p>
 </dd>
 <dt><strong>index</strong><span class="classifier">single label or list-like</span></dt><dd><p>Redundant for application on Series, but ‘index’ can be used instead
 of ‘labels’.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 </dd>
 <dt><strong>columns</strong><span class="classifier">single label or list-like</span></dt><dd><p>No change is made to the Series; use ‘index’ or ‘labels’ instead.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 </dd>
 <dt><strong>level</strong><span class="classifier">int or level name, optional</span></dt><dd><p>For MultiIndex, level for which the labels will be removed.</p>
 </dd>
@@ -85,7 +79,7 @@ of ‘labels’.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>Series</dt><dd><p>Series with specified index labels removed.</p>
+<dt>Series or None</dt><dd><p>Series with specified index labels removed or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -96,7 +90,7 @@ of ‘labels’.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.reindex.html#pandas.Series.reindex" title="pandas.Series.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.reindex</span></code></a></dt><dd><p>Return only specified index labels of Series.</p>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-sql">
 <h1>pandas.read_sql<a class="headerlink" href="#pandas-read-sql" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_sql">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_sql</code><span class="sig-paren">(</span><em class="sig-param">sql</em>, <em class="sig-param">con</em>, <em class="sig-param">index_col=None</em>, <em class="sig-param">coerce_float=True</em>, <em class="sig-param">params=None</em>, <em class="sig-param">parse_dates=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">chunksize=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/sql.py#L336-L439"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_sql" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_sql</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">con</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coerce_float</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/sql.py#L426-L528"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_sql" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read SQL query or database table into a DataFrame.</p>
 <p>This function is a convenience wrapper around <code class="docutils literal notranslate"><span class="pre">read_sql_table</span></code> and
 <code class="docutils literal notranslate"><span class="pre">read_sql_query</span></code> (for backward compatibility). It will delegate
@@ -60,23 +60,23 @@ to the specific function depending on the provided input. A SQL query
 will be routed to <code class="docutils literal notranslate"><span class="pre">read_sql_query</span></code>, while a database table name will
 be routed to <code class="docutils literal notranslate"><span class="pre">read_sql_table</span></code>. Note that the delegated function might
 have more specific notes about their functionality not listed here.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>sql</strong><span class="classifier">str or SQLAlchemy Selectable (select or text object)</span></dt><dd><p>SQL query to be executed or a table name.</p>
 </dd>
-<dt><strong>con</strong><span class="classifier">SQLAlchemy connectable (engine/connection) or database str URI</span></dt><dd><p>or DBAPI2 connection (fallback mode)’</p>
-<p>Using SQLAlchemy makes it possible to use any DB supported by that
+<dt><strong>con</strong><span class="classifier">SQLAlchemy connectable, str, or sqlite3 connection</span></dt><dd><p>Using SQLAlchemy makes it possible to use any DB supported by that
 library. If a DBAPI2 object, only sqlite3 is supported. The user is responsible
-for engine disposal and connection closure for the SQLAlchemy connectable. See
-<a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/connections.html">here</a></p>
+for engine disposal and connection closure for the SQLAlchemy connectable; str
+connections are closed automatically. See
+<a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/connections.html">here</a>.</p>
 </dd>
-<dt><strong>index_col</strong><span class="classifier">str or list of strings, optional, default: None</span></dt><dd><p>Column(s) to set as index(MultiIndex).</p>
+<dt><strong>index_col</strong><span class="classifier">str or list of str, optional, default: None</span></dt><dd><p>Column(s) to set as index(MultiIndex).</p>
 </dd>
 <dt><strong>coerce_float</strong><span class="classifier">bool, default True</span></dt><dd><p>Attempts to convert values of non-string, non-numeric objects (like
 decimal.Decimal) to floating point, useful for SQL result sets.</p>
 </dd>
-<dt><strong>params</strong><span class="classifier">list, tuple or dict, optional, default: None</span></dt><dd><p>List of parameters to pass to execute method.  The syntax used
+<dt><strong>params</strong><span class="classifier">list, tuple or dict, optional, default: None</span></dt><dd><p>List of parameters to pass to execute method. The syntax used
 to pass parameters is database driver dependent. Check your
 database driver documentation for which of the five syntax styles,
 described in PEP 249’s paramstyle, is supported.
@@ -103,11 +103,11 @@ number of rows to include in each chunk.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>DataFrame</dt><dd></dd>
+<dt>DataFrame or Iterator[DataFrame]</dt><dd></dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.read_sql_table.html#pandas.read_sql_table" title="pandas.read_sql_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_sql_table</span></code></a></dt><dd><p>Read SQL database table into a DataFrame.</p>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-datetimeindex-mean">
 <h1>pandas.DatetimeIndex.mean<a class="headerlink" href="#pandas-datetimeindex-mean" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DatetimeIndex.mean">
-<code class="sig-prename descclassname">DatetimeIndex.</code><code class="sig-name descname">mean</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/extension.py#L79-L85"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DatetimeIndex.mean" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DatetimeIndex.</span></code><code class="sig-name descname"><span class="pre">mean</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/extension.py#L82-L90"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DatetimeIndex.mean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean value of the Array.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.25.0.</span></p>
@@ -62,6 +62,7 @@
 <dd class="field-odd"><dl class="simple">
 <dt><strong>skipna</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to ignore any NaT elements.</p>
 </dd>
+<dt><strong>axis</strong><span class="classifier">int, optional, default 0</span></dt><dd></dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -71,10 +72,10 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.mean.html#numpy.ndarray.mean" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.mean</span></code></a></dt><dd><p>Returns the average of array elements along a given axis.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.mean.html#numpy.ndarray.mean" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.mean</span></code></a></dt><dd><p>Returns the average of array elements along a given axis.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.mean.html#pandas.Series.mean" title="pandas.Series.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.mean</span></code></a></dt><dd><p>Return the mean value in a Series.</p>
 </dd>

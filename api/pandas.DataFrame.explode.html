@@ -50,17 +50,22 @@
   <body>
 <div class="section" id="pandas-dataframe-explode">
 <h1>pandas.DataFrame.explode<a class="headerlink" href="#pandas-dataframe-explode" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.explode">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">explode</code><span class="sig-paren">(</span><em class="sig-param">self, column: Union[str, Tuple]</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L6253-L6323"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.explode" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">explode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L7214-L7291"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.explode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform each element of a list-like to a row, replicating index values.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.25.0.</span></p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>column</strong><span class="classifier">str or tuple</span></dt><dd><p>Column to explode.</p>
+</dd>
+<dt><strong>ignore_index</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, the resulting index will be labeled 0, 1, …, n - 1.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -78,7 +83,7 @@ index will be duplicated for these rows.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.unstack.html#pandas.DataFrame.unstack" title="pandas.DataFrame.unstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.unstack</span></code></a></dt><dd><p>Pivot a level of the (necessarily hierarchical) index labels.</p>
@@ -90,10 +95,11 @@ index will be duplicated for these rows.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>This routine will explode list-likes including lists, tuples,
+<p>This routine will explode list-likes including lists, tuples, sets,
 Series, and np.ndarray. The result dtype of the subset rows will
-be object. Scalars will be returned unchanged. Empty list-likes will
-result in a np.nan for that row.</p>
+be object. Scalars will be returned unchanged, and empty list-likes will
+result in a np.nan for that row. In addition, the ordering of rows in the
+output will be non-deterministic when exploding sets.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A'</span><span class="p">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">'foo'</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="s1">'B'</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>

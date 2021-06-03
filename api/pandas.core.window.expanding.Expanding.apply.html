@@ -50,10 +50,10 @@
   <body>
 <div class="section" id="pandas-core-window-expanding-expanding-apply">
 <h1>pandas.core.window.expanding.Expanding.apply<a class="headerlink" href="#pandas-core-window-expanding-expanding-apply" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.window.expanding.Expanding.apply">
-<code class="sig-prename descclassname">Expanding.</code><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">func</em>, <em class="sig-param">raw=False</em>, <em class="sig-param">args=()</em>, <em class="sig-param">kwargs={}</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/window/expanding.py#L149-L152"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.window.expanding.Expanding.apply" title="Permalink to this definition">¶</a></dt>
-<dd><p>The expanding function’s apply function.</p>
+<code class="sig-prename descclassname"><span class="pre">Expanding.</span></code><code class="sig-name descname"><span class="pre">apply</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/window/expanding.py#L145-L163"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.window.expanding.Expanding.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply an arbitrary function to each expanding window.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -73,10 +73,11 @@ If you are just applying a NumPy reduction function this will
 achieve much better performance.</p></li>
 </ul>
 </dd>
-<dt><strong>engine</strong><span class="classifier">str, default ‘cython’</span></dt><dd><ul>
+<dt><strong>engine</strong><span class="classifier">str, default None</span></dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">'cython'</span></code> : Runs rolling apply through C-extensions from cython.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'numba'</span></code> : Runs rolling apply through JIT compiled code from numba.
-Only available when <code class="docutils literal notranslate"><span class="pre">raw</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+Only available when <code class="docutils literal notranslate"><span class="pre">raw</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> : Defaults to <code class="docutils literal notranslate"><span class="pre">'cython'</span></code> or globally setting <code class="docutils literal notranslate"><span class="pre">compute.use_numba</span></code></p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
 </div>
@@ -109,17 +110,21 @@ applied to both the <code class="docutils literal notranslate"><span class="pre"
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.expanding</span></code></dt><dd><p>Series expanding.</p>
+<dt><a class="reference internal" href="pandas.Series.expanding.html#pandas.Series.expanding" title="pandas.Series.expanding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series.expanding</span></code></a></dt><dd><p>Calling object with Series data.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.expanding</span></code></dt><dd><p>DataFrame expanding.</p>
+<dt><a class="reference internal" href="pandas.DataFrame.expanding.html#pandas.DataFrame.expanding" title="pandas.DataFrame.expanding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame.expanding</span></code></a></dt><dd><p>Calling object with DataFrame data.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.apply.html#pandas.Series.apply" title="pandas.Series.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series.apply</span></code></a></dt><dd><p>Similar method for Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.apply.html#pandas.DataFrame.apply" title="pandas.DataFrame.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame.apply</span></code></a></dt><dd><p>Similar method for DataFrame.</p>
 </dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>See <a class="reference internal" href="../../user_guide/computation.html#stats-rolling-apply"><span class="std std-ref">Rolling Apply</span></a> for extended documentation and performance
+<p>See <a class="reference internal" href="../../user_guide/window.html#window-numba-engine"><span class="std std-ref">Numba engine</span></a> for extended documentation and performance
 considerations for the Numba engine.</p>
 </dd></dl>
 </div>

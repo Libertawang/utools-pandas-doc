@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-to-json">
 <h1>pandas.DataFrame.to_json<a class="headerlink" href="#pandas-dataframe-to-json" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.to_json">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param">self, path_or_buf: Union[str, pathlib.Path, IO[~AnyStr], NoneType] = None, orient: Union[str, NoneType] = None, date_format: Union[str, NoneType] = None, double_precision: int = 10, force_ascii: bool = True, date_unit: str = 'ms', default_handler: Union[Callable[[Any], Union[str, int, float, bool, List, Dict]], NoneType] = None, lines: bool = False, compression: Union[str, NoneType] = 'infer', index: bool = True, indent: Union[int, NoneType] = None</em><span class="sig-paren">)</span> → Union[str, NoneType]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L2184-L2365"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_json" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">to_json</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_or_buf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">double_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_ascii</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ms'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'infer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L2199-L2480"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the object to a JSON string.</p>
 <p>Note NaN’s and None will be converted to null and datetime objects
 will be converted to UNIX timestamps.</p>
@@ -68,7 +68,7 @@ a string.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>default is ‘index’</p></li>
-<li><p>allowed values are: {‘split’,’records’,’index’,’table’}.</p></li>
+<li><p>allowed values are: {‘split’, ‘records’, ‘index’, ‘table’}.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -96,9 +96,6 @@ a string.</p>
 </div></blockquote>
 </li>
 </ul>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.20.0.</span></p>
-</div>
 </dd>
 <dt><strong>date_format</strong><span class="classifier">{None, ‘epoch’, ‘iso’}</span></dt><dd><p>Type of date conversion. ‘epoch’ = epoch milliseconds,
 ‘iso’ = ISO8601. The default depends on the <cite>orient</cite>. For
@@ -111,7 +108,7 @@ floating point values.</p>
 <dt><strong>force_ascii</strong><span class="classifier">bool, default True</span></dt><dd><p>Force encoded string to be ASCII.</p>
 </dd>
 <dt><strong>date_unit</strong><span class="classifier">str, default ‘ms’ (milliseconds)</span></dt><dd><p>The time unit to encode to, governs timestamp and ISO8601
-precision.  One of ‘s’, ‘ms’, ‘us’, ‘ns’ for second, millisecond,
+precision. One of ‘s’, ‘ms’, ‘us’, ‘ns’ for second, millisecond,
 microsecond, and nanosecond respectively.</p>
 </dd>
 <dt><strong>default_handler</strong><span class="classifier">callable, default None</span></dt><dd><p>Handler to call if object cannot otherwise be converted to a
@@ -125,9 +122,6 @@ like.</p>
 <dt><strong>compression</strong><span class="classifier">{‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}</span></dt><dd><p>A string representing the compression to use in the output file,
 only used when the first argument is a filename. By default, the
 compression is inferred from the filename.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.24.0: </span>‘infer’ option added and set to default</p>
 </div>
@@ -135,13 +129,20 @@ compression is inferred from the filename.</p>
 <dt><strong>index</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether to include the index values in the JSON string. Not
 including the index (<code class="docutils literal notranslate"><span class="pre">index=False</span></code>) is only supported when
 orient is ‘split’ or ‘table’.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
 </dd>
 <dt><strong>indent</strong><span class="classifier">int, optional</span></dt><dd><p>Length of whitespace used to indent each record.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
+</div>
+</dd>
+<dt><strong>storage_options</strong><span class="classifier">dict, optional</span></dt><dd><p>Extra options that make sense for a particular storage connection, e.g.
+host, port, username, password, etc., if using a URL that will
+be parsed by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, e.g., starting “s3://”, “gcs://”. An error
+will be raised if providing this argument with a non-fsspec URL.
+See the fsspec and backend storage implementation docs for the set of
+allowed keys and values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
 </div>
 </dd>
 </dl>
@@ -154,10 +155,11 @@ string. Otherwise returns None.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.read_json.html#pandas.read_json" title="pandas.read_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_json</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.read_json.html#pandas.read_json" title="pandas.read_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_json</span></code></a></dt><dd><p>Convert a JSON string to pandas object.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -165,46 +167,146 @@ string. Otherwise returns None.</p>
 indent the output but does insert newlines. Currently, <code class="docutils literal notranslate"><span class="pre">indent=0</span></code>
 and the default <code class="docutils literal notranslate"><span class="pre">indent=None</span></code> are equivalent in pandas, though this
 may change in a future release.</p>
+<p><code class="docutils literal notranslate"><span class="pre">orient='table'</span></code> contains a ‘pandas_version’ field under ‘schema’.
+This stores the version of <cite>pandas</cite> used in the latest revision of the
+schema.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]],</span>
-<span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'row 1'</span><span class="p">,</span> <span class="s1">'row 2'</span><span class="p">],</span>
-<span class="gp">... </span>                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'col 1'</span><span class="p">,</span> <span class="s1">'col 2'</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'split'</span><span class="p">)</span>
-<span class="go">'{"columns":["col 1","col 2"],</span>
-<span class="go">  "index":["row 1","row 2"],</span>
-<span class="go">  "data":[["a","b"],["c","d"]]}'</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">[[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">],</span> <span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">]],</span>
+<span class="gp">... </span>    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"row 1"</span><span class="p">,</span> <span class="s2">"row 2"</span><span class="p">],</span>
+<span class="gp">... </span>    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"col 1"</span><span class="p">,</span> <span class="s2">"col 2"</span><span class="p">],</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"split"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">parsed</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  
+<span class="go">{</span>
+<span class="go">    "columns": [</span>
+<span class="go">        "col 1",</span>
+<span class="go">        "col 2"</span>
+<span class="go">    ],</span>
+<span class="go">    "index": [</span>
+<span class="go">        "row 1",</span>
+<span class="go">        "row 2"</span>
+<span class="go">    ],</span>
+<span class="go">    "data": [</span>
+<span class="go">        [</span>
+<span class="go">            "a",</span>
+<span class="go">            "b"</span>
+<span class="go">        ],</span>
+<span class="go">        [</span>
+<span class="go">            "c",</span>
+<span class="go">            "d"</span>
+<span class="go">        ]</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
 </pre></div>
 </div>
 <p>Encoding/decoding a Dataframe using <code class="docutils literal notranslate"><span class="pre">'records'</span></code> formatted JSON.
 Note that index labels are not preserved with this encoding.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'records'</span><span class="p">)</span>
-<span class="go">'[{"col 1":"a","col 2":"b"},{"col 1":"c","col 2":"d"}]'</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"records"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">parsed</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  
+<span class="go">[</span>
+<span class="go">    {</span>
+<span class="go">        "col 1": "a",</span>
+<span class="go">        "col 2": "b"</span>
+<span class="go">    },</span>
+<span class="go">    {</span>
+<span class="go">        "col 1": "c",</span>
+<span class="go">        "col 2": "d"</span>
+<span class="go">    }</span>
+<span class="go">]</span>
 </pre></div>
 </div>
 <p>Encoding/decoding a Dataframe using <code class="docutils literal notranslate"><span class="pre">'index'</span></code> formatted JSON:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'index'</span><span class="p">)</span>
-<span class="go">'{"row 1":{"col 1":"a","col 2":"b"},"row 2":{"col 1":"c","col 2":"d"}}'</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">parsed</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  
+<span class="go">{</span>
+<span class="go">    "row 1": {</span>
+<span class="go">        "col 1": "a",</span>
+<span class="go">        "col 2": "b"</span>
+<span class="go">    },</span>
+<span class="go">    "row 2": {</span>
+<span class="go">        "col 1": "c",</span>
+<span class="go">        "col 2": "d"</span>
+<span class="go">    }</span>
+<span class="go">}</span>
 </pre></div>
 </div>
 <p>Encoding/decoding a Dataframe using <code class="docutils literal notranslate"><span class="pre">'columns'</span></code> formatted JSON:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
-<span class="go">'{"col 1":{"row 1":"a","row 2":"c"},"col 2":{"row 1":"b","row 2":"d"}}'</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"columns"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">parsed</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  
+<span class="go">{</span>
+<span class="go">    "col 1": {</span>
+<span class="go">        "row 1": "a",</span>
+<span class="go">        "row 2": "c"</span>
+<span class="go">    },</span>
+<span class="go">    "col 2": {</span>
+<span class="go">        "row 1": "b",</span>
+<span class="go">        "row 2": "d"</span>
+<span class="go">    }</span>
+<span class="go">}</span>
 </pre></div>
 </div>
 <p>Encoding/decoding a Dataframe using <code class="docutils literal notranslate"><span class="pre">'values'</span></code> formatted JSON:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'values'</span><span class="p">)</span>
-<span class="go">'[["a","b"],["c","d"]]'</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"values"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">parsed</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  
+<span class="go">[</span>
+<span class="go">    [</span>
+<span class="go">        "a",</span>
+<span class="go">        "b"</span>
+<span class="go">    ],</span>
+<span class="go">    [</span>
+<span class="go">        "c",</span>
+<span class="go">        "d"</span>
+<span class="go">    ]</span>
+<span class="go">]</span>
 </pre></div>
 </div>
-<p>Encoding with Table Schema</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">'table'</span><span class="p">)</span>
-<span class="go">'{"schema": {"fields": [{"name": "index", "type": "string"},</span>
-<span class="go">                        {"name": "col 1", "type": "string"},</span>
-<span class="go">                        {"name": "col 2", "type": "string"}],</span>
-<span class="go">             "primaryKey": "index",</span>
-<span class="go">             "pandas_version": "0.20.0"},</span>
-<span class="go">  "data": [{"index": "row 1", "col 1": "a", "col 2": "b"},</span>
-<span class="go">           {"index": "row 2", "col 1": "c", "col 2": "d"}]}'</span>
+<p>Encoding with Table Schema:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s2">"table"</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">parsed</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  
+<span class="go">{</span>
+<span class="go">    "schema": {</span>
+<span class="go">        "fields": [</span>
+<span class="go">            {</span>
+<span class="go">                "name": "index",</span>
+<span class="go">                "type": "string"</span>
+<span class="go">            },</span>
+<span class="go">            {</span>
+<span class="go">                "name": "col 1",</span>
+<span class="go">                "type": "string"</span>
+<span class="go">            },</span>
+<span class="go">            {</span>
+<span class="go">                "name": "col 2",</span>
+<span class="go">                "type": "string"</span>
+<span class="go">            }</span>
+<span class="go">        ],</span>
+<span class="go">        "primaryKey": [</span>
+<span class="go">            "index"</span>
+<span class="go">        ],</span>
+<span class="go">        "pandas_version": "0.20.0"</span>
+<span class="go">    },</span>
+<span class="go">    "data": [</span>
+<span class="go">        {</span>
+<span class="go">            "index": "row 1",</span>
+<span class="go">            "col 1": "a",</span>
+<span class="go">            "col 2": "b"</span>
+<span class="go">        },</span>
+<span class="go">        {</span>
+<span class="go">            "index": "row 2",</span>
+<span class="go">            "col 1": "c",</span>
+<span class="go">            "col 2": "d"</span>
+<span class="go">        }</span>
+<span class="go">    ]</span>
+<span class="go">}</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-arrays-sparsearray">
 <h1>pandas.arrays.SparseArray<a class="headerlink" href="#pandas-arrays-sparsearray" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.arrays.SparseArray">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.arrays.</code><code class="sig-name descname">SparseArray</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">sparse_index=None</em>, <em class="sig-param">index=None</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">kind='integer'</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">copy=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/arrays/sparse/array.py#L195-L1480"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.arrays.SparseArray" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.arrays.</span></code><code class="sig-name descname"><span class="pre">SparseArray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'integer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/arrays/sparse/array.py#L199-L1462"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.arrays.SparseArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>An ExtensionArray for storing sparse data.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.24.0: </span>Implements the ExtensionArray interface.</p>
@@ -125,6 +125,16 @@ this determines <code class="docutils literal notranslate"><span class="pre">sel
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas.arrays</span> <span class="kn">import</span> <span class="n">SparseArray</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">SparseArray</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span>
+<span class="go">[0, 0, 1, 2]</span>
+<span class="go">Fill: 0</span>
+<span class="go">IntIndex</span>
+<span class="go">Indices: array([2, 3], dtype=int32)</span>
+</pre></div>
+</div>
 <p class="rubric">Attributes</p>
 <table class="table">
 <colgroup>

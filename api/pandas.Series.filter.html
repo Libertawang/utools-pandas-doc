@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-filter">
 <h1>pandas.Series.filter<a class="headerlink" href="#pandas-series-filter" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.filter">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param">self: ~FrameOrSeries</em>, <em class="sig-param">items=None</em>, <em class="sig-param">like: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">regex: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">axis=None</em><span class="sig-paren">)</span> → ~FrameOrSeries<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L4621-L4716"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.filter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">filter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">like</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L4893-L4994"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subset the dataframe rows or columns according to the specified index labels.</p>
 <p>Note that this routine does not filter a dataframe on its
 contents. The filter is applied to the labels of the index.</p>
@@ -77,10 +77,11 @@ or axis name (str). By default this is the info axis,
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.DataFrame.loc.html#pandas.DataFrame.loc" title="pandas.DataFrame.loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.loc</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.DataFrame.loc.html#pandas.DataFrame.loc" title="pandas.DataFrame.loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.loc</span></code></a></dt><dd><p>Access a group of rows and columns by label(s) or a boolean array.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -92,6 +93,10 @@ with <code class="docutils literal notranslate"><span class="pre">[]</span></cod
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])),</span>
 <span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'mouse'</span><span class="p">,</span> <span class="s1">'rabbit'</span><span class="p">],</span>
 <span class="gp">... </span>                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'one'</span><span class="p">,</span> <span class="s1">'two'</span><span class="p">,</span> <span class="s1">'three'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">        one  two  three</span>
+<span class="go">mouse     1    2      3</span>
+<span class="go">rabbit    4    5      6</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># select columns by name</span>

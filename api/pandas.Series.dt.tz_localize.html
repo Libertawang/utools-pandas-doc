@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-dt-tz-localize">
 <h1>pandas.Series.dt.tz_localize<a class="headerlink" href="#pandas-series-dt-tz-localize" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.dt.tz_localize">
-<code class="sig-prename descclassname">Series.dt.</code><code class="sig-name descname">tz_localize</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/accessor.py#L98-L99"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.dt.tz_localize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.dt.</span></code><code class="sig-name descname"><span class="pre">tz_localize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/accessor.py#L91-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.dt.tz_localize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Localize tz-naive Datetime Array/Index to tz-aware
 Datetime Array/Index.</p>
 <p>This method takes a time zone (tz) naive Datetime Array/Index object
@@ -114,7 +114,7 @@ nonexistent times.</p></li>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DatetimeIndex.tz_convert.html#pandas.DatetimeIndex.tz_convert" title="pandas.DatetimeIndex.tz_convert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DatetimeIndex.tz_convert</span></code></a></dt><dd><p>Convert tz-aware DatetimeIndex from one time zone to another.</p>
@@ -135,7 +135,7 @@ nonexistent times.</p></li>
 <span class="go">DatetimeIndex(['2018-03-01 09:00:00-05:00',</span>
 <span class="go">               '2018-03-02 09:00:00-05:00',</span>
 <span class="go">               '2018-03-03 09:00:00-05:00'],</span>
-<span class="go">              dtype='datetime64[ns, US/Eastern]', freq='D')</span>
+<span class="go">              dtype='datetime64[ns, US/Eastern]', freq=None)</span>
 </pre></div>
 </div>
 <p>With the <code class="docutils literal notranslate"><span class="pre">tz=None</span></code>, we can remove the time zone information
@@ -143,7 +143,7 @@ while keeping the local time (not converted to UTC):</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tz_aware</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 <span class="go">DatetimeIndex(['2018-03-01 09:00:00', '2018-03-02 09:00:00',</span>
 <span class="go">               '2018-03-03 09:00:00'],</span>
-<span class="go">              dtype='datetime64[ns]', freq='D')</span>
+<span class="go">              dtype='datetime64[ns]', freq=None)</span>
 </pre></div>
 </div>
 <p>Be careful with DST changes. When there is sequential data, pandas can
@@ -172,9 +172,10 @@ pass an ndarray to the ambiguous parameter to set the DST explicitly</p>
 <span class="gp">... </span>                              <span class="s1">'2018-10-28 02:36:00'</span><span class="p">,</span>
 <span class="gp">... </span>                              <span class="s1">'2018-10-28 03:46:00'</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">'CET'</span><span class="p">,</span> <span class="n">ambiguous</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]))</span>
-<span class="go">0   2015-03-29 03:00:00+02:00</span>
-<span class="go">1   2015-03-29 03:30:00+02:00</span>
-<span class="go">dtype: datetime64[ns, Europe/Warsaw]</span>
+<span class="go">0   2018-10-28 01:20:00+02:00</span>
+<span class="go">1   2018-10-28 02:36:00+02:00</span>
+<span class="go">2   2018-10-28 03:46:00+01:00</span>
+<span class="go">dtype: datetime64[ns, CET]</span>
 </pre></div>
 </div>
 <p>If the DST transition causes nonexistent times, you can shift these
@@ -185,15 +186,19 @@ or <cite>‘shift_backwards’</cite>.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">'Europe/Warsaw'</span><span class="p">,</span> <span class="n">nonexistent</span><span class="o">=</span><span class="s1">'shift_forward'</span><span class="p">)</span>
 <span class="go">0   2015-03-29 03:00:00+02:00</span>
 <span class="go">1   2015-03-29 03:30:00+02:00</span>
-<span class="go">dtype: datetime64[ns, 'Europe/Warsaw']</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">'Europe/Warsaw'</span><span class="p">,</span> <span class="n">nonexistent</span><span class="o">=</span><span class="s1">'shift_backward'</span><span class="p">)</span>
+<span class="go">dtype: datetime64[ns, Europe/Warsaw]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">'Europe/Warsaw'</span><span class="p">,</span> <span class="n">nonexistent</span><span class="o">=</span><span class="s1">'shift_backward'</span><span class="p">)</span>
 <span class="go">0   2015-03-29 01:59:59.999999999+01:00</span>
 <span class="go">1   2015-03-29 03:30:00+02:00</span>
-<span class="go">dtype: datetime64[ns, 'Europe/Warsaw']</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">'Europe/Warsaw'</span><span class="p">,</span> <span class="n">nonexistent</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">'1H'</span><span class="p">))</span>
+<span class="go">dtype: datetime64[ns, Europe/Warsaw]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">tz_localize</span><span class="p">(</span><span class="s1">'Europe/Warsaw'</span><span class="p">,</span> <span class="n">nonexistent</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="s1">'1H'</span><span class="p">))</span>
 <span class="go">0   2015-03-29 03:30:00+02:00</span>
 <span class="go">1   2015-03-29 03:30:00+02:00</span>
-<span class="go">dtype: datetime64[ns, 'Europe/Warsaw']</span>
+<span class="go">dtype: datetime64[ns, Europe/Warsaw]</span>
 </pre></div>
 </div>
 </dd></dl>

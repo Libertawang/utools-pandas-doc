@@ -50,13 +50,13 @@
   <body>
 <div class="section" id="pandas-categoricalindex-rename-categories">
 <h1>pandas.CategoricalIndex.rename_categories<a class="headerlink" href="#pandas-categoricalindex-rename-categories" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.CategoricalIndex.rename_categories">
-<code class="sig-prename descclassname">CategoricalIndex.</code><code class="sig-name descname">rename_categories</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/accessor.py#L98-L99"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.CategoricalIndex.rename_categories" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">CategoricalIndex.</span></code><code class="sig-name descname"><span class="pre">rename_categories</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/accessor.py#L91-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.CategoricalIndex.rename_categories" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rename categories.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>new_categories</strong><span class="classifier">list-like, dict-like or callable</span></dt><dd><p>New categories which will replace old categories.</p>
 <ul class="simple">
 <li><p>list-like: all items must be unique and the number of items in
@@ -65,17 +65,9 @@ the new categories must match the existing number of categories.</p></li>
 old categories to new. Categories not contained in the mapping
 are passed through and extra categories in the mapping are
 ignored.</p></li>
-</ul>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0..</span></p>
-</div>
-<ul class="simple">
 <li><p>callable : a callable that is called on all items in the old
 categories and whose return values comprise the new categories.</p></li>
 </ul>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0..</span></p>
-</div>
 </dd>
 <dt><strong>inplace</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether or not to rename the categories inplace or return a copy of
 this categorical with renamed categories.</p>
@@ -84,8 +76,7 @@ this categorical with renamed categories.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>cat</strong><span class="classifier">Categorical or None</span></dt><dd><p>With <code class="docutils literal notranslate"><span class="pre">inplace=False</span></code>, the new categorical is returned.
-With <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>, there is no return value.</p>
+<dt><strong>cat</strong><span class="classifier">Categorical or None</span></dt><dd><p>Categorical with removed categories or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -97,14 +88,19 @@ items than the current categories or do not validate as categories</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.CategoricalIndex.reorder_categories.html#pandas.CategoricalIndex.reorder_categories" title="pandas.CategoricalIndex.reorder_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reorder_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.CategoricalIndex.add_categories.html#pandas.CategoricalIndex.add_categories" title="pandas.CategoricalIndex.add_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.CategoricalIndex.remove_categories.html#pandas.CategoricalIndex.remove_categories" title="pandas.CategoricalIndex.remove_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.CategoricalIndex.remove_unused_categories.html#pandas.CategoricalIndex.remove_unused_categories" title="pandas.CategoricalIndex.remove_unused_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_unused_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.CategoricalIndex.set_categories.html#pandas.CategoricalIndex.set_categories" title="pandas.CategoricalIndex.set_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_categories</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.reorder_categories.html#pandas.CategoricalIndex.reorder_categories" title="pandas.CategoricalIndex.reorder_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reorder_categories</span></code></a></dt><dd><p>Reorder categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.add_categories.html#pandas.CategoricalIndex.add_categories" title="pandas.CategoricalIndex.add_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_categories</span></code></a></dt><dd><p>Add new categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.remove_categories.html#pandas.CategoricalIndex.remove_categories" title="pandas.CategoricalIndex.remove_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_categories</span></code></a></dt><dd><p>Remove the specified categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.remove_unused_categories.html#pandas.CategoricalIndex.remove_unused_categories" title="pandas.CategoricalIndex.remove_unused_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_unused_categories</span></code></a></dt><dd><p>Remove categories which are not used.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.set_categories.html#pandas.CategoricalIndex.set_categories" title="pandas.CategoricalIndex.set_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_categories</span></code></a></dt><dd><p>Set the categories to the specified ones.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
@@ -117,14 +113,14 @@ items than the current categories or do not validate as categories</p>
 <p>For dict-like <code class="docutils literal notranslate"><span class="pre">new_categories</span></code>, extra keys are ignored and
 categories not in the dictionary are passed through</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">rename_categories</span><span class="p">({</span><span class="s1">'a'</span><span class="p">:</span> <span class="s1">'A'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">:</span> <span class="s1">'C'</span><span class="p">})</span>
-<span class="go">[A, A, b]</span>
-<span class="go">Categories (2, object): [A, b]</span>
+<span class="go">['A', 'A', 'b']</span>
+<span class="go">Categories (2, object): ['A', 'b']</span>
 </pre></div>
 </div>
 <p>You may also provide a callable to create the new categories</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">rename_categories</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-<span class="go">[A, A, B]</span>
-<span class="go">Categories (2, object): [A, B]</span>
+<span class="go">['A', 'A', 'B']</span>
+<span class="go">Categories (2, object): ['A', 'B']</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-rangeindex">
 <h1>pandas.RangeIndex<a class="headerlink" href="#pandas-rangeindex" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.RangeIndex">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">RangeIndex</code><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/range.py#L36-L808"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.RangeIndex" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">RangeIndex</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/range.py#L38-L886"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.RangeIndex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Immutable Index implementing a monotonic integer range.</p>
 <p>RangeIndex is a memory-saving special case of Int64Index limited to
 representing monotonic ranges. Using RangeIndex may in some instances
@@ -66,14 +66,16 @@ by DataFrame and Series when no explicit index is provided by the user.</p>
 </dd>
 <dt><strong>stop</strong><span class="classifier">int (default: 0)</span></dt><dd></dd>
 <dt><strong>step</strong><span class="classifier">int (default: 1)</span></dt><dd></dd>
-<dt><strong>name</strong><span class="classifier">object, optional</span></dt><dd><p>Name to be stored in the index.</p>
+<dt><strong>dtype</strong><span class="classifier">np.int64</span></dt><dd><p>Unused, accepted for homogeneity with other index types.</p>
 </dd>
 <dt><strong>copy</strong><span class="classifier">bool, default False</span></dt><dd><p>Unused, accepted for homogeneity with other index types.</p>
 </dd>
+<dt><strong>name</strong><span class="classifier">object, optional</span></dt><dd><p>Name to be stored in the index.</p>
+</dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Index.html#pandas.Index" title="pandas.Index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index</span></code></a></dt><dd><p>The base pandas Index type.</p>
@@ -83,7 +85,7 @@ by DataFrame and Series when no explicit index is provided by the user.</p>
 </dl>
 </div>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -101,7 +103,7 @@ by DataFrame and Series when no explicit index is provided by the user.</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>

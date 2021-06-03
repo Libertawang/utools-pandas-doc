@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-plot-area">
 <h1>pandas.Series.plot.area<a class="headerlink" href="#pandas-series-plot-area" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.plot.area">
-<code class="sig-prename descclassname">Series.plot.</code><code class="sig-name descname">area</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">x=None</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_core.py#L1292-L1363"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.plot.area" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.plot.</span></code><code class="sig-name descname"><span class="pre">area</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_core.py#L1408-L1479"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.plot.area" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draw a stacked area plot.</p>
 <p>An area plot displays quantitative data visually.
 This function wraps the matplotlib area function.</p>
@@ -78,7 +78,7 @@ unstacked plot.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.plot.html#pandas.DataFrame.plot" title="pandas.DataFrame.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.plot</span></code></a></dt><dd><p>Make plots of DataFrame using matplotlib / pylab.</p>
@@ -97,7 +97,7 @@ unstacked plot.</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-area-1.png" src="../../_images/pandas-Series-plot-area-1.png"/>
+<img alt="../../_images/pandas-Series-plot-area-1.png" class="plot-directive" src="../../_images/pandas-Series-plot-area-1.png"/>
 </div>
 <p>Area plots are stacked by default. To produce an unstacked plot,
 pass <code class="docutils literal notranslate"><span class="pre">stacked=False</span></code>:</p>
@@ -105,14 +105,14 @@ pass <code class="docutils literal notranslate"><span class="pre">stacked=False<
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-area-2.png" src="../../_images/pandas-Series-plot-area-2.png"/>
+<img alt="../../_images/pandas-Series-plot-area-2.png" class="plot-directive" src="../../_images/pandas-Series-plot-area-2.png"/>
 </div>
 <p>Draw an area plot for a single column:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">'sales'</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-area-3.png" src="../../_images/pandas-Series-plot-area-3.png"/>
+<img alt="../../_images/pandas-Series-plot-area-3.png" class="plot-directive" src="../../_images/pandas-Series-plot-area-3.png"/>
 </div>
 <p>Draw with a different <cite>x</cite>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -124,7 +124,7 @@ pass <code class="docutils literal notranslate"><span class="pre">stacked=False<
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-area-4.png" src="../../_images/pandas-Series-plot-area-4.png"/>
+<img alt="../../_images/pandas-Series-plot-area-4.png" class="plot-directive" src="../../_images/pandas-Series-plot-area-4.png"/>
 </div>
 </dd></dl>
 </div>

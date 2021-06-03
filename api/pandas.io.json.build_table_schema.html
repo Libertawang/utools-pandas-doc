@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-io-json-build-table-schema">
 <h1>pandas.io.json.build_table_schema<a class="headerlink" href="#pandas-io-json-build-table-schema" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.io.json.build_table_schema">
-<code class="sig-prename descclassname">pandas.io.json.</code><code class="sig-name descname">build_table_schema</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">index=True</em>, <em class="sig-param">primary_key=None</em>, <em class="sig-param">version=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/json/_table_schema.py#L190-L268"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.io.json.build_table_schema" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.io.json.</span></code><code class="sig-name descname"><span class="pre">build_table_schema</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/json/_table_schema.py#L192-L278"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.io.json.build_table_schema" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a Table schema from <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -76,7 +76,8 @@ of pandas that generated the schema.</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>See <cite>_as_json_table_type</cite> for conversion types.
+<p>See <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/io.html#table-schema">Table Schema</a> for
+conversion types.
 Timedeltas as converted to ISO8601 duration format with
 9 decimal places after the seconds field for nanosecond precision.</p>
 <p>Categoricals are converted to the <cite>any</cite> dtype, and use the <cite>enum</cite> field

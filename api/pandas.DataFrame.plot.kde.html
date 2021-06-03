@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-plot-kde">
 <h1>pandas.DataFrame.plot.kde<a class="headerlink" href="#pandas-dataframe-plot-kde" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.plot.kde">
-<code class="sig-prename descclassname">DataFrame.plot.</code><code class="sig-name descname">kde</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">bw_method=None</em>, <em class="sig-param">ind=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_core.py#L1182-L1288"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.plot.kde" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.plot.</span></code><code class="sig-name descname"><span class="pre">kde</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bw_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_core.py#L1298-L1404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.plot.kde" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate Kernel Density Estimate plot using Gaussian kernels.</p>
 <p>In statistics, <a class="reference external" href="https://en.wikipedia.org/wiki/Kernel_density_estimation">kernel density estimation</a> (KDE) is a non-parametric
 way to estimate the probability density function (PDF) of a random
@@ -64,7 +64,7 @@ bandwidth determination.</p>
 <dt><strong>bw_method</strong><span class="classifier">str, scalar or callable, optional</span></dt><dd><p>The method used to calculate the estimator bandwidth. This can be
 ‘scott’, ‘silverman’, a scalar constant or a callable.
 If None (default), ‘scott’ is used.
-See <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html#scipy.stats.gaussian_kde" title="(in SciPy v1.4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.stats.gaussian_kde</span></code></a> for more information.</p>
+See <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html#scipy.stats.gaussian_kde" title="(in SciPy v1.6.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.stats.gaussian_kde</span></code></a> for more information.</p>
 </dd>
 <dt><strong>ind</strong><span class="classifier">NumPy array or int, optional</span></dt><dd><p>Evaluation points for the estimated PDF. If None (default),
 1000 equally spaced points are used. If <cite>ind</cite> is a NumPy array, the
@@ -82,10 +82,10 @@ KDE is evaluated at the points passed. If <cite>ind</cite> is an integer,
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html#scipy.stats.gaussian_kde" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.gaussian_kde</span></code></a></dt><dd><p>Representation of a kernel-density estimate using Gaussian kernels. This is the function used internally to estimate the PDF.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html#scipy.stats.gaussian_kde" title="(in SciPy v1.6.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.gaussian_kde</span></code></a></dt><dd><p>Representation of a kernel-density estimate using Gaussian kernels. This is the function used internally to estimate the PDF.</p>
 </dd>
 </dl>
 </div>
@@ -99,7 +99,7 @@ bandwidth determination and plot the results, evaluating them at
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-plot-kde-1.png" src="../../_images/pandas-DataFrame-plot-kde-1.png"/>
+<img alt="../../_images/pandas-DataFrame-plot-kde-1.png" class="plot-directive" src="../../_images/pandas-DataFrame-plot-kde-1.png"/>
 </div>
 <p>A scalar bandwidth can be specified. Using a small bandwidth value can
 lead to over-fitting, while using a large bandwidth value may result
@@ -108,13 +108,13 @@ in under-fitting:</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-plot-kde-2.png" src="../../_images/pandas-DataFrame-plot-kde-2.png"/>
+<img alt="../../_images/pandas-DataFrame-plot-kde-2.png" class="plot-directive" src="../../_images/pandas-DataFrame-plot-kde-2.png"/>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">bw_method</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-plot-kde-3.png" src="../../_images/pandas-DataFrame-plot-kde-3.png"/>
+<img alt="../../_images/pandas-DataFrame-plot-kde-3.png" class="plot-directive" src="../../_images/pandas-DataFrame-plot-kde-3.png"/>
 </div>
 <p>Finally, the <cite>ind</cite> parameter determines the evaluation points for the
 plot of the estimated PDF:</p>
@@ -122,7 +122,7 @@ plot of the estimated PDF:</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-plot-kde-4.png" src="../../_images/pandas-DataFrame-plot-kde-4.png"/>
+<img alt="../../_images/pandas-DataFrame-plot-kde-4.png" class="plot-directive" src="../../_images/pandas-DataFrame-plot-kde-4.png"/>
 </div>
 <p>For DataFrame, it works in the same way:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
@@ -133,7 +133,7 @@ plot of the estimated PDF:</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-plot-kde-5.png" src="../../_images/pandas-DataFrame-plot-kde-5.png"/>
+<img alt="../../_images/pandas-DataFrame-plot-kde-5.png" class="plot-directive" src="../../_images/pandas-DataFrame-plot-kde-5.png"/>
 </div>
 <p>A scalar bandwidth can be specified. Using a small bandwidth value can
 lead to over-fitting, while using a large bandwidth value may result
@@ -142,13 +142,13 @@ in under-fitting:</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-plot-kde-6.png" src="../../_images/pandas-DataFrame-plot-kde-6.png"/>
+<img alt="../../_images/pandas-DataFrame-plot-kde-6.png" class="plot-directive" src="../../_images/pandas-DataFrame-plot-kde-6.png"/>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">bw_method</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-plot-kde-7.png" src="../../_images/pandas-DataFrame-plot-kde-7.png"/>
+<img alt="../../_images/pandas-DataFrame-plot-kde-7.png" class="plot-directive" src="../../_images/pandas-DataFrame-plot-kde-7.png"/>
 </div>
 <p>Finally, the <cite>ind</cite> parameter determines the evaluation points for the
 plot of the estimated PDF:</p>
@@ -156,7 +156,7 @@ plot of the estimated PDF:</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-DataFrame-plot-kde-8.png" src="../../_images/pandas-DataFrame-plot-kde-8.png"/>
+<img alt="../../_images/pandas-DataFrame-plot-kde-8.png" class="plot-directive" src="../../_images/pandas-DataFrame-plot-kde-8.png"/>
 </div>
 </dd></dl>
 </div>

@@ -50,38 +50,64 @@
   <body>
 <div class="section" id="pandas-series-plot-line">
 <h1>pandas.Series.plot.line<a class="headerlink" href="#pandas-series-plot-line" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.plot.line">
-<code class="sig-prename descclassname">Series.plot.</code><code class="sig-name descname">line</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">x=None</em>, <em class="sig-param">y=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_core.py#L851-L918"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.plot.line" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.plot.</span></code><code class="sig-name descname"><span class="pre">line</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_core.py#L959-L1023"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.plot.line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot Series or DataFrame as lines.</p>
 <p>This function is useful to plot lines using DataFrame’s values
 as coordinates.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x</strong><span class="classifier">int or str, optional</span></dt><dd><p>Columns to use for the horizontal axis.
-Either the location or the label of the columns to be used.
-By default, it will use the DataFrame indices.</p>
+<dd class="field-odd"><dl>
+<dt><strong>x</strong><span class="classifier">label or position, optional</span></dt><dd><p>Allows plotting of one column versus another. If not specified,
+the index of the DataFrame is used.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">int, str, or list of them, optional</span></dt><dd><p>The values to be plotted.
-Either the location or the label of the columns to be used.
-By default, it will use the remaining DataFrame numeric columns.</p>
+<dt><strong>y</strong><span class="classifier">label or position, optional</span></dt><dd><p>Allows plotting of one column versus another. If not specified,
+all numerical columns are used.</p>
 </dd>
-<dt><strong>**kwargs</strong></dt><dd><p>Keyword arguments to pass on to <a class="reference internal" href="pandas.DataFrame.plot.html#pandas.DataFrame.plot" title="pandas.DataFrame.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.plot()</span></code></a>.</p>
+<dt><strong>color</strong><span class="classifier">str, array_like, or dict, optional</span></dt><dd><p>The color for each of the DataFrame’s columns. Possible values are:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>A single color string referred to by name, RGB or RGBA code,</dt><dd><p>for instance ‘red’ or ‘#a98d19’.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A sequence of color strings referred to by name, RGB or RGBA</dt><dd><p>code, which will be used for each column recursively. For
+instance [‘green’,’yellow’] each column’s line will be filled in
+green or yellow, alternatively.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>A dict of the form {column name<span class="classifier">color}, so that each column will be</span></dt><dd><p>colored accordingly. For example, if your columns are called <cite>a</cite> and
+<cite>b</cite>, then passing {‘a’: ‘green’, ‘b’: ‘red’} will color lines for
+column <cite>a</cite> in green and lines for column <cite>b</cite> in red.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>**kwargs</strong></dt><dd><p>Additional keyword arguments are documented in
+<a class="reference internal" href="pandas.DataFrame.plot.html#pandas.DataFrame.plot" title="pandas.DataFrame.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.plot()</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><a class="reference external" href="https://matplotlib.org/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.2.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a> or <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a></dt><dd><p>Return an ndarray when <code class="docutils literal notranslate"><span class="pre">subplots=True</span></code>.</p>
+<dt>matplotlib.axes.Axes or np.ndarray of them</dt><dd><p>An ndarray is returned with one <a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code></a>
+per column when <code class="docutils literal notranslate"><span class="pre">subplots=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.2.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a></dt><dd><p>Plot y versus x as lines and/or markers.</p>
+<dt><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a></dt><dd><p>Plot y versus x as lines and/or markers.</p>
 </dd>
 </dl>
 </div>
@@ -91,7 +117,7 @@ By default, it will use the remaining DataFrame numeric columns.</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-line-1.png" src="../../_images/pandas-Series-plot-line-1.png"/>
+<img alt="../../_images/pandas-Series-plot-line-1.png" class="plot-directive" src="../../_images/pandas-Series-plot-line-1.png"/>
 </div>
 <p>The following example shows the populations for some animals
 over the years.</p>
@@ -103,7 +129,7 @@ over the years.</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-line-2.png" src="../../_images/pandas-Series-plot-line-2.png"/>
+<img alt="../../_images/pandas-Series-plot-line-2.png" class="plot-directive" src="../../_images/pandas-Series-plot-line-2.png"/>
 </div>
 <p>An example with subplots, so an array of axes is returned.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">axes</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -112,7 +138,17 @@ over the years.</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-line-3.png" src="../../_images/pandas-Series-plot-line-3.png"/>
+<img alt="../../_images/pandas-Series-plot-line-3.png" class="plot-directive" src="../../_images/pandas-Series-plot-line-3.png"/>
+</div>
+<p>Let’s repeat the same example, but specifying colors for
+each column (in this case, for each animal).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">axes</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">{</span><span class="s2">"pig"</span><span class="p">:</span> <span class="s2">"pink"</span><span class="p">,</span> <span class="s2">"horse"</span><span class="p">:</span> <span class="s2">"#742802"</span><span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-Series-plot-line-4.png" class="plot-directive" src="../../_images/pandas-Series-plot-line-4.png"/>
 </div>
 <p>The following example shows the relationship between both
 populations.</p>
@@ -120,7 +156,7 @@ populations.</p>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-Series-plot-line-4.png" src="../../_images/pandas-Series-plot-line-4.png"/>
+<img alt="../../_images/pandas-Series-plot-line-5.png" class="plot-directive" src="../../_images/pandas-Series-plot-line-5.png"/>
 </div>
 </dd></dl>
 </div>

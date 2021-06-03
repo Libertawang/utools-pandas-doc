@@ -50,15 +50,30 @@
   <body>
 <div class="section" id="pandas-hdfstore-keys">
 <h1>pandas.HDFStore.keys<a class="headerlink" href="#pandas-hdfstore-keys" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.HDFStore.keys">
-<code class="sig-prename descclassname">HDFStore.</code><code class="sig-name descname">keys</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> → List[str]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/pytables.py#L595-L604"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.HDFStore.keys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">HDFStore.</span></code><code class="sig-name descname"><span class="pre">keys</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pandas'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/pytables.py#L621-L653"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.HDFStore.keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of keys corresponding to objects stored in HDFStore.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>include</strong><span class="classifier">str, default ‘pandas’</span></dt><dd><p>When kind equals ‘pandas’ return pandas objects.
+When kind equals ‘native’ return native HDF5 Table objects.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt>list</dt><dd><p>List of ABSOLUTE path-names (e.g. have the leading ‘/’).</p>
 </dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>raises ValueError if kind has an illegal value</dt><dd></dd>
 </dl>
 </dd>
 </dl>

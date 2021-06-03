@@ -50,15 +50,28 @@
   <body>
 <div class="section" id="pandas-tseries-offsets-bquarterend">
 <h1>pandas.tseries.offsets.BQuarterEnd<a class="headerlink" href="#pandas-tseries-offsets-bquarterend" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.tseries.offsets.BQuarterEnd">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.tseries.offsets.</code><code class="sig-name descname">BQuarterEnd</code><span class="sig-paren">(</span><em class="sig-param">n=1</em>, <em class="sig-param">normalize=False</em>, <em class="sig-param">startingMonth=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/tseries/offsets.py#L1895-L1908"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.tseries.offsets.BQuarterEnd" title="Permalink to this definition">¶</a></dt>
-<dd><p>DateOffset increments between business Quarter dates.</p>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.tseries.offsets.</span></code><code class="sig-name descname"><span class="pre">BQuarterEnd</span></code><a class="headerlink" href="#pandas.tseries.offsets.BQuarterEnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>DateOffset increments between the last business day of each Quarter.</p>
 <p>startingMonth = 1 corresponds to dates like 1/31/2007, 4/30/2007, …
 startingMonth = 2 corresponds to dates like 2/28/2007, 5/31/2007, …
 startingMonth = 3 corresponds to dates like 3/30/2007, 6/29/2007, …</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas.tseries.offset</span> <span class="kn">import</span> <span class="n">BQuarterEnd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'2020-05-24 05:01:15'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">+</span> <span class="n">BQuarterEnd</span><span class="p">()</span>
+<span class="go">Timestamp('2020-06-30 05:01:15')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">+</span> <span class="n">BQuarterEnd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Timestamp('2020-09-30 05:01:15')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">+</span> <span class="n">BQuarterEnd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">startingMonth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Timestamp('2020-05-29 05:01:15')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">+</span> <span class="n">BQuarterEnd</span><span class="p">(</span><span class="n">startingMonth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Timestamp('2020-05-29 05:01:15')</span>
+</pre></div>
+</div>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -71,8 +84,8 @@ startingMonth = 3 corresponds to dates like 3/30/2007, 6/29/2007, …</p>
 </table>
 <table class="table">
 <colgroup>
-<col style="width: 57%"/>
-<col style="width: 43%"/>
+<col style="width: 63%"/>
+<col style="width: 37%"/>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>freqstr</strong></p></td>
@@ -81,28 +94,40 @@ startingMonth = 3 corresponds to dates like 3/30/2007, 6/29/2007, …</p>
 <tr class="row-even"><td><p><strong>kwds</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>name</strong></p></td>
+<tr class="row-odd"><td><p><strong>n</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>nanos</strong></p></td>
+<tr class="row-even"><td><p><strong>name</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>nanos</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>normalize</strong></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p><strong>rule_code</strong></p></td>
 <td></td>
 </tr>
+<tr class="row-even"><td><p><strong>startingMonth</strong></p></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BQuarterEnd.rollback.html#pandas.tseries.offsets.BQuarterEnd.rollback" title="pandas.tseries.offsets.BQuarterEnd.rollback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollback</span></code></a>(self, dt)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BQuarterEnd.__call__.html#pandas.tseries.offsets.BQuarterEnd.__call__" title="pandas.tseries.offsets.BQuarterEnd.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.tseries.offsets.BQuarterEnd.rollback.html#pandas.tseries.offsets.BQuarterEnd.rollback" title="pandas.tseries.offsets.BQuarterEnd.rollback"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollback</span></code></a></p></td>
 <td><p>Roll provided date backward to next offset only if not on offset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.tseries.offsets.BQuarterEnd.rollforward.html#pandas.tseries.offsets.BQuarterEnd.rollforward" title="pandas.tseries.offsets.BQuarterEnd.rollforward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollforward</span></code></a>(self, dt)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.tseries.offsets.BQuarterEnd.rollforward.html#pandas.tseries.offsets.BQuarterEnd.rollforward" title="pandas.tseries.offsets.BQuarterEnd.rollforward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rollforward</span></code></a></p></td>
 <td><p>Roll provided date forward to next offset only if not on offset.</p></td>
 </tr>
 </tbody>
@@ -113,28 +138,25 @@ startingMonth = 3 corresponds to dates like 3/30/2007, 6/29/2007, …</p>
 <col style="width: 38%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><strong>__call__</strong></p></td>
+<tr class="row-odd"><td><p><strong>apply</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>apply</strong></p></td>
+<tr class="row-even"><td><p><strong>apply_index</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>apply_index</strong></p></td>
+<tr class="row-odd"><td><p><strong>copy</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>copy</strong></p></td>
+<tr class="row-even"><td><p><strong>isAnchored</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>isAnchored</strong></p></td>
+<tr class="row-odd"><td><p><strong>is_anchored</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>is_anchored</strong></p></td>
+<tr class="row-even"><td><p><strong>is_on_offset</strong></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>is_on_offset</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>onOffset</strong></p></td>
+<tr class="row-odd"><td><p><strong>onOffset</strong></p></td>
 <td></td>
 </tr>
 </tbody>

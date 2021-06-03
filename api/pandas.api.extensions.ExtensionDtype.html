@@ -50,18 +50,17 @@
   <body>
 <div class="section" id="pandas-api-extensions-extensiondtype">
 <h1>pandas.api.extensions.ExtensionDtype<a class="headerlink" href="#pandas-api-extensions-extensiondtype" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.api.extensions.ExtensionDtype">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.api.extensions.</code><code class="sig-name descname">ExtensionDtype</code><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/dtypes/base.py#L11-L317"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.api.extensions.ExtensionDtype" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.api.extensions.</span></code><code class="sig-name descname"><span class="pre">ExtensionDtype</span></code><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/dtypes/base.py#L18-L352"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.api.extensions.ExtensionDtype" title="Permalink to this definition">¶</a></dt>
 <dd><p>A custom data type, to be paired with an ExtensionArray.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">extensions.register_extension_dtype</span></code></dt><dd></dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">extensions.ExtensionArray</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">extensions.register_extension_dtype</span></code></dt><dd><p>Register an ExtensionType with pandas as class decorator.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">extensions.ExtensionArray</span></code></dt><dd><p>Abstract base class for custom 1-D array types.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -70,13 +69,13 @@ be implemented by subclasses:</p>
 <ul class="simple">
 <li><p>type</p></li>
 <li><p>name</p></li>
-<li><p>construct_from_string</p></li>
 </ul>
-<p>The following attributes influence the behavior of the dtype in
+<p>The following attributes and methods influence the behavior of the dtype in
 pandas operations</p>
 <ul class="simple">
 <li><p>_is_numeric</p></li>
 <li><p>_is_boolean</p></li>
+<li><p>_get_common_dtype</p></li>
 </ul>
 <p>Optionally one can override construct_array_type for construction
 with the name of this dtype via the Registry. See
@@ -109,7 +108,7 @@ ExtensionArray for this dtype and the passed values:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ExtensionDtype</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="nf">__from_arrow__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">:</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="o">/</span><span class="n">ChunkedArray</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">array</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">pyarrow</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">pyarrow</span><span class="o">.</span><span class="n">ChunkedArray</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExtensionArray</span><span class="p">:</span>
         <span class="o">...</span>
 </pre></div>
@@ -119,7 +118,7 @@ Methods and properties required by the interface raise
 <code class="docutils literal notranslate"><span class="pre">pandas.errors.AbstractMethodError</span></code> and no <code class="docutils literal notranslate"><span class="pre">register</span></code> method is
 provided for registering virtual subclasses.</p>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -143,7 +142,7 @@ provided for registering virtual subclasses.</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>

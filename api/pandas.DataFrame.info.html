@@ -50,15 +50,17 @@
   <body>
 <div class="section" id="pandas-dataframe-info">
 <h1>pandas.DataFrame.info<a class="headerlink" href="#pandas-dataframe-info" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.info">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">info</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">verbose=None</em>, <em class="sig-param">buf=None</em>, <em class="sig-param">max_cols=None</em>, <em class="sig-param">memory_usage=None</em>, <em class="sig-param">null_counts=None</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L2224-L2499"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory_usage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">null_counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L2566-L2709"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print a concise summary of a DataFrame.</p>
 <p>This method prints information about a DataFrame including
-the index dtype and column dtypes, non-null values and memory usage.</p>
+the index dtype and columns, non-null values and memory usage.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
+<dt><strong>data</strong><span class="classifier">DataFrame</span></dt><dd><p>DataFrame to print information about.</p>
+</dd>
 <dt><strong>verbose</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to print the full summary. By default, the setting in
 <code class="docutils literal notranslate"><span class="pre">pandas.options.display.max_info_columns</span></code> is followed.</p>
 </dd>
@@ -83,11 +85,15 @@ consume the same memory amount for corresponding dtypes. With deep
 memory introspection, a real memory usage calculation is performed
 at the cost of computational resources.</p>
 </dd>
-<dt><strong>null_counts</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to show the non-null counts. By default, this is shown
-only if the frame is smaller than
+<dt><strong>show_counts</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to show the non-null counts. By default, this is shown
+only if the DataFrame is smaller than
 <code class="docutils literal notranslate"><span class="pre">pandas.options.display.max_info_rows</span></code> and
 <code class="docutils literal notranslate"><span class="pre">pandas.options.display.max_info_columns</span></code>. A value of True always
 shows the counts, and False never shows the counts.</p>
+</dd>
+<dt><strong>null_counts</strong><span class="classifier">bool, optional</span></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.0: </span>Use show_counts instead.</p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -98,7 +104,7 @@ shows the counts, and False never shows the counts.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.describe.html#pandas.DataFrame.describe" title="pandas.DataFrame.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.describe</span></code></a></dt><dd><p>Generate descriptive statistics of DataFrame columns.</p>
@@ -114,7 +120,7 @@ shows the counts, and False never shows the counts.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"int_col"</span><span class="p">:</span> <span class="n">int_values</span><span class="p">,</span> <span class="s2">"text_col"</span><span class="p">:</span> <span class="n">text_values</span><span class="p">,</span>
 <span class="gp">... </span>                  <span class="s2">"float_col"</span><span class="p">:</span> <span class="n">float_values</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
-<span class="go">   int_col text_col  float_col</span>
+<span class="go">    int_col text_col  float_col</span>
 <span class="go">0        1    alpha       0.00</span>
 <span class="go">1        2     beta       0.25</span>
 <span class="go">2        3    gamma       0.50</span>
@@ -189,7 +195,7 @@ useful for big DataFrames and fine-tune memory optimization:</p>
 <span class="go"> 1   column_2  1000000 non-null  object</span>
 <span class="go"> 2   column_3  1000000 non-null  object</span>
 <span class="go">dtypes: object(3)</span>
-<span class="go">memory usage: 188.8 MB</span>
+<span class="go">memory usage: 165.9 MB</span>
 </pre></div>
 </div>
 </dd></dl>

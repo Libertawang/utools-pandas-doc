@@ -50,20 +50,20 @@
   <body>
 <div class="section" id="pandas-timedelta">
 <h1>pandas.Timedelta<a class="headerlink" href="#pandas-timedelta" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.Timedelta">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">Timedelta</code><a class="headerlink" href="#pandas.Timedelta" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">Timedelta</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">value=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">unit=None</span></em>, <em class="sig-param"><span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pandas.Timedelta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a duration, the difference between two dates or times.</p>
 <p>Timedelta is the pandas equivalent of python’s <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>
 and is interchangeable with it in most cases.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>value</strong><span class="classifier">Timedelta, timedelta, np.timedelta64, string, or integer</span></dt><dd></dd>
+<dt><strong>value</strong><span class="classifier">Timedelta, timedelta, np.timedelta64, str, or int</span></dt><dd></dd>
 <dt><strong>unit</strong><span class="classifier">str, default ‘ns’</span></dt><dd><p>Denote the unit of the input, if input is an integer.</p>
 <p>Possible values:</p>
 <ul class="simple">
-<li><p>‘Y’, ‘M’, ‘W’, ‘D’, ‘T’, ‘S’, ‘L’, ‘U’, or ‘N’</p></li>
+<li><p>‘W’, ‘D’, ‘T’, ‘S’, ‘L’, ‘U’, or ‘N’</p></li>
 <li><p>‘days’ or ‘day’</p></li>
 <li><p>‘hours’, ‘hour’, ‘hr’, or ‘h’</p></li>
 <li><p>‘minutes’, ‘minute’, ‘min’, or ‘m’</p></li>
@@ -83,8 +83,10 @@ Numpy ints and floats will be coerced to python ints and floats.</p>
 </dl>
 <p class="rubric">Notes</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.value</span></code> attribute is always in ns.</p>
+<p>If the precision is higher than nanoseconds, the precision of the duration is
+truncated to nanoseconds.</p>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -134,37 +136,37 @@ Numpy ints and floats will be coerced to python ints and floats.</p>
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.ceil.html#pandas.Timedelta.ceil" title="pandas.Timedelta.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>(self, freq)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.ceil.html#pandas.Timedelta.ceil" title="pandas.Timedelta.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>(freq)</p></td>
 <td><p>Return a new Timedelta ceiled to this resolution.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.Timedelta.floor.html#pandas.Timedelta.floor" title="pandas.Timedelta.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a>(self, freq)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Timedelta.floor.html#pandas.Timedelta.floor" title="pandas.Timedelta.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a>(freq)</p></td>
 <td><p>Return a new Timedelta floored to this resolution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.isoformat.html#pandas.Timedelta.isoformat" title="pandas.Timedelta.isoformat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isoformat</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.isoformat.html#pandas.Timedelta.isoformat" title="pandas.Timedelta.isoformat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isoformat</span></code></a></p></td>
 <td><p>Format Timedelta as ISO 8601 Duration like <code class="docutils literal notranslate"><span class="pre">P[n]Y[n]M[n]DT[n]H[n]M[n]S</span></code>, where the <code class="docutils literal notranslate"><span class="pre">[n]</span></code> s are replaced by the values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.Timedelta.round.html#pandas.Timedelta.round" title="pandas.Timedelta.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(self, freq)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Timedelta.round.html#pandas.Timedelta.round" title="pandas.Timedelta.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>(freq)</p></td>
 <td><p>Round the Timedelta to the specified resolution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.to_numpy.html#pandas.Timedelta.to_numpy" title="pandas.Timedelta.to_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.to_numpy.html#pandas.Timedelta.to_numpy" title="pandas.Timedelta.to_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy</span></code></a></p></td>
 <td><p>Convert the Timedelta to a NumPy timedelta64.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.Timedelta.to_pytimedelta.html#pandas.Timedelta.to_pytimedelta" title="pandas.Timedelta.to_pytimedelta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pytimedelta</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Timedelta.to_pytimedelta.html#pandas.Timedelta.to_pytimedelta" title="pandas.Timedelta.to_pytimedelta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pytimedelta</span></code></a></p></td>
 <td><p>Convert a pandas Timedelta object into a python timedelta object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.to_timedelta64.html#pandas.Timedelta.to_timedelta64" title="pandas.Timedelta.to_timedelta64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_timedelta64</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.to_timedelta64.html#pandas.Timedelta.to_timedelta64" title="pandas.Timedelta.to_timedelta64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_timedelta64</span></code></a></p></td>
 <td><p>Return a numpy.timedelta64 object with ‘ns’ precision.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.Timedelta.total_seconds.html#pandas.Timedelta.total_seconds" title="pandas.Timedelta.total_seconds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">total_seconds</span></code></a>()</p></td>
-<td><p>Total duration of timedelta in seconds (to ns precision).</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Timedelta.total_seconds.html#pandas.Timedelta.total_seconds" title="pandas.Timedelta.total_seconds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">total_seconds</span></code></a></p></td>
+<td><p>Total seconds in the duration.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.view.html#pandas.Timedelta.view" title="pandas.Timedelta.view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">view</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Timedelta.view.html#pandas.Timedelta.view" title="pandas.Timedelta.view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">view</span></code></a></p></td>
 <td><p>Array view compatibility.</p></td>
 </tr>
 </tbody>

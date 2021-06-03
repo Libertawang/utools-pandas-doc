@@ -50,20 +50,21 @@
   <body>
 <div class="section" id="pandas-plotting-deregister-matplotlib-converters">
 <h1>pandas.plotting.deregister_matplotlib_converters<a class="headerlink" href="#pandas-plotting-deregister-matplotlib-converters" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.plotting.deregister_matplotlib_converters">
-<code class="sig-prename descclassname">pandas.plotting.</code><code class="sig-name descname">deregister_matplotlib_converters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_misc.py#L52-L68"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.plotting.deregister_matplotlib_converters" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove pandas’ formatters and converters.</p>
+<code class="sig-prename descclassname"><span class="pre">pandas.plotting.</span></code><code class="sig-name descname"><span class="pre">deregister_matplotlib_converters</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_misc.py#L52-L69"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.plotting.deregister_matplotlib_converters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove pandas formatters and converters.</p>
 <p>Removes the custom converters added by <code class="xref py py-func docutils literal notranslate"><span class="pre">register()</span></code>. This
 attempts to set the state of the registry back to the state before
 pandas registered its own units. Converters for pandas’ own types like
 Timestamp and Period are removed completely. Converters for types
 pandas overwrites, like <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>, are restored to their
 original value.</p>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.plotting.register_matplotlib_converters.html#pandas.plotting.register_matplotlib_converters" title="pandas.plotting.register_matplotlib_converters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_matplotlib_converters</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.plotting.register_matplotlib_converters.html#pandas.plotting.register_matplotlib_converters" title="pandas.plotting.register_matplotlib_converters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_matplotlib_converters</span></code></a></dt><dd><p>Register pandas formatters and converters with matplotlib.</p>
+</dd>
 </dl>
 </div>
 </dd></dl>

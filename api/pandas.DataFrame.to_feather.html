@@ -50,14 +50,21 @@
   <body>
 <div class="section" id="pandas-dataframe-to-feather">
 <h1>pandas.DataFrame.to_feather<a class="headerlink" href="#pandas-dataframe-to-feather" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.to_feather">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_feather</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">path</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L1982-L1994"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_feather" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write out the binary feather-format for DataFrames.</p>
-<dl class="field-list simple">
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">to_feather</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L2273-L2291"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.to_feather" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a DataFrame to the binary Feather format.</p>
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>path</strong><span class="classifier">str</span></dt><dd><p>String file path.</p>
+<dd class="field-odd"><dl>
+<dt><strong>path</strong><span class="classifier">str or file-like object</span></dt><dd><p>If a string, it will be used as Root Directory path.</p>
+</dd>
+<dt><strong>**kwargs :</strong></dt><dd><p>Additional keywords passed to <a class="reference external" href="https://arrow.apache.org/docs/python/generated/pyarrow.feather.write_feather.html#pyarrow.feather.write_feather" title="(in Apache Arrow v3.0.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyarrow.feather.write_feather()</span></code></a>.
+Starting with pyarrow 0.17, this includes the <cite>compression</cite>,
+<cite>compression_level</cite>, <cite>chunksize</cite> and <cite>version</cite> keywords.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>

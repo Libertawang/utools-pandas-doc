@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-cut">
 <h1>pandas.cut<a class="headerlink" href="#pandas-cut" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.cut">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">cut</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">bins</em>, <em class="sig-param">right: bool = True</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">retbins: bool = False</em>, <em class="sig-param">precision: int = 3</em>, <em class="sig-param">include_lowest: bool = False</em>, <em class="sig-param">duplicates: str = 'raise'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/reshape/tile.py#L32-L268"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.cut" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">cut</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retbins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_lowest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/reshape/tile.py#L32-L285"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.cut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bin values into discrete intervals.</p>
 <p>Use <cite>cut</cite> when you need to segment and sort data values into bins. This
 function is also useful for going from a continuous variable to a
@@ -84,7 +84,7 @@ indicate (1,2], (2,3], (3,4]. This argument is ignored when
 the resulting bins. If False, returns only integer indicators of the
 bins. This affects the type of the output container (see below).
 This argument is ignored when <cite>bins</cite> is an IntervalIndex. If True,
-raises an error.</p>
+raises an error. When <cite>ordered=False</cite>, labels must be provided.</p>
 </dd>
 <dt><strong>retbins</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether to return the bins or not. Useful when bins is provided
 as a scalar.</p>
@@ -94,8 +94,13 @@ as a scalar.</p>
 <dt><strong>include_lowest</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether the first interval should be left-inclusive or not.</p>
 </dd>
 <dt><strong>duplicates</strong><span class="classifier">{default ‘raise’, ‘drop’}, optional</span></dt><dd><p>If bin edges are not unique, raise ValueError or drop non-uniques.</p>
+</dd>
+<dt><strong>ordered</strong><span class="classifier">bool, default True</span></dt><dd><p>Whether the labels are ordered or not. Applies to returned types
+Categorical and Series (with Categorical dtype). If True,
+the resulting categorical will be ordered. If False, the resulting
+categorical will be unordered (labels must be provided).</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
 </div>
 </dd>
 </dl>
@@ -122,7 +127,7 @@ an IntervalIndex <cite>bins</cite>, this is equal to <cite>bins</cite>.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.qcut.html#pandas.qcut" title="pandas.qcut"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qcut</span></code></a></dt><dd><p>Discretize variable into equal-sized buckets based on rank or based on sample quantiles.</p>
@@ -157,8 +162,16 @@ the resulting Series or Categorical object.</p>
 the returned Categorical’s categories are <cite>labels</cite> and is ordered.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>
 <span class="gp">... </span>       <span class="mi">3</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">"bad"</span><span class="p">,</span> <span class="s2">"medium"</span><span class="p">,</span> <span class="s2">"good"</span><span class="p">])</span>
-<span class="go">[bad, good, medium, medium, good, bad]</span>
-<span class="go">Categories (3, object): [bad &lt; medium &lt; good]</span>
+<span class="go">['bad', 'good', 'medium', 'medium', 'good', 'bad']</span>
+<span class="go">Categories (3, object): ['bad' &lt; 'medium' &lt; 'good']</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ordered=False</span></code> will result in unordered categories when labels are passed.
+This parameter can be used to allow non-unique labels:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="mi">3</span><span class="p">,</span>
+<span class="gp">... </span>       <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">"B"</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">],</span> <span class="n">ordered</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">['B', 'B', 'A', 'A', 'B', 'B']</span>
+<span class="go">Categories (2, object): ['A', 'B']</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">labels=False</span></code> implies you just want the bins back.</p>
@@ -186,24 +199,26 @@ It is used to map numerically to intervals based on bins.</p>
 <span class="gp">... </span>              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retbins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="gp">... </span>
-<span class="go">(a    0.0</span>
-<span class="go"> b    1.0</span>
-<span class="go"> c    2.0</span>
-<span class="go"> d    3.0</span>
-<span class="go"> e    4.0</span>
-<span class="go"> dtype: float64, array([0, 2, 4, 6, 8]))</span>
+<span class="go">(a    1.0</span>
+<span class="go"> b    2.0</span>
+<span class="go"> c    3.0</span>
+<span class="go"> d    4.0</span>
+<span class="go"> e    NaN</span>
+<span class="go"> dtype: float64,</span>
+<span class="go"> array([ 0,  2,  4,  6,  8, 10]))</span>
 </pre></div>
 </div>
 <p>Use <cite>drop</cite> optional when bins is not unique</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">retbins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="gp">... </span>       <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">duplicates</span><span class="o">=</span><span class="s1">'drop'</span><span class="p">)</span>
 <span class="gp">... </span>
-<span class="go">(a    0.0</span>
-<span class="go"> b    1.0</span>
-<span class="go"> c    2.0</span>
+<span class="go">(a    1.0</span>
+<span class="go"> b    2.0</span>
+<span class="go"> c    3.0</span>
 <span class="go"> d    3.0</span>
-<span class="go"> e    3.0</span>
-<span class="go"> dtype: float64, array([0, 2, 4, 6, 8]))</span>
+<span class="go"> e    NaN</span>
+<span class="go"> dtype: float64,</span>
+<span class="go"> array([ 0,  2,  4,  6, 10]))</span>
 </pre></div>
 </div>
 <p>Passing an IntervalIndex for <cite>bins</cite> results in those categories exactly.
@@ -212,7 +227,7 @@ is to the left of the first bin (which is closed on the right), and 1.5
 falls between two bins.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bins</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">IntervalIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">],</span> <span class="n">bins</span><span class="p">)</span>
-<span class="go">[NaN, (0, 1], NaN, (2, 3], (4, 5]]</span>
+<span class="go">[NaN, (0.0, 1.0], NaN, (2.0, 3.0], (4.0, 5.0]]</span>
 <span class="go">Categories (3, interval[int64]): [(0, 1] &lt; (2, 3] &lt; (4, 5]]</span>
 </pre></div>
 </div>

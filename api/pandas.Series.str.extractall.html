@@ -50,10 +50,11 @@
   <body>
 <div class="section" id="pandas-series-str-extractall">
 <h1>pandas.Series.str.extractall<a class="headerlink" href="#pandas-series-str-extractall" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.extractall">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">extractall</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pat</em>, <em class="sig-param">flags=0</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L3043-L3046"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.extractall" title="Permalink to this definition">¶</a></dt>
-<dd><p>For each subject string in the Series, extract groups from all
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">extractall</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L2309-L2385"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.extractall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract capture groups in the regex <cite>pat</cite> as columns in DataFrame.</p>
+<p>For each subject string in the Series, extract groups from all
 matches of regular expression pat. When each subject string in the
 Series has exactly one match, extractall(pat).xs(0, level=’match’)
 is the same as extract(pat).</p>
@@ -81,7 +82,7 @@ group numbers will be used.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.extract.html#pandas.Series.str.extract" title="pandas.Series.str.extract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract</span></code></a></dt><dd><p>Returns first match only (not all matches).</p>
@@ -93,37 +94,37 @@ group numbers will be used.</p>
 Indices with no matches will not appear in the result.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"a1a2"</span><span class="p">,</span> <span class="s2">"b1"</span><span class="p">,</span> <span class="s2">"c1"</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">,</span> <span class="s2">"C"</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"[ab](\d)"</span><span class="p">)</span>
-<span class="go">         0</span>
-<span class="go">  match</span>
+<span class="go">        0</span>
+<span class="go">match</span>
 <span class="go">A 0      1</span>
-<span class="go">  1      2</span>
+<span class="go">1      2</span>
 <span class="go">B 0      1</span>
 </pre></div>
 </div>
 <p>Capture group names are used for column names of the result.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"[ab](?P&lt;digit&gt;\d)"</span><span class="p">)</span>
 <span class="go">        digit</span>
-<span class="go">  match</span>
+<span class="go">match</span>
 <span class="go">A 0         1</span>
-<span class="go">  1         2</span>
+<span class="go">1         2</span>
 <span class="go">B 0         1</span>
 </pre></div>
 </div>
 <p>A pattern with two groups will return a DataFrame with two columns.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(?P&lt;letter&gt;[ab])(?P&lt;digit&gt;\d)"</span><span class="p">)</span>
 <span class="go">        letter digit</span>
-<span class="go">  match</span>
+<span class="go">match</span>
 <span class="go">A 0          a     1</span>
-<span class="go">  1          a     2</span>
+<span class="go">1          a     2</span>
 <span class="go">B 0          b     1</span>
 </pre></div>
 </div>
 <p>Optional groups that do not match are NaN in the result.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(?P&lt;letter&gt;[ab])?(?P&lt;digit&gt;\d)"</span><span class="p">)</span>
 <span class="go">        letter digit</span>
-<span class="go">  match</span>
+<span class="go">match</span>
 <span class="go">A 0          a     1</span>
-<span class="go">  1          a     2</span>
+<span class="go">1          a     2</span>
 <span class="go">B 0          b     1</span>
 <span class="go">C 0        NaN     1</span>
 </pre></div>

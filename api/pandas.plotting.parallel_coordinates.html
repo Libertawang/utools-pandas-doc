@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-plotting-parallel-coordinates">
 <h1>pandas.plotting.parallel_coordinates<a class="headerlink" href="#pandas-plotting-parallel-coordinates" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.plotting.parallel_coordinates">
-<code class="sig-prename descclassname">pandas.plotting.</code><code class="sig-name descname">parallel_coordinates</code><span class="sig-paren">(</span><em class="sig-param">frame</em>, <em class="sig-param">class_column</em>, <em class="sig-param">cols=None</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">color=None</em>, <em class="sig-param">use_columns=False</em>, <em class="sig-param">xticks=None</em>, <em class="sig-param">colormap=None</em>, <em class="sig-param">axvlines=True</em>, <em class="sig-param">axvlines_kwds=None</em>, <em class="sig-param">sort_labels=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_misc.py#L310-L381"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.plotting.parallel_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.plotting.</span></code><code class="sig-name descname"><span class="pre">parallel_coordinates</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_column</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colormap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axvlines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axvlines_kwds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_misc.py#L335-L410"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.plotting.parallel_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parallel coordinates plotting.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -89,14 +89,17 @@
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://raw.github.com/pandas-dev/pandas/master'</span>
-<span class="go">                    '/pandas/tests/data/csv/iris.csv')</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">'https://raw.github.com/pandas-dev/'</span>
+<span class="gp">... </span>    <span class="s1">'pandas/master/pandas/tests/io/data/csv/iris.csv'</span>
+<span class="gp">... </span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">parallel_coordinates</span><span class="p">(</span>
-<span class="go">        df, 'Name',</span>
-<span class="go">        color=('#556270', '#4ECDC4', '#C7F464'))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="n">df</span><span class="p">,</span> <span class="s1">'Name'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="s1">'#556270'</span><span class="p">,</span> <span class="s1">'#4ECDC4'</span><span class="p">,</span> <span class="s1">'#C7F464'</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-plotting-parallel_coordinates-1.png" class="plot-directive" src="../../_images/pandas-plotting-parallel_coordinates-1.png"/>
 </div>
 </dd></dl>
 </div>

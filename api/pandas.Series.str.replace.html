@@ -50,12 +50,12 @@
   <body>
 <div class="section" id="pandas-series-str-replace">
 <h1>pandas.Series.str.replace<a class="headerlink" href="#pandas-series-str-replace" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.replace">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">replace</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pat</em>, <em class="sig-param">repl</em>, <em class="sig-param">n=-1</em>, <em class="sig-param">case=None</em>, <em class="sig-param">flags=0</em>, <em class="sig-param">regex=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L2773-L2779"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.replace" title="Permalink to this definition">¶</a></dt>
-<dd><p>Replace occurrences of pattern/regex in the Series/Index with
-some other string. Equivalent to <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace" title="(in Python v3.8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.replace()</span></code></a> or
-<a class="reference external" href="https://docs.python.org/3/library/re.html#re.sub" title="(in Python v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.sub()</span></code></a>.</p>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">replace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L1178-L1314"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace each occurrence of pattern/regex in the Series/Index.</p>
+<p>Equivalent to <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace" title="(in Python v3.9)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.replace()</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/re.html#re.sub" title="(in Python v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.sub()</span></code></a>, depending on
+the regex value.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -63,7 +63,7 @@ some other string. Equivalent to <a class="reference external" href="https://doc
 </dd>
 <dt><strong>repl</strong><span class="classifier">str or callable</span></dt><dd><p>Replacement string or a callable. The callable is passed the regex
 match object and must return a replacement string to be used.
-See <a class="reference external" href="https://docs.python.org/3/library/re.html#re.sub" title="(in Python v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.sub()</span></code></a>.</p>
+See <a class="reference external" href="https://docs.python.org/3/library/re.html#re.sub" title="(in Python v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.sub()</span></code></a>.</p>
 </dd>
 <dt><strong>n</strong><span class="classifier">int, default -1 (all)</span></dt><dd><p>Number of replacements to make from start.</p>
 </dd>
@@ -125,7 +125,7 @@ left as is:</p>
 </pre></div>
 </div>
 <p>When <cite>pat</cite> is a string and <cite>regex</cite> is False, every <cite>pat</cite> is replaced with
-<cite>repl</cite> as with <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace" title="(in Python v3.8)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.replace()</span></code></a>:</p>
+<cite>repl</cite> as with <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.replace" title="(in Python v3.9)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.replace()</span></code></a>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'f.o'</span><span class="p">,</span> <span class="s1">'fuz'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'f.'</span><span class="p">,</span> <span class="s1">'ba'</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="go">0    bao</span>
 <span class="go">1    fuz</span>
@@ -134,13 +134,13 @@ left as is:</p>
 </pre></div>
 </div>
 <p>When <cite>repl</cite> is a callable, it is called on every <cite>pat</cite> using
-<a class="reference external" href="https://docs.python.org/3/library/re.html#re.sub" title="(in Python v3.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.sub()</span></code></a>. The callable should expect one positional argument
+<a class="reference external" href="https://docs.python.org/3/library/re.html#re.sub" title="(in Python v3.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.sub()</span></code></a>. The callable should expect one positional argument
 (a regex object) and return a string.</p>
 <p>To get the idea:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'fuz'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">])</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'f'</span><span class="p">,</span> <span class="nb">repr</span><span class="p">)</span>
-<span class="go">0    &lt;_sre.SRE_Match object; span=(0, 1), match='f'&gt;oo</span>
-<span class="go">1    &lt;_sre.SRE_Match object; span=(0, 1), match='f'&gt;uz</span>
-<span class="go">2                                                  NaN</span>
+<span class="go">0    &lt;re.Match object; span=(0, 1), match='f'&gt;oo</span>
+<span class="go">1    &lt;re.Match object; span=(0, 1), match='f'&gt;uz</span>
+<span class="go">2                                            NaN</span>
 <span class="go">dtype: object</span>
 </pre></div>
 </div>

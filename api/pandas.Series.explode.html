@@ -50,23 +50,31 @@
   <body>
 <div class="section" id="pandas-series-explode">
 <h1>pandas.Series.explode<a class="headerlink" href="#pandas-series-explode" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.explode">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">explode</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> → 'Series'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L3453-L3507"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.explode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transform each element of a list-like to a row, replicating the
-index values.</p>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">explode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ignore_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L3720-L3787"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.explode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform each element of a list-like to a row.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.25.0.</span></p>
 </div>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>ignore_index</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, the resulting index will be labeled 0, 1, …, n - 1.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt>Series</dt><dd><p>Exploded lists to rows; index will be duplicated for these rows.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.split.html#pandas.Series.str.split" title="pandas.Series.str.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.split</span></code></a></dt><dd><p>Split string values on specified separator.</p>
@@ -80,10 +88,11 @@ index values.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>This routine will explode list-likes including lists, tuples,
+<p>This routine will explode list-likes including lists, tuples, sets,
 Series, and np.ndarray. The result dtype of the subset rows will
-be object. Scalars will be returned unchanged. Empty list-likes will
-result in a np.nan for that row.</p>
+be object. Scalars will be returned unchanged, and empty list-likes will
+result in a np.nan for that row. In addition, the ordering of elements in
+the output will be non-deterministic when exploding sets.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">'foo'</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>

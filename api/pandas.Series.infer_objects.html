@@ -50,17 +50,14 @@
   <body>
 <div class="section" id="pandas-series-infer-objects">
 <h1>pandas.Series.infer_objects<a class="headerlink" href="#pandas-series-infer-objects" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.infer_objects">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">infer_objects</code><span class="sig-paren">(</span><em class="sig-param">self: ~FrameOrSeries</em><span class="sig-paren">)</span> → ~FrameOrSeries<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L5873-L5920"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.infer_objects" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">infer_objects</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L6049-L6093"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.infer_objects" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to infer better dtypes for object columns.</p>
 <p>Attempts soft conversion of object-dtyped
 columns, leaving non-object and unconvertible
 columns unchanged. The inference rules are the
 same as during normal Series/DataFrame construction.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
@@ -68,7 +65,7 @@ same as during normal Series/DataFrame construction.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.to_datetime.html#pandas.to_datetime" title="pandas.to_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_datetime</span></code></a></dt><dd><p>Convert argument to datetime.</p>

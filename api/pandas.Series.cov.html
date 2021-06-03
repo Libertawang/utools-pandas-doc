@@ -50,16 +50,22 @@
   <body>
 <div class="section" id="pandas-series-cov">
 <h1>pandas.Series.cov<a class="headerlink" href="#pandas-series-cov" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.cov">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">cov</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">min_periods=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L2263-L2290"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.cov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">cov</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L2337-L2380"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.cov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute covariance with Series, excluding missing values.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>other</strong><span class="classifier">Series</span></dt><dd><p>Series with which to compute the covariance.</p>
 </dd>
 <dt><strong>min_periods</strong><span class="classifier">int, optional</span></dt><dd><p>Minimum number of observations needed to have a valid result.</p>
+</dd>
+<dt><strong>ddof</strong><span class="classifier">int, default 1</span></dt><dd><p>Delta degrees of freedom. The divisor used in calculations
+is <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">-</span> <span class="pre">ddof</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> represents the number of elements.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -71,6 +77,13 @@
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.DataFrame.cov.html#pandas.DataFrame.cov" title="pandas.DataFrame.cov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.cov</span></code></a></dt><dd><p>Compute pairwise covariance of columns.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">0.90010907</span><span class="p">,</span> <span class="mf">0.13484424</span><span class="p">,</span> <span class="mf">0.62036035</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">0.12528585</span><span class="p">,</span> <span class="mf">0.26962463</span><span class="p">,</span> <span class="mf">0.51111198</span><span class="p">])</span>

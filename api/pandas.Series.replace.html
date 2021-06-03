@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-replace">
 <h1>pandas.Series.replace<a class="headerlink" href="#pandas-series-replace" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.replace">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">replace</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">to_replace=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">inplace=False</em>, <em class="sig-param">limit=None</em>, <em class="sig-param">regex=False</em>, <em class="sig-param">method='pad'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L4162-L4179"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.replace" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">replace</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_replace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'pad'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L4499-L4516"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.replace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replace values given in <cite>to_replace</cite> with <cite>value</cite>.</p>
 <p>Values of the Series are replaced with other values dynamically.
 This differs from updating with <code class="docutils literal notranslate"><span class="pre">.loc</span></code> or <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>, which require
@@ -136,7 +136,7 @@ objects are also allowed.</p>
 other views on this object (e.g. a column from a DataFrame).
 Returns the caller if this is True.</p>
 </dd>
-<dt><strong>limit</strong><span class="classifier">int, default None</span></dt><dd><p>Maximum size gap to forward or backward fill.</p>
+<dt><strong>limit</strong><span class="classifier">int or None, default None</span></dt><dd><p>Maximum size gap to forward or backward fill.</p>
 </dd>
 <dt><strong>regex</strong><span class="classifier">bool or same types as <cite>to_replace</cite>, default False</span></dt><dd><p>Whether to interpret <cite>to_replace</cite> and/or <cite>value</cite> as regular
 expressions. If this is <code class="docutils literal notranslate"><span class="pre">True</span></code> then <cite>to_replace</cite> <em>must</em> be a
@@ -146,15 +146,12 @@ list, dict, or array of regular expressions in which case
 </dd>
 <dt><strong>method</strong><span class="classifier">{‘pad’, ‘ffill’, ‘bfill’, <cite>None</cite>}</span></dt><dd><p>The method to use when for replacement, when <cite>to_replace</cite> is a
 scalar, list or tuple and <cite>value</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 0.23.0: </span>Added to DataFrame.</p>
-</div>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>Series</dt><dd><p>Object after replacement.</p>
+<dt>Series or None</dt><dd><p>Object after replacement or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -166,6 +163,7 @@ scalar, list or tuple and <cite>value</cite> is <code class="docutils literal no
 </ul>
 </dd>
 <dt>TypeError</dt><dd><ul class="simple">
+<li><p>If <cite>to_replace</cite> is not a scalar, array-like, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, or <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 <li><p>If <cite>to_replace</cite> is a <code class="docutils literal notranslate"><span class="pre">dict</span></code> and <cite>value</cite> is not a <code class="docutils literal notranslate"><span class="pre">list</span></code>,
 <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, or <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
 <li><p>If <cite>to_replace</cite> is <code class="docutils literal notranslate"><span class="pre">None</span></code> and <cite>regex</cite> is not compilable
@@ -184,7 +182,7 @@ value being replaced</p></li>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.fillna.html#pandas.Series.fillna" title="pandas.Series.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.fillna</span></code></a></dt><dd><p>Fill NA values.</p>
@@ -328,19 +326,6 @@ value(s) in the dict are the value parameter.</p></li>
 <span class="go">2  bait  xyz</span>
 </pre></div>
 </div>
-<p>Note that when replacing multiple <code class="docutils literal notranslate"><span class="pre">bool</span></code> or <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> objects,
-the data types in the <cite>to_replace</cite> parameter must match the data
-type of the value being replaced:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A'</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">],</span>
-<span class="gp">... </span>                   <span class="s1">'B'</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">'a string'</span><span class="p">:</span> <span class="s1">'new value'</span><span class="p">,</span> <span class="kc">True</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>  <span class="c1"># raises</span>
-<span class="gt">Traceback (most recent call last):</span>
-    <span class="o">...</span>
-<span class="gr">TypeError</span>: <span class="n">Cannot compare types 'ndarray(dtype=bool)' and 'str'</span>
-</pre></div>
-</div>
-<p>This raises a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> because one of the <code class="docutils literal notranslate"><span class="pre">dict</span></code> keys is not of
-the correct type for replacement.</p>
 <p>Compare the behavior of <code class="docutils literal notranslate"><span class="pre">s.replace({'a':</span> <span class="pre">None})</span></code> and
 <code class="docutils literal notranslate"><span class="pre">s.replace('a',</span> <span class="pre">None)</span></code> to understand the peculiarities
 of the <cite>to_replace</cite> parameter:</p>

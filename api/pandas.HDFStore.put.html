@@ -50,33 +50,38 @@
   <body>
 <div class="section" id="pandas-hdfstore-put">
 <h1>pandas.HDFStore.put<a class="headerlink" href="#pandas-hdfstore-put" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.HDFStore.put">
-<code class="sig-prename descclassname">HDFStore.</code><code class="sig-name descname">put</code><span class="sig-paren">(</span><em class="sig-param">self, key: str, value: ~FrameOrSeries, format=None, index=True, append=False, complib=None, complevel: Union[int, NoneType] = None, min_itemsize: Union[int, Dict[str, int], NoneType] = None, nan_rep=None, data_columns: Union[List[str], NoneType] = None, encoding=None, errors: str = 'strict'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/pytables.py#L986-L1043"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.HDFStore.put" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">HDFStore.</span></code><code class="sig-name descname"><span class="pre">put</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">append</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_itemsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_rep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'strict'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">track_times</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/pytables.py#L1041-L1107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.HDFStore.put" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store object in HDFStore.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>key</strong><span class="classifier">str</span></dt><dd></dd>
 <dt><strong>value</strong><span class="classifier">{Series, DataFrame}</span></dt><dd></dd>
-<dt><strong>format</strong><span class="classifier">‘fixed(f)|table(t)’, default is ‘fixed’</span></dt><dd><dl class="simple">
-<dt>fixed(f)<span class="classifier">Fixed format</span></dt><dd><p>Fast writing/reading. Not-appendable, nor searchable.</p>
+<dt><strong>format</strong><span class="classifier">‘fixed(f)|table(t)’, default is ‘fixed’</span></dt><dd><p>Format to use when storing object in HDFStore. Value can be one of:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'fixed'</span></code></dt><dd><p>Fixed format. Fast writing/reading. Not-appendable, nor searchable.</p>
 </dd>
-<dt>table(t)<span class="classifier">Table format</span></dt><dd><p>Write as a PyTables Table structure which may perform
-worse but allow more flexible operations like searching
-/ selecting subsets of the data.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">'table'</span></code></dt><dd><p>Table format. Write as a PyTables Table structure which may perform
+worse but allow more flexible operations like searching / selecting
+subsets of the data.</p>
 </dd>
 </dl>
 </dd>
-<dt><strong>append</strong><span class="classifier">bool, default False</span></dt><dd><p>This will force Table format, append the input data to the
-existing.</p>
+<dt><strong>append</strong><span class="classifier">bool, default False</span></dt><dd><p>This will force Table format, append the input data to the existing.</p>
 </dd>
-<dt><strong>data_columns</strong><span class="classifier">list, default None</span></dt><dd><p>List of columns to create as data columns, or True to
-use all columns. See <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#query-via-data-columns">here</a>.</p>
+<dt><strong>data_columns</strong><span class="classifier">list, default None</span></dt><dd><p>List of columns to create as data columns, or True to use all columns.
+See <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#query-via-data-columns">here</a>.</p>
 </dd>
 <dt><strong>encoding</strong><span class="classifier">str, default None</span></dt><dd><p>Provide an encoding for strings.</p>
 </dd>
-<dt><strong>dropna</strong><span class="classifier">bool, default False, do not write an ALL nan row to</span></dt><dd><p>The store settable by the option ‘io.hdf.dropna_table’.</p>
+<dt><strong>track_times</strong><span class="classifier">bool, default True</span></dt><dd><p>Parameter is propagated to ‘create_table’ method of ‘PyTables’.
+If set to False it enables to have the same h5 files (same hashes)
+independent on creation time.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>

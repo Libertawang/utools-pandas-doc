@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-isna">
 <h1>pandas.DataFrame.isna<a class="headerlink" href="#pandas-dataframe-isna" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.isna">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">isna</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L4615-L4617"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.isna" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">isna</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L5027-L5030"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.isna" title="Permalink to this definition">¶</a></dt>
 <dd><p>Detect missing values.</p>
 <p>Return a boolean same-sized object indicating if the values are NA.
 NA values, such as None or <code class="xref py py-attr docutils literal notranslate"><span class="pre">numpy.NaN</span></code>, gets mapped to True
@@ -64,12 +64,12 @@ strings <code class="docutils literal notranslate"><span class="pre">''</span></
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>DataFrame</dt><dd><p>Mask of bool values for each element in DataFrame that
-indicates whether an element is not an NA value.</p>
+indicates whether an element is an NA value.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.isnull.html#pandas.DataFrame.isnull" title="pandas.DataFrame.isnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.isnull</span></code></a></dt><dd><p>Alias of isna.</p>
@@ -84,11 +84,11 @@ indicates whether an element is not an NA value.</p>
 </div>
 <p class="rubric">Examples</p>
 <p>Show which entries in a DataFrame are NA.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'age'</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">],</span>
-<span class="gp">... </span>                   <span class="s1">'born'</span><span class="p">:</span> <span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">NaT</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'1939-05-27'</span><span class="p">),</span>
-<span class="gp">... </span>                            <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'1940-04-25'</span><span class="p">)],</span>
-<span class="gp">... </span>                   <span class="s1">'name'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Alfred'</span><span class="p">,</span> <span class="s1">'Batman'</span><span class="p">,</span> <span class="s1">''</span><span class="p">],</span>
-<span class="gp">... </span>                   <span class="s1">'toy'</span><span class="p">:</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">'Batmobile'</span><span class="p">,</span> <span class="s1">'Joker'</span><span class="p">]})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="n">born</span><span class="o">=</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">NaT</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'1939-05-27'</span><span class="p">),</span>
+<span class="gp">... </span>                         <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'1940-04-25'</span><span class="p">)],</span>
+<span class="gp">... </span>                   <span class="n">name</span><span class="o">=</span><span class="p">[</span><span class="s1">'Alfred'</span><span class="p">,</span> <span class="s1">'Batman'</span><span class="p">,</span> <span class="s1">''</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="n">toy</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">'Batmobile'</span><span class="p">,</span> <span class="s1">'Joker'</span><span class="p">]))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
 <span class="go">   age       born    name        toy</span>
 <span class="go">0  5.0        NaT  Alfred       None</span>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-to-excel">
 <h1>pandas.DataFrame.to_excel<a class="headerlink" href="#pandas-dataframe-to-excel" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.to_excel">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_excel</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">excel_writer</em>, <em class="sig-param">sheet_name='Sheet1'</em>, <em class="sig-param">na_rep=''</em>, <em class="sig-param">float_format=None</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">header=True</em>, <em class="sig-param">index=True</em>, <em class="sig-param">index_label=None</em>, <em class="sig-param">startrow=0</em>, <em class="sig-param">startcol=0</em>, <em class="sig-param">engine=None</em>, <em class="sig-param">merge_cells=True</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">inf_rep='inf'</em>, <em class="sig-param">verbose=True</em>, <em class="sig-param">freeze_panes=None</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L2140-L2182"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_excel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">to_excel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">excel_writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sheet_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Sheet1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_rep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startrow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startcol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge_cells</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inf_rep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'inf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freeze_panes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L2034-L2197"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.to_excel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write object to an Excel sheet.</p>
 <p>To write a single object to an Excel .xlsx file it is only necessary to
 specify a target file name. To write to multiple sheets it is necessary to
@@ -62,10 +62,10 @@ in the file to write to.</p>
 With all data written to the file it is necessary to save the changes.
 Note that creating an <cite>ExcelWriter</cite> object with a file name that already
 exists will result in the contents of the existing file being erased.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>excel_writer</strong><span class="classifier">str or ExcelWriter object</span></dt><dd><p>File path or existing ExcelWriter.</p>
+<dd class="field-odd"><dl>
+<dt><strong>excel_writer</strong><span class="classifier">path-like, file-like, or ExcelWriter object</span></dt><dd><p>File path or existing ExcelWriter.</p>
 </dd>
 <dt><strong>sheet_name</strong><span class="classifier">str, default ‘Sheet1’</span></dt><dd><p>Name of sheet which will contain DataFrame.</p>
 </dd>
@@ -92,6 +92,11 @@ sequence should be given if the DataFrame uses MultiIndex.</p>
 <dt><strong>engine</strong><span class="classifier">str, optional</span></dt><dd><p>Write engine to use, ‘openpyxl’ or ‘xlsxwriter’. You can also set this
 via the options <code class="docutils literal notranslate"><span class="pre">io.excel.xlsx.writer</span></code>, <code class="docutils literal notranslate"><span class="pre">io.excel.xls.writer</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">io.excel.xlsm.writer</span></code>.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.0: </span>As the <a class="reference external" href="https://pypi.org/project/xlwt/">xlwt</a> package is no longer
+maintained, the <code class="docutils literal notranslate"><span class="pre">xlwt</span></code> engine will be removed in a future version
+of pandas.</p>
+</div>
 </dd>
 <dt><strong>merge_cells</strong><span class="classifier">bool, default True</span></dt><dd><p>Write MultiIndex and Hierarchical Rows as merged cells.</p>
 </dd>
@@ -106,10 +111,20 @@ infinity in Excel).</p>
 <dt><strong>freeze_panes</strong><span class="classifier">tuple of int (length 2), optional</span></dt><dd><p>Specifies the one-based bottommost row and rightmost column that
 is to be frozen.</p>
 </dd>
+<dt><strong>storage_options</strong><span class="classifier">dict, optional</span></dt><dd><p>Extra options that make sense for a particular storage connection, e.g.
+host, port, username, password, etc., if using a URL that will
+be parsed by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, e.g., starting “s3://”, “gcs://”. An error
+will be raised if providing this argument with a non-fsspec URL.
+See the fsspec and backend storage implementation docs for the set of
+allowed keys and values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
+</div>
+</dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="pandas.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a></dt><dd><p>Write DataFrame to a comma-separated values (csv) file.</p>

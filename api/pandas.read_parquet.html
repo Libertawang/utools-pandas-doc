@@ -50,28 +50,25 @@
   <body>
 <div class="section" id="pandas-read-parquet">
 <h1>pandas.read_parquet<a class="headerlink" href="#pandas-read-parquet" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_parquet">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_parquet</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">engine: str = 'auto'</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/parquet.py#L268-L310"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_parquet" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_parquet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_nullable_dtypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/parquet.py#L407-L461"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_parquet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a parquet object from the file path, returning a DataFrame.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>path</strong><span class="classifier">str, path object or file-like object</span></dt><dd><p>Any valid string path is acceptable. The string could be a URL. Valid
-URL schemes include http, ftp, s3, and file. For file URLs, a host is
+URL schemes include http, ftp, s3, gs, and file. For file URLs, a host is
 expected. A local file could be:
 <code class="docutils literal notranslate"><span class="pre">file://localhost/path/to/table.parquet</span></code>.
 A file URL can also be a path to a directory that contains multiple
 partitioned parquet files. Both pyarrow and fastparquet support
 paths to directories as well as file URLs. A directory path could be:
-<code class="docutils literal notranslate"><span class="pre">file://localhost/path/to/tables</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">file://localhost/path/to/tables</span></code> or <code class="docutils literal notranslate"><span class="pre">s3://bucket/partition_dir</span></code></p>
 <p>If you want to pass in a path object, pandas accepts any
 <code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
 <p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method,
-such as a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
+such as a file handle (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
 or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
 </dd>
 <dt><strong>engine</strong><span class="classifier">{‘auto’, ‘pyarrow’, ‘fastparquet’}, default ‘auto’</span></dt><dd><p>Parquet library to use. If ‘auto’, then the option
@@ -80,8 +77,15 @@ behavior is to try ‘pyarrow’, falling back to ‘fastparquet’ if
 ‘pyarrow’ is unavailable.</p>
 </dd>
 <dt><strong>columns</strong><span class="classifier">list, default=None</span></dt><dd><p>If not None, only these columns will be read from the file.</p>
+</dd>
+<dt><strong>use_nullable_dtypes</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, use dtypes that use <code class="docutils literal notranslate"><span class="pre">pd.NA</span></code> as missing value indicator
+for the resulting DataFrame (only applicable for <code class="docutils literal notranslate"><span class="pre">engine="pyarrow"</span></code>).
+As new dtypes are added that support <code class="docutils literal notranslate"><span class="pre">pd.NA</span></code> in the future, the
+output with this option will change to use those dtypes.
+Note: this is an experimental option, and behaviour (e.g. additional
+support dtypes) may change without notice.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.1.</span></p>
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
 </div>
 </dd>
 <dt><strong>**kwargs</strong></dt><dd><p>Any additional kwargs are passed to the engine.</p>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-categoricalindex-reorder-categories">
 <h1>pandas.CategoricalIndex.reorder_categories<a class="headerlink" href="#pandas-categoricalindex-reorder-categories" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.CategoricalIndex.reorder_categories">
-<code class="sig-prename descclassname">CategoricalIndex.</code><code class="sig-name descname">reorder_categories</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/accessor.py#L98-L99"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.CategoricalIndex.reorder_categories" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">CategoricalIndex.</span></code><code class="sig-name descname"><span class="pre">reorder_categories</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/accessor.py#L91-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.CategoricalIndex.reorder_categories" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reorder categories as specified in new_categories.</p>
 <p><cite>new_categories</cite> need to include all old categories and no new category
 items.</p>
@@ -71,7 +71,8 @@ this categorical with reordered categories.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>cat</strong><span class="classifier">Categorical with reordered categories or None if inplace.</span></dt><dd></dd>
+<dt><strong>cat</strong><span class="classifier">Categorical or None</span></dt><dd><p>Categorical with removed categories or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
@@ -82,14 +83,19 @@ new ones</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.CategoricalIndex.rename_categories.html#pandas.CategoricalIndex.rename_categories" title="pandas.CategoricalIndex.rename_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.CategoricalIndex.add_categories.html#pandas.CategoricalIndex.add_categories" title="pandas.CategoricalIndex.add_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.CategoricalIndex.remove_categories.html#pandas.CategoricalIndex.remove_categories" title="pandas.CategoricalIndex.remove_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.CategoricalIndex.remove_unused_categories.html#pandas.CategoricalIndex.remove_unused_categories" title="pandas.CategoricalIndex.remove_unused_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_unused_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.CategoricalIndex.set_categories.html#pandas.CategoricalIndex.set_categories" title="pandas.CategoricalIndex.set_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_categories</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.rename_categories.html#pandas.CategoricalIndex.rename_categories" title="pandas.CategoricalIndex.rename_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_categories</span></code></a></dt><dd><p>Rename categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.add_categories.html#pandas.CategoricalIndex.add_categories" title="pandas.CategoricalIndex.add_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_categories</span></code></a></dt><dd><p>Add new categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.remove_categories.html#pandas.CategoricalIndex.remove_categories" title="pandas.CategoricalIndex.remove_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_categories</span></code></a></dt><dd><p>Remove the specified categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.remove_unused_categories.html#pandas.CategoricalIndex.remove_unused_categories" title="pandas.CategoricalIndex.remove_unused_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_unused_categories</span></code></a></dt><dd><p>Remove categories which are not used.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.CategoricalIndex.set_categories.html#pandas.CategoricalIndex.set_categories" title="pandas.CategoricalIndex.set_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_categories</span></code></a></dt><dd><p>Set the categories to the specified ones.</p>
+</dd>
 </dl>
 </div>
 </dd></dl>

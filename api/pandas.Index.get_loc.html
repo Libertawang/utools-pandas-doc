@@ -50,13 +50,13 @@
   <body>
 <div class="section" id="pandas-index-get-loc">
 <h1>pandas.Index.get_loc<a class="headerlink" href="#pandas-index-get-loc" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.get_loc">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">get_loc</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">key</em>, <em class="sig-param">method=None</em>, <em class="sig-param">tolerance=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L2637-L2655"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.get_loc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">get_loc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L3036-L3093"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.get_loc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get integer location, slice or boolean mask for requested label.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>key</strong><span class="classifier">label</span></dt><dd></dd>
 <dt><strong>method</strong><span class="classifier">{None, ‘pad’/’ffill’, ‘backfill’/’bfill’, ‘nearest’}, optional</span></dt><dd><ul class="simple">
 <li><p>default: exact matches only.</p></li>
@@ -67,11 +67,8 @@ distances are broken by preferring the larger index value.</p></li>
 </ul>
 </dd>
 <dt><strong>tolerance</strong><span class="classifier">int or float, optional</span></dt><dd><p>Maximum distance from index value for inexact matches. The value of
-the index at the matching location most satisfy the equation
+the index at the matching location must satisfy the equation
 <code class="docutils literal notranslate"><span class="pre">abs(index[loc]</span> <span class="pre">-</span> <span class="pre">key)</span> <span class="pre">&lt;=</span> <span class="pre">tolerance</span></code>.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0: </span>(list-like tolerance)</p>
-</div>
 </dd>
 </dl>
 </dd>
@@ -94,7 +91,7 @@ the index at the matching location most satisfy the equation
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">non_monotonic_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">'abcb'</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">non_monotonic_index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="s1">'b'</span><span class="p">)</span>
-<span class="go">array([False,  True, False,  True], dtype=bool)</span>
+<span class="go">array([False,  True, False,  True])</span>
 </pre></div>
 </div>
 </dd></dl>

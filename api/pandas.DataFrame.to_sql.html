@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-to-sql">
 <h1>pandas.DataFrame.to_sql<a class="headerlink" href="#pandas-dataframe-to-sql" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.to_sql">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_sql</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name: str</em>, <em class="sig-param">con</em>, <em class="sig-param">schema=None</em>, <em class="sig-param">if_exists: str = 'fail'</em>, <em class="sig-param">index: bool = True</em>, <em class="sig-param">index_label=None</em>, <em class="sig-param">chunksize=None</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">method=None</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L2508-L2664"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_sql" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">to_sql</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">con</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fail'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L2624-L2790"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.to_sql" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write records stored in a DataFrame to a SQL database.</p>
 <p>Databases supported by SQLAlchemy <a class="reference internal" href="#r689dfd12abe5-1" id="id1">[1]</a> are supported. Tables can be
 newly created, appended to, or overwritten.</p>
@@ -61,10 +61,10 @@ newly created, appended to, or overwritten.</p>
 <dd class="field-odd"><dl>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of SQL table.</p>
 </dd>
-<dt><strong>con</strong><span class="classifier">sqlalchemy.engine.Engine or sqlite3.Connection</span></dt><dd><p>Using SQLAlchemy makes it possible to use any DB supported by that
+<dt><strong>con</strong><span class="classifier">sqlalchemy.engine.(Engine or Connection) or sqlite3.Connection</span></dt><dd><p>Using SQLAlchemy makes it possible to use any DB supported by that
 library. Legacy support is provided for sqlite3.Connection objects. The user
 is responsible for engine disposal and connection closure for the SQLAlchemy
-connectable See <a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/connections.html">here</a></p>
+connectable See <a class="reference external" href="https://docs.sqlalchemy.org/en/13/core/connections.html">here</a>.</p>
 </dd>
 <dt><strong>schema</strong><span class="classifier">str, optional</span></dt><dd><p>Specify the schema (if database flavor supports this). If None, use
 default schema.</p>
@@ -113,7 +113,7 @@ default).</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.read_sql.html#pandas.read_sql" title="pandas.read_sql"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_sql</span></code></a></dt><dd><p>Read a DataFrame from a table.</p>
@@ -131,7 +131,7 @@ timestamps local to the original timezone.</p>
 <p class="rubric">References</p>
 <dl class="citation">
 <dt class="label" id="r689dfd12abe5-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><a class="reference external" href="http://docs.sqlalchemy.org">http://docs.sqlalchemy.org</a></p>
+<dd><p><a class="reference external" href="https://docs.sqlalchemy.org">https://docs.sqlalchemy.org</a></p>
 </dd>
 <dt class="label" id="r689dfd12abe5-2"><span class="brackets">2</span></dt>
 <dd><p><a class="reference external" href="https://www.python.org/dev/peps/pep-0249/">https://www.python.org/dev/peps/pep-0249/</a></p>
@@ -157,18 +157,27 @@ timestamps local to the original timezone.</p>
 <span class="go">[(0, 'User 1'), (1, 'User 2'), (2, 'User 3')]</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'name'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'User 4'</span><span class="p">,</span> <span class="s1">'User 5'</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM users"</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-<span class="go">[(0, 'User 1'), (1, 'User 2'), (2, 'User 3'),</span>
-<span class="go"> (0, 'User 4'), (1, 'User 5')]</span>
+<p>An <cite>sqlalchemy.engine.Connection</cite> can also be passed to <cite>con</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span> <span class="k">as</span> <span class="n">connection</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'name'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'User 4'</span><span class="p">,</span> <span class="s1">'User 5'</span><span class="p">]})</span>
+<span class="gp">... </span>    <span class="n">df1</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">connection</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Overwrite the table with just <code class="docutils literal notranslate"><span class="pre">df1</span></code>.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span>
+<p>This is allowed to support operations that require that the same
+DBAPI connection is used for the entire operation.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'name'</span> <span class="p">:</span> <span class="p">[</span><span class="s1">'User 6'</span><span class="p">,</span> <span class="s1">'User 7'</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'append'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM users"</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+<span class="go">[(0, 'User 1'), (1, 'User 2'), (2, 'User 3'),</span>
+<span class="go"> (0, 'User 4'), (1, 'User 5'), (0, 'User 6'),</span>
+<span class="go"> (1, 'User 7')]</span>
+</pre></div>
+</div>
+<p>Overwrite the table with just <code class="docutils literal notranslate"><span class="pre">df2</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span>
 <span class="gp">... </span>           <span class="n">index_label</span><span class="o">=</span><span class="s1">'id'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM users"</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
-<span class="go">[(0, 'User 4'), (1, 'User 5')]</span>
+<span class="go">[(0, 'User 6'), (1, 'User 7')]</span>
 </pre></div>
 </div>
 <p>Specify the dtype (especially useful for integers with missing values).

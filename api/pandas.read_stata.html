@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-stata">
 <h1>pandas.read_stata<a class="headerlink" href="#pandas-read-stata" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_stata">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_stata</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer</em>, <em class="sig-param">convert_dates=True</em>, <em class="sig-param">convert_categoricals=True</em>, <em class="sig-param">index_col=None</em>, <em class="sig-param">convert_missing=False</em>, <em class="sig-param">preserve_dtypes=True</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">order_categoricals=True</em>, <em class="sig-param">chunksize=None</em>, <em class="sig-param">iterator=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/stata.py#L163-L196"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_stata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_stata</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath_or_buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_categoricals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve_dtypes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_categoricals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/stata.py#L1883-L1918"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_stata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read Stata file into DataFrame.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -62,7 +62,7 @@ URL schemes include http, ftp, s3, and file. For file URLs, a host is
 expected. A local file could be: <code class="docutils literal notranslate"><span class="pre">file://localhost/path/to/table.dta</span></code>.</p>
 <p>If you want to pass in a path object, pandas accepts any <code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
 <p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method,
-such as a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
+such as a file handle (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
 or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
 </dd>
 <dt><strong>convert_dates</strong><span class="classifier">bool, default True</span></dt><dd><p>Convert date variables to DataFrame time values.</p>
@@ -72,7 +72,7 @@ or <code class="docutils literal notranslate"><span class="pre">StringIO</span><
 <dt><strong>index_col</strong><span class="classifier">str, optional</span></dt><dd><p>Column to set as index.</p>
 </dd>
 <dt><strong>convert_missing</strong><span class="classifier">bool, default False</span></dt><dd><p>Flag indicating whether to convert missing values to their Stata
-representations.  If False, missing values are replaced with nan.
+representations. If False, missing values are replaced with nan.
 If True, columns containing missing values are returned with
 object data types and missing values are represented by
 StataMissingValue objects.</p>
@@ -80,7 +80,7 @@ StataMissingValue objects.</p>
 <dt><strong>preserve_dtypes</strong><span class="classifier">bool, default True</span></dt><dd><p>Preserve Stata datatypes. If False, numeric data are upcast to pandas
 default types for foreign data (float64 or int64).</p>
 </dd>
-<dt><strong>columns</strong><span class="classifier">list or None</span></dt><dd><p>Columns to retain.  Columns will be returned in the given order.  None
+<dt><strong>columns</strong><span class="classifier">list or None</span></dt><dd><p>Columns to retain. Columns will be returned in the given order. None
 returns all columns.</p>
 </dd>
 <dt><strong>order_categoricals</strong><span class="classifier">bool, default True</span></dt><dd><p>Flag indicating whether converted categorical data are ordered.</p>
@@ -98,7 +98,7 @@ given number of lines.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">io.stata.StataReader</span></code></dt><dd><p>Low-level reader for Stata data files.</p>
@@ -107,6 +107,11 @@ given number of lines.</p>
 </dd>
 </dl>
 </div>
+<p class="rubric">Notes</p>
+<p>Categorical variables read through an iterator may not have the same
+categories and dtype. This occurs when a variable stored in a DTA
+file is associated to an incomplete set of value labels that only
+label a strict subset of the values.</p>
 <p class="rubric">Examples</p>
 <p>Read a Stata dta file:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_stata</span><span class="p">(</span><span class="s1">'filename.dta'</span><span class="p">)</span>

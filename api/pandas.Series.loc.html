@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-loc">
 <h1>pandas.Series.loc<a class="headerlink" href="#pandas-series-loc" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.loc">
-<em class="property">property </em><code class="sig-prename descclassname">Series.</code><code class="sig-name descname">loc</code><a class="headerlink" href="#pandas.Series.loc" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">loc</span></code><a class="headerlink" href="#pandas.Series.loc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access a group of rows and columns by label(s) or a boolean array.</p>
 <p><code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> is primarily label based, but may also be used with a
 boolean array.</p>
@@ -63,7 +63,7 @@ interpreted as a <em>label</em> of the index, and <strong>never</strong> as an
 integer position along the index).</p></li>
 <li><p>A list or array of labels, e.g. <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c']</span></code>.</p></li>
 <li><p>A slice object with labels, e.g. <code class="docutils literal notranslate"><span class="pre">'a':'f'</span></code>.</p>
-<div class="alert alert-warning">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Note that contrary to usual python slices, <strong>both</strong> the
 start and the stop are included</p>
@@ -71,19 +71,24 @@ start and the stop are included</p>
 </li>
 <li><p>A boolean array of the same length as the axis being sliced,
 e.g. <code class="docutils literal notranslate"><span class="pre">[True,</span> <span class="pre">False,</span> <span class="pre">True]</span></code>.</p></li>
+<li><p>An alignable boolean Series. The index of the key will be aligned before
+masking.</p></li>
+<li><p>An alignable Index. The Index of the returned selection will be the input.</p></li>
 <li><p>A <code class="docutils literal notranslate"><span class="pre">callable</span></code> function with one argument (the calling Series or
 DataFrame) and that returns valid output for indexing (one of the above)</p></li>
 </ul>
-<p>See more at <a class="reference internal" href="../../user_guide/indexing.html#indexing-label"><span class="std std-ref">Selection by Label</span></a></p>
+<p>See more at <a class="reference internal" href="../../user_guide/indexing.html#indexing-label"><span class="std std-ref">Selection by Label</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>KeyError</dt><dd><p>If any items are not found.</p>
 </dd>
+<dt>IndexingError</dt><dd><p>If an indexed key is passed and its index is unalignable to the frame index.</p>
+</dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.at.html#pandas.DataFrame.at" title="pandas.DataFrame.at"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.at</span></code></a></dt><dd><p>Access a single value for a row/column label pair.</p>
@@ -139,6 +144,21 @@ above, note that both the start and stop of the slice are included.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
 <span class="go">            max_speed  shield</span>
 <span class="go">sidewinder          7       8</span>
+</pre></div>
+</div>
+<p>Alignable boolean Series:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+<span class="gp">... </span>       <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'viper'</span><span class="p">,</span> <span class="s1">'sidewinder'</span><span class="p">,</span> <span class="s1">'cobra'</span><span class="p">])]</span>
+<span class="go">            max_speed  shield</span>
+<span class="go">sidewinder          7       8</span>
+</pre></div>
+</div>
+<p>Index (same behavior as <code class="docutils literal notranslate"><span class="pre">df.reindex</span></code>)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="s2">"cobra"</span><span class="p">,</span> <span class="s2">"viper"</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"foo"</span><span class="p">)]</span>
+<span class="go">       max_speed  shield</span>
+<span class="go">foo</span>
+<span class="go">cobra          1       2</span>
+<span class="go">viper          4       5</span>
 </pre></div>
 </div>
 <p>Conditional that returns a boolean Series</p>

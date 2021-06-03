@@ -50,14 +50,14 @@
   <body>
 <div class="section" id="pandas-index-memory-usage">
 <h1>pandas.Index.memory_usage<a class="headerlink" href="#pandas-index-memory-usage" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.memory_usage">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">memory_usage</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">deep=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L3744-L3750"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.memory_usage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">memory_usage</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L4102-L4108"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.memory_usage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Memory usage of the values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>deep</strong><span class="classifier">bool</span></dt><dd><p>Introspect the data deeply, interrogate
+<dt><strong>deep</strong><span class="classifier">bool, default False</span></dt><dd><p>Introspect the data deeply, interrogate
 <cite>object</cite> dtypes for system-level memory consumption.</p>
 </dd>
 </dl>
@@ -68,10 +68,11 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.nbytes.html#numpy.ndarray.nbytes" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.nbytes</span></code></a></dt><dd></dd>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.nbytes.html#numpy.ndarray.nbytes" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.nbytes</span></code></a></dt><dd><p>Total bytes consumed by the elements of the array.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>

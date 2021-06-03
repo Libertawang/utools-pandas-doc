@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-merge-ordered">
 <h1>pandas.merge_ordered<a class="headerlink" href="#pandas-merge-ordered" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.merge_ordered">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">merge_ordered</code><span class="sig-paren">(</span><em class="sig-param">left</em>, <em class="sig-param">right</em>, <em class="sig-param">on=None</em>, <em class="sig-param">left_on=None</em>, <em class="sig-param">right_on=None</em>, <em class="sig-param">left_by=None</em>, <em class="sig-param">right_by=None</em>, <em class="sig-param">fill_method=None</em>, <em class="sig-param">suffixes=('_x'</em>, <em class="sig-param">'_y')</em>, <em class="sig-param">how: str = 'outer'</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/reshape/merge.py#L177-L304"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.merge_ordered" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">merge_ordered</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_on</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_by</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffixes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('_x',</span> <span class="pre">'_y')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'outer'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/reshape/merge.py#L153-L293"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.merge_ordered" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform merge with optional filling/interpolation.</p>
 <p>Designed for ordered data like time series data. Optionally
 perform group-wise merge (see examples).</p>
@@ -78,7 +78,7 @@ left DataFrame.</p>
 </dd>
 <dt><strong>fill_method</strong><span class="classifier">{‘ffill’, None}, default None</span></dt><dd><p>Interpolation method for data.</p>
 </dd>
-<dt><strong>suffixes</strong><span class="classifier">Sequence, default is (“_x”, “_y”)</span></dt><dd><p>A length-2 sequence where each element is optionally a string
+<dt><strong>suffixes</strong><span class="classifier">list-like, default is (“_x”, “_y”)</span></dt><dd><p>A length-2 sequence where each element is optionally a string
 indicating the suffix to add to overlapping column names in
 <cite>left</cite> and <cite>right</cite> respectively. Pass a value of <cite>None</cite> instead
 of a string to indicate that the column name from <cite>left</cite> or
@@ -105,15 +105,24 @@ values must not be None.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.merge.html#pandas.merge" title="pandas.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.merge_asof.html#pandas.merge_asof" title="pandas.merge_asof"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_asof</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.merge.html#pandas.merge" title="pandas.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a></dt><dd><p>Merge with a database-style join.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.merge_asof.html#pandas.merge_asof" title="pandas.merge_asof"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_asof</span></code></a></dt><dd><p>Merge on nearest keys.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">{</span>
+<span class="gp">... </span>        <span class="s2">"key"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"e"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"e"</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="s2">"lvalue"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>        <span class="s2">"group"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="p">}</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df1</span>
 <span class="go">      key  lvalue group</span>
 <span class="go">0   a       1     a</span>
 <span class="go">1   c       2     a</span>
@@ -123,25 +132,26 @@ values must not be None.</p>
 <span class="go">5   e       3     b</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">B</span>
-<span class="go">    Key  rvalue</span>
-<span class="go">0     b       1</span>
-<span class="go">1     c       2</span>
-<span class="go">2     d       3</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"key"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">],</span> <span class="s2">"rvalue"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span>
+<span class="go">      key  rvalue</span>
+<span class="go">0   b       1</span>
+<span class="go">1   c       2</span>
+<span class="go">2   d       3</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">merge_ordered</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">fill_method</span><span class="o">=</span><span class="s1">'ffill'</span><span class="p">,</span> <span class="n">left_by</span><span class="o">=</span><span class="s1">'group'</span><span class="p">)</span>
-<span class="go">  group key  lvalue  rvalue</span>
-<span class="go">0     a   a       1     NaN</span>
-<span class="go">1     a   b       1     1.0</span>
-<span class="go">2     a   c       2     2.0</span>
-<span class="go">3     a   d       2     3.0</span>
-<span class="go">4     a   e       3     3.0</span>
-<span class="go">5     b   a       1     NaN</span>
-<span class="go">6     b   b       1     1.0</span>
-<span class="go">7     b   c       2     2.0</span>
-<span class="go">8     b   d       2     3.0</span>
-<span class="go">9     b   e       3     3.0</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">merge_ordered</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">fill_method</span><span class="o">=</span><span class="s2">"ffill"</span><span class="p">,</span> <span class="n">left_by</span><span class="o">=</span><span class="s2">"group"</span><span class="p">)</span>
+<span class="go">  key  lvalue group  rvalue</span>
+<span class="go">0   a       1     a     NaN</span>
+<span class="go">1   b       1     a     1.0</span>
+<span class="go">2   c       2     a     2.0</span>
+<span class="go">3   d       2     a     3.0</span>
+<span class="go">4   e       3     a     3.0</span>
+<span class="go">5   a       1     b     NaN</span>
+<span class="go">6   b       1     b     1.0</span>
+<span class="go">7   c       2     b     2.0</span>
+<span class="go">8   d       2     b     3.0</span>
+<span class="go">9   e       3     b     3.0</span>
 </pre></div>
 </div>
 </dd></dl>

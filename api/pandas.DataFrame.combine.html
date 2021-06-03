@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-combine">
 <h1>pandas.DataFrame.combine<a class="headerlink" href="#pandas-dataframe-combine" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.combine">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">combine</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other: 'DataFrame'</em>, <em class="sig-param">func</em>, <em class="sig-param">fill_value=None</em>, <em class="sig-param">overwrite=True</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L5338-L5505"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.combine" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">combine</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L6222-L6389"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.combine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform column-wise combine with another DataFrame.</p>
 <p>Combines a DataFrame with <cite>other</cite> DataFrame using <cite>func</cite>
 to element-wise combine columns. The row and column indexes of the
@@ -80,7 +80,7 @@ overwritten with NaNs.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.combine_first.html#pandas.DataFrame.combine_first" title="pandas.DataFrame.combine_first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.combine_first</span></code></a></dt><dd><p>Combine two DataFrame objects and default to non-null values in frame calling the method.</p>

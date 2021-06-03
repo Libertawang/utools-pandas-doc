@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-append">
 <h1>pandas.DataFrame.append<a class="headerlink" href="#pandas-dataframe-append" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.append">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other</em>, <em class="sig-param">ignore_index=False</em>, <em class="sig-param">verify_integrity=False</em>, <em class="sig-param">sort=False</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L6949-L7086"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.append" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">append</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify_integrity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L7849-L7988"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append rows of <cite>other</cite> to the end of caller, returning a new object.</p>
 <p>Columns in <cite>other</cite> that are not in the caller are added as new columns.</p>
 <dl class="field-list">
@@ -60,14 +60,11 @@
 <dd class="field-odd"><dl>
 <dt><strong>other</strong><span class="classifier">DataFrame or Series/dict-like object, or list of these</span></dt><dd><p>The data to append.</p>
 </dd>
-<dt><strong>ignore_index</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, do not use the index labels.</p>
+<dt><strong>ignore_index</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, the resulting axis will be labeled 0, 1, …, n - 1.</p>
 </dd>
 <dt><strong>verify_integrity</strong><span class="classifier">bool, default False</span></dt><dd><p>If True, raise ValueError on creating index with duplicates.</p>
 </dd>
 <dt><strong>sort</strong><span class="classifier">bool, default False</span></dt><dd><p>Sort columns if the columns of <cite>self</cite> and <cite>other</cite> are not aligned.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 1.0.0: </span>Changed to not sort by default.</p>
 </div>
@@ -80,7 +77,7 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.concat.html#pandas.concat" title="pandas.concat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concat</span></code></a></dt><dd><p>General function to concatenate DataFrame or Series objects.</p>

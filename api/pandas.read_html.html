@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-html">
 <h1>pandas.read_html<a class="headerlink" href="#pandas-read-html" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_html">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_html</code><span class="sig-paren">(</span><em class="sig-param">io</em>, <em class="sig-param">match='.+'</em>, <em class="sig-param">flavor=None</em>, <em class="sig-param">header=None</em>, <em class="sig-param">index_col=None</em>, <em class="sig-param">skiprows=None</em>, <em class="sig-param">attrs=None</em>, <em class="sig-param">parse_dates=False</em>, <em class="sig-param">thousands='</em>, <em class="sig-param">'</em>, <em class="sig-param">encoding=None</em>, <em class="sig-param">decimal='.'</em>, <em class="sig-param">converters=None</em>, <em class="sig-param">na_values=None</em>, <em class="sig-param">keep_default_na=True</em>, <em class="sig-param">displayed_only=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/html.py#L926-L1101"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_html" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_html</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">io</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.+'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flavor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skiprows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_dates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thousands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">converters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">na_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_default_na</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displayed_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/html.py#L924-L1101"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_html" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read HTML tables into a <code class="docutils literal notranslate"><span class="pre">list</span></code> of <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> objects.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -68,22 +68,22 @@ string). The default value will return all tables contained on a page.
 This value is converted to a regular expression so that there is
 consistent behavior between Beautiful Soup and lxml.</p>
 </dd>
-<dt><strong>flavor</strong><span class="classifier">str or None</span></dt><dd><p>The parsing engine to use. ‘bs4’ and ‘html5lib’ are synonymous with
+<dt><strong>flavor</strong><span class="classifier">str, optional</span></dt><dd><p>The parsing engine to use. ‘bs4’ and ‘html5lib’ are synonymous with
 each other, they are both there for backwards compatibility. The
 default of <code class="docutils literal notranslate"><span class="pre">None</span></code> tries to use <code class="docutils literal notranslate"><span class="pre">lxml</span></code> to parse and if that fails it
 falls back on <code class="docutils literal notranslate"><span class="pre">bs4</span></code> + <code class="docutils literal notranslate"><span class="pre">html5lib</span></code>.</p>
 </dd>
-<dt><strong>header</strong><span class="classifier">int or list-like or None, optional</span></dt><dd><p>The row (or list of rows for a <a class="reference internal" href="pandas.MultiIndex.html#pandas.MultiIndex" title="pandas.MultiIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiIndex</span></code></a>) to use to
+<dt><strong>header</strong><span class="classifier">int or list-like, optional</span></dt><dd><p>The row (or list of rows for a <a class="reference internal" href="pandas.MultiIndex.html#pandas.MultiIndex" title="pandas.MultiIndex"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiIndex</span></code></a>) to use to
 make the columns headers.</p>
 </dd>
-<dt><strong>index_col</strong><span class="classifier">int or list-like or None, optional</span></dt><dd><p>The column (or list of columns) to use to create the index.</p>
+<dt><strong>index_col</strong><span class="classifier">int or list-like, optional</span></dt><dd><p>The column (or list of columns) to use to create the index.</p>
 </dd>
-<dt><strong>skiprows</strong><span class="classifier">int or list-like or slice or None, optional</span></dt><dd><p>Number of rows to skip after parsing the column integer. 0-based. If a
+<dt><strong>skiprows</strong><span class="classifier">int, list-like or slice, optional</span></dt><dd><p>Number of rows to skip after parsing the column integer. 0-based. If a
 sequence of integers or a slice is given, will skip the rows indexed by
-that sequence.  Note that a single element sequence means ‘skip the nth
+that sequence. Note that a single element sequence means ‘skip the nth
 row’ whereas an integer means ‘skip n rows’.</p>
 </dd>
-<dt><strong>attrs</strong><span class="classifier">dict or None, optional</span></dt><dd><p>This is a dictionary of attributes that you can pass to use to identify
+<dt><strong>attrs</strong><span class="classifier">dict, optional</span></dt><dd><p>This is a dictionary of attributes that you can pass to use to identify
 the table in the HTML. These are not checked for validity before being
 passed to lxml or Beautiful Soup. However, these attributes must be
 valid HTML table attributes to work correctly. For example,</p>
@@ -91,21 +91,21 @@ valid HTML table attributes to work correctly. For example,</p>
 </pre></div>
 </div>
 <p>is a valid attribute dictionary because the ‘id’ HTML tag attribute is
-a valid HTML attribute for <em>any</em> HTML tag as per <a class="reference external" href="http://www.w3.org/TR/html-markup/global-attributes.html">this document</a>.</p>
+a valid HTML attribute for <em>any</em> HTML tag as per <a class="reference external" href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes">this document</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'asdf'</span><span class="p">:</span> <span class="s1">'table'</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>is <em>not</em> a valid attribute dictionary because ‘asdf’ is not a valid
-HTML attribute even if it is a valid XML attribute.  Valid HTML 4.01
+HTML attribute even if it is a valid XML attribute. Valid HTML 4.01
 table attributes can be found <a class="reference external" href="http://www.w3.org/TR/REC-html40/struct/tables.html#h-11.2">here</a>. A
-working draft of the HTML 5 spec can be found <a class="reference external" href="http://www.w3.org/TR/html-markup/table.html">here</a>. It contains the
+working draft of the HTML 5 spec can be found <a class="reference external" href="https://html.spec.whatwg.org/multipage/tables.html">here</a>. It contains the
 latest information on table attributes for the modern web.</p>
 </dd>
 <dt><strong>parse_dates</strong><span class="classifier">bool, optional</span></dt><dd><p>See <a class="reference internal" href="pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_csv()</span></code></a> for more details.</p>
 </dd>
 <dt><strong>thousands</strong><span class="classifier">str, optional</span></dt><dd><p>Separator to use to parse thousands. Defaults to <code class="docutils literal notranslate"><span class="pre">','</span></code>.</p>
 </dd>
-<dt><strong>encoding</strong><span class="classifier">str or None, optional</span></dt><dd><p>The encoding used to decode the web page. Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.``None``
+<dt><strong>encoding</strong><span class="classifier">str, optional</span></dt><dd><p>The encoding used to decode the web page. Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.``None``
 preserves the previous encoding behavior, which depends on the
 underlying parser library (e.g., the parser library will try to use
 the encoding provided by the document).</p>
@@ -134,10 +134,11 @@ values are overridden, otherwise they’re appended to.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_csv</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_csv</span></code></a></dt><dd><p>Read a comma-separated values (csv) file into DataFrame.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -155,11 +156,6 @@ attempts to properly handle <code class="docutils literal notranslate"><span cla
 If the function has a <code class="docutils literal notranslate"><span class="pre">&lt;thead&gt;</span></code> argument, it is used to construct
 the header, otherwise the function attempts to find the header within
 the body (by putting rows with only <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> elements into the header).</p>
-<blockquote>
-<div><div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
-</div></blockquote>
 <p>Similar to <a class="reference internal" href="pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_csv()</span></code></a> the <cite>header</cite> argument is applied
 <strong>after</strong> <cite>skiprows</cite> is applied.</p>
 <p>This function will <em>always</em> return a list of <a class="reference internal" href="pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> <em>or</em>

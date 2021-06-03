@@ -50,18 +50,15 @@
   <body>
 <div class="section" id="pandas-index-unique">
 <h1>pandas.Index.unique<a class="headerlink" href="#pandas-index-unique" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.unique">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">unique</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">level=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L1970-L1975"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.unique" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return unique values in the index. Uniques are returned in order
-of appearance, this does NOT sort.</p>
-<dl class="field-list">
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">unique</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L2360-L2387"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return unique values in the index.</p>
+<p>Unique values are returned in order of appearance, this does NOT sort.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>level</strong><span class="classifier">int or str, optional, default None</span></dt><dd><p>Only return values from specified level (for MultiIndex).</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
 </dd>
 </dl>
 </dd>
@@ -71,11 +68,13 @@ of appearance, this does NOT sort.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.unique.html#pandas.unique" title="pandas.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.Series.unique.html#pandas.Series.unique" title="pandas.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.unique</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.unique.html#pandas.unique" title="pandas.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a></dt><dd><p>Numpy array of unique values in that column.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.unique.html#pandas.Series.unique" title="pandas.Series.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.unique</span></code></a></dt><dd><p>Return unique values of Series object.</p>
+</dd>
 </dl>
 </div>
 </dd></dl>

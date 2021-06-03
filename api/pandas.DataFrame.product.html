@@ -50,13 +50,13 @@
   <body>
 <div class="section" id="pandas-dataframe-product">
 <h1>pandas.DataFrame.product<a class="headerlink" href="#pandas-dataframe-product" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.product">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">product</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">skipna=None</em>, <em class="sig-param">level=None</em>, <em class="sig-param">numeric_only=None</em>, <em class="sig-param">min_count=0</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L11143-L11183"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.product" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the product of the values for the requested axis.</p>
-<dl class="field-list">
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">product</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L11079-L11100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.product" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the product of the values over the requested axis.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>axis</strong><span class="classifier">{index (0), columns (1)}</span></dt><dd><p>Axis for the function to be applied on.</p>
 </dd>
 <dt><strong>skipna</strong><span class="classifier">bool, default True</span></dt><dd><p>Exclude NA/null values when computing the result.</p>
@@ -69,11 +69,6 @@ everything, then use only numeric data. Not implemented for Series.</p>
 </dd>
 <dt><strong>min_count</strong><span class="classifier">int, default 0</span></dt><dd><p>The required number of valid values to perform the operation. If fewer than
 <code class="docutils literal notranslate"><span class="pre">min_count</span></code> non-NA values are present the result will be NA.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.22.0: </span>Added with the default being 0. This means the sum of an all-NA
-or empty Series is 0, and the product of an all-NA or empty
-Series is 1.</p>
-</div>
 </dd>
 <dt><strong>**kwargs</strong></dt><dd><p>Additional keyword arguments to be passed to the function.</p>
 </dd>
@@ -85,6 +80,31 @@ Series is 1.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Series.sum.html#pandas.Series.sum" title="pandas.Series.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.sum</span></code></a></dt><dd><p>Return the sum.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.min.html#pandas.Series.min" title="pandas.Series.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.min</span></code></a></dt><dd><p>Return the minimum.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.max.html#pandas.Series.max" title="pandas.Series.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.max</span></code></a></dt><dd><p>Return the maximum.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.idxmin.html#pandas.Series.idxmin" title="pandas.Series.idxmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.idxmin</span></code></a></dt><dd><p>Return the index of the minimum.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.idxmax.html#pandas.Series.idxmax" title="pandas.Series.idxmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.idxmax</span></code></a></dt><dd><p>Return the index of the maximum.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sum.html#pandas.DataFrame.sum" title="pandas.DataFrame.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.sum</span></code></a></dt><dd><p>Return the sum over the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.min.html#pandas.DataFrame.min" title="pandas.DataFrame.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.min</span></code></a></dt><dd><p>Return the minimum over the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.max.html#pandas.DataFrame.max" title="pandas.DataFrame.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.max</span></code></a></dt><dd><p>Return the maximum over the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.idxmin.html#pandas.DataFrame.idxmin" title="pandas.DataFrame.idxmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.idxmin</span></code></a></dt><dd><p>Return the index of the minimum over the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.idxmax.html#pandas.DataFrame.idxmax" title="pandas.DataFrame.idxmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.idxmax</span></code></a></dt><dd><p>Return the index of the maximum over the requested axis.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Examples</p>
 <p>By default, the product of an empty or all-NA Series is <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([])</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>

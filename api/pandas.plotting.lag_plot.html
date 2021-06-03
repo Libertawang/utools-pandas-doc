@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-plotting-lag-plot">
 <h1>pandas.plotting.lag_plot<a class="headerlink" href="#pandas-plotting-lag-plot" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.plotting.lag_plot">
-<code class="sig-prename descclassname">pandas.plotting.</code><code class="sig-name descname">lag_plot</code><span class="sig-paren">(</span><em class="sig-param">series</em>, <em class="sig-param">lag=1</em>, <em class="sig-param">ax=None</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_misc.py#L384-L401"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.plotting.lag_plot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.plotting.</span></code><code class="sig-name descname"><span class="pre">lag_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_misc.py#L413-L452"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.plotting.lag_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lag plot for time series.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -70,6 +70,25 @@
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>Lag plots are most commonly used to look for patterns in time series data.</p>
+<p>Given the following time series</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-plotting-lag_plot-1.png" class="plot-directive" src="../../_images/pandas-plotting-lag_plot-1.png"/>
+</div>
+<p>A lag plot with <code class="docutils literal notranslate"><span class="pre">lag=1</span></code> returns</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">lag_plot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">lag</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="figure align-default">
+<img alt="../../_images/pandas-plotting-lag_plot-2.png" class="plot-directive" src="../../_images/pandas-plotting-lag_plot-2.png"/>
+</div>
 </dd></dl>
 </div>
 </body></html>

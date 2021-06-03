@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-qcut">
 <h1>pandas.qcut<a class="headerlink" href="#pandas-qcut" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.qcut">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">qcut</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">q</em>, <em class="sig-param">labels=None</em>, <em class="sig-param">retbins: bool = False</em>, <em class="sig-param">precision: int = 3</em>, <em class="sig-param">duplicates: str = 'raise'</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/reshape/tile.py#L271-L351"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.qcut" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">qcut</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retbins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/reshape/tile.py#L288-L368"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.qcut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Quantile-based discretization function.</p>
 <p>Discretize variable into equal-sized buckets based on rank or based
 on sample quantiles. For example 1000 values for 10 quantiles would
@@ -61,7 +61,7 @@ produce a Categorical object indicating quantile membership for each data point.
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>x</strong><span class="classifier">1d ndarray or Series</span></dt><dd></dd>
-<dt><strong>q</strong><span class="classifier">int or list-like of int</span></dt><dd><p>Number of quantiles. 10 for deciles, 4 for quartiles, etc. Alternately
+<dt><strong>q</strong><span class="classifier">int or list-like of float</span></dt><dd><p>Number of quantiles. 10 for deciles, 4 for quartiles, etc. Alternately
 array of quantiles, e.g. [0, .25, .5, .75, 1.] for quartiles.</p>
 </dd>
 <dt><strong>labels</strong><span class="classifier">array or False, default None</span></dt><dd><p>Used as labels for the resulting bins. Must be of the same length as

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-sparse-from-coo">
 <h1>pandas.Series.sparse.from_coo<a class="headerlink" href="#pandas-series-sparse-from-coo" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.sparse.from_coo">
-<em class="property">classmethod </em><code class="sig-prename descclassname">sparse.</code><code class="sig-name descname">from_coo</code><span class="sig-paren">(</span><em class="sig-param">A</em>, <em class="sig-param">dense_index=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pandas.Series.sparse.from_coo" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-prename descclassname"><span class="pre">Series.sparse.</span></code><code class="sig-name descname"><span class="pre">from_coo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/arrays/sparse/accessor.py#L48-L96"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.sparse.from_coo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a Series with sparse values from a scipy.sparse.coo_matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -74,24 +74,28 @@ If True, the SparseSeries index consists of the full sorted
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">(([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])),</span>
-<span class="go">                       shape=(3, 4))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">sparse</span><span class="o">.</span><span class="n">coo_matrix</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="p">([</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])),</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">A</span>
 <span class="go">&lt;3x4 sparse matrix of type '&lt;class 'numpy.float64'&gt;'</span>
-<span class="go">        with 3 stored elements in COOrdinate format&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
-<span class="go">matrix([[ 0.,  0.,  1.,  2.],</span>
-<span class="go">        [ 3.,  0.,  0.,  0.],</span>
-<span class="go">        [ 0.,  0.,  0.,  0.]])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ss</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">from_coo</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="go">with 3 stored elements in COOrdinate format&gt;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<span class="go">matrix([[0., 0., 1., 2.],</span>
+<span class="go">[3., 0., 0., 0.],</span>
+<span class="go">[0., 0., 0., 0.]])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ss</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">from_coo</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ss</span>
-<span class="go">0  2    1</span>
-<span class="go">   3    2</span>
-<span class="go">1  0    3</span>
-<span class="go">dtype: float64</span>
-<span class="go">BlockIndex</span>
-<span class="go">Block locations: array([0], dtype=int32)</span>
-<span class="go">Block lengths: array([3], dtype=int32)</span>
+<span class="go">0  2    1.0</span>
+<span class="go">   3    2.0</span>
+<span class="go">1  0    3.0</span>
+<span class="go">dtype: Sparse[float64, nan]</span>
 </pre></div>
 </div>
 </dd></dl>

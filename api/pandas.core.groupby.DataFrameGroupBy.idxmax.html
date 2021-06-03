@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-core-groupby-dataframegroupby-idxmax">
 <h1>pandas.core.groupby.DataFrameGroupBy.idxmax<a class="headerlink" href="#pandas-core-groupby-dataframegroupby-idxmax" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.groupby.DataFrameGroupBy.idxmax">
-<em class="property">property </em><code class="sig-prename descclassname">DataFrameGroupBy.</code><code class="sig-name descname">idxmax</code><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.idxmax" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrameGroupBy.</span></code><code class="sig-name descname"><span class="pre">idxmax</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/groupby/generic.py#L1836-L1855"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.groupby.DataFrameGroupBy.idxmax" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return index of first occurrence of maximum over requested axis.</p>
 <p>NA/null values are excluded.</p>
 <dl class="field-list simple">
@@ -80,14 +80,44 @@ will be NA.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.idxmax</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.idxmax</span></code></dt><dd><p>Return index of the maximum element.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
 <p>This method is the DataFrame version of <code class="docutils literal notranslate"><span class="pre">ndarray.argmax</span></code>.</p>
+<p class="rubric">Examples</p>
+<p>Consider a dataset containing food consumption in Argentina.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'consumption'</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.51</span><span class="p">,</span> <span class="mf">103.11</span><span class="p">,</span> <span class="mf">55.48</span><span class="p">],</span>
+<span class="gp">... </span>                   <span class="s1">'co2_emissions'</span><span class="p">:</span> <span class="p">[</span><span class="mf">37.2</span><span class="p">,</span> <span class="mf">19.66</span><span class="p">,</span> <span class="mi">1712</span><span class="p">]},</span>
+<span class="gp">... </span>                   <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">'Pork'</span><span class="p">,</span> <span class="s1">'Wheat Products'</span><span class="p">,</span> <span class="s1">'Beef'</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">                consumption  co2_emissions</span>
+<span class="go">Pork                  10.51         37.20</span>
+<span class="go">Wheat Products       103.11         19.66</span>
+<span class="go">Beef                  55.48       1712.00</span>
+</pre></div>
+</div>
+<p>By default, it returns the index for the maximum value in each column.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="go">consumption     Wheat Products</span>
+<span class="go">co2_emissions             Beef</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
+<p>To return the index for the maximum value in each row, use <code class="docutils literal notranslate"><span class="pre">axis="columns"</span></code>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">idxmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"columns"</span><span class="p">)</span>
+<span class="go">Pork              co2_emissions</span>
+<span class="go">Wheat Products     consumption</span>
+<span class="go">Beef              co2_emissions</span>
+<span class="go">dtype: object</span>
+</pre></div>
+</div>
 </dd></dl>
 </div>
 </body></html>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-infer-freq">
 <h1>pandas.infer_freq<a class="headerlink" href="#pandas-infer-freq" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.infer_freq">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">infer_freq</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">warn: bool = True</em><span class="sig-paren">)</span> → Union[str, NoneType]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/tseries/frequencies.py#L239-L297"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.infer_freq" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">infer_freq</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/tseries/frequencies.py#L120-L183"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.infer_freq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Infer the most likely frequency given the input index. If the frequency is
 uncertain, a warning will be printed.</p>
 <dl class="field-list simple">
@@ -65,9 +65,15 @@ uncertain, a warning will be printed.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>str or None</dt><dd><p>None if no discernible frequency
-TypeError if the index is not datetime-like
-ValueError if there are less than three values.</p>
+<dt>str or None</dt><dd><p>None if no discernible frequency.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>TypeError</dt><dd><p>If the index is not datetime-like.</p>
+</dd>
+<dt>ValueError</dt><dd><p>If there are fewer than three values.</p>
 </dd>
 </dl>
 </dd>

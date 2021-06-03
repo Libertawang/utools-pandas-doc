@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-table">
 <h1>pandas.read_table<a class="headerlink" href="#pandas-read-table" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_table">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_table</code><span class="sig-paren">(</span><em class="sig-param">filepath_or_buffer: Union[str, pathlib.Path, IO[~AnyStr]], sep='t', delimiter=None, header='infer', names=None, index_col=None, usecols=None, squeeze=False, prefix=None, mangle_dupe_cols=True, dtype=None, engine=None, converters=None, true_values=None, false_values=None, skipinitialspace=False, skiprows=None, skipfooter=0, nrows=None, na_values=None, keep_default_na=True, na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False, infer_datetime_format=False, keep_date_col=False, date_parser=None, dayfirst=False, cache_dates=True, iterator=False, chunksize=None, compression='infer', thousands=None, decimal: str = '.', lineterminator=None, quotechar='"', quoting=0, doublequote=True, escapechar=None, comment=None, encoding=None, dialect=None, error_bad_lines=True, warn_bad_lines=True, delim_whitespace=False, low_memory=True, memory_map=False, float_precision=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/parsers.py#L530-L676"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_table" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_table</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">filepath_or_buffer</span></em>, <em class="sig-param"><span class="pre">sep=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">delimiter=None</span></em>, <em class="sig-param"><span class="pre">header='infer'</span></em>, <em class="sig-param"><span class="pre">names=None</span></em>, <em class="sig-param"><span class="pre">index_col=None</span></em>, <em class="sig-param"><span class="pre">usecols=None</span></em>, <em class="sig-param"><span class="pre">squeeze=False</span></em>, <em class="sig-param"><span class="pre">prefix=None</span></em>, <em class="sig-param"><span class="pre">mangle_dupe_cols=True</span></em>, <em class="sig-param"><span class="pre">dtype=None</span></em>, <em class="sig-param"><span class="pre">engine=None</span></em>, <em class="sig-param"><span class="pre">converters=None</span></em>, <em class="sig-param"><span class="pre">true_values=None</span></em>, <em class="sig-param"><span class="pre">false_values=None</span></em>, <em class="sig-param"><span class="pre">skipinitialspace=False</span></em>, <em class="sig-param"><span class="pre">skiprows=None</span></em>, <em class="sig-param"><span class="pre">skipfooter=0</span></em>, <em class="sig-param"><span class="pre">nrows=None</span></em>, <em class="sig-param"><span class="pre">na_values=None</span></em>, <em class="sig-param"><span class="pre">keep_default_na=True</span></em>, <em class="sig-param"><span class="pre">na_filter=True</span></em>, <em class="sig-param"><span class="pre">verbose=False</span></em>, <em class="sig-param"><span class="pre">skip_blank_lines=True</span></em>, <em class="sig-param"><span class="pre">parse_dates=False</span></em>, <em class="sig-param"><span class="pre">infer_datetime_format=False</span></em>, <em class="sig-param"><span class="pre">keep_date_col=False</span></em>, <em class="sig-param"><span class="pre">date_parser=None</span></em>, <em class="sig-param"><span class="pre">dayfirst=False</span></em>, <em class="sig-param"><span class="pre">cache_dates=True</span></em>, <em class="sig-param"><span class="pre">iterator=False</span></em>, <em class="sig-param"><span class="pre">chunksize=None</span></em>, <em class="sig-param"><span class="pre">compression='infer'</span></em>, <em class="sig-param"><span class="pre">thousands=None</span></em>, <em class="sig-param"><span class="pre">decimal='.'</span></em>, <em class="sig-param"><span class="pre">lineterminator=None</span></em>, <em class="sig-param"><span class="pre">quotechar='"'</span></em>, <em class="sig-param"><span class="pre">quoting=0</span></em>, <em class="sig-param"><span class="pre">doublequote=True</span></em>, <em class="sig-param"><span class="pre">escapechar=None</span></em>, <em class="sig-param"><span class="pre">comment=None</span></em>, <em class="sig-param"><span class="pre">encoding=None</span></em>, <em class="sig-param"><span class="pre">dialect=None</span></em>, <em class="sig-param"><span class="pre">error_bad_lines=True</span></em>, <em class="sig-param"><span class="pre">warn_bad_lines=True</span></em>, <em class="sig-param"><span class="pre">delim_whitespace=False</span></em>, <em class="sig-param"><span class="pre">low_memory=True</span></em>, <em class="sig-param"><span class="pre">memory_map=False</span></em>, <em class="sig-param"><span class="pre">float_precision=None</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/parsers.py#L613-L689"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_table" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read general delimited file into DataFrame.</p>
 <p>Also supports optionally iterating or breaking of the file
 into chunks.</p>
@@ -62,11 +62,11 @@ into chunks.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>filepath_or_buffer</strong><span class="classifier">str, path object or file-like object</span></dt><dd><p>Any valid string path is acceptable. The string could be a URL. Valid
-URL schemes include http, ftp, s3, and file. For file URLs, a host is
+URL schemes include http, ftp, s3, gs, and file. For file URLs, a host is
 expected. A local file could be: <a class="reference external" href="file://localhost/path/to/table.csv">file://localhost/path/to/table.csv</a>.</p>
 <p>If you want to pass in a path object, pandas accepts any <code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
 <p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method, such as
-a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function) or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
+a file handle (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function) or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
 </dd>
 <dt><strong>sep</strong><span class="classifier">str, default ‘\t’ (tab-stop)</span></dt><dd><p>Delimiter to use. If sep is None, the C engine cannot automatically detect
 the separator, but the Python parsing engine can, meaning the latter will
@@ -79,7 +79,7 @@ delimiters are prone to ignoring quoted data. Regex example: <code class="docuti
 <dt><strong>delimiter</strong><span class="classifier">str, default <code class="docutils literal notranslate"><span class="pre">None</span></code></span></dt><dd><p>Alias for sep.</p>
 </dd>
 <dt><strong>header</strong><span class="classifier">int, list of int, default ‘infer’</span></dt><dd><p>Row number(s) to use as the column names, and the start of the
-data.  Default behavior is to infer the column names: if no names
+data. Default behavior is to infer the column names: if no names
 are passed the behavior is identical to <code class="docutils literal notranslate"><span class="pre">header=0</span></code> and column
 names are inferred from the first line of the file, if column
 names are passed explicitly then the behavior is identical to
@@ -158,7 +158,7 @@ An example of a valid callable argument would be <code class="docutils literal n
 <dt><strong>nrows</strong><span class="classifier">int, optional</span></dt><dd><p>Number of rows of file to read. Useful for reading pieces of large files.</p>
 </dd>
 <dt><strong>na_values</strong><span class="classifier">scalar, str, list-like, or dict, optional</span></dt><dd><p>Additional strings to recognize as NA/NaN. If dict passed, specific
-per-column NA values.  By default the following values are interpreted as
+per-column NA values. By default the following values are interpreted as
 NaN: ‘’, ‘#N/A’, ‘#N/A N/A’, ‘#NA’, ‘-1.#IND’, ‘-1.#QNAN’, ‘-NaN’, ‘-nan’,
 ‘1.#IND’, ‘1.#QNAN’, ‘&lt;NA&gt;’, ‘N/A’, ‘NA’, ‘NULL’, ‘NaN’, ‘n/a’,
 ‘nan’, ‘null’.</p>
@@ -191,13 +191,13 @@ of reading a large file.</p>
 <li><p>boolean. If True -&gt; try parsing the index.</p></li>
 <li><p>list of int or names. e.g. If [1, 2, 3] -&gt; try parsing columns 1, 2, 3
 each as a separate date column.</p></li>
-<li><p>list of lists. e.g.  If [[1, 3]] -&gt; combine columns 1 and 3 and parse as
+<li><p>list of lists. e.g. If [[1, 3]] -&gt; combine columns 1 and 3 and parse as
 a single date column.</p></li>
 <li><p>dict, e.g. {‘foo’ : [1, 3]} -&gt; parse columns 1, 3 as date and call
 result ‘foo’</p></li>
 </ul>
 <p>If a column or index cannot be represented as an array of datetimes,
-say because of an unparseable value or a mixture of timezones, the column
+say because of an unparsable value or a mixture of timezones, the column
 or index will be returned unaltered as an object data type. For
 non-standard datetime parsing, use <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code> after
 <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>. To parse an index or column with a mixture of timezones,
@@ -235,10 +235,16 @@ date strings, especially ones with timezone offsets.</p>
 </dd>
 <dt><strong>iterator</strong><span class="classifier">bool, default False</span></dt><dd><p>Return TextFileReader object for iteration or getting chunks with
 <code class="docutils literal notranslate"><span class="pre">get_chunk()</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2: </span><code class="docutils literal notranslate"><span class="pre">TextFileReader</span></code> is a context manager.</p>
+</div>
 </dd>
 <dt><strong>chunksize</strong><span class="classifier">int, optional</span></dt><dd><p>Return TextFileReader object for iteration.
 See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/io.html#io-chunking">IO Tools docs</a>
 for more information on <code class="docutils literal notranslate"><span class="pre">iterator</span></code> and <code class="docutils literal notranslate"><span class="pre">chunksize</span></code>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2: </span><code class="docutils literal notranslate"><span class="pre">TextFileReader</span></code> is a context manager.</p>
+</div>
 </dd>
 <dt><strong>compression</strong><span class="classifier">{‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}, default ‘infer’</span></dt><dd><p>For on-the-fly decompression of on-disk data. If ‘infer’ and
 <cite>filepath_or_buffer</cite> is path-like, then detect compression from the
@@ -273,7 +279,13 @@ fully commented lines are ignored by the parameter <cite>header</cite> but not b
 treated as the header.</p>
 </dd>
 <dt><strong>encoding</strong><span class="classifier">str, optional</span></dt><dd><p>Encoding to use for UTF when reading/writing (ex. ‘utf-8’). <a class="reference external" href="https://docs.python.org/3/library/codecs.html#standard-encodings">List of Python
-standard encodings</a> .</p>
+standard encodings</a> .
+.. versionchanged:: 1.2</p>
+<blockquote>
+<div><p>When <code class="docutils literal notranslate"><span class="pre">encoding</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">errors="replace"</span></code> is passed to
+<code class="docutils literal notranslate"><span class="pre">open()</span></code>. Otherwise, <code class="docutils literal notranslate"><span class="pre">errors="strict"</span></code> is passed to <code class="docutils literal notranslate"><span class="pre">open()</span></code>.
+This behavior was previously only the case for <code class="docutils literal notranslate"><span class="pre">engine="python"</span></code>.</p>
+</div></blockquote>
 </dd>
 <dt><strong>dialect</strong><span class="classifier">str or csv.Dialect, optional</span></dt><dd><p>If provided, this parameter will override values (default or not) for the
 following parameters: <cite>delimiter</cite>, <cite>doublequote</cite>, <cite>escapechar</cite>,
@@ -295,7 +307,7 @@ is set to True, nothing should be passed in for the <code class="docutils litera
 parameter.</p>
 </dd>
 <dt><strong>low_memory</strong><span class="classifier">bool, default True</span></dt><dd><p>Internally process the file in chunks, resulting in lower memory use
-while parsing, but possibly mixed type inference.  To ensure no mixed
+while parsing, but possibly mixed type inference. To ensure no mixed
 types either set False, or specify the type with the <cite>dtype</cite> parameter.
 Note that the entire file is read into a single DataFrame regardless,
 use the <cite>chunksize</cite> or <cite>iterator</cite> parameter to return the data in chunks.
@@ -306,9 +318,22 @@ directly onto memory and access the data directly from there. Using this
 option can improve performance because there is no longer any I/O overhead.</p>
 </dd>
 <dt><strong>float_precision</strong><span class="classifier">str, optional</span></dt><dd><p>Specifies which converter the C engine should use for floating-point
-values. The options are <cite>None</cite> for the ordinary converter,
-<cite>high</cite> for the high-precision converter, and <cite>round_trip</cite> for the
-round-trip converter.</p>
+values. The options are <code class="docutils literal notranslate"><span class="pre">None</span></code> or ‘high’ for the ordinary converter,
+‘legacy’ for the original lower precision pandas converter, and
+‘round_trip’ for the round-trip converter.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.2.</span></p>
+</div>
+</dd>
+<dt><strong>storage_options</strong><span class="classifier">dict, optional</span></dt><dd><p>Extra options that make sense for a particular storage connection, e.g.
+host, port, username, password, etc., if using a URL that will
+be parsed by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, e.g., starting “s3://”, “gcs://”. An error
+will be raised if providing this argument with a non-fsspec URL.
+See the fsspec and backend storage implementation docs for the set of
+allowed keys and values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -320,10 +345,10 @@ data structure with labeled axes.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></dt><dd><p>Write DataFrame to a comma-separated values (csv) file.</p>
+<dt><a class="reference internal" href="pandas.DataFrame.to_csv.html#pandas.DataFrame.to_csv" title="pandas.DataFrame.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.to_csv</span></code></a></dt><dd><p>Write DataFrame to a comma-separated values (csv) file.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_csv</span></code></a></dt><dd><p>Read a comma-separated values (csv) file into DataFrame.</p>
 </dd>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-reset-index">
 <h1>pandas.DataFrame.reset_index<a class="headerlink" href="#pandas-dataframe-reset-index" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.reset_index">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">reset_index</code><span class="sig-paren">(</span><em class="sig-param">self, level: Union[Hashable, Sequence[Hashable], NoneType] = None, drop: bool = False, inplace: bool = False, col_level: Hashable = 0, col_fill: Union[Hashable, NoneType] = ''</em><span class="sig-paren">)</span> → Union[ForwardRef('DataFrame'), NoneType]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L4369-L4610"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.reset_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">reset_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_fill</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L4817-L5022"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.reset_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the index, or a level of it.</p>
 <p>Reset the index of the DataFrame, and use the default one instead.
 If the DataFrame has a MultiIndex, this method can remove one or more
@@ -84,7 +84,7 @@ levels are named. If None then the index name is repeated.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.set_index.html#pandas.DataFrame.set_index" title="pandas.DataFrame.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.set_index</span></code></a></dt><dd><p>Opposite of reset_index.</p>

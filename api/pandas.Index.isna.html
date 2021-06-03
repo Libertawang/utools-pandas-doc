@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-index-isna">
 <h1>pandas.Index.isna<a class="headerlink" href="#pandas-index-isna" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Index.isna">
-<code class="sig-prename descclassname">Index.</code><code class="sig-name descname">isna</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/base.py#L1785-L1838"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Index.isna" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Index.</span></code><code class="sig-name descname"><span class="pre">isna</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/base.py#L2199-L2253"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Index.isna" title="Permalink to this definition">¶</a></dt>
 <dd><p>Detect missing values.</p>
 <p>Return a boolean same-sized object indicating if the values are NA.
 NA values, such as <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">numpy.NaN</span></code> or <code class="xref py py-attr docutils literal notranslate"><span class="pre">pd.NaT</span></code>, get
@@ -68,7 +68,7 @@ empty strings <cite>‘’</cite> or <code class="xref py py-attr docutils liter
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Index.notna.html#pandas.Index.notna" title="pandas.Index.notna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Index.notna</span></code></a></dt><dd><p>Boolean inverse of isna.</p>
@@ -88,7 +88,7 @@ array.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span>
 <span class="go">Float64Index([5.2, 6.0, nan], dtype='float64')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
-<span class="go">array([False, False,  True], dtype=bool)</span>
+<span class="go">array([False, False,  True])</span>
 </pre></div>
 </div>
 <p>Empty strings are not considered NA values. None is considered an NA
@@ -97,7 +97,7 @@ value.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span>
 <span class="go">Index(['black', '', 'red', None], dtype='object')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
-<span class="go">array([False, False, False,  True], dtype=bool)</span>
+<span class="go">array([False, False, False,  True])</span>
 </pre></div>
 </div>
 <p>For datetimes, <cite>NaT</cite> (Not a Time) is considered as an NA value.</p>
@@ -107,7 +107,7 @@ value.</p>
 <span class="go">DatetimeIndex(['1940-04-25', 'NaT', 'NaT', 'NaT'],</span>
 <span class="go">              dtype='datetime64[ns]', freq=None)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span>
-<span class="go">array([False,  True,  True,  True], dtype=bool)</span>
+<span class="go">array([False,  True,  True,  True])</span>
 </pre></div>
 </div>
 </dd></dl>

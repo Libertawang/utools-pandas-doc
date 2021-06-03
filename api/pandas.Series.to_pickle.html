@@ -50,35 +50,49 @@
   <body>
 <div class="section" id="pandas-series-to-pickle">
 <h1>pandas.Series.to_pickle<a class="headerlink" href="#pandas-series-to-pickle" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.to_pickle">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">to_pickle</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">path</em>, <em class="sig-param">compression: Union[str</em>, <em class="sig-param">NoneType] = 'infer'</em>, <em class="sig-param">protocol: int = 4</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L2666-L2725"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.to_pickle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">to_pickle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'infer'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L2792-L2870"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.to_pickle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pickle (serialize) object to file.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>path</strong><span class="classifier">str</span></dt><dd><p>File path where the pickled object will be stored.</p>
 </dd>
-<dt><strong>compression</strong><span class="classifier">{‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None},         default ‘infer’</span></dt><dd><p>A string representing the compression to use in the output file. By
-default, infers from the file extension in specified path.</p>
+<dt><strong>compression</strong><span class="classifier">{‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}, default ‘infer’</span></dt><dd><p>A string representing the compression to use in the output file. By
+default, infers from the file extension in specified path.
+Compression mode may be any of the following possible
+values: {‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}. If compression
+mode is ‘infer’ and path_or_buf is path-like, then detect
+compression mode from the following extensions:
+‘.gz’, ‘.bz2’, ‘.zip’ or ‘.xz’. (otherwise no compression).
+If dict given and mode is ‘zip’ or inferred as ‘zip’, other entries
+passed as additional compression options.</p>
 </dd>
 <dt><strong>protocol</strong><span class="classifier">int</span></dt><dd><p>Int which indicates which protocol should be used by the pickler,
 default HIGHEST_PROTOCOL (see <a class="reference internal" href="#r9a0a8647c05c-1" id="id1">[1]</a> paragraph 12.1.2). The possible
-values are 0, 1, 2, 3, 4. A negative value for the protocol
+values are 0, 1, 2, 3, 4, 5. A negative value for the protocol
 parameter is equivalent to setting its value to HIGHEST_PROTOCOL.</p>
 <dl class="citation">
 <dt class="label" id="r9a0a8647c05c-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p><a class="reference external" href="https://docs.python.org/3/library/pickle.html">https://docs.python.org/3/library/pickle.html</a>.</p>
 </dd>
 </dl>
+</dd>
+<dt><strong>storage_options</strong><span class="classifier">dict, optional</span></dt><dd><p>Extra options that make sense for a particular storage connection, e.g.
+host, port, username, password, etc., if using a URL that will
+be parsed by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, e.g., starting “s3://”, “gcs://”. An error
+will be raised if providing this argument with a non-fsspec URL.
+See the fsspec and backend storage implementation docs for the set of
+allowed keys and values.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0..</span></p>
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
 </div>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.read_pickle.html#pandas.read_pickle" title="pandas.read_pickle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_pickle</span></code></a></dt><dd><p>Load pickled pandas object (or any object) from file.</p>

@@ -50,11 +50,10 @@
   <body>
 <div class="section" id="pandas-multiindex-get-loc-level">
 <h1>pandas.MultiIndex.get_loc_level<a class="headerlink" href="#pandas-multiindex-get-loc-level" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.MultiIndex.get_loc_level">
-<code class="sig-prename descclassname">MultiIndex.</code><code class="sig-name descname">get_loc_level</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">key</em>, <em class="sig-param">level=0</em>, <em class="sig-param">drop_level: bool = True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/multi.py#L2709-L2847"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.MultiIndex.get_loc_level" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get both the location for the requested label(s) and the
-resulting sliced index.</p>
+<code class="sig-prename descclassname"><span class="pre">MultiIndex.</span></code><code class="sig-name descname"><span class="pre">get_loc_level</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/multi.py#L2923-L2965"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.MultiIndex.get_loc_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get location and sliced index for requested label(s)/level(s).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -73,7 +72,7 @@ contains all levels, this will be <code class="docutils literal notranslate"><sp
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.MultiIndex.get_loc.html#pandas.MultiIndex.get_loc" title="pandas.MultiIndex.get_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiIndex.get_loc</span></code></a></dt><dd><p>Get location for a label or a tuple of labels.</p>
@@ -92,8 +91,7 @@ contains all levels, this will be <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span><span class="o">.</span><span class="n">get_loc_level</span><span class="p">(</span><span class="s1">'e'</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">'B'</span><span class="p">)</span>
-<span class="go">(array([False,  True, False], dtype=bool),</span>
-<span class="go">Index(['b'], dtype='object', name='A'))</span>
+<span class="go">(array([False,  True, False]), Index(['b'], dtype='object', name='A'))</span>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span><span class="o">.</span><span class="n">get_loc_level</span><span class="p">([</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">])</span>

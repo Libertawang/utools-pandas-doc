@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-select-dtypes">
 <h1>pandas.DataFrame.select_dtypes<a class="headerlink" href="#pandas-dataframe-select-dtypes" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.select_dtypes">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">select_dtypes</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">include=None</em>, <em class="sig-param">exclude=None</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L3348-L3476"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.select_dtypes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">select_dtypes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L3601-L3738"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.select_dtypes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a subset of the DataFrame’s columns based on the column dtypes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -80,12 +80,19 @@ excluding the dtypes in <code class="docutils literal notranslate"><span class="
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.DataFrame.dtypes.html#pandas.DataFrame.dtypes" title="pandas.DataFrame.dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.dtypes</span></code></a></dt><dd><p>Return Series with the data type of each column.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Notes</p>
 <ul class="simple">
 <li><p>To select all <em>numeric</em> types, use <code class="docutils literal notranslate"><span class="pre">np.number</span></code> or <code class="docutils literal notranslate"><span class="pre">'number'</span></code></p></li>
 <li><p>To select strings you must use the <code class="docutils literal notranslate"><span class="pre">object</span></code> dtype, but note that
 this will return <em>all</em> object dtype columns</p></li>
-<li><p>See the <a class="reference external" href="http://docs.scipy.org/doc/numpy/reference/arrays.scalars.html">numpy dtype hierarchy</a></p></li>
+<li><p>See the <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.scalars.html">numpy dtype hierarchy</a></p></li>
 <li><p>To select datetimes, use <code class="docutils literal notranslate"><span class="pre">np.datetime64</span></code>, <code class="docutils literal notranslate"><span class="pre">'datetime'</span></code> or
 <code class="docutils literal notranslate"><span class="pre">'datetime64'</span></code></p></li>
 <li><p>To select timedeltas, use <code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code>, <code class="docutils literal notranslate"><span class="pre">'timedelta'</span></code> or
@@ -128,7 +135,7 @@ this will return <em>all</em> object dtype columns</p></li>
 <span class="go">5  2.0</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="s1">'int'</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span><span class="o">=</span><span class="p">[</span><span class="s1">'int64'</span><span class="p">])</span>
 <span class="go">       b    c</span>
 <span class="go">0   True  1.0</span>
 <span class="go">1  False  2.0</span>

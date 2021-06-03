@@ -50,29 +50,43 @@
   <body>
 <div class="section" id="pandas-excelwriter">
 <h1>pandas.ExcelWriter<a class="headerlink" href="#pandas-excelwriter" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.ExcelWriter">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">ExcelWriter</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">engine=None</em>, <em class="sig-param">date_format=None</em>, <em class="sig-param">datetime_format=None</em>, <em class="sig-param">mode='w'</em>, <em class="sig-param">**engine_kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/excel/_base.py#L533-L781"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.ExcelWriter" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">ExcelWriter</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/excel/_base.py#L584-L900"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.ExcelWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for writing DataFrame objects into excel sheets.</p>
-<p>Default is to use xlwt for xls, openpyxl for xlsx.
+<p>Default is to use xlwt for xls, openpyxl for xlsx, odf for ods.
 See DataFrame.to_excel for typical usage.</p>
+<p>The writer should be used as a context manager. Otherwise, call <cite>close()</cite> to save
+and close any opened file handles.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>path</strong><span class="classifier">str</span></dt><dd><p>Path to xls or xlsx file.</p>
+<dt><strong>path</strong><span class="classifier">str or typing.BinaryIO</span></dt><dd><p>Path to xls or xlsx or ods file.</p>
 </dd>
 <dt><strong>engine</strong><span class="classifier">str (optional)</span></dt><dd><p>Engine to use for writing. If None, defaults to
-<code class="docutils literal notranslate"><span class="pre">io.excel.&lt;extension&gt;.writer</span></code>.  NOTE: can only be passed as a keyword
+<code class="docutils literal notranslate"><span class="pre">io.excel.&lt;extension&gt;.writer</span></code>. NOTE: can only be passed as a keyword
 argument.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.0: </span>As the <a class="reference external" href="https://pypi.org/project/xlwt/">xlwt</a> package is no longer
+maintained, the <code class="docutils literal notranslate"><span class="pre">xlwt</span></code> engine will be removed in a future
+version of pandas.</p>
+</div>
 </dd>
 <dt><strong>date_format</strong><span class="classifier">str, default None</span></dt><dd><p>Format string for dates written into Excel files (e.g. ‘YYYY-MM-DD’).</p>
 </dd>
 <dt><strong>datetime_format</strong><span class="classifier">str, default None</span></dt><dd><p>Format string for datetime objects written into Excel files.
 (e.g. ‘YYYY-MM-DD HH:MM:SS’).</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{‘w’, ‘a’}, default ‘w’</span></dt><dd><p>File mode to use (write or append).</p>
+<dt><strong>mode</strong><span class="classifier">{‘w’, ‘a’}, default ‘w’</span></dt><dd><p>File mode to use (write or append). Append does not work with fsspec URLs.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.0.</span></p>
+</div>
+</dd>
+<dt><strong>storage_options</strong><span class="classifier">dict, optional</span></dt><dd><p>Extra options that make sense for a particular storage connection, e.g.
+host, port, username, password, etc., if using a URL that will
+be parsed by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, e.g., starting “s3://”, “gcs://”.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
 </div>
 </dd>
 </dl>
@@ -96,14 +110,29 @@ and dicts to strings before writing.</p>
 </div>
 <p>You can set the date format or datetime format:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">ExcelWriter</span><span class="p">(</span><span class="s1">'path_to_file.xlsx'</span><span class="p">,</span>
-<span class="go">                      date_format='YYYY-MM-DD',</span>
-<span class="go">                      datetime_format='YYYY-MM-DD HH:MM:SS') as writer:</span>
+<span class="gp">... </span>                  <span class="n">date_format</span><span class="o">=</span><span class="s1">'YYYY-MM-DD'</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">datetime_format</span><span class="o">=</span><span class="s1">'YYYY-MM-DD HH:MM:SS'</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can also append to an existing Excel file:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">ExcelWriter</span><span class="p">(</span><span class="s1">'path_to_file.xlsx'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'a'</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Sheet3'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can store Excel file in RAM:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">io</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buffer</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can pack Excel file into zip archive:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s1">'path_to_file.zip'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">zf</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">with</span> <span class="n">zf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">'filename.xlsx'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">buffer</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+<span class="gp">... </span>            <span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="rubric">Attributes</p>

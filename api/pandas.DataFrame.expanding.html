@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-expanding">
 <h1>pandas.DataFrame.expanding<a class="headerlink" href="#pandas-dataframe-expanding" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.expanding">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">expanding</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">min_periods=1</em>, <em class="sig-param">center=False</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L10389-L10392"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.expanding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">expanding</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L11256-L11271"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.expanding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide expanding transformations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -71,7 +71,7 @@
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.rolling.html#pandas.DataFrame.rolling" title="pandas.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a></dt><dd><p>Provides rolling window calculations.</p>
@@ -84,7 +84,8 @@
 <p>By default, the result is set to the right edge of the window. This can be
 changed to the center of the window by setting <code class="docutils literal notranslate"><span class="pre">center=True</span></code>.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'B'</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"B"</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
 <span class="go">     B</span>
 <span class="go">0  0.0</span>
 <span class="go">1  1.0</span>

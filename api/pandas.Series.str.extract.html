@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-str-extract">
 <h1>pandas.Series.str.extract<a class="headerlink" href="#pandas-series-str-extract" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.extract">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">extract</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">pat</em>, <em class="sig-param">flags=0</em>, <em class="sig-param">expand=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L3038-L3041"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.extract" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">extract</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L2224-L2307"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.extract" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract capture groups in the regex <cite>pat</cite> as columns in a DataFrame.</p>
 <p>For each subject string in the Series, extract groups from the
 first match of regular expression <cite>pat</cite>.</p>
@@ -63,7 +63,7 @@ first match of regular expression <cite>pat</cite>.</p>
 </dd>
 <dt><strong>flags</strong><span class="classifier">int, default 0 (no flags)</span></dt><dd><p>Flags from the <code class="docutils literal notranslate"><span class="pre">re</span></code> module, e.g. <code class="docutils literal notranslate"><span class="pre">re.IGNORECASE</span></code>, that
 modify regular expression matching for things like case,
-spaces, etc. For more details, see <a class="reference external" href="https://docs.python.org/3/library/re.html#module-re" title="(in Python v3.8)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a>.</p>
+spaces, etc. For more details, see <a class="reference external" href="https://docs.python.org/3/library/re.html#module-re" title="(in Python v3.9)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">re</span></code></a>.</p>
 </dd>
 <dt><strong>expand</strong><span class="classifier">bool, default True</span></dt><dd><p>If True, return DataFrame with one column per capture group.
 If False, return a Series/Index if there is one capture group
@@ -85,7 +85,7 @@ is an Index).</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.extractall.html#pandas.Series.str.extractall" title="pandas.Series.str.extractall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extractall</span></code></a></dt><dd><p>Returns all matches (not just the first match).</p>
@@ -97,7 +97,7 @@ is an Index).</p>
 Non-matches will be NaN.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">'a1'</span><span class="p">,</span> <span class="s1">'b2'</span><span class="p">,</span> <span class="s1">'c3'</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'([ab])(\d)'</span><span class="p">)</span>
-<span class="go">     0    1</span>
+<span class="go">    0    1</span>
 <span class="go">0    a    1</span>
 <span class="go">1    b    2</span>
 <span class="go">2  NaN  NaN</span>
@@ -105,7 +105,7 @@ Non-matches will be NaN.</p>
 </div>
 <p>A pattern may contain optional groups.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'([ab])?(\d)'</span><span class="p">)</span>
-<span class="go">     0  1</span>
+<span class="go">    0  1</span>
 <span class="go">0    a  1</span>
 <span class="go">1    b  2</span>
 <span class="go">2  NaN  3</span>
@@ -113,7 +113,7 @@ Non-matches will be NaN.</p>
 </div>
 <p>Named groups will become column names in the result.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(?P&lt;letter&gt;[ab])(?P&lt;digit&gt;\d)'</span><span class="p">)</span>
-<span class="go">  letter digit</span>
+<span class="go">letter digit</span>
 <span class="go">0      a     1</span>
 <span class="go">1      b     2</span>
 <span class="go">2    NaN   NaN</span>
@@ -122,7 +122,7 @@ Non-matches will be NaN.</p>
 <p>A pattern with one group will return a DataFrame with one column
 if expand=True.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'[ab](\d)'</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="go">     0</span>
+<span class="go">    0</span>
 <span class="go">0    1</span>
 <span class="go">1    2</span>
 <span class="go">2  NaN</span>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-period">
 <h1>pandas.Period<a class="headerlink" href="#pandas-period" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="pandas.Period">
-<em class="property">class </em><code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">Period</code><a class="headerlink" href="#pandas.Period" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">Period</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordinal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quarter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pandas.Period" title="Permalink to this definition">¶</a></dt>
 <dd><p>Represents a period of time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -61,7 +61,7 @@
 </dd>
 <dt><strong>freq</strong><span class="classifier">str, default None</span></dt><dd><p>One of pandas period strings or corresponding objects.</p>
 </dd>
-<dt><strong>ordinal</strong><span class="classifier">int, default None</span></dt><dd><p>The period offset from the gregorian proleptic epoch.</p>
+<dt><strong>ordinal</strong><span class="classifier">int, default None</span></dt><dd><p>The period offset from the proleptic Gregorian epoch.</p>
 </dd>
 <dt><strong>year</strong><span class="classifier">int, default None</span></dt><dd><p>Year value of the period.</p>
 </dd>
@@ -81,7 +81,7 @@
 </dd>
 </dl>
 <p class="rubric">Attributes</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
@@ -89,6 +89,12 @@
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pandas.Period.day.html#pandas.Period.day" title="pandas.Period.day"><code class="xref py py-obj docutils literal notranslate"><span class="pre">day</span></code></a></p></td>
 <td><p>Get day of the month that a Period falls on.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Period.day_of_week.html#pandas.Period.day_of_week" title="pandas.Period.day_of_week"><code class="xref py py-obj docutils literal notranslate"><span class="pre">day_of_week</span></code></a></p></td>
+<td><p>Day of the week the period lies in, with Monday=0 and Sunday=6.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Period.day_of_year.html#pandas.Period.day_of_year" title="pandas.Period.day_of_year"><code class="xref py py-obj docutils literal notranslate"><span class="pre">day_of_year</span></code></a></p></td>
+<td><p>Return the day of the year.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pandas.Period.dayofweek.html#pandas.Period.dayofweek" title="pandas.Period.dayofweek"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dayofweek</span></code></a></p></td>
 <td><p>Day of the week the period lies in, with Monday=0 and Sunday=6.</p></td>
@@ -161,19 +167,19 @@
 </tbody>
 </table>
 <p class="rubric">Methods</p>
-<table class="longtable table">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Period.asfreq.html#pandas.Period.asfreq" title="pandas.Period.asfreq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asfreq</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Period.asfreq.html#pandas.Period.asfreq" title="pandas.Period.asfreq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asfreq</span></code></a></p></td>
 <td><p>Convert Period to desired frequency, at the start or end of the interval.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pandas.Period.strftime.html#pandas.Period.strftime" title="pandas.Period.strftime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strftime</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pandas.Period.strftime.html#pandas.Period.strftime" title="pandas.Period.strftime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strftime</span></code></a></p></td>
 <td><p>Returns the string representation of the <a class="reference internal" href="#pandas.Period" title="pandas.Period"><code class="xref py py-class docutils literal notranslate"><span class="pre">Period</span></code></a>, depending on the selected <code class="docutils literal notranslate"><span class="pre">fmt</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Period.to_timestamp.html#pandas.Period.to_timestamp" title="pandas.Period.to_timestamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_timestamp</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pandas.Period.to_timestamp.html#pandas.Period.to_timestamp" title="pandas.Period.to_timestamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_timestamp</span></code></a></p></td>
 <td><p>Return the Timestamp representation of the Period.</p></td>
 </tr>
 </tbody>

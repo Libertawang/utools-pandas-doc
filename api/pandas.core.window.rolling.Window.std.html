@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-core-window-rolling-window-std">
 <h1>pandas.core.window.rolling.Window.std<a class="headerlink" href="#pandas-core-window-rolling-window-std" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.window.rolling.Window.std">
-<code class="sig-prename descclassname">Window.</code><code class="sig-name descname">std</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">ddof=1</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/window/rolling.py#L1127-L1131"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.window.rolling.Window.std" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Window.</span></code><code class="sig-name descname"><span class="pre">std</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/window/rolling.py#L1174-L1178"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.window.rolling.Window.std" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate window standard deviation.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
@@ -62,7 +62,7 @@ argument.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ddof</strong><span class="classifier">int, default 1</span></dt><dd><p>Delta Degrees of Freedom.  The divisor used in calculations
+<dt><strong>ddof</strong><span class="classifier">int, default 1</span></dt><dd><p>Delta Degrees of Freedom. The divisor used in calculations
 is <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">-</span> <span class="pre">ddof</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> represents the number of elements.</p>
 </dd>
 <dt><strong>*args, **kwargs</strong></dt><dd><p>For NumPy compatibility. No additional arguments are used.</p>
@@ -76,18 +76,18 @@ is <code class="docutils literal notranslate"><span class="pre">N</span> <span c
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.window</span></code></dt><dd><p>Calling object with Series data.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series.window</span></code></dt><dd><p>Calling object with Series data.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.window</span></code></dt><dd><p>Calling object with DataFrames.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame.window</span></code></dt><dd><p>Calling object with DataFrames.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.std</span></code></dt><dd><p>Equivalent method for Series.</p>
+<dt><a class="reference internal" href="pandas.Series.std.html#pandas.Series.std" title="pandas.Series.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series.std</span></code></a></dt><dd><p>Equivalent method for Series.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.std</span></code></dt><dd><p>Equivalent method for DataFrame.</p>
+<dt><a class="reference internal" href="pandas.DataFrame.std.html#pandas.DataFrame.std" title="pandas.DataFrame.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame.std</span></code></a></dt><dd><p>Equivalent method for DataFrame.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.std</span></code></a></dt><dd><p>Equivalent method for Numpy array.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.std.html#numpy.std" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.std</span></code></a></dt><dd><p>Equivalent method for Numpy array.</p>
 </dd>
 </dl>
 </div>

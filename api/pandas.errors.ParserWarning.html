@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-errors-parserwarning">
 <h1>pandas.errors.ParserWarning<a class="headerlink" href="#pandas-errors-parserwarning" title="Permalink to this headline">¶</a></h1>
-<dl class="exception">
+<dl class="py exception">
 <dt id="pandas.errors.ParserWarning">
-<em class="property">exception </em><code class="sig-prename descclassname">pandas.errors.</code><code class="sig-name descname">ParserWarning</code><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/errors/__init__.py#L110-L148"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.errors.ParserWarning" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">pandas.errors.</span></code><code class="sig-name descname"><span class="pre">ParserWarning</span></code><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/errors/__init__.py#L122-L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.errors.ParserWarning" title="Permalink to this definition">¶</a></dt>
 <dd><p>Warning raised when reading a file that doesn’t use the default ‘c’ parser.</p>
 <p>Raised by <cite>pd.read_csv</cite> and <cite>pd.read_table</cite> when it is necessary to change
 parsers, generally from the default ‘c’ parser to ‘python’.</p>
@@ -66,7 +66,7 @@ particular attribute of a CSV file with the requested engine.</p>
 </ol>
 <p>The warning can be avoided by adding <cite>engine=’python’</cite> as a parameter in
 <cite>pd.read_csv</cite> and <cite>pd.read_table</cite> methods.</p>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">pd.read_csv</span></code></dt><dd><p>Read CSV (comma-separated) file into DataFrame.</p>

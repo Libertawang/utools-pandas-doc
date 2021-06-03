@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-plotting-bootstrap-plot">
 <h1>pandas.plotting.bootstrap_plot<a class="headerlink" href="#pandas-plotting-bootstrap-plot" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.plotting.bootstrap_plot">
-<code class="sig-prename descclassname">pandas.plotting.</code><code class="sig-name descname">bootstrap_plot</code><span class="sig-paren">(</span><em class="sig-param">series</em>, <em class="sig-param">fig=None</em>, <em class="sig-param">size=50</em>, <em class="sig-param">samples=500</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/plotting/_misc.py#L258-L307"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.plotting.bootstrap_plot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.plotting.</span></code><code class="sig-name descname"><span class="pre">bootstrap_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/plotting/_misc.py#L282-L332"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.plotting.bootstrap_plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bootstrap plot on mean, median and mid-range statistics.</p>
 <p>The bootstrap plot is used to estimate the uncertainty of a statistic
 by relaying on random sampling with replacement <a class="reference internal" href="#r11075647b7c8-1" id="id1">[1]</a>. This function will
@@ -60,19 +60,19 @@ generate bootstrapping plots for mean, median and mid-range statistics
 for the given number of samples of the given size.</p>
 <dl class="citation">
 <dt class="label" id="r11075647b7c8-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>“Bootstrapping (statistics)” in     <a class="reference external" href="https://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29">https://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29</a></p>
+<dd><p>“Bootstrapping (statistics)” in <a class="reference external" href="https://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29">https://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29</a></p>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>series</strong><span class="classifier">pandas.Series</span></dt><dd><p>Pandas Series from where to get the samplings for the bootstrapping.</p>
+<dt><strong>series</strong><span class="classifier">pandas.Series</span></dt><dd><p>Series from where to get the samplings for the bootstrapping.</p>
 </dd>
 <dt><strong>fig</strong><span class="classifier">matplotlib.figure.Figure, default None</span></dt><dd><p>If given, it will use the <cite>fig</cite> reference for plotting instead of
 creating a new one with default parameters.</p>
 </dd>
 <dt><strong>size</strong><span class="classifier">int, default 50</span></dt><dd><p>Number of data points to consider during each sampling. It must be
-greater or equal than the length of the <cite>series</cite>.</p>
+less than or equal to the length of the <cite>series</cite>.</p>
 </dd>
 <dt><strong>samples</strong><span class="classifier">int, default 500</span></dt><dd><p>Number of times the bootstrap procedure is performed.</p>
 </dd>
@@ -87,7 +87,7 @@ greater or equal than the length of the <cite>series</cite>.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.plot</span></code></dt><dd><p>Basic plotting for DataFrame objects.</p>
@@ -97,12 +97,13 @@ greater or equal than the length of the <cite>series</cite>.</p>
 </dl>
 </div>
 <p class="rubric">Examples</p>
+<p>This example draws a basic bootstrap plot for a Series.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">bootstrap_plot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">bootstrap_plot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="figure align-default">
-<img alt="../../_images/pandas-plotting-bootstrap_plot-1.png" src="../../_images/pandas-plotting-bootstrap_plot-1.png"/>
+<img alt="../../_images/pandas-plotting-bootstrap_plot-1.png" class="plot-directive" src="../../_images/pandas-plotting-bootstrap_plot-1.png"/>
 </div>
 </dd></dl>
 </div>

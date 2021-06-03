@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-astype">
 <h1>pandas.DataFrame.astype<a class="headerlink" href="#pandas-dataframe-astype" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.astype">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">astype</code><span class="sig-paren">(</span><em class="sig-param">self: ~FrameOrSeries</em>, <em class="sig-param">dtype</em>, <em class="sig-param">copy: bool = True</em>, <em class="sig-param">errors: str = 'raise'</em><span class="sig-paren">)</span> → ~FrameOrSeries<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/generic.py#L5563-L5704"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.astype" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">astype</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'raise'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/generic.py#L5724-L5887"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.astype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cast a pandas object to a specified dtype <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -80,7 +80,7 @@ pandas objects).</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.to_datetime.html#pandas.to_datetime" title="pandas.to_datetime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_datetime</span></code></a></dt><dd><p>Convert argument to datetime.</p>
@@ -89,7 +89,7 @@ pandas objects).</p>
 </dd>
 <dt><a class="reference internal" href="pandas.to_numeric.html#pandas.to_numeric" title="pandas.to_numeric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numeric</span></code></a></dt><dd><p>Convert argument to a numeric type.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.astype.html#numpy.ndarray.astype" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.astype</span></code></a></dt><dd><p>Cast a numpy array to a specified type.</p>
+<dt><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html#numpy.ndarray.astype" title="(in NumPy v1.20)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.astype</span></code></a></dt><dd><p>Cast a numpy array to a specified type.</p>
 </dd>
 </dl>
 </div>
@@ -156,6 +156,24 @@ pandas object may propagate changes:</p>
 <span class="go">0    10</span>
 <span class="go">1     2</span>
 <span class="go">dtype: int64</span>
+</pre></div>
+</div>
+<p>Create a series of dates:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ser_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'20200101'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ser_date</span>
+<span class="go">0   2020-01-01</span>
+<span class="go">1   2020-01-02</span>
+<span class="go">2   2020-01-03</span>
+<span class="go">dtype: datetime64[ns]</span>
+</pre></div>
+</div>
+<p>Datetimes are localized to UTC first before
+converting to the specified timezone:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ser_date</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'datetime64[ns, US/Eastern]'</span><span class="p">)</span>
+<span class="go">0   2019-12-31 19:00:00-05:00</span>
+<span class="go">1   2020-01-01 19:00:00-05:00</span>
+<span class="go">2   2020-01-02 19:00:00-05:00</span>
+<span class="go">dtype: datetime64[ns, US/Eastern]</span>
 </pre></div>
 </div>
 </dd></dl>

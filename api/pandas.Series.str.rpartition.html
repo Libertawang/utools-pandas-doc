@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-str-rpartition">
 <h1>pandas.Series.str.rpartition<a class="headerlink" href="#pandas-series-str-rpartition" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.str.rpartition">
-<code class="sig-prename descclassname">Series.str.</code><code class="sig-name descname">rpartition</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">sep=' '</em>, <em class="sig-param">expand=True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/strings.py#L2733-L2746"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.str.rpartition" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.str.</span></code><code class="sig-name descname"><span class="pre">rpartition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/strings/accessor.py#L851-L863"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.str.rpartition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split the string at the last occurrence of <cite>sep</cite>.</p>
 <p>This method splits the string at the last occurrence of <cite>sep</cite>,
 and returns 3 elements containing the part before the separator,
@@ -74,14 +74,14 @@ If False, return Series/Index.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.str.partition.html#pandas.Series.str.partition" title="pandas.Series.str.partition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">partition</span></code></a></dt><dd><p>Split the string at the first occurrence of <cite>sep</cite>.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.split.html#pandas.Series.str.split" title="pandas.Series.str.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.str.split</span></code></a></dt><dd><p>Split strings around given separators.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.partition" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.partition</span></code></a></dt><dd><p>Standard library version.</p>
+<dt><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str.partition" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str.partition</span></code></a></dt><dd><p>Standard library version.</p>
 </dd>
 </dl>
 </div>
@@ -130,7 +130,7 @@ If False, return Series/Index.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">partition</span><span class="p">()</span>
 <span class="go">MultiIndex([('X', ' ', '123'),</span>
 <span class="go">            ('Y', ' ', '999')],</span>
-<span class="go">           dtype='object')</span>
+<span class="go">           )</span>
 </pre></div>
 </div>
 <p>Or an index with tuples with <code class="docutils literal notranslate"><span class="pre">expand=False</span></code>:</p>

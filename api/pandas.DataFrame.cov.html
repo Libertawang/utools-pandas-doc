@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-cov">
 <h1>pandas.DataFrame.cov<a class="headerlink" href="#pandas-dataframe-cov" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.cov">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">cov</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">min_periods=None</em><span class="sig-paren">)</span> → 'DataFrame'<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L7502-L7610"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.cov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">cov</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L8414-L8530"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.cov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute pairwise covariance of columns, excluding NA/null values.</p>
 <p>Compute the pairwise covariance among the series of a DataFrame.
 The returned data frame is the <a class="reference external" href="https://en.wikipedia.org/wiki/Covariance_matrix">covariance matrix</a> of the columns
@@ -65,11 +65,17 @@ below this threshold will be returned as <code class="docutils literal notransla
 <p>This method is generally used for the analysis of time series data to
 understand the relationship between different measures
 across time.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>min_periods</strong><span class="classifier">int, optional</span></dt><dd><p>Minimum number of observations required per pair of columns
 to have a valid result.</p>
+</dd>
+<dt><strong>ddof</strong><span class="classifier">int, default 1</span></dt><dd><p>Delta degrees of freedom. The divisor used in calculations
+is <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">-</span> <span class="pre">ddof</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> represents the number of elements.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -80,12 +86,12 @@ to have a valid result.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.cov.html#pandas.Series.cov" title="pandas.Series.cov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.cov</span></code></a></dt><dd><p>Compute covariance with another Series.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.window.EWM.cov</span></code></dt><dd><p>Exponential weighted sample covariance.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.window.ExponentialMovingWindow.cov</span></code></dt><dd><p>Exponential weighted sample covariance.</p>
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.window.Expanding.cov</span></code></dt><dd><p>Expanding sample covariance.</p>
 </dd>
@@ -95,7 +101,7 @@ to have a valid result.</p>
 </div>
 <p class="rubric">Notes</p>
 <p>Returns the covariance matrix of the DataFrame’s time series.
-The covariance is normalized by N-1.</p>
+The covariance is normalized by N-ddof.</p>
 <p>For DataFrames that have Series that are missing data (assuming that
 data is <a class="reference external" href="https://en.wikipedia.org/wiki/Missing_data#Missing_at_random">missing at random</a>)
 the returned covariance matrix will be an unbiased estimate
@@ -104,7 +110,7 @@ of the variance and covariance between the member Series.</p>
 because the estimate covariance matrix is not guaranteed to be positive
 semi-definite. This could lead to estimate correlations having
 absolute values which are greater than one, and/or a non-invertible
-covariance matrix. See <a class="reference external" href="http://en.wikipedia.org/w/index.php?title=Estimation_of_covariance_matrices">Estimation of covariance matrices</a> for more details.</p>
+covariance matrix. See <a class="reference external" href="https://en.wikipedia.org/w/index.php?title=Estimation_of_covariance_matrices">Estimation of covariance matrices</a> for more details.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
 <span class="gp">... </span>                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'dogs'</span><span class="p">,</span> <span class="s1">'cats'</span><span class="p">])</span>

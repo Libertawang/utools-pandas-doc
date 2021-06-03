@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-core-window-rolling-rolling-cov">
 <h1>pandas.core.window.rolling.Rolling.cov<a class="headerlink" href="#pandas-core-window-rolling-rolling-cov" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.window.rolling.Rolling.cov">
-<code class="sig-prename descclassname">Rolling.</code><code class="sig-name descname">cov</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">other=None</em>, <em class="sig-param">pairwise=None</em>, <em class="sig-param">ddof=1</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/window/rolling.py#L2080-L2084"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.window.rolling.Rolling.cov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Rolling.</span></code><code class="sig-name descname"><span class="pre">cov</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pairwise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/window/rolling.py#L2130-L2134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.window.rolling.Rolling.cov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the rolling sample covariance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -67,7 +67,7 @@ output will be a MultiIndexed DataFrame in the case of DataFrame
 inputs. In the case of missing elements, only complete pairwise
 observations will be used.</p>
 </dd>
-<dt><strong>ddof</strong><span class="classifier">int, default 1</span></dt><dd><p>Delta Degrees of Freedom.  The divisor used in calculations
+<dt><strong>ddof</strong><span class="classifier">int, default 1</span></dt><dd><p>Delta Degrees of Freedom. The divisor used in calculations
 is <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">-</span> <span class="pre">ddof</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> represents the number of elements.</p>
 </dd>
 <dt><strong>**kwargs</strong></dt><dd><p>Keyword arguments to be passed into func.</p>
@@ -81,12 +81,16 @@ is <code class="docutils literal notranslate"><span class="pre">N</span> <span c
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.rolling</span></code></dt><dd><p>Series rolling.</p>
+<dt><a class="reference internal" href="pandas.Series.rolling.html#pandas.Series.rolling" title="pandas.Series.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series.rolling</span></code></a></dt><dd><p>Calling object with Series data.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.rolling</span></code></dt><dd><p>DataFrame rolling.</p>
+<dt><a class="reference internal" href="pandas.DataFrame.rolling.html#pandas.DataFrame.rolling" title="pandas.DataFrame.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame.rolling</span></code></a></dt><dd><p>Calling object with DataFrame data.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cov.html#pandas.Series.cov" title="pandas.Series.cov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.Series.cov</span></code></a></dt><dd><p>Similar method for Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.cov.html#pandas.DataFrame.cov" title="pandas.DataFrame.cov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas.DataFrame.cov</span></code></a></dt><dd><p>Similar method for DataFrame.</p>
 </dd>
 </dl>
 </div>

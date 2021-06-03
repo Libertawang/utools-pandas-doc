@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-multiindex-is-lexsorted">
 <h1>pandas.MultiIndex.is_lexsorted<a class="headerlink" href="#pandas-multiindex-is-lexsorted" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.MultiIndex.is_lexsorted">
-<code class="sig-prename descclassname">MultiIndex.</code><code class="sig-name descname">is_lexsorted</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span> → bool<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/multi.py#L1695-L1703"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.MultiIndex.is_lexsorted" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">MultiIndex.</span></code><code class="sig-name descname"><span class="pre">is_lexsorted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/multi.py#L1800-L1832"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.MultiIndex.is_lexsorted" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if the codes are lexicographically sorted.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -61,6 +61,29 @@
 </dl>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<p>In the below examples, the first level of the MultiIndex is sorted because
+a&lt;b&lt;c, so there is no need to look at the next level.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">([[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">]])</span><span class="o">.</span><span class="n">is_lexsorted</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">([[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'d'</span><span class="p">,</span> <span class="s1">'f'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]])</span><span class="o">.</span><span class="n">is_lexsorted</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>In case there is a tie, the lexicographical sorting looks
+at the next level of the MultiIndex.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">]])</span><span class="o">.</span><span class="n">is_lexsorted</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">]])</span><span class="o">.</span><span class="n">is_lexsorted</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">([[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="s1">'aa'</span><span class="p">,</span> <span class="s1">'bb'</span><span class="p">,</span> <span class="s1">'aa'</span><span class="p">,</span> <span class="s1">'bb'</span><span class="p">]])</span><span class="o">.</span><span class="n">is_lexsorted</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">([[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span>
+<span class="gp">... </span>                           <span class="p">[</span><span class="s1">'bb'</span><span class="p">,</span> <span class="s1">'aa'</span><span class="p">,</span> <span class="s1">'aa'</span><span class="p">,</span> <span class="s1">'bb'</span><span class="p">]])</span><span class="o">.</span><span class="n">is_lexsorted</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
 </dd></dl>
 </div>
 </body></html>

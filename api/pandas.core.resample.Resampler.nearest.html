@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-core-resample-resampler-nearest">
 <h1>pandas.core.resample.Resampler.nearest<a class="headerlink" href="#pandas-core-resample-resampler-nearest" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.resample.Resampler.nearest">
-<code class="sig-prename descclassname">Resampler.</code><code class="sig-name descname">nearest</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">limit=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/resample.py#L457-L517"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.resample.Resampler.nearest" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Resampler.</span></code><code class="sig-name descname"><span class="pre">nearest</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/resample.py#L477-L535"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.resample.Resampler.nearest" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resample by using the nearest value.</p>
 <p>When resampling data, missing values may appear (e.g., when the
 resampling frequency is higher than the original frequency).
@@ -62,13 +62,10 @@ sequence, based on the index value.
 Missing values that existed in the original data will not be modified.
 If <cite>limit</cite> is given, fill only this many values in each direction for
 each of the original values.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>limit</strong><span class="classifier">int, optional</span></dt><dd><p>Limit of how many values to fill.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.21.0.</span></p>
-</div>
 </dd>
 </dl>
 </dd>
@@ -80,7 +77,7 @@ their nearest value.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.core.resample.Resampler.backfill.html#pandas.core.resample.Resampler.backfill" title="pandas.core.resample.Resampler.backfill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backfill</span></code></a></dt><dd><p>Backward fill the new missing values in the resampled data.</p>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-core-groupby-groupby-nth">
 <h1>pandas.core.groupby.GroupBy.nth<a class="headerlink" href="#pandas-core-groupby-groupby-nth" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.core.groupby.GroupBy.nth">
-<code class="sig-prename descclassname">GroupBy.</code><code class="sig-name descname">nth</code><span class="sig-paren">(</span><em class="sig-param">self, n: Union[int, List[int]], dropna: Union[str, NoneType] = None</em><span class="sig-paren">)</span> → pandas.core.frame.DataFrame<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/groupby/groupby.py#L1669-L1839"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.core.groupby.GroupBy.nth" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">GroupBy.</span></code><code class="sig-name descname"><span class="pre">nth</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/groupby/groupby.py#L1984-L2156"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.core.groupby.GroupBy.nth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take the nth row from each group if n is an int, or a subset of rows
 if n is a list of ints.</p>
 <p>If dropna, will take the nth non-null row, dropna is either
@@ -75,11 +75,13 @@ the nth row. Needs to be None, ‘any’ or ‘all’.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.groupby</span></code></dt><dd></dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.groupby</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.groupby</span></code></dt><dd><p>Apply a function groupby to a Series.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.groupby</span></code></dt><dd><p>Apply a function groupby to each row or column of a DataFrame.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>

@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-reset-index">
 <h1>pandas.Series.reset_index<a class="headerlink" href="#pandas-series-reset-index" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.reset_index">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">reset_index</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">level=None</em>, <em class="sig-param">drop=False</em>, <em class="sig-param">name=None</em>, <em class="sig-param">inplace=False</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L1210-L1342"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.reset_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">reset_index</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L1146-L1278"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.reset_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a new DataFrame or Series with the index reset.</p>
 <p>This is useful when the index needs to be treated as a column, or
 when the index is meaningless and needs to be reset to the default
@@ -76,7 +76,7 @@ when <cite>drop</cite> is True.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>Series or DataFrame</dt><dd><p>When <cite>drop</cite> is False (the default), a DataFrame is returned.
+<dt>Series or DataFrame or None</dt><dd><p>When <cite>drop</cite> is False (the default), a DataFrame is returned.
 The newly created columns will come first in the DataFrame,
 followed by the original Series values.
 When <cite>drop</cite> is True, a <cite>Series</cite> is returned.
@@ -85,7 +85,7 @@ In either case, if <code class="docutils literal notranslate"><span class="pre">
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.reset_index.html#pandas.DataFrame.reset_index" title="pandas.DataFrame.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.reset_index</span></code></a></dt><dd><p>Analogous function for DataFrame.</p>

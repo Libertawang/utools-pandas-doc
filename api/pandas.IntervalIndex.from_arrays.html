@@ -50,13 +50,13 @@
   <body>
 <div class="section" id="pandas-intervalindex-from-arrays">
 <h1>pandas.IntervalIndex.from_arrays<a class="headerlink" href="#pandas-intervalindex-from-arrays" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.IntervalIndex.from_arrays">
-<em class="property">classmethod </em><code class="sig-prename descclassname">IntervalIndex.</code><code class="sig-name descname">from_arrays</code><span class="sig-paren">(</span><em class="sig-param">left</em>, <em class="sig-param">right</em>, <em class="sig-param">closed: str = 'right'</em>, <em class="sig-param">name=None</em>, <em class="sig-param">copy: bool = False</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/interval.py#L288-L318"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.IntervalIndex.from_arrays" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-prename descclassname"><span class="pre">IntervalIndex.</span></code><code class="sig-name descname"><span class="pre">from_arrays</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/interval.py#L260-L290"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.IntervalIndex.from_arrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct from two arrays defining the left and right bounds.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>left</strong><span class="classifier">array-like (1-dimensional)</span></dt><dd><p>Left bounds for each interval.</p>
 </dd>
 <dt><strong>right</strong><span class="classifier">array-like (1-dimensional)</span></dt><dd><p>Right bounds for each interval.</p>
@@ -67,9 +67,6 @@ or neither.</p>
 <dt><strong>copy</strong><span class="classifier">bool, default False</span></dt><dd><p>Copy the data.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">dtype, optional</span></dt><dd><p>If None, dtype will be inferred.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 0.23.0.</span></p>
-</div>
 </dd>
 </dl>
 </dd>
@@ -87,7 +84,7 @@ in <cite>right</cite>.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.interval_range.html#pandas.interval_range" title="pandas.interval_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interval_range</span></code></a></dt><dd><p>Function to create a fixed frequency IntervalIndex.</p>

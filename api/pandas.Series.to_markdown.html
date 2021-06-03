@@ -50,23 +50,36 @@
   <body>
 <div class="section" id="pandas-series-to-markdown">
 <h1>pandas.Series.to_markdown<a class="headerlink" href="#pandas-series-to-markdown" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.to_markdown">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">to_markdown</code><span class="sig-paren">(</span><em class="sig-param">self, buf: Union[IO[str], NoneType] = None, mode: Union[str, NoneType] = None, **kwargs</em><span class="sig-paren">)</span> → Union[str, NoneType]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L1455-L1474"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.to_markdown" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">to_markdown</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L1390-L1476"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.to_markdown" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print Series in Markdown-friendly format.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.0.</span></p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>buf</strong><span class="classifier">writable buffer, defaults to sys.stdout</span></dt><dd><p>Where to send the output. By default, the output is printed to
-sys.stdout. Pass a writable buffer if you need to further process
-the output.</p>
+<dd class="field-odd"><dl>
+<dt><strong>buf</strong><span class="classifier">str, Path or StringIO-like, optional, default None</span></dt><dd><p>Buffer to write to. If None, the output is returned as a string.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">str, optional</span></dt><dd><p>Mode in which file is opened.</p>
+<dt><strong>mode</strong><span class="classifier">str, optional</span></dt><dd><p>Mode in which file is opened, “wt” by default.</p>
 </dd>
-<dt><strong>**kwargs</strong></dt><dd><p>These parameters will be passed to <cite>tabulate</cite>.</p>
+<dt><strong>index</strong><span class="classifier">bool, optional, default True</span></dt><dd><p>Add index (row) labels.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>storage_options</strong><span class="classifier">dict, optional</span></dt><dd><p>Extra options that make sense for a particular storage connection, e.g.
+host, port, username, password, etc., if using a URL that will
+be parsed by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, e.g., starting “s3://”, “gcs://”. An error
+will be raised if providing this argument with a non-fsspec URL.
+See the fsspec and backend storage implementation docs for the set of
+allowed keys and values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
+</div>
+</dd>
+<dt><strong>**kwargs</strong></dt><dd><p>These parameters will be passed to <a class="reference external" href="https://pypi.org/project/tabulate">tabulate</a>.</p>
 </dd>
 </dl>
 </dd>
@@ -77,6 +90,8 @@ the output.</p>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Notes</p>
+<p>Requires the <a class="reference external" href="https://pypi.org/project/tabulate">tabulate</a> package.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s2">"elk"</span><span class="p">,</span> <span class="s2">"pig"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"quetzal"</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">"animal"</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
@@ -86,6 +101,21 @@ the output.</p>
 <span class="go">|  1 | pig      |</span>
 <span class="go">|  2 | dog      |</span>
 <span class="go">|  3 | quetzal  |</span>
+</pre></div>
+</div>
+<p>Output markdown with a tabulate option.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">(</span><span class="n">tablefmt</span><span class="o">=</span><span class="s2">"grid"</span><span class="p">))</span>
+<span class="go">+----+----------+</span>
+<span class="go">|    | animal   |</span>
+<span class="go">+====+==========+</span>
+<span class="go">|  0 | elk      |</span>
+<span class="go">+----+----------+</span>
+<span class="go">|  1 | pig      |</span>
+<span class="go">+----+----------+</span>
+<span class="go">|  2 | dog      |</span>
+<span class="go">+----+----------+</span>
+<span class="go">|  3 | quetzal  |</span>
+<span class="go">+----+----------+</span>
 </pre></div>
 </div>
 </dd></dl>

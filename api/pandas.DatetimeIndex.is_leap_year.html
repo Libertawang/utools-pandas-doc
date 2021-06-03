@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-datetimeindex-is-leap-year">
 <h1>pandas.DatetimeIndex.is_leap_year<a class="headerlink" href="#pandas-datetimeindex-is-leap-year" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DatetimeIndex.is_leap_year">
-<em class="property">property </em><code class="sig-prename descclassname">DatetimeIndex.</code><code class="sig-name descname">is_leap_year</code><a class="headerlink" href="#pandas.DatetimeIndex.is_leap_year" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-prename descclassname"><span class="pre">DatetimeIndex.</span></code><code class="sig-name descname"><span class="pre">is_leap_year</span></code><a class="headerlink" href="#pandas.DatetimeIndex.is_leap_year" title="Permalink to this definition">¶</a></dt>
 <dd><p>Boolean indicator if the date belongs to a leap year.</p>
 <p>A leap year is a year, which has 366 days (instead of 365) including
 29th of February as an intercalary day.
@@ -74,10 +74,10 @@ the <code class="docutils literal notranslate"><span class="pre">.dt</span></cod
 <span class="go">DatetimeIndex(['2012-12-31', '2013-12-31', '2014-12-31'],</span>
 <span class="go">              dtype='datetime64[ns]', freq='A-DEC')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">idx</span><span class="o">.</span><span class="n">is_leap_year</span>
-<span class="go">array([ True, False, False], dtype=bool)</span>
+<span class="go">array([ True, False, False])</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dates_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dates_series</span>
 <span class="go">0   2012-12-31</span>
 <span class="go">1   2013-12-31</span>

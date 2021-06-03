@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-dataframe-to-gbq">
 <h1>pandas.DataFrame.to_gbq<a class="headerlink" href="#pandas-dataframe-to-gbq" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.DataFrame.to_gbq">
-<code class="sig-prename descclassname">DataFrame.</code><code class="sig-name descname">to_gbq</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">destination_table</em>, <em class="sig-param">project_id=None</em>, <em class="sig-param">chunksize=None</em>, <em class="sig-param">reauth=False</em>, <em class="sig-param">if_exists='fail'</em>, <em class="sig-param">auth_local_webserver=False</em>, <em class="sig-param">table_schema=None</em>, <em class="sig-param">location=None</em>, <em class="sig-param">progress_bar=True</em>, <em class="sig-param">credentials=None</em><span class="sig-paren">)</span> → None<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/frame.py#L1441-L1547"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.DataFrame.to_gbq" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">DataFrame.</span></code><code class="sig-name descname"><span class="pre">to_gbq</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination_table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">project_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunksize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reauth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">if_exists</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fail'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_local_webserver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_schema</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/frame.py#L1616-L1722"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.DataFrame.to_gbq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a DataFrame to a Google BigQuery table.</p>
 <p>This function requires the <a class="reference external" href="https://pandas-gbq.readthedocs.io">pandas-gbq package</a>.</p>
 <p>See the <a class="reference external" href="https://pandas-gbq.readthedocs.io/en/latest/howto/authentication.html">How to authenticate with Google BigQuery</a>
@@ -81,7 +81,7 @@ if multiple accounts are used.</p>
 </dd>
 </dl>
 </dd>
-<dt><strong>auth_local_webserver</strong><span class="classifier">bool, default False</span></dt><dd><p>Use the <a class="reference external" href="http://google-auth-oauthlib.readthedocs.io/en/latest/reference/google_auth_oauthlib.flow.html#google_auth_oauthlib.flow.InstalledAppFlow.run_local_server">local webserver flow</a> instead of the <a class="reference external" href="http://google-auth-oauthlib.readthedocs.io/en/latest/reference/google_auth_oauthlib.flow.html#google_auth_oauthlib.flow.InstalledAppFlow.run_console">console flow</a>
+<dt><strong>auth_local_webserver</strong><span class="classifier">bool, default False</span></dt><dd><p>Use the <a class="reference external" href="https://google-auth-oauthlib.readthedocs.io/en/latest/reference/google_auth_oauthlib.flow.html#google_auth_oauthlib.flow.InstalledAppFlow.run_local_server">local webserver flow</a> instead of the <a class="reference external" href="https://google-auth-oauthlib.readthedocs.io/en/latest/reference/google_auth_oauthlib.flow.html#google_auth_oauthlib.flow.InstalledAppFlow.run_console">console flow</a>
 when getting user credentials.</p>
 <p><em>New in version 0.2.0 of pandas-gbq</em>.</p>
 </dd>
@@ -115,10 +115,10 @@ directly.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://pandas-gbq.readthedocs.io/en/latest/api.html#pandas_gbq.to_gbq" title="(in pandas-gbq v0.13.1+1.g97e9a9e)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas_gbq.to_gbq</span></code></a></dt><dd><p>This function in the pandas-gbq library.</p>
+<dt><a class="reference external" href="https://pandas-gbq.readthedocs.io/en/latest/api.html#pandas_gbq.to_gbq" title="(in pandas-gbq v0.14.1+1.g97c9aaa)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pandas_gbq.to_gbq</span></code></a></dt><dd><p>This function in the pandas-gbq library.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.read_gbq.html#pandas.read_gbq" title="pandas.read_gbq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_gbq</span></code></a></dt><dd><p>Read a DataFrame from Google BigQuery.</p>
 </dd>

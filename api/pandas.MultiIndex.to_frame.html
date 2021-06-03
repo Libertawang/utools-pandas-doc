@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-multiindex-to-frame">
 <h1>pandas.MultiIndex.to_frame<a class="headerlink" href="#pandas-multiindex-to-frame" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.MultiIndex.to_frame">
-<code class="sig-prename descclassname">MultiIndex.</code><code class="sig-name descname">to_frame</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">index=True</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/indexes/multi.py#L1610-L1661"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.MultiIndex.to_frame" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">MultiIndex.</span></code><code class="sig-name descname"><span class="pre">to_frame</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/indexes/multi.py#L1689-L1766"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.MultiIndex.to_frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a DataFrame with the levels of the MultiIndex as columns.</p>
 <p>Column ordering is determined by the DataFrame constructor with data as
 a dict.</p>
@@ -64,7 +64,7 @@ a dict.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>index</strong><span class="classifier">bool, default True</span></dt><dd><p>Set the index of the returned DataFrame as the original MultiIndex.</p>
 </dd>
-<dt><strong>name</strong><span class="classifier">list / sequence of strings, optional</span></dt><dd><p>The passed names should substitute index level names.</p>
+<dt><strong>name</strong><span class="classifier">list / sequence of str, optional</span></dt><dd><p>The passed names should substitute index level names.</p>
 </dd>
 </dl>
 </dd>
@@ -74,11 +74,41 @@ a dict.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame</span></code></a></dt><dd><p>Two-dimensional, size-mutable, potentially heterogeneous tabular data.</p>
+</dd>
 </dl>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_arrays</span><span class="p">([[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">],</span> <span class="p">[</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mi</span>
+<span class="go">MultiIndex([('a', 'c'),</span>
+<span class="go">            ('b', 'd')],</span>
+<span class="go">           )</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">mi</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">     0  1</span>
+<span class="go">a c  a  c</span>
+<span class="go">b d  b  d</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">mi</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">   0  1</span>
+<span class="go">0  a  c</span>
+<span class="go">1  b  d</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">mi</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="p">[</span><span class="s1">'x'</span><span class="p">,</span> <span class="s1">'y'</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">     x  y</span>
+<span class="go">a c  a  c</span>
+<span class="go">b d  b  d</span>
+</pre></div>
 </div>
 </dd></dl>
 </div>

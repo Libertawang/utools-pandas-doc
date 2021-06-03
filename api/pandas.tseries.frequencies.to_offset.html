@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-tseries-frequencies-to-offset">
 <h1>pandas.tseries.frequencies.to_offset<a class="headerlink" href="#pandas-tseries-frequencies-to-offset" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.tseries.frequencies.to_offset">
-<code class="sig-prename descclassname">pandas.tseries.frequencies.</code><code class="sig-name descname">to_offset</code><span class="sig-paren">(</span><em class="sig-param">freq</em><span class="sig-paren">)</span> → Union[pandas.tseries.offsets.DateOffset, NoneType]<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/tseries/frequencies.py#L74-L182"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.tseries.frequencies.to_offset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.tseries.frequencies.</span></code><code class="sig-name descname"><span class="pre">to_offset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pandas.tseries.frequencies.to_offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return DateOffset object from string or tuple representation
 or datetime.timedelta object.</p>
 <dl class="field-list simple">
@@ -63,8 +63,7 @@ or datetime.timedelta object.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>DateOffset</dt><dd><p>None if freq is None.</p>
-</dd>
+<dt>DateOffset or None</dt><dd></dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
@@ -74,30 +73,31 @@ or datetime.timedelta object.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DateOffset</span></code></dt><dd></dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DateOffset</span></code></dt><dd><p>Standard kind of date increment used for a date range.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">(</span><span class="s1">'5min'</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">(</span><span class="s2">"5min"</span><span class="p">)</span>
 <span class="go">&lt;5 * Minutes&gt;</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">(</span><span class="s1">'1D1H'</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">(</span><span class="s2">"1D1H"</span><span class="p">)</span>
 <span class="go">&lt;25 * Hours&gt;</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">((</span><span class="s1">'W'</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">(</span><span class="s2">"2W"</span><span class="p">)</span>
 <span class="go">&lt;2 * Weeks: weekday=6&gt;</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">(</span><span class="s2">"2B"</span><span class="p">)</span>
 <span class="go">&lt;2 * BusinessDays&gt;</span>
 </pre></div>
 </div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">to_offset</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 <span class="go">&lt;Day&gt;</span>
 </pre></div>
 </div>

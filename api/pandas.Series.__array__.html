@@ -50,12 +50,12 @@
   <body>
 <div class="section" id="pandas-series-array">
 <h1>pandas.Series.__array__<a class="headerlink" href="#pandas-series-array" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.__array__">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">__array__</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">dtype=None</em><span class="sig-paren">)</span> → numpy.ndarray<a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L707-L754"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.__array__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">__array__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L721-L768"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.__array__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the values as a NumPy array.</p>
 <p>Users should not call this directly. Rather, it is invoked by
-<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.17)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.array()</span></code></a> and <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.asarray.html#numpy.asarray" title="(in NumPy v1.17)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.asarray()</span></code></a>.</p>
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.20)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.array()</span></code></a> and <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.asarray.html#numpy.asarray" title="(in NumPy v1.20)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.asarray()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -66,13 +66,13 @@ the dtype is inferred from the data.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>The values in the series converted to a <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarary</span></code>
+<dt>numpy.ndarray</dt><dd><p>The values in the series converted to a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.20)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>
 with the specified <cite>dtype</cite>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.array.html#pandas.array" title="pandas.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></dt><dd><p>Create a new array from data.</p>

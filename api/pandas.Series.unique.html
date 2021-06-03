@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-series-unique">
 <h1>pandas.Series.unique<a class="headerlink" href="#pandas-series-unique" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.unique">
-<code class="sig-prename descclassname">Series.</code><code class="sig-name descname">unique</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/series.py#L1755-L1817"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.unique" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">unique</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/series.py#L1811-L1873"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.unique" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return unique values of Series object.</p>
 <p>Uniques are returned in order of appearance. Hash table-based unique,
 therefore does NOT sort.</p>
@@ -64,7 +64,7 @@ therefore does NOT sort.</p>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="pandas.unique.html#pandas.unique" title="pandas.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a></dt><dd><p>Top-level unique method for any 1-d array-like object.</p>
@@ -108,15 +108,15 @@ the unique values is returned. This includes</p>
 <p>An unordered Categorical will return categories in the order of
 appearance.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">'baabc'</span><span class="p">)))</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="go">[b, a, c]</span>
-<span class="go">Categories (3, object): [b, a, c]</span>
+<span class="go">['b', 'a', 'c']</span>
+<span class="go">Categories (3, object): ['b', 'a', 'c']</span>
 </pre></div>
 </div>
 <p>An ordered Categorical preserves the category ordering.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">'baabc'</span><span class="p">),</span> <span class="n">categories</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">),</span>
 <span class="gp">... </span>                         <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-<span class="go">[b, a, c]</span>
-<span class="go">Categories (3, object): [a &lt; b &lt; c]</span>
+<span class="go">['b', 'a', 'c']</span>
+<span class="go">Categories (3, object): ['a' &lt; 'b' &lt; 'c']</span>
 </pre></div>
 </div>
 </dd></dl>

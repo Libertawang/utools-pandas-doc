@@ -50,9 +50,9 @@
   <body>
 <div class="section" id="pandas-read-feather">
 <h1>pandas.read_feather<a class="headerlink" href="#pandas-read-feather" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="pandas.read_feather">
-<code class="sig-prename descclassname">pandas.</code><code class="sig-name descname">read_feather</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">columns=None</em>, <em class="sig-param">use_threads: bool = True</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/io/feather_format.py#L67-L103"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.read_feather" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pandas.</span></code><code class="sig-name descname"><span class="pre">read_feather</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">storage_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/io/feather_format.py#L83-L129"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.read_feather" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a feather-format object from the file path.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -64,7 +64,7 @@ expected. A local file could be:
 <p>If you want to pass in a path object, pandas accepts any
 <code class="docutils literal notranslate"><span class="pre">os.PathLike</span></code>.</p>
 <p>By file-like object, we refer to objects with a <code class="docutils literal notranslate"><span class="pre">read()</span></code> method,
-such as a file handler (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
+such as a file handle (e.g. via builtin <code class="docutils literal notranslate"><span class="pre">open</span></code> function)
 or <code class="docutils literal notranslate"><span class="pre">StringIO</span></code>.</p>
 </dd>
 <dt><strong>columns</strong><span class="classifier">sequence, default None</span></dt><dd><p>If not provided, all columns are read.</p>
@@ -77,6 +77,16 @@ or <code class="docutils literal notranslate"><span class="pre">StringIO</span><
 </div></blockquote>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.0.</span></p>
+</div>
+</dd>
+<dt><strong>storage_options</strong><span class="classifier">dict, optional</span></dt><dd><p>Extra options that make sense for a particular storage connection, e.g.
+host, port, username, password, etc., if using a URL that will
+be parsed by <code class="docutils literal notranslate"><span class="pre">fsspec</span></code>, e.g., starting “s3://”, “gcs://”. An error
+will be raised if providing this argument with a non-fsspec URL.
+See the fsspec and backend storage implementation docs for the set of
+allowed keys and values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.2.0.</span></p>
 </div>
 </dd>
 </dl>

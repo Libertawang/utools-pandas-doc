@@ -50,32 +50,41 @@
   <body>
 <div class="section" id="pandas-series-cat-remove-unused-categories">
 <h1>pandas.Series.cat.remove_unused_categories<a class="headerlink" href="#pandas-series-cat-remove-unused-categories" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.cat.remove_unused_categories">
-<code class="sig-prename descclassname">Series.cat.</code><code class="sig-name descname">remove_unused_categories</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/accessor.py#L98-L99"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pandas.Series.cat.remove_unused_categories" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">Series.cat.</span></code><code class="sig-name descname"><span class="pre">remove_unused_categories</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/pandas-dev/pandas/blob/v1.2.4/pandas/core/accessor.py#L91-L92"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pandas.Series.cat.remove_unused_categories" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove categories which are not used.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>inplace</strong><span class="classifier">bool, default False</span></dt><dd><p>Whether or not to drop unused categories inplace or return a copy of
 this categorical with unused categories dropped.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.2.0.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>cat</strong><span class="classifier">Categorical with unused categories dropped or None if inplace.</span></dt><dd></dd>
+<dt><strong>cat</strong><span class="classifier">Categorical or None</span></dt><dd><p>Categorical with unused categories dropped or None if <code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
+</dd>
 </dl>
 </dd>
 </dl>
-<div class="alert alert-info">
+<div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.Series.cat.rename_categories.html#pandas.Series.cat.rename_categories" title="pandas.Series.cat.rename_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.Series.cat.reorder_categories.html#pandas.Series.cat.reorder_categories" title="pandas.Series.cat.reorder_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reorder_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.Series.cat.add_categories.html#pandas.Series.cat.add_categories" title="pandas.Series.cat.add_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.Series.cat.remove_categories.html#pandas.Series.cat.remove_categories" title="pandas.Series.cat.remove_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_categories</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="pandas.Series.cat.set_categories.html#pandas.Series.cat.set_categories" title="pandas.Series.cat.set_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_categories</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="pandas.Series.cat.rename_categories.html#pandas.Series.cat.rename_categories" title="pandas.Series.cat.rename_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_categories</span></code></a></dt><dd><p>Rename categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.reorder_categories.html#pandas.Series.cat.reorder_categories" title="pandas.Series.cat.reorder_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reorder_categories</span></code></a></dt><dd><p>Reorder categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.add_categories.html#pandas.Series.cat.add_categories" title="pandas.Series.cat.add_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_categories</span></code></a></dt><dd><p>Add new categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.remove_categories.html#pandas.Series.cat.remove_categories" title="pandas.Series.cat.remove_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_categories</span></code></a></dt><dd><p>Remove the specified categories.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.set_categories.html#pandas.Series.cat.set_categories" title="pandas.Series.cat.set_categories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_categories</span></code></a></dt><dd><p>Set the categories to the specified ones.</p>
+</dd>
 </dl>
 </div>
 </dd></dl>

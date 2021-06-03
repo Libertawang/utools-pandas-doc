@@ -50,9 +50,55 @@
   <body>
 <div class="section" id="pandas-series-empty">
 <h1>pandas.Series.empty<a class="headerlink" href="#pandas-series-empty" title="Permalink to this headline">¶</a></h1>
-<dl class="method">
+<dl class="py method">
 <dt id="pandas.Series.empty">
-<em class="property">property </em><code class="sig-prename descclassname">Series.</code><code class="sig-name descname">empty</code><a class="headerlink" href="#pandas.Series.empty" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">property</span> </em><code class="sig-prename descclassname"><span class="pre">Series.</span></code><code class="sig-name descname"><span class="pre">empty</span></code><a class="headerlink" href="#pandas.Series.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Indicator whether DataFrame is empty.</p>
+<p>True if DataFrame is entirely empty (no items), meaning any of the
+axes are of length 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>If DataFrame is empty, return True, if not return False.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Series.dropna.html#pandas.Series.dropna" title="pandas.Series.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.dropna</span></code></a></dt><dd><p>Return series without null values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.dropna.html#pandas.DataFrame.dropna" title="pandas.DataFrame.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.dropna</span></code></a></dt><dd><p>Return DataFrame with labels on given axis omitted where (all or any) data are missing.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>If DataFrame contains only NaNs, it is still not considered empty. See
+the example below.</p>
+<p class="rubric">Examples</p>
+<p>An example of an actual empty DataFrame. Notice the index is empty:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df_empty</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A'</span> <span class="p">:</span> <span class="p">[]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_empty</span>
+<span class="go">Empty DataFrame</span>
+<span class="go">Columns: [A]</span>
+<span class="go">Index: []</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df_empty</span><span class="o">.</span><span class="n">empty</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If we only have NaNs in our DataFrame, it is not considered empty! We
+will need to drop the NaNs to make the DataFrame empty:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'A'</span> <span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">    A</span>
+<span class="go">0 NaN</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">empty</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">empty</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
 </div>
 </body></html>
